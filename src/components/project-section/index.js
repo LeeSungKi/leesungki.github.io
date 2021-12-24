@@ -1,6 +1,8 @@
 import React from 'react';
 import SectionHeader from '../section-header';
 import IconButtonBar from '../icon-button-bar';
+import Paper from '@mui/material/Paper';
+import Card from '@mui/material/Card';
 import Image from '../image';
 import './style.scss';
 
@@ -19,8 +21,11 @@ function ProjectSection({ projects }) {
               )}
             </div>
             <div className="body">
-              <Image className="thumbnail" src={project.thumbnailUrl} />
-
+            <Paper elevation={20}>
+              <Card>
+                <Image className="thumbnail" src={project.thumbnailUrl} />
+              </Card> 
+            </Paper>
               {project.techStack && (
                 <div className="tech-stack">
                   {project.techStack.map((tech, index) => (

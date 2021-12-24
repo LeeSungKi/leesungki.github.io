@@ -58,7 +58,8 @@ module.exports = {
         lang: `en`,
         display: `standalone`,
         start_url: `/`,
-        icon: `static/favicon.png`,
+        icon: `static/react-native-icon.png`,
+        //static/favicon.png
       },
     },
     {

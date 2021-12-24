@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
       <PageHeader siteTitle={title || `Title`} />
       <main className="page-content">{children}</main>
       <PageFooter
+        //푸터 컴포넌트에 데이터보냄
         author={author.name || `Author`}
         githubUrl={author.social?.github || `https://www.github.com`}
       />
