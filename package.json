@@ -1,9 +1,9 @@
 {
-  "name": "zoomkoding.com",
+  "name": "leesungki",
   "private": false,
   "description": "A neat blog theme for developers",
-  "version": "2.0.0",
-  "author": "zoomkoding <zoomkoding@gmail.com>",
+  "version": "1.0.0",
+  "author": "leesungki <leesunggi92@gmail.com>",
   "dependencies": {
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "^5.1.0",
@@ -58,9 +58,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zoomkoding/zoomkoding-gatsby-blog"
+    "url": "https://github.com/LeeSungKi/leesungki.github.io"
   },
   "bugs": {
-    "url": "https://github.com/zoomkoding/zoomkoding-gatsby-blog/issues"
+    "url": "https://github.com/LeeSungKi/leesungki.github.io/issues"
   }
 }
