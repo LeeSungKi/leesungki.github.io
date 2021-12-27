@@ -61,6 +61,11 @@ function Seo({ description, title }) {
           name:`google-site-verification`, 
           content:`NIs0QhmetlWroylVB41Dz3fVQcuHAzP8e2DvVMjFPus`,
         },
+        //naver seo
+        {
+          name:`naver-site-verification`, 
+          content:`c695577700808f46f7ac9db8f39c8a2a3f9dd14d`,
+        },
       ]}
     />
   );
