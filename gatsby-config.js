@@ -123,38 +123,7 @@ module.exports = {
     },
     `gatsby-theme-material-ui`,
     `gatsby-transformer-sharp`,
-    /* `gatsby-plugin-advanced-sitemap`, */
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                siteUrl
-              }
-            }
-            allSitePage(
-              filter: {
-                path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
-              }
-            ) {
-              edges {
-                node {
-                  path
-                }
-              }
-            }
-          }
-        `,
-        output: '/sitemap.xml',
-        serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-          url: site.siteMetadata.siteUrl + edge.node.path,
-          changefreq: 'daily', //페이지가 변경되는 빈도
-          priority: 0.7 //해당 사이트의 기타 URL에 대한 특정 URL의 상대적 우선순위
-        }))
-      }
-    },
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-feed`,
