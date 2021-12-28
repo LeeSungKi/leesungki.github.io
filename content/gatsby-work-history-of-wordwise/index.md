@@ -4,7 +4,7 @@ title: 나의 첫회사...
 date: '2021-12-24 16:49:00'
 author: 쩡기
 tags: blog 개발자 코딩 회사 첫회사 첫파견 주니어개발자
-categories: 잡동사니
+categories: 잡동사니 project
 ---
 
 ## 🎈 소개 🎈
