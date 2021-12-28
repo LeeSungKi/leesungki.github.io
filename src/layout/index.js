@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import PageHeader from '../components/page-header';
 import PageFooter from '../components/page-footer';
 import ThemeSwitch from '../components/theme-switch';
+import { Helmet } from 'react-helmet';
 import './style.scss';
 
 const Layout = ({ children }) => {
@@ -25,6 +26,10 @@ const Layout = ({ children }) => {
 
   return (
     <div className="page-wrapper">
+      <Helmet>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6901713023068431"
+     crossorigin="anonymous"></script>
+      </Helmet>
       <PageHeader siteTitle={title || `Title`} />
       <main className="page-content">{children}</main>
       <PageFooter
