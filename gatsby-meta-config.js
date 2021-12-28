@@ -6,7 +6,7 @@ module.exports = {
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
   comments: {
     utterances: {
-      repo: ``, // `zoomkoding/zoomkoding-gatsby-blog`,
+      repo: `LeeSungKi/leesungki.github.io`, // `zoomkoding/zoomkoding-gatsby-blog`,
     },
   },
   ga: '0', // Google Analytics Tracking ID
@@ -56,7 +56,7 @@ module.exports = {
         date: '2018.12 ~ 2020.01',
         activity: 'LIG NEX1 파견',
         links: {
-          post: '',
+          post: '/gatsby-work-history-of-wordwise',
           github: '',
           demo: '',
         },
