@@ -1,6 +1,6 @@
 ---
 emoji: 🎉
-title: KT DS 에서의 2번째 프로젝트
+title: KT DS 에서의 프로젝트
 date: '2021-12-28 15:50:00'
 author: 쩡기
 tags: 개발자 KTDS KT 프로젝트 Vue.js 
