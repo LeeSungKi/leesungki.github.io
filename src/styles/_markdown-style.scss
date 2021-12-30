@@ -669,8 +669,9 @@
 
 .markdown blockquote {
   padding: 0 1em;
-  color: #6a737d;
+  color: var(--primary-text-color);
   border-left: 0.25em solid var(--markdown-blockquote-border-color);
+  background-color: var(--markdown-blockquote-background-color);
 }
 
 .markdown blockquote> :first-child {

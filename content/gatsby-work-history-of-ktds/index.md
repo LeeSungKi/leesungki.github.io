@@ -7,7 +7,7 @@ tags: 개발자 KTDS KT 프로젝트 Vue.js
 categories: project
 ---
 
-1년간의 LIG NEX1에서의 과제가 끝난 후 철수하게 되었고 다음 프로젝트는 KT DS의 Q-Brige라는컨테이너 관리 시스템의 화면 고도화 작업에 투입되었다.<br>
+1년간의 LIG NEX1에서의 과제가 끝난 후 철수하게 되었고 다음 프로젝트는 KT DS의 Flying Cube라는컨테이너 관리 시스템의 화면 고도화 작업에 투입되었다.<br>
 
 
 뭔가 나에게는 제대로 된 첫 SI 프로젝트였고 접해보지 않았던 Vue.js를 통한 화면 고도화를 접하는 거라 많이 떨렸다.
@@ -16,9 +16,9 @@ categories: project
 이번 포스트에서는 내가 프로젝트의 어떤 부분에 기여했으며 어떤 기술들을 사용해 봤는지를 기술할 예정이며
 자세한 기술적인 포스팅은 따로 카테고리에 정리할 예정이다.<br>
 
-## 1. Q-Brige History
+## 1. Flying Cube History
 
-Q-Brige 란 KT 자체적으로 개발한 컨테이너 관리 플랫폼이라고 본다 해당 시스템은 2차에 거쳐 개발이 되었다고 알고 있다.
+Flying Cube 란 KT 자체적으로 개발한 컨테이너 관리 플랫폼이라고 본다 해당 시스템은 2차에 거쳐 개발이 되었다고 알고 있다.
 
 >😅나중에 알게 된 거지만 `Red Hat` 의 [OpenShift](https://www.redhat.com/ko/topics/containers/red-hat-openshift-kubernetes)를 벤치마킹?(뺐긴..)시스템 이더라..
 
