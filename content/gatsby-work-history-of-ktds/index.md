@@ -5,6 +5,7 @@ date: '2021-12-28 15:50:00'
 author: 쩡기
 tags: 개발자 KTDS KT 프로젝트 Vue.js 
 categories: project
+imageUrl: 'ktds.jpg'
 ---
 
 1년간의 LIG NEX1에서의 과제가 끝난 후 철수하게 되었고 다음 프로젝트는 KT DS의 Flying Cube라는컨테이너 관리 시스템의 화면 고도화 작업에 투입되었다.<br>

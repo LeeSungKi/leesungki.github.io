@@ -5,6 +5,7 @@ date: '2021-12-30 11:02:00'
 author: 쩡기
 tags: 개발자 CJ 대한통운 프로젝트 스트럿츠 Apache Struts
 categories: project
+imageUrl: 'cjimg.jpg'
 ---
 
 이번 대한 통운 에서의 업무는 트레블 슈터로서 기존 운영되고 있는 Q-bridge라는 글로벌 포워딩 시스템의 오류들을 개선하고 추가 개발을 하기 위해 투입되었다. 
