@@ -1,1 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"><url><loc>https://leesungki.github.io/gatsby-work-history-of-ktds/</loc><lastmod>2021-12-30T01:21:33.575Z</lastmod></url><url><loc>https://leesungki.github.io/gatsby-work-history-of-wordwise/</loc><lastmod>2021-12-30T01:21:33.577Z</lastmod></url><url><loc>https://leesungki.github.io/posts</loc><lastmod>2021-12-30T01:21:33.577Z</lastmod></url><url><loc>https://leesungki.github.io/posts/All</loc><lastmod>2021-12-30T01:21:33.577Z</lastmod></url><url><loc>https://leesungki.github.io/posts/project</loc><lastmod>2021-12-30T01:21:33.577Z</lastmod></url><url><loc>https://leesungki.github.io/posts/잡동사니</loc><lastmod>2021-12-30T01:21:33.577Z</lastmod></url><url><loc>https://leesungki.github.io/about/</loc><lastmod>2021-12-30T01:21:33.577Z</lastmod></url><url><loc>https://leesungki.github.io/</loc><lastmod>2021-12-30T01:21:33.577Z</lastmod></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://leesungki.github.io/</loc>
+  <lastmod>2021-12-28T07:35:20+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://leesungki.github.io/about/</loc>
+  <lastmod>2021-12-28T07:35:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://leesungki.github.io/posts/</loc>
+  <lastmod>2021-12-28T07:35:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://leesungki.github.io/gatsby-work-history-of-ktds/</loc>
+  <lastmod>2021-12-28T07:35:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://leesungki.github.io/gatsby-work-history-of-wordwise/</loc>
+  <lastmod>2021-12-28T07:35:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://leesungki.github.io/posts/project/</loc>
+  <lastmod>2021-12-28T07:35:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
