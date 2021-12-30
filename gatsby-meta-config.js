@@ -65,7 +65,7 @@ module.exports = {
         date: '2020.01 ~ 2020.08',
         activity: 'KT DS 파견',
         links: {
-          post: '',
+          post: '/gatsby-work-history-of-ktds',
           github: '',
           demo: '',
         },
@@ -74,7 +74,7 @@ module.exports = {
         date: '2021.08 ~ 2021.12',
         activity: 'CJ대한통운 파견',
         links: {
-          post: '',
+          post: '/gatsby-work-history-of-cj',
           github: '',
           demo: '',
         },
@@ -118,13 +118,37 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
-        title: '개발 블로그 테마 개발',
+        title: 'LIG NEX1 파견',
         description:
-          '개발 블로그를 없이 개발하는 기간이 조금씩 늘어나고 점점 많은 생각과 경험이 쌓여가면서 제 이야기를 담고 있는 블로그를 직접 만들고 운영하고 싶게 되었습니다.',
-        techStack: ['gatsby', 'react'],
-        thumbnailUrl: 'blog.jpg',//blog.png
+          'MDM 시스템 운영 및 백오피스 개발, 홈페이지 유지보수, 리조트 예약 시스템 유지보수',
+        techStack: ['Spring', 'Oracle', 'jQuery', 'MySql'],
+        thumbnailUrl: 'lignex1.png',
         links: {
-          post: '',///gatsby-starter-zoomkoding-introduction
+          post: '/gatsby-work-history-of-wordwise',
+          github: '',
+          demo: '',
+        },
+      },
+      {
+        title: 'KT DS 파견',
+        description:
+          '컨테이너 관리 시스템(FlyingCube) 화면 고도화',
+        techStack: ['Vue.js', 'SpringBoot', 'Vuex', 'Axios', 'VueRouter' , 'Vuetify'],
+        thumbnailUrl: 'ktds.jpg',
+        links: {
+          post: '/gatsby-work-history-of-ktds',
+          github: '',
+          demo: '',
+        },
+      },
+      {
+        title: 'CJ대한통운 파견',
+        description:
+          '글로벌 포워딩 시스템(Q-brige) 오류 개선 및 추가 개발',
+        techStack: ['Struts', 'MsSql', 'Ibsheet'],
+        thumbnailUrl: 'cjimg.jpg',
+        links: {
+          post: '/gatsby-work-history-of-cj',
           github: '',
           demo: '',
         },
