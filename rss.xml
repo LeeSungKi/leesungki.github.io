@@ -1,4 +1,611 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[leesunggi RSS Feed]]></title><description><![CDATA[leesunggi92@gmail.com]]></description><link>https://leesungki.github.io/sungkilee.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 26 Jan 2022 01:19:05 GMT</lastBuildDate><item><title><![CDATA[현대 자동차 에서의 프로젝트]]></title><description><![CDATA[어느덧 3년 차라는 허울뿐인 개발자가 되었다 싶을 때쯤 현대자동차의 프로젝트에 투입되었다. 이전에 클라우드의 개념에 대해 자세히 모르던 나는 aws…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-work-history-of-hyundai/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-work-history-of-hyundai/</guid><pubDate>Tue, 25 Jan 2022 04:40:00 GMT</pubDate><content:encoded>&lt;p&gt;어느덧 3년 차라는 허울뿐인 개발자가 되었다 싶을 때쯤 현대자동차의 프로젝트에 투입되었다.&lt;br&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[leesunggi RSS Feed]]></title><description><![CDATA[leesunggi92@gmail.com]]></description><link>https://leesungki.github.io/sungkilee.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 26 Jan 2022 06:58:50 GMT</lastBuildDate><item><title><![CDATA[AWS S3 란?]]></title><description><![CDATA[🎈 AWS Simple Storage Service(S3) 란?  AWS S3 특징 제공하는 단순한 웹 서비스 인터페이스를 사용하여 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있습니다. 개발자는 Amazon…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-aws-simple-storage-services3-란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-aws-simple-storage-services3-%EB%9E%80&quot; aria-label=&quot; aws simple storage services3 란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 AWS Simple Storage Service(S3) 란?&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;AWS Simple Storage Service(S3)는 인터넷용 스토리지 서비스입니다. 이 서비스는 개발자가 더 쉽게 웹 규모 컴퓨팅 작업을 수행할 수 있도록 설계되었습니다.&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;aws-s3-특징&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#aws-s3-%ED%8A%B9%EC%A7%95&quot; aria-label=&quot;aws s3 특징 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;AWS S3 특징&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;제공하는 단순한 웹 서비스 인터페이스를 사용하여 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;개발자는 Amazon이 자체 웹 사이트의 글로벌 네트워크 운영에 사용하는 것과 같은 높은 확장성과 신뢰성을 갖춘 빠르고 경제적인 데이터 스토리지 인프라에 액세스할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;단독 스토리지로도 사용할 수 있으며 EC2, EBS, Glacier와 같은 다른 AWS 서비스와도 함께 사용할 수 있어 클라우드 어플리케이션, 컨텐츠 배포, 백업 및 아카이빙, 재해 복구 및 빅데이터 분석을 포함한 다양한 사례에 알맞다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;S3의 버킷은 무한대의 객체를 저장할 수 있으므로 스토리지의 요구를 미리 추정하여 관리할 필요가 없어 확장/축소에 신경쓰지 않아도 된다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HTTPS 프로토콜을 사용하여 SSL로 암호화된 엔드포인트를 통해 데이터를 안전하게 업로드/다운로드 할 수 있으며 상주 데이터를 자동으로 암호화 하고 AWS KMS를 통해 S3에서 사용자를 위해 키를 관리하게 하는 방법과 고유한 키를 제공하는 방법 중에서 키 관리 방법을 선택할 수 있는 기능을 제공한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;사용한 스토리지 만큼 요금이 청구되며 데이터 전송부분에서는 해당 리전 내에서는 데이터 송수신은 무료(다른 AWS 리전으로는 무료가 아니다!)이고 S3에서 인터넷으로 데이터를 송수신 시에도 가격이 매우 저렴하다. 요금에 대한 부분은 이곳에서 확인 할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;aws-s3-기본-개념&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#aws-s3-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90&quot; aria-label=&quot;aws s3 기본 개념 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;AWS S3 기본 개념&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;객체(Object)&lt;br&gt;
+S3에 데이터가 저장되는 기본 단위로써 파일과 메타데이터로 이루어져있다. 객체 하나의 크기는 1Byte부터 5TB까지 허용되며 메타데이터는 MIME 형식으로 파일 확장자를 통해 자동으로 설정되며 사용자 임의로도 지정 가능하다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;버킷(Bucket)&lt;br&gt;
+S3에서 생성할 수 있는 최상위 디렉토리의 개념으로 이름은 S3 리전 중에서 유일해야 한다. 계정별로 100개까지 생성 가능하며 버킷에 저장할 수 있는 객체수와 용량은 무제한이다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;표준스토리지&lt;br&gt;
+S3 서비스 수준 계약으로 객체에 대해 99.999999999%의 내구성을 보장하며 99.99%의 가용성을 제공한다. 하지만 높은 내구성을 보장해야 하는 만큼 비용이 높으므로 유실되면 안되는 원본 데이터, 민감정보, 개인정보 등의 중요한 데이터를 저장하는 것이 알맞다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RRS(Reduced Redundancy Storage)&lt;br&gt;
+표준 스토리지보다 저렴한 비용으로 데이터를 저장할 수 있다. RRS 옵션은 여러 시설 전반에 다양한 디바이스에 객체를 저장하며 일반 디스크 드라이브의 400배에 달하는 내구성을 제공하나 표준 스토리지 만큼 많이 객체를 복제하지는 않으므로 원본을 복제한 데이터나 가공한 데이터(예를 들어 썸네일 같은)의 저장에 알맞다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;출처: &lt;a href=&quot;https://usefultoknow.tistory.com/entry/Amazon-S3%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C&quot;&gt;https://usefultoknow.tistory.com/entry/Amazon-S3란-무엇일까&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-aws-simple-storage-services3-%EB%9E%80&quot;&gt;🎈 AWS Simple Storage Service(S3) 란?&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#aws-s3-%ED%8A%B9%EC%A7%95&quot;&gt;AWS S3 특징&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#aws-s3-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90&quot;&gt;AWS S3 기본 개념&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 정책 편집]]></title><description><![CDATA[👀 사용 계기 프로젝트 진행 중 외부 api 연동 과제 진행 중에 private한 s3 스토리지에서 득정 도메인의 접근을 허용하는 방식이 필요하게 되었다. ❗TMI❗ : 네이버 ocr 기능을 사용 중 s…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3-referer/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3-referer/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-사용-계기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%82%AC%EC%9A%A9-%EA%B3%84%EA%B8%B0&quot; aria-label=&quot; 사용 계기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👀 사용 계기&lt;/h2&gt;
+&lt;p&gt;프로젝트 진행 중 외부 api 연동 과제 진행 중에 private한 s3 스토리지에서 득정 도메인의 접근을 허용하는 방식이 필요하게 되었다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;❗TMI❗ : 네이버 ocr 기능을 사용 중 s3에 저장되어 있는 이미지 파일을 읽어 와야 하는데 보안 특성상
+s3 버킷을 public 하게 사용할 수가 없었고 그로 인해 naver api의 접근이 불가능했다..😅
+문제 해결을 위해 aws s3 문서를 읽는 중 버킷의 정책을 변경하여 특정 도메인의 접근을 가능하게 하는
+방법을 찾았고 나의 삽질을 기록한다..😂&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;-http-referer란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-http-referer%EB%9E%80&quot; aria-label=&quot; http referer란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🗑 HTTP Referer란?&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;HTTP는 헤더값으로 웹 브라우저에서 생성하는 데이터&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;예를들어 &lt;a href=&quot;http://naver.com&quot;&gt;http://naver.com&lt;/a&gt; 웹사이트에서 접근시에 해당 Resource로 보내는 HTTP 헤더의 Referer값은 &lt;a href=&quot;http://naver.com&quot;&gt;http://naver.com&lt;/a&gt; 입니다.
+S3에서는 이 Referer값을 판단해 파일을 보여줄지 말지 제한할 수 있습니다.&lt;/p&gt;
+&lt;h2 id=&quot;-bucket-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot; bucket 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✅ Bucket 생성하기&lt;/h2&gt;
+&lt;p&gt;테스트를 위한 버킷을 생성해준다.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;s3 버킷 생성에 대한 자료는 여기에서 참고 바랍니다. 👉&lt;a href=&quot;https://leesungki.github.io/gatsby-aws-study-s3-makeBucket/&quot;&gt;Bucket 생성&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;-정책-편집&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%A0%95%EC%B1%85-%ED%8E%B8%EC%A7%91&quot; aria-label=&quot; 정책 편집 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;♻ 정책 편집&lt;/h2&gt;
+&lt;h4&gt;생성한 버킷의 권한탭 클릭한다.
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 69.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAByElEQVQoz41Ty25UMQydH2bNJ4GEEIIFKwSCWbBl0wqN2qHTzuMmuYmTOE6cZHjIuaXqBlTryDc3yfHjRF45H0+zdz5Y52brZucCxoj4FKwg4h6iSUU5OJ5Ok1IQnkyerq++vXl58e7V96/rzfbmars9zfBwjCn9jxzubuDTe/PhLWwuyDpUKiYMMS6AEEKM/yYnAjAuZR1RfVmrz2sjzVttzOzc4XictH6I9RijZ/CH49E5h0TRe/QeiTClBYko0f06/sX9L+IqEe33h9m61hrXWodnZq41c8tcqdQytloV1Mo5l1orEa1SSsbMk1Jaa/XIT3q+neztZDd7vZfazW6yu5PdKQsAUhLlFaYEXh5nVEjMXLhExFwKV8aEOWfJk3NMOXPFXM7nc+89EQ0ywGxtiFFro12Md5f+9fPw4lm+/Mi/fjOX1lodtnxba713Wshe3gOXBeVSM1bzo6rrhrb1cxvW5X4XRUSYusgt5MKch4kspTDX0n8S99qkvN57a1W2B0/ql0RiQu7nszHG+kiljORyrLWJiESEw+eSHUDhIiMw20RZepYwRBZAxiMm8JCIfAgwRkUbY8zsR1vGWglqjA8xFxH1D7yNFRzgCaogAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer1.png&quot;
+        title=&quot;referer1.png&quot;
+        src=&quot;/static/50fe30ca2023cc37b13efd666a4be6bf/37523/referer1.png&quot;
+        srcset=&quot;/static/50fe30ca2023cc37b13efd666a4be6bf/e9ff0/referer1.png 180w,
+/static/50fe30ca2023cc37b13efd666a4be6bf/f21e7/referer1.png 360w,
+/static/50fe30ca2023cc37b13efd666a4be6bf/37523/referer1.png 720w,
+/static/50fe30ca2023cc37b13efd666a4be6bf/63ec5/referer1.png 812w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h4&gt;해당 버킷이 가지고 있는 권한 정보 에서 퍼블릭 액세스 차단 편집 버튼 클릭한다.
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 92.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAB+0lEQVQ4y5VTy3LUMBD0z3PjyoX/4MqNojgAB6rChtqsJVuSV++35Jc2lNZJCGxIoKtrPDVWj+3pcaOMZ9op64wxUmuptXPOef8vbAZKv+2uDwjt9ofd9Y+rq6ueCuvuTzhnnxGzL5/at6/bN6/I+3cyJiGEttb54MMdQ4w+hKfFzhiOkToSJYR3JlhtrNXGKK21tUJKLoSp7Z4SW+e4lNpaJiXBPYItk1JIyYQQSh0ZGyiVuna8ZOND4JxTxnLOKY8pb9exMuc8juM01dIFYoxNiBFh0vd4HMd5mf+G5YLjODapPi6Wdbn9T5S1NDGmPKCs5FrK+gjlJSzL0jjvY0oxpRBjiBVb8jDSDX/Meas0IQTYdfubG4QJ6hGAEAAgpVzXdZqm+rnTtCU1TneY5znnXAfWtuDQHmDXdX0Pu65tAcJYCME5P1LKhcBkoIxyzhjn1UXOjbF1YCFGrhVmFMAOYUyGAWHU9agFAOEaYd8DCFsICSEAdrCrx3qEcxU7x/Z78n3HjrR2ZVQIwTinlEkphZBSKaU14rY7M8R43oR0FmNiP39VHz4WY8vt7bJUr5cHPM7vb22l+toxJkcIB9Ba60MopZw2G0t5sGv9Pf9lVUpJgcMAgFBaShVTnM77eDqdXliScl6SaZpDCH77Dc/Reb8sy/os5nn+Cdbg/fVbxqFaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer2.png&quot;
+        title=&quot;referer2.png&quot;
+        src=&quot;/static/8e65e39dcbfb4d5b4e9c23ec5bee733e/37523/referer2.png&quot;
+        srcset=&quot;/static/8e65e39dcbfb4d5b4e9c23ec5bee733e/e9ff0/referer2.png 180w,
+/static/8e65e39dcbfb4d5b4e9c23ec5bee733e/f21e7/referer2.png 360w,
+/static/8e65e39dcbfb4d5b4e9c23ec5bee733e/37523/referer2.png 720w,
+/static/8e65e39dcbfb4d5b4e9c23ec5bee733e/e5715/referer2.png 768w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4&gt;새 퍼블릭 버킷 또는 액세스 지점 정책을 통해 부여된 버킷 및 객체에 대한 퍼블릭 액세스 차단 체크 후 변경 사항 저장
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 88.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABJ0AAASdAHeZh94AAACwklEQVQ4y5VU2Y7TQBD0l/PCD/AdPK3gDb4AJI5FIJJNdhN7xh6Pj/ERH/GVQtXeXS0LPBCp1JOeSXd1V3e8xNWIXY2iqmFdBZ2WiF2Fqq6RpBnyokCW50gzIkPuHOrTSe5pn8O72d/i89dr0P7cbnEMAux2e2y2N7j+/gOb7Rb7uztsthvsbg8o6jXYv+DZJEEYGWTOwaapMMhzJ6xUGMLEMZIkgQ5DhMYiK2uc/sLskWFVVdjtb3E8+jDGYL+/xeF4ROAH6M8D5nnGOI6Y5hnTNGEcB5zPZ5yHAcMzdH0PryxL+EGwMogiRFGEQCkEQYAkTaVvtGQcWwtjLXKXI8syuSuKAmmaiu0lYFVJAPYuMhHCMILWGkpr6HC1ZEzLxEorKKXkHEYhfCZXCtZadF0Hj3ULA8mYIklSGBMjMkYYsX9EmOQ4xA53sUOcVzjVNZqmkX4SPAtD9oI9KYoSdb02fBwnXHDBsiyCy+UiWIjl8tv3yxOw1944TaiqGoHSonZsE5RlhVPToGlbUa5pWrRtK5a+tu3kvu16PP1QQI9RyYjjoXUow6yUxt3BlyR+oBBFBodjID7eESa2qE8seQUVJrn7gKOIEehQHmoKw+9Ki6VP6XCtIqRwRnw2SR+3hswfA/bDIMNMdhSIwvCxtQlS8WVypkjOFSIAMZyHP0uepwl+3iLQ6/yxhyyR/fT9QFiRDf1MxrZEJpZJiO8TjjLwIwYR5b5kZmd5kTy0MMbKmYH5Yw4uwdUkY+ccuBT0ZVkuU9J1PTyu0/k8SJncBlcUAirN8h4CZLl7sudOmMl755BxU5xD33dkOEn9a3NPsqPTNEsZTDYvi+zxLFjEPswn7/nrhf0D5Ow9/K9xrh5QP7Hrv0hzj9PjW65sSd/+I6pPV6i+vEX57d0a8H/BoFJqWaP88BrF1QsUb16ieP8KvwBY11I5igNazQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer3.png&quot;
+        title=&quot;referer3.png&quot;
+        src=&quot;/static/3c8b18306d2baf78d60656ec0f1e6fc4/37523/referer3.png&quot;
+        srcset=&quot;/static/3c8b18306d2baf78d60656ec0f1e6fc4/e9ff0/referer3.png 180w,
+/static/3c8b18306d2baf78d60656ec0f1e6fc4/f21e7/referer3.png 360w,
+/static/3c8b18306d2baf78d60656ec0f1e6fc4/37523/referer3.png 720w,
+/static/3c8b18306d2baf78d60656ec0f1e6fc4/cda19/referer3.png 785w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;권한 탭으로 돌아가 버킷 정책 편집 버튼을 클릭한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABJ0AAASdAHeZh94AAABL0lEQVQoz5XPW0+sMBSGYf7/v/LGZG8TNdnb0TmGgwPj0FIopxYKr6FBo9558WT1W6urSQMhJXGS8HpOGceBwVrPGPNrbdsSSCk4HI+cwogwvRJlV6KLRJUlSimvqiqkLJBSonVNsfTXeVlVn7luGgJda85piigU4fmN5JKj6g5rzDfmR/45W37VdR1BbyzOOezoGKcZt5hhmGYGN/k6Tqy+nmFws+8td5b93hiCqh94EZZY1oQXwSmTJLkizitei5o4L31vEV0Vp0ysJInQhG+K6Foh+wndWwLVWm6Tlr+7hD9Pe+6eQ24edzw+73nYnrj7v+V+s2cbZezjC5tjzL9D6PMuU7ykis1ZkTUO3VkC3Q80IxRmRhiQBj8UjSVfKTNRO9Ajvn7weVXa2T/4DjIXFej45OLBAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer4.png&quot;
+        title=&quot;referer4.png&quot;
+        src=&quot;/static/e6fd427dc9268c064d5de56c038469d7/37523/referer4.png&quot;
+        srcset=&quot;/static/e6fd427dc9268c064d5de56c038469d7/e9ff0/referer4.png 180w,
+/static/e6fd427dc9268c064d5de56c038469d7/f21e7/referer4.png 360w,
+/static/e6fd427dc9268c064d5de56c038469d7/37523/referer4.png 720w,
+/static/e6fd427dc9268c064d5de56c038469d7/cab43/referer4.png 755w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;정책 생성기 버튼을 클릭하면 자동으로 정책을 생성해주는 웹 페이지로 이동한다.
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 41.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABJ0AAASdAHeZh94AAAA9ElEQVQoz5VRa2+DMAzk//+9DrQB1caHqUBCXsah4nVVvBZtX6rO0smOc7qz5awzHq3x0MaiHRxaE3DRBnoY0CuNTik47xGI4EOQ/AxZVdcoqxqntxx5UeCUF+gHB/+LlIReRZbcjbUC6xy6XsH4gJH535AJjTH4KEtU9RnMjBgjYmSpx3EEEUmWdQNJP1CQPt3/g3BY3lkiNk2D81eD9+YiKD6/0SuFZJbEDkF6CNJhRI+a74LMUZzTAax1Qk4H0XqA8wHrumJZliM/gwhO1yumacK2bUix42/s+/4y0vQZx4iu62WlNLr3P9ea5/kQfDWS1g35GWd6SbwAcwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer5.png&quot;
+        title=&quot;referer5.png&quot;
+        src=&quot;/static/6baf4324d37db28043249000902063bb/37523/referer5.png&quot;
+        srcset=&quot;/static/6baf4324d37db28043249000902063bb/e9ff0/referer5.png 180w,
+/static/6baf4324d37db28043249000902063bb/f21e7/referer5.png 360w,
+/static/6baf4324d37db28043249000902063bb/37523/referer5.png 720w,
+/static/6baf4324d37db28043249000902063bb/20982/referer5.png 778w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABJ0AAASdAHeZh94AAABqUlEQVQ4y41Ty67dIAzM/+/6G/2Pqvuq66qrq5y8MIRgA0mmshNOT3V1dYs0skPweGxDN80LhmHEME7oHwPCGiEiYGawZCSWG80viKli42p+2xfJ2Pcd3UYTwjKCxjezfupBy4gQVji/YaEI5yMcbXDmM0bHmIlB4fo/u4g1JtRa0PmxB80T/PCGVcnGHoG8Zc1ZIMzIIgYRVV2eUKWXX83PZUfHBYi8g6KAQsQS2LJ6H7BtG0opOM4Tx3HcON/jvOx5nuhwZOCsyFuARI8cCTWrumzQQ5+vv2c6dgOSnyA0GNg9UCSh1IpaiilMUsF5Nyty7Sl0eLXWi/K8FWpgzgW5VJS6wxHhMQcrOXiPlBhSDkjerVeSPyY0hf8IPw4QkZFoEg24yj7wP0s5uyZVV4wRIegw0m23J/SeKTSBqqpWWUZKydQ2lU/C855kI1iWBeu6WtDzojPbP91rBBrTBBmhHvbeG0LwGMfJrCeH4AnM6dkzJVJSjdHv1r8Pe9gWyw5ai72K2QUj0Wf1CiVT+1rhu5Jb8/vf3/Hz2xf8+vEVkuunk3i9qn8AhCP24K4Bz20AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer6.png&quot;
+        title=&quot;referer6.png&quot;
+        src=&quot;/static/a8efeb5a18d71a3ca5a8bd6092a9f699/37523/referer6.png&quot;
+        srcset=&quot;/static/a8efeb5a18d71a3ca5a8bd6092a9f699/e9ff0/referer6.png 180w,
+/static/a8efeb5a18d71a3ca5a8bd6092a9f699/f21e7/referer6.png 360w,
+/static/a8efeb5a18d71a3ca5a8bd6092a9f699/37523/referer6.png 720w,
+/static/a8efeb5a18d71a3ca5a8bd6092a9f699/339e3/referer6.png 977w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select Type of Policy : S3 Bucket Policy&lt;/li&gt;
+&lt;li&gt;Effect : Allow&lt;/li&gt;
+&lt;li&gt;Principal : *&lt;/li&gt;
+&lt;li&gt;AWS Service : Amazon SQS&lt;/li&gt;
+&lt;li&gt;Actions : GetObject&lt;/li&gt;
+&lt;li&gt;Amazon Resource Name (ARN) : “버킷 ARN”/* &lt;code class=&quot;language-text&quot;&gt;ex) arn:aws:s3:::referer-test-buck/*&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Add Conditions (Optional) 클릭
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 27.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABJ0AAASdAHeZh94AAAAz0lEQVQY032MW26DMBBF2f8muoCqa2lVKami8oghpCA/MCTERsQ+EVRV+5FmpDN3RnPnJq3qaJWlWZDLbDB2wA4nuv6MtA47TvhrxM/hISc3k4huIteewngK7XnfS7aioTg0NGZA9WeOeqDUI7m8kGlPptwdvv+TpaXKkUpHric2B8uHaKi+Wo7SUJuR0lzWwEyOpOq/QLfmJLWdKDtP2S3qqPpIUX2ye3tmX+frLoxDrPe/3vskIUZ+uIbAUqbdkr0+ITYvzPNEBEL49T3iBpIae5YMb87/AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer7.png&quot;
+        title=&quot;referer7.png&quot;
+        src=&quot;/static/850ae825ce5c645b55ed55acbd71062a/37523/referer7.png&quot;
+        srcset=&quot;/static/850ae825ce5c645b55ed55acbd71062a/e9ff0/referer7.png 180w,
+/static/850ae825ce5c645b55ed55acbd71062a/f21e7/referer7.png 360w,
+/static/850ae825ce5c645b55ed55acbd71062a/37523/referer7.png 720w,
+/static/850ae825ce5c645b55ed55acbd71062a/587b0/referer7.png 970w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Condition : StringLike&lt;/li&gt;
+&lt;li&gt;Key : aws:Referer&lt;/li&gt;
+&lt;li&gt;Value : 접근 허용할 도메인(http referer)/* &lt;code class=&quot;language-text&quot;&gt;ex)http://clovaocr-api-kr.ncloud.com/external/v1/*&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4&gt;입력후 Add Condition 클릭 하면 Condition 추가된다 그후
+Add Statement 클릭 하면 아래와 같이 정책이 생성된다.
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 16.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABJ0AAASdAHeZh94AAAAo0lEQVQI11WL2Y7CMBRD+//fNy8IJCSgZYY2t9kTsvSglqexZHmRPXin0PoP7xecnYlRSFEOn7MmpRXvFkJQR27VUasjZ0Nvgd7/cwj+gagLMdwRdabVX2p5IssZZ6/kdGd5nVjlQoo3apmI/sb4+MGaK60+Ke/p6Pff0PvGjm2DUtqhO1vrpJQppWKMxVpPfhda++61NozjhMjKPCuUEmLMfABqtubOYAVJqwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer8.png&quot;
+        title=&quot;referer8.png&quot;
+        src=&quot;/static/126558c98d037a4b2c766e971b1a5114/37523/referer8.png&quot;
+        srcset=&quot;/static/126558c98d037a4b2c766e971b1a5114/e9ff0/referer8.png 180w,
+/static/126558c98d037a4b2c766e971b1a5114/f21e7/referer8.png 360w,
+/static/126558c98d037a4b2c766e971b1a5114/37523/referer8.png 720w,
+/static/126558c98d037a4b2c766e971b1a5114/748b0/referer8.png 868w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4&gt;마지막 으로 Generate Policy 버튼을 클릭하면 위에서 지정한 정책이 json 형태로 생성되는 것을 확인할수 있다.
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 61.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABJ0AAASdAHeZh94AAABMUlEQVQoz6WTXW6DMBCEff0eqs89RFWpSKmwDRiMDeHXE40j05JAXrrSJ9awO+wsQlykwfePjlyUgazcHuOhah9z2y/wI+CGAMdrYgjoJkDXHqK1DWpjYG0D79qYl0URKQoNpSQKrWCqCssyAwhA2BPCCgbrxbIsGIYB1+sVrXNorI35UYQQsEaBPet6F8xzeRdUSqGqKjRNg7qu0ff9UxM5i/RMSgnBwzRNUahtWzjnYK0FX/TY9IonwbIsYYzZ7FIwQUtHAoeCTLjDLMviZJyS57RX2h/H8dTmX8E8zyHSQimmtd7EKEQoSrz3ka7rMM/z4YT8DptlFnOSZPGZ3/tnO+Qg4nFX/wk6EZyKE9IGYf4IbbL47HnqZ504tpes0caIz4835F/v/EewrjNe9dwAakKq8JHAld0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer9.png&quot;
+        title=&quot;referer9.png&quot;
+        src=&quot;/static/421f55b2358e38532588734dfe0f87c3/37523/referer9.png&quot;
+        srcset=&quot;/static/421f55b2358e38532588734dfe0f87c3/e9ff0/referer9.png 180w,
+/static/421f55b2358e38532588734dfe0f87c3/f21e7/referer9.png 360w,
+/static/421f55b2358e38532588734dfe0f87c3/37523/referer9.png 720w,
+/static/421f55b2358e38532588734dfe0f87c3/43fbc/referer9.png 797w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4&gt;해당 값을 복사하여 버킷 정책 편집 창에 넣어주고 변경 사항 저장 클릭
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 93.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABJ0AAASdAHeZh94AAAB6UlEQVQ4y51UW27bMBDUpXuI3iVA/3KK3iAI0qQyYolP8a2Xp9i1JBtxbKcRMFhRIpezM0tWdV2jrneIMcJ5D+89Qgg8pphSPI1j2N59iNBdRBcS+r5n5JxRKaXwt95BCIl906De7eCcQykZKSWedIwJibC9Z4SY4VPBMAyMUgqqmI47jOOEaZowzTMOh8N/YV7WjNOEikokFqX0vAP9+O5DiStrLGJMzG4cR6ZO8R6GcWBpSILt2zCgsl0HpQ2ENGilgDZ6YVxugowhzaWUbBSbQhpSQnI3pQxjOxhr4IPnRat7n4G0n+aJS11lIpZV5xx8CMyqaTWEFKBNKOHK9DzROl47gJgqpTenK6kUtDE8qREarVTgTbznGGLkhecynCcUQuDP6xtCiBiIIQlLJQ/LJOcjR27ipZFJAs+ynJqYmFGJ82Fmg6hsMrZ6eX3D+745ldjfNuM4p2cSlPj8YQ2fnl84IdW/lnYPq8uU4MKUXPJdRz8zJS79d5HQfdDmK6Bq0tWEZIpz2yVApdwDzSOTriakbqdIjlprvwRqNWJ6YYqxFu9NwxBK8TGUWkMZA/p3C3xsjUHTtti3DfctX1+BL88Iv2Adp0WGq+A7McI4D+s8Yi7Ho/dtdB1kF2B//4J9+AHz+BP/AOVZwNWNW5mWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer10.png&quot;
+        title=&quot;referer10.png&quot;
+        src=&quot;/static/43c9348e2b6857ad9cc43da65f256bab/37523/referer10.png&quot;
+        srcset=&quot;/static/43c9348e2b6857ad9cc43da65f256bab/e9ff0/referer10.png 180w,
+/static/43c9348e2b6857ad9cc43da65f256bab/f21e7/referer10.png 360w,
+/static/43c9348e2b6857ad9cc43da65f256bab/37523/referer10.png 720w,
+/static/43c9348e2b6857ad9cc43da65f256bab/f1d1f/referer10.png 739w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4&gt;이제 정책이 정상 반영되었는지 확인해보자. 버킷에 이미지 파일을 하나 업로드 한다음.
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 40%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABJ0AAASdAHeZh94AAABNUlEQVQoz42RuU4EMRBE5/9/go8gIgEJbQYSkOyCxBIBs4ft9n0OKtSeYUlA2uCp5bZcXdUeNrfX2Fxd4vnpES/bLQ6SYJ3rOO97NdaezUDrB4i7FWg/wvoAIoJaEFKCtD4NOIdhPB5wNBbKGEilIP8Q5Mn6P4yBNnqu7FAKASkkck5IaSZ28sJvv5MTcs7IJfeaakP6AlKdEGPEIKXEbr+DUrK72gvCx5FANkBoD2UcnJvx3p/cEykIpaE/t3DrG/jxFak0DIp0t2r4QYxIOSPEOE9n173OlFLgnJ9XoDUEWcT3NfzqAuHtHj5VDD6EvkyuHI/F2DrH4z73WmuotXZBhu/43GqFTwWmAHlCTzGUWkGke8RaG4IPyMvDnx82xiCEgGmaUBdxjh9CBK/MO4tpamCtb9/oY+9TWNAOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer11.png&quot;
+        title=&quot;referer11.png&quot;
+        src=&quot;/static/275702abdd052835111da75ee0f60fb8/37523/referer11.png&quot;
+        srcset=&quot;/static/275702abdd052835111da75ee0f60fb8/e9ff0/referer11.png 180w,
+/static/275702abdd052835111da75ee0f60fb8/f21e7/referer11.png 360w,
+/static/275702abdd052835111da75ee0f60fb8/37523/referer11.png 720w,
+/static/275702abdd052835111da75ee0f60fb8/50383/referer11.png 740w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h4&gt;객체를 클릭하여 들어가 보면 객체 URL을 확인할수 있다.
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABJ0AAASdAHeZh94AAABTElEQVQoz61S2XKDMAz0//9hr6cmbQgY4hPbMmxHAtImJX2qZnaExbJaGann1zc8vbxhMA7OO1i3D933OBw/0JxbnNsWp+YsNX5uuw6fTYNOayg7dBguA1qt0ekextp9OAvn/U0Trt03VsfDO05Ng4uxuBjz0KEIXBs85iittVie5hm11l0QEUopkm9qVNZMklNKUNZahBgRQoT3Hj4EOOcFfOYxWcw5hxCCfBRjlBrHPM8CDhZWxhghM5GxOfmJaZqkEY80DIM8M4/rmygHc5XnP6h7cRJW4l6wY56GXY/jKC6J6m/BbRQmjTFeX26jbGcW072GD6tgiKhEN01FkIk5Z7HP+EswjAm5EMZckHJBoQqqk6BO83KHPMK0fnQv9C04Y0wZIRXETFeEtKFIzqVA8bi8Bv8Ryx36ZT3owQ7KzsnerXkPtPBSzvgCPXinVyQImicAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer12.png&quot;
+        title=&quot;referer12.png&quot;
+        src=&quot;/static/fffaccebed73d702b07dce9f77e6d692/37523/referer12.png&quot;
+        srcset=&quot;/static/fffaccebed73d702b07dce9f77e6d692/e9ff0/referer12.png 180w,
+/static/fffaccebed73d702b07dce9f77e6d692/f21e7/referer12.png 360w,
+/static/fffaccebed73d702b07dce9f77e6d692/37523/referer12.png 720w,
+/static/fffaccebed73d702b07dce9f77e6d692/63ec5/referer12.png 812w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;
+&lt;br&gt;
+&lt;br&gt;
+클릭을 해보면 아래와 같이 Access Denied가 뜨는걸 확인 할수있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 17.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABJ0AAASdAHeZh94AAAAf0lEQVQI152N2wrCMBAF+/+/qKmktkg2l02giVC0Iw190FcXhmU4u5zBPRwiQkqpE2MkaiSEgPe+I166H3fH/s6CP12k/w5VVvxVMMYwXkbczfHUxnt78c8MLTXyXVnmGWstk52QRdCgaFJyzqhqby+lUHLBiaOWla1u7Pv+wwct5OVZwM96MwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer13.png&quot;
+        title=&quot;referer13.png&quot;
+        src=&quot;/static/a1d027df849160c13427eb35cede6f2e/37523/referer13.png&quot;
+        srcset=&quot;/static/a1d027df849160c13427eb35cede6f2e/e9ff0/referer13.png 180w,
+/static/a1d027df849160c13427eb35cede6f2e/f21e7/referer13.png 360w,
+/static/a1d027df849160c13427eb35cede6f2e/37523/referer13.png 720w,
+/static/a1d027df849160c13427eb35cede6f2e/0fcea/referer13.png 851w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;
+&lt;br&gt;
+&lt;br&gt;
+그렇다 우리가 지정한 referer 로 접근한게 아니기 때문이다.&lt;/p&gt;
+&lt;p&gt;그렇다면 어떻게 확인 할수 있을까? 간단하게 postman을 활용하여 테스트를 진행해보자.&lt;/p&gt;
+&lt;p&gt;GET 방식으로 객체 URL 을 넣어주고 Headers 에 우리가 지정한 Referer을 넣고 호출해보면
+이미지가 정상적으로 뜨는것을 확인할수 있다.
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 47.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABJ0AAASdAHeZh94AAABgUlEQVQoz22S646bMBBGefO+Qd+nf/sQq+0qlwYCCRdjiPENm5zKXhFtq1r6NIOZOf4YXDweD7TWzPPMOI7ISeZcSpk1TVOWMQZrbZZzLivl3lmU8Xz/afn2Q1OkzQRctCY6Q/SW5/NJjJF1XXO+bVuO+0rP+7vP2gDbClugSG4S9OvaC5Or5CQ1e++z0n4IIffsB73critF+mRrbC5aw0oM8QXeIbuc9y+4844QP3tCjBi/scYnhZx7hBLIRbK4BaEGetUjtGC2M2Y1uGBxwWUpo9BO55HswDUGrN/QxlHc5hvlWGKCQVtN+7hzFEd+de+UsuQqryxWZfBilnywsop/ZpTDKATFW/PGZfhNL3tO1Ylu7Fj8wn2+cREXruOVa1tRtRX1WHOqj0zL9Nes9x8mEvDQHRhUzzAMtF3LrWvytUlukts0jqqsqJsa+ZBMs0R7/QJ+jYlRvN/fOfdnOtXRyIaP8oNG1tRTzWW4UImK4+2Q47k9c7qfmM38X6BSij+ehLUUk63bvwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;referer15.png&quot;
+        title=&quot;referer15.png&quot;
+        src=&quot;/static/8878534b7d3defe3faf8d24bb787fd70/37523/referer15.png&quot;
+        srcset=&quot;/static/8878534b7d3defe3faf8d24bb787fd70/e9ff0/referer15.png 180w,
+/static/8878534b7d3defe3faf8d24bb787fd70/f21e7/referer15.png 360w,
+/static/8878534b7d3defe3faf8d24bb787fd70/37523/referer15.png 720w,
+/static/8878534b7d3defe3faf8d24bb787fd70/302a4/referer15.png 1080w,
+/static/8878534b7d3defe3faf8d24bb787fd70/ad00e/referer15.png 1366w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-%EC%82%AC%EC%9A%A9-%EA%B3%84%EA%B8%B0&quot;&gt;👀 사용 계기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-http-referer%EB%9E%80&quot;&gt;🗑 HTTP Referer란?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;✅ Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-%EC%A0%95%EC%B1%85-%ED%8E%B8%EC%A7%91&quot;&gt;♻ 정책 편집&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 생성]]></title><description><![CDATA[🎈 목적  🗑 Bucket 생성하기 1️⃣ AWS console 로그인을 하고 s3 서비스에 접근합니다. 버킷 만들기 클릭!  2️⃣ 버킷 이름, 리전 등을 지정해줍니다.  아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3-makeBucket/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3-makeBucket/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-목적&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot; aria-label=&quot; 목적 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 목적&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aws 에서 사용하는 s3 버킷 생성&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;-bucket-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot; bucket 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🗑 Bucket 생성하기&lt;/h2&gt;
+&lt;h2 id=&quot;1️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;1️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1️⃣&lt;/h2&gt;
+&lt;p&gt;AWS console 로그인을 하고 &lt;a href=&quot;https://console.aws.amazon.com/s3/home?region=ap-northeast-2&quot;&gt;s3 서비스&lt;/a&gt;에 접근합니다.&lt;/p&gt;
+&lt;p&gt;버킷 만들기 클릭!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 45.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABUElEQVQozzWQW24dIRBEZ//ybrKALMB//ov8GcfjmTs8uqGfMJcEkpRaAiRadaq26zxyzv2+e+9Yyvm4ABFLAcR5wfJ/pnKGlHPKOQOeV9gwRRFpvY8xzCzF+PPjAwDNVISZmIhEhESrGCCGEGKMABhT2q4QUkpENMZQM1hydxGpRGamqsupind1T4AJirWeMmwAQET3fc9l1UrUWhtj3CvIWBLm5j7R3Pfj8Xk8SDQDbCIiqiJibrKW53ONTlcVM+1P9caqLKKmZmZuYWJfARHvJTU7zvMMsS5hpVCkxkt/vWs8vTV3W0GstRZT/ofNIn+xQ4wJAEth5lJr9Sf9eKVvL/L2vY3hy9ZtHleMW62kInvm+/mcrTIDFhZZbK4qlVXvIa3T6o9Faq2qOpexlPVt9jGTm0KhXBhJfFEex7nvOzPv+1eIM9HXcRDRn7Z/AwI+A6qlIhN4AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket1.png&quot;
+        title=&quot;makebucket1.png&quot;
+        src=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png&quot;
+        srcset=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/e9ff0/makebucket1.png 180w,
+/static/d0c263a35dd6fda29557c82d14eb5830/f21e7/makebucket1.png 360w,
+/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png 720w,
+/static/d0c263a35dd6fda29557c82d14eb5830/078fe/makebucket1.png 934w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;2️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2️⃣&lt;/h2&gt;
+&lt;p&gt;버킷 이름, 리전 등을 지정해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 658px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 92.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABJ0AAASdAHeZh94AAACTUlEQVQ4y52UeW+cMBDF9/t/t0r9p1klaY5lD1gOH/jA2MCrZiCErJK0KtIPGws9zzzPeCd0i0slIXWLumlwLSvotv2U1ph1/Ipd1Qhk5wLnPEdeFKiFgnUOxlrGWrPyndAqSCL3Dw+42+/x626Pp8MJx/MZl8sF+bXE8SqYUyW/jHzLjl51XaMRAkpraK0hlYIidAupzUxrOPLv4AgpraIocC1L9H2PlNKG+E6MiH+BtHazX5S/xTCOK+PC23zajMMw8Po0TRgXaE5aLKgobSFY1HcdY52Hcx5dCLBdD2EDtAuQLqCLicVvH+c9do5ybw3Tx4jQ9wghwPtZlDcIEaaLcCFC+4g+zWLTEhmxCrKZ7VyDQkgWtnaOlFO6TXka2S/afCv6HqH3LFRcS2THI8qqYqx1s4fk15ZxRBqGNeUPgm5JuSiueH49oKxqNrbrAv7n4Qipdsh4+iDvYkqcEnv5FeHzdS4bemWnE55fXpBXDVrrYIyZW8/YZTTrSAHYt7XNul3+5wiL/IIsO+CQZVzkSgq01DVKwbQ0UtvpuXtozRhIKdeOojkdLNch7dD4CNlF1Mahah1MGuGGiaG5TSNbQSdL9tDhTJuCJmiNU9bO4UkG7A85fuyf8PP+Bb8vFV5LhddS4iwd6m5AlxJfGPv7Rz48qShijUZKNEKyrxyhtg4qAaVLKGyP3PQ4SouT8jgrz2t1GBBiWtLyfIBzy87XHM1XQbe0nlCK05puSmFa+OeyoR3I1Kqu+fpKS9l8vHXSUk4L6YY4/0Me/gH9qb0dGAv2CgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket2.png&quot;
+        title=&quot;makebucket2.png&quot;
+        src=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png&quot;
+        srcset=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/e9ff0/makebucket2.png 180w,
+/static/eb23b224cf64aaa70beb81cd624c5b3f/f21e7/makebucket2.png 360w,
+/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png 658w&quot;
+        sizes=&quot;(max-width: 658px) 100vw, 658px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 546px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 166.66666666666669%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAACXBIWXMAABJ0AAASdAHeZh94AAAD00lEQVRIx6VWW5LjNgzUzVM5xJ4jOUCukY9sxmO9KVFPviRKst0pgJLtSbybTFZVXSRoqgUCaNDRMA44xzHiJMHb6YQkSVAUJc5xirppsCwL5nmG957HZ/Caf9humhANQ484iZEXOZI0RikKHtM0Rp6nkLJGWRbIiwyiEijKnPcIUaKqKwhRoCgyVJUIhOM4oKpKNK1ELWs0jYSoJd6zEqdMoJAthqGDlBL08bZt0HUtz/u+Q9u1vNYPfSBUbsagNLq+x6gUtNbwywq/bJj8imW74Hq9Mi6XCy7HyLjudvidQhD11qNqexSl4JgR8TRNL2L1wLSv3W43PD/rtiGioG/bhtEYaGuhjMGgFNphYM8DFLphxKA1lNG819HHvIdfFiZirCsivxMaa2GnCcY6niuz287BOscfu+/Z1w7CIyR3QsKoDXvHozbszbhDWYue4mstB56OvKzr6yMfLtOx+Lg6HJOIiUQ9eXaEhDwMXk78LpEzluVBGLzT/BJ7ZYLHdDSK1zR7TN4z8eElrZNNe4iQPaT0UwyJKGQxhIBAdiCbmYwzfGD/yJF5IiOeiNin46UfBIUm6voOWZrgfD6jrhuuO6rDb8FN7l6nj7U9BKSUrh/wNc6QC4G6rlh6QV4Nz3kku+94JG3LRjLIpr1t10E0A5RxiOhLo/NwPtQj1dL/w8ZeRr12SLMclahCMe21dcPHGnv1HHuOeuQsq8kjyQoYY3iRKp42fBZMSEpxVGd7UI/AvsI079jrzu3yO+BYtpTltkWW5tzvKNOlqDDPR1bDi7RZ2QA7eazrwqr4O+gd9lApxUemXmhJZtYyWZgbbhidcmiVg3Iel+2fSaGEUoKjQxGaugt1FWP56Lfbd1LxvRgSSS0byKbhheesffZh6RnuJo/AzrP/IKeja/8X6RFHRPdIlufI8gJ3Xd+lRlkPmPYO/RL7lcDSo0RUVYVK1lBqhNYKaseoLWRvIHoLO3ts/6KWkBTqcdZhHEZcr7d7Oz/mt1sA33r33z7iuPW4wdKtd4pTyFriRx9OCsWHskwxooVQpOsnsXDH5uagqfUrxWVDGX+W3/QsvW/YR/LuWdZEVlfIi4J/JFk9pOWx7rKiWC+E5fEbwfOfpdBwSXXRubWIG41YDjiJFu+iwx9phbeywbnu8WchcRIdEjmyTXvIpn3vVYes0xCjZeSdRnTuZ8StwbkeEDcjklbjrewQyxFZF9aTRqEYHNs0Z7QaaatRmRXNBrQbUNobIrqPe0X3scVAd7E2GI1l+8O60ru9Q2mIXqM5/w75y0+Qv/6M9rcv+AuYrvQ7lOznHgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket3.png&quot;
+        title=&quot;makebucket3.png&quot;
+        src=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png&quot;
+        srcset=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/e9ff0/makebucket3.png 180w,
+/static/531397bf51c8d1cf783d1c8162e06c3b/f21e7/makebucket3.png 360w,
+/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png 546w&quot;
+        sizes=&quot;(max-width: 546px) 100vw, 546px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;3️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3️⃣&lt;/h2&gt;
+&lt;p&gt;저는 아래와 같이 &lt;code class=&quot;language-text&quot;&gt;leesungkibucket&lt;/code&gt; 이라는 이름으로 생성 하였습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 715px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABpUlEQVQoz4VSW5LUMAzM7bkEB+Gbb85A1TI7bMZ5+C3LjpPelTJZ4ItUdVlWZLXU0jDNC1ZrEWJETOn/kLgYNf6CD0Eh9hBCwOvtFcYYUCHknFFK0TPndIIIiVhRa1UwV1hrYaYZD2P0DCFikIcxRTDzM5CRUvpzrwyuFT4mhETY+oZtO3ER18rofdM3g/dBW/j7IyIcx/GPzzmnCa5v33e83N7w6z5i9oTSdiUeqBQ15CxPaFXMaotfWhaUwkomtvit86d+5oZkXhD9imGaDN4eBiFlEJ26xZRhQ0bIBa1VHcY8L0gqz6mx+AqfBOn7V8RvX5B+/sAgDO4JmZJqmgkuEgJJwoYqUD2r2vwcjPwTLVvfwa0r2UBUIJMWdg1oTU+pjLl8rohIcA1MWr7uUpDEFCK1B2Ggcq4EcUOpTQXvvSu887jff2NdrVYjp5kmPMykrS/LCu89SNaM6Ewo5brEiFSx9V0nfE05p4xxfMBapz5nHcZx1Lu0Ld1dAxOCM2HdNGFtHTgOrVAgCaQdSShL248DbBewXSF08l8Si+4qwcfavAMxOVJpcT4gEgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket4.png&quot;
+        title=&quot;makebucket4.png&quot;
+        src=&quot;/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png&quot;
+        srcset=&quot;/static/2991bb6828aece27363c2c204479dc9c/e9ff0/makebucket4.png 180w,
+/static/2991bb6828aece27363c2c204479dc9c/f21e7/makebucket4.png 360w,
+/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png 715w&quot;
+        sizes=&quot;(max-width: 715px) 100vw, 715px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;해당 버킷을 클릭하여 들어가 보면 저장 되어있는 객체들을 확인할수 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABkklEQVQoz41SyW7UQBD1/185I+UHEFcuXPIDkGMQkVgy8rjd++pePA9VzaIAEsHS06uuvco1CZdgQoSQEkpr+BDgvP8NVx3xa5geHz7h8eEzvj494fvzAdb/7fRngX9h+vnuDj8+vMe6LJDawDoyODZa5/67s1uHs1ggQ8SqFMS68uhHIZgP88xMiY21r8M5TEKsSDGibBtK2Zg3RmEupSDngvySWc7nN3FKjBgjpnmeobSCcw7+Mqo0HkcToemH+YiUImI6c4iBOeWERElSQqoDpQNbbZiU0rDOQhnNyYzzWJSFdBHWR0TuKnMgsQ8eUipobXAUEmo5wN+/Rfj4Blk+YzLWIcQEz2NXbLWi1orWzjKdklSKx2yt8RqoMxo1pYySEor4hnD4Am81JtqRVBq5bJyAAsLlVCiBpxUodStEySiGZPIjW+k76gBSLpgoSBsHnytaHzidTlydToC+MQZj33fGeIHeB3rv2PeB076j9Y6Jgg/HFT4V9N5YSV0pbdDHOHfW2g3twlc9+V9tdCG/AJ4WS8bp4TDkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket5.png&quot;
+        title=&quot;makebucket5.png&quot;
+        src=&quot;/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png&quot;
+        srcset=&quot;/static/65e6b186d785dc864b90fc94f691e701/e9ff0/makebucket5.png 180w,
+/static/65e6b186d785dc864b90fc94f691e701/f21e7/makebucket5.png 360w,
+/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png 720w,
+/static/65e6b186d785dc864b90fc94f691e701/01dae/makebucket5.png 721w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;저는 현재 폴더 만들기를 통하여 폴더를 만들어 놓은 모습입니다.&lt;/p&gt;
+&lt;p&gt;이로써 기본적인 버킷생성은 완료 하였습니다.&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot;&gt;🎈 목적&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;🗑 Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot;&gt;1️⃣&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot;&gt;2️⃣&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot;&gt;3️⃣&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[현대 자동차 에서의 프로젝트]]></title><description><![CDATA[어느덧 3년 차라는 허울뿐인 개발자가 되었다 싶을 때쯤 현대자동차의 프로젝트에 투입되었다. 이전에 클라우드의 개념에 대해 자세히 모르던 나는 aws…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-work-history-of-hyundai/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-work-history-of-hyundai/</guid><pubDate>Tue, 25 Jan 2022 04:40:00 GMT</pubDate><content:encoded>&lt;p&gt;어느덧 3년 차라는 허울뿐인 개발자가 되었다 싶을 때쯤 현대자동차의 프로젝트에 투입되었다.&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;이전에 클라우드의 개념에 대해 자세히 모르던 나는 aws 프로젝트를 접하게 된 거라 많이 떨렸다 항상 사용해 보지 않은 기술에 대한 떨림은 기분이 좋은 거 같다.&lt;/p&gt;
 &lt;p&gt;이번 포스트에서는 내가 프로젝트의 어떤 부분에 기여했으며 어떤 기술들을 사용해 봤는지를 기술할 예정이며
 자세한 기술적인 포스팅은 따로 카테고리에 정리할 예정이다.&lt;br&gt;&lt;/p&gt;
