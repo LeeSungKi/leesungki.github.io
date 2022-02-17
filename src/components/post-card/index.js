@@ -8,7 +8,7 @@ function PostCard({ post }) {
   return (
     <div className="post-card-wrapper">
       <Link className="post-card" key={id} to={slug}>
-      {/* <h1>test:{imageUrl}</h1> */}
+      
       <Image className="thumbnail" src={imageUrl} />
        <div className="title">{title}</div>
         <p className="description" dangerouslySetInnerHTML={{ __html: excerpt }} />
