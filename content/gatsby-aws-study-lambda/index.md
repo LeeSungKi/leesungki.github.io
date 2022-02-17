@@ -5,7 +5,7 @@ date: '2022-01-27 13:54:00'
 author: 쩡기
 tags: AWS lambda 람다생성 람다만들기 람다사용법 람다개념
 categories: AWS
-imageUrl: 'lambda.png'
+imageUrl: 'lambda.jpg'
 ---
 
 ## 🎈 람다(Lambda) 란?
