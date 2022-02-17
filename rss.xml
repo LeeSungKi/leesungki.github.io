@@ -1,4 +1,361 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[leesunggi RSS Feed]]></title><description><![CDATA[leesunggi92@gmail.com]]></description><link>https://leesungki.github.io/sungkilee.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 26 Jan 2022 06:58:50 GMT</lastBuildDate><item><title><![CDATA[AWS S3 란?]]></title><description><![CDATA[🎈 AWS Simple Storage Service(S3) 란?  AWS S3 특징 제공하는 단순한 웹 서비스 인터페이스를 사용하여 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있습니다. 개발자는 Amazon…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-aws-simple-storage-services3-란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-aws-simple-storage-services3-%EB%9E%80&quot; aria-label=&quot; aws simple storage services3 란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 AWS Simple Storage Service(S3) 란?&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[leesunggi RSS Feed]]></title><description><![CDATA[leesunggi92@gmail.com]]></description><link>https://leesungki.github.io/sungkilee.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 17 Feb 2022 05:15:03 GMT</lastBuildDate><item><title><![CDATA[AWS 람다(Lambda) 사용법]]></title><description><![CDATA[🎈 람다(Lambda) 만들기 python을 이용하여 ‘hello world’를 출력하는 람다 함수를 만들어보자. ✅ 람다 사용을 위해 간단한 예제를 통한 실습을 해보자. 🍕튜토리얼 AWS Lambda…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-lambda-tutorial/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-lambda-tutorial/</guid><pubDate>Fri, 28 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-람다lambda-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%9E%8C%EB%8B%A4lambda-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot; 람다lambda 만들기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 람다(Lambda) 만들기&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;python을 이용하여 ‘hello world’를 출력하는 람다 함수를 만들어보자.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;✅ 람다 사용을 위해 간단한 예제를 통한 실습을 해보자.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;튜토리얼&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC&quot; aria-label=&quot;튜토리얼 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🍕튜토리얼&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;AWS Lambda로 들어간다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;오른쪽 상단에 함수 생성 버튼을 누른다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 18.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABJ0AAASdAHeZh94AAAAuUlEQVQY03WQTU7DQAxGc/9rsGHBhlsgVeIahaQlY8//ZDIPeVC7w9KT9Vn2J9vLtt0weu9Y1FoR9Xzdhfu+8+Mc4j36D6KK+IBW0AaLFXLOnOc5DY/jQEPg+r2xO0dKaWLD3gb1LzsnOBFiLgS3oZ/v6OWNRcRxjsEjzDjEyLquc7tcytROdGILxJTwIRBCoBydojfi5ZX88cLSW2WMMXkYWrMZGSnneUGpdWp7SWvtielSGxnwHX4BkUg0LQTQ3LUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lambdatuto.png&quot;
+        title=&quot;lambdatuto.png&quot;
+        src=&quot;/static/8a1d5f56ecbae045b1f67d0601f9ece1/37523/lambdatuto.png&quot;
+        srcset=&quot;/static/8a1d5f56ecbae045b1f67d0601f9ece1/e9ff0/lambdatuto.png 180w,
+/static/8a1d5f56ecbae045b1f67d0601f9ece1/f21e7/lambdatuto.png 360w,
+/static/8a1d5f56ecbae045b1f67d0601f9ece1/37523/lambdatuto.png 720w,
+/static/8a1d5f56ecbae045b1f67d0601f9ece1/4b2cc/lambdatuto.png 1013w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;만들고자 하는 람다 함수 이름과 사용 언어를 선택한 후 함수 생성 버튼을 누른다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 88.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABJ0AAASdAHeZh94AAACTklEQVQ4y5VUW5KcMAzk0LlKLpE75Ct3SFK7k0l2ZhnAPGyDn9hMpyRgd/ZRlQ1VXULCtKWW7OLu/h6HwwE/ft6hbFr0fY+u79F2HZRW0OP4Xyjqtgehans8NgKXRqAWggnHaYJzDpMxDOvcE17HjLXsF6UyuC8FSmlRjhG/pYeeJoi2hVQKWmvMKTF53Qh0XQetFOI8wxiDRgg0ooVSGiFGFJUyOJwrnFqFWjm0NqIdBhyPv/HwcMLpfOYMKNOqqvF4foQQLW9Cm51OZ0ZdN/A+oOjcjDEDYwKmBRhChjYWdV0zgfees0kp4fa5Xq9QG6EQgslzXlAIbSAmDzE6RqMNJms5/RACW+c8a0TkbodzLIOUin1aR5UUSkkcj0dIKTHPM2IMTEQ/P4F8jr20tC7uG4fAmxSWujNNTJZTwhwjlpyppn9iWZYnkATEUbSjwd2lwa+6w0VblCSBDehjQh/eRxcShrhqer3RNeWMghpQdQOE1NDWQRkHOVmMPiAuV4S8vIHf7N4cAhOmhIJmqeslRuMQvAdJQFr4TfhbLelbDIHLvW5lviGkDsptUPOyIOe82h3kvxMjvV4/FF8zHBRcmNcuc6cj2xDi+h7nrZuR19BQsx/js93+K2iGxnHiWaOUCfNu6ed59cnuA562DCn2vH6NFTSw1joumyafFu/EL97f81+BZrGgK6e8XFDV9Tqct6fhA+DmhQg/Z9gQV0K6Meh24auIM/44DF1deoAVfzB15UpIZ5LPpdZc9oehJIQyGL5/Q//lE4avn/EXhAZup8xdysEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lambdatuto1.png&quot;
+        title=&quot;lambdatuto1.png&quot;
+        src=&quot;/static/6c8b62bd8a1307701835ec2812373f02/37523/lambdatuto1.png&quot;
+        srcset=&quot;/static/6c8b62bd8a1307701835ec2812373f02/e9ff0/lambdatuto1.png 180w,
+/static/6c8b62bd8a1307701835ec2812373f02/f21e7/lambdatuto1.png 360w,
+/static/6c8b62bd8a1307701835ec2812373f02/37523/lambdatuto1.png 720w,
+/static/6c8b62bd8a1307701835ec2812373f02/40601/lambdatuto1.png 945w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;함수 이름은 lambdatutorial, 사용 언어는 python 3.7로 선택했다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABJ0AAASdAHeZh94AAAA9ElEQVQoz5VRwVLFIAzk///Ko9+gp1dnbB8FWkohEJ7rJFqtvvHgYSeQ2Wx2wcQYMQwvGK8We6molUBUQFRBRKi1/gsm54ywLIhxQyFC6zcwgM4M7h2ttbshWfTXMiMDvXcwN7T+BnID0tMDXFjhnFPSWVTOYkLAzF+9A+Z8UcHwiuX5ESnTD+IBEdFUIWDf97sERqznXJQkDXlHGxJSSmjMOiT9UkjPwpfqvVex261rwt75w+G2JfgQNF6SjbWC23fMo64xws4z4rZhXVdcLgPGccQ0XTFNE6y1yjHnKL/tn0UPDn+6FgPeeczOwdpZP1UivwPI5x9u4GoSTgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lambdatuto2.png&quot;
+        title=&quot;lambdatuto2.png&quot;
+        src=&quot;/static/5013e705d68cb16cfbfcbad1bd44fe55/37523/lambdatuto2.png&quot;
+        srcset=&quot;/static/5013e705d68cb16cfbfcbad1bd44fe55/e9ff0/lambdatuto2.png 180w,
+/static/5013e705d68cb16cfbfcbad1bd44fe55/f21e7/lambdatuto2.png 360w,
+/static/5013e705d68cb16cfbfcbad1bd44fe55/37523/lambdatuto2.png 720w,
+/static/5013e705d68cb16cfbfcbad1bd44fe55/636c2/lambdatuto2.png 911w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;코드 인라인에 원하는 코드를 추가한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 31.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABJ0AAASdAHeZh94AAABF0lEQVQY022QzUoDMRhF53V9KJeuFQXduxNxI9JNoba000w7M5n8ZzJtOZJQi6KLQ/Ill5ubW/VSshUCqR1jSqRfTCRvSXZgjJFxTIzjSIyxkDXeB3b7PV0v0cZQdV1Hlw+6jrZt6fu+7Pc7Qacc+vkadXNFv5zRa8fL6xt3D0/c3j/y/jErxlprjDHM53OqpmlopaLeimKYL4ZhoN42fC5XtGKNHxqCd4QQCSFc1lhSjxfyXGmlkDawrmuEEBhrUWpAtIrVpkbsd0ilSopsMk3Tr1p+Gua5ysLT6cjpeOR4RsqeQRlWTcuiXrDZitKPcQZtNd77c9K/VNba8uo3h8OhfDmXHVNEO43RDpdNoscFR5pS0f3HF5nKyOhqFLBSAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lambdatuto3.png&quot;
+        title=&quot;lambdatuto3.png&quot;
+        src=&quot;/static/ee91be70fddd3d822b249c304d5e0e11/37523/lambdatuto3.png&quot;
+        srcset=&quot;/static/ee91be70fddd3d822b249c304d5e0e11/e9ff0/lambdatuto3.png 180w,
+/static/ee91be70fddd3d822b249c304d5e0e11/f21e7/lambdatuto3.png 360w,
+/static/ee91be70fddd3d822b249c304d5e0e11/37523/lambdatuto3.png 720w,
+/static/ee91be70fddd3d822b249c304d5e0e11/142fb/lambdatuto3.png 907w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;lambdatutorial 함수에 hello world 출력문을 추가해주었다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;✅ 핸들러&lt;br&gt;
+람다 함수에게 어디서부터 코드를 실행해! 라고      알려주는 부분이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;아래에 있는 기본 설정에서 실행에 필요한 메모리와 시간을 설정후 저장 버튼을 누른다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABJ0AAASdAHeZh94AAABJElEQVQoz4WPy27cMAxF/f9/1lWBAu0qaR7jIJ6xZcsyrQclzwmkSZCgi0bAAcUr6uKyW1aHmWeG85nF2lZHY7DTwGUcuUwT53HEriurc9/SzcOJxa7s3jehmo+TaSbOOUQEkZ1N5L/UMM3QvD7jNqGUguw7p77nPE74qOScUVWSKlrvX6mafszktkH931m34b0nxthSHiXz73FuJXh/a67XVmIIWGur8E59OuiqczVLKTXDXQ9cULagtxozkkrT4wGxQChXvBYkKl4PfD7aTNBCtyxL2/0j4c8h8ONu4M9Dz6+7nt9/XzgZ4WlyjcfLSm8Dz6tyvyhTuGIiDJKZfaarsevKNeEmO2ZPzHvC+sRSqb0EzPbJLBEjiUki1uuNkHE+8QZKWBstPM9R1QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lambdatuto4.png&quot;
+        title=&quot;lambdatuto4.png&quot;
+        src=&quot;/static/95d949356169dd727ce6ee144b765f3f/37523/lambdatuto4.png&quot;
+        srcset=&quot;/static/95d949356169dd727ce6ee144b765f3f/e9ff0/lambdatuto4.png 180w,
+/static/95d949356169dd727ce6ee144b765f3f/f21e7/lambdatuto4.png 360w,
+/static/95d949356169dd727ce6ee144b765f3f/37523/lambdatuto4.png 720w,
+/static/95d949356169dd727ce6ee144b765f3f/82b28/lambdatuto4.png 931w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 85.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABJ0AAASdAHeZh94AAABt0lEQVQ4y6VU7XKbMBDU0/Z1+g59jL5J2yTOxCHGIIOs0zc2m7kztLaD/cO9mR3ECZa9PR3qbb3G6vUVT88v+PX7D55XKzjvYazF/gEoIsJ7VUF3PVIuyDkhxvgwFKupqgqt7hBzwTAM/wUVYgTDkZPE8XjE4QzHBcz5pVBZysx3X17E4YBxHIFxlOsM5b1H3ezQUxAPUsqIKUljWDHHePWSEE0xr/8RhoBd14Ov5JxA73bIpVw8fB3nxOf7KoSIvjeijEtndWzDLQVLKi88ZEIGk81esj+3lF2r/EJYcoaf/BqGwxfCe1giVY0hPK3eUNdbWCJ4z1568ZSVc3MsOfmo8QnGRTjnbjZMUSwyJR8fGzStPo1dz1OT8UiolCKapkWMp2aUMiClJISnM8q5gjIMsp4ngu/ZGt6b86LQOY9WazkqPNdMFuPpTM5TFKcPsAWSD1Gs4Z8BV8Q5bigPgvIhoWo7bBqNqm6x2WpsdY/1pkHd7oSMlZxPzzApM3srFV2UTD6gsx6GAgx57F0Q9OTRW4K19FflNdJ0bmXfWUQyUCybyMIuggT3/n9sVatbmJ/f0f34hk+E0y3loRrknwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lambdatuto5.png&quot;
+        title=&quot;lambdatuto5.png&quot;
+        src=&quot;/static/feb7f5a95fe6b3f1bc2b31918ec3dae1/37523/lambdatuto5.png&quot;
+        srcset=&quot;/static/feb7f5a95fe6b3f1bc2b31918ec3dae1/e9ff0/lambdatuto5.png 180w,
+/static/feb7f5a95fe6b3f1bc2b31918ec3dae1/f21e7/lambdatuto5.png 360w,
+/static/feb7f5a95fe6b3f1bc2b31918ec3dae1/37523/lambdatuto5.png 720w,
+/static/feb7f5a95fe6b3f1bc2b31918ec3dae1/764be/lambdatuto5.png 806w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;*메모리는 256MB, 실행 시간은 최대 5분으로 설정했다.&lt;/p&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;원하는 대로 람다 함수를 잘 만들었는지 확인해보자 코드 탭에서 Deploy 버튼클릭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 31.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABJ0AAASdAHeZh94AAABF0lEQVQY022QzUoDMRhF53V9KJeuFQXduxNxI9JNoba000w7M5n8ZzJtOZJQi6KLQ/Ill5ubW/VSshUCqR1jSqRfTCRvSXZgjJFxTIzjSIyxkDXeB3b7PV0v0cZQdV1Hlw+6jrZt6fu+7Pc7Qacc+vkadXNFv5zRa8fL6xt3D0/c3j/y/jErxlprjDHM53OqpmlopaLeimKYL4ZhoN42fC5XtGKNHxqCd4QQCSFc1lhSjxfyXGmlkDawrmuEEBhrUWpAtIrVpkbsd0ilSopsMk3Tr1p+Gua5ysLT6cjpeOR4RsqeQRlWTcuiXrDZitKPcQZtNd77c9K/VNba8uo3h8OhfDmXHVNEO43RDpdNoscFR5pS0f3HF5nKyOhqFLBSAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lambdatuto3.png&quot;
+        title=&quot;lambdatuto3.png&quot;
+        src=&quot;/static/ee91be70fddd3d822b249c304d5e0e11/37523/lambdatuto3.png&quot;
+        srcset=&quot;/static/ee91be70fddd3d822b249c304d5e0e11/e9ff0/lambdatuto3.png 180w,
+/static/ee91be70fddd3d822b249c304d5e0e11/f21e7/lambdatuto3.png 360w,
+/static/ee91be70fddd3d822b249c304d5e0e11/37523/lambdatuto3.png 720w,
+/static/ee91be70fddd3d822b249c304d5e0e11/142fb/lambdatuto3.png 907w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;7&quot;&gt;
+&lt;li&gt;테스트 탭에서 테스트 이벤트를 만들어서 해당 람다 함수를 실행시킬 수 있다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 45.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABJ0AAASdAHeZh94AAABHklEQVQoz52QQW7cMAxFdfSeKQfIppteIIsEAYrUnWQytoYiJcsaWc5LrADZFF1MBDx8ESKpTzoTTxCPvB7w5zPPxyOT953TODJOU1c1I5h1/SLGT00ZLRs6L7ig2guGw4H9PudMmuf/ElPqeUENCYJYQo+/0btb9PkRN00TwzDw9GdgWRZKKV/6L5fe9CzSnY3jiTEk7OEXevOD+f4nLqZMjKlju/39ZwmkNKOqxBSZd2c9JyIimMX+vsdpHzst6AXqG7hRZ05eWErh++cN2Nhaw9m+jxBY15Vt275Na41aK86rMZwmNBdSbaTLej11xUolLgXnU+avF+yyEtf2Sb2StaG19R5uH/dpeOHFR16ngBdD4oLEfB2WyR8O3wGtBbaw4QmDbgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lambdatuto6.png&quot;
+        title=&quot;lambdatuto6.png&quot;
+        src=&quot;/static/a11f6d530c1855a1b8d05627f0bc629b/37523/lambdatuto6.png&quot;
+        srcset=&quot;/static/a11f6d530c1855a1b8d05627f0bc629b/e9ff0/lambdatuto6.png 180w,
+/static/a11f6d530c1855a1b8d05627f0bc629b/f21e7/lambdatuto6.png 360w,
+/static/a11f6d530c1855a1b8d05627f0bc629b/37523/lambdatuto6.png 720w,
+/static/a11f6d530c1855a1b8d05627f0bc629b/c0255/lambdatuto6.png 920w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;테스트 버튼을 누른다&lt;/p&gt;
+&lt;ol start=&quot;8&quot;&gt;
+&lt;li&gt;실행 결과의 세부 정보를 확인 할수있다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 72.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABJ0AAASdAHeZh94AAACB0lEQVQ4y5WS65LaMAyFef9nZGkhBBJfJN8S2/HC6dghLOy2P5qZbyQfeWRF0u4w7PH7csBZHHFUV6ggYRPBRA2eNTjq5m/wrGBm1SxNK9VXXqCnDrurvuCj2+OieggzQvCwYkYoJ6GcgLTjAwHlNYQnyECwkZ+4ZCD9iJ0JBEECkiUUK2ijmlVGgT2DHTWtQlaDvIMKHjR5xGV+Mi0B0g/YLZ8LrHHwLsAZhxQzUkz43698LhBuwM5OBnOekEpstjKl8Hg5NltjlS9tZdMrU35UONAFI19hZoJLDLvx0h+eNLSXb9o79NXDq7rg0H2gG084iw7dcMR57B7nU3uoDuZXf2iDq1x132J1oDXR21Dq9Cgo+Gz/+nq9WKsTZmj+luA1/pZQWdEu/+t3toS1mvp4/f3XpC5+S9jLM47DsQm1yu9MxbeEF3WGDgp2JoRn3Pys8Kp67E971OHU3vSia9W0c+vXOrQaq1pvFDoaUQupy/9jsdkx+r7HKAWMNc0qrcGGoUljFCOIqVHP7D2mlDHHGUtZcLvfcL/fkEta95As4XTqIaUEk4EQEkQEIoZSGsMwwvuAspSVUtZFLgUxRqSUm55LXhP6yYKZ4byD9x4hBBBzq9YY07S8ZOScm12WBbfbrdmUUtNq8lTSuth1z1ofZoaZV7udt/6YeYMaPNHDf9U0hB3wBxB2eeBdNRGqAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lambdatuto7.png&quot;
+        title=&quot;lambdatuto7.png&quot;
+        src=&quot;/static/f0e3806bd7eaf601be012f8af0c7369b/37523/lambdatuto7.png&quot;
+        srcset=&quot;/static/f0e3806bd7eaf601be012f8af0c7369b/e9ff0/lambdatuto7.png 180w,
+/static/f0e3806bd7eaf601be012f8af0c7369b/f21e7/lambdatuto7.png 360w,
+/static/f0e3806bd7eaf601be012f8af0c7369b/37523/lambdatuto7.png 720w,
+/static/f0e3806bd7eaf601be012f8af0c7369b/2a50c/lambdatuto7.png 925w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;로그에 Hello Wolrd가 출력된 것을 볼 수 있다. 잘 만들었다!&lt;/p&gt;
+&lt;h3 id=&quot;마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot;마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🌭마무리&lt;/h3&gt;
+&lt;p&gt;AWS lambda에 코드를 올리는 방법은 3가지이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;인라인 코드&lt;/li&gt;
+&lt;li&gt;zip파일을 업로드&lt;/li&gt;
+&lt;li&gt;아마존 S3에서 파일 업로드&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-%EB%9E%8C%EB%8B%A4lambda-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot;&gt;🎈 람다(Lambda) 만들기&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC&quot;&gt;🍕튜토리얼&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot;&gt;🌭마무리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS 람다(Lambda) 란?]]></title><description><![CDATA[🎈 람다(Lambda…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-lambda/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-lambda/</guid><pubDate>Thu, 27 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-람다lambda-란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%9E%8C%EB%8B%A4lambda-%EB%9E%80&quot; aria-label=&quot; 람다lambda 란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 람다(Lambda) 란?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;AWS Lambda는 서버를 프로비저닝하거나 관리하지 않고도 코드를 실행할 수 있게 해주는 컴퓨팅 서비스입니다. 즉, AWS에서 제공하는 서버리스 컴퓨팅 서비스입니다.&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;✅ 프로비저닝이란 사용자의 요구에 맞게 시스템 자원을 할당, 배치, 배포해 두었다가 필요 시 시스템을 즉시 사용할 수 있는 상태로 미리 준비해 두는 것&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;✅ 서버리스 컴퓨팅은 애플리케이션을 실행하기 위해 별도의 서버 셋업 없이 곧바로 코드를 실행해주는 서비스를 의미&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;aws-lambda-특징&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#aws-lambda-%ED%8A%B9%EC%A7%95&quot; aria-label=&quot;aws lambda 특징 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🍕AWS Lambda 특징&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;AWS Lambda는 &lt;strong&gt;필요 시에만 코드를 실행&lt;/strong&gt;하며, 하루에 몇 개의 요청에서 초당 수천 개의 요청까지 자동으로 확장이 가능합니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;사용한 컴퓨팅 시간에 대해서만 요금을 지불&lt;/strong&gt;하면 되고 코드가 실행되지 않을 때는 요금이 부과되지 않습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AWS Lambda에서는 사실상 &lt;strong&gt;모든 유형의 애플리케이션이나 백엔드 서비스에 대한 코드를 별도의 관리 없이 실행&lt;/strong&gt;할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;고가용성 컴퓨팅 인프라에서 코드를 실행하고 &lt;strong&gt;서버 및 운영 체제 유지 관리, 용량 프로비저닝 및 자동 조정, 코드 및 보안 패치 배포, 코드 모니터링 및 로깅 등 모든 컴퓨팅 리소스 관리를 수행&lt;/strong&gt;합니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AWS Lambda가 지원하는 언어중 하나로 코드를 공급하기만 하면 됩니다. 이때 런타임 사용을 통해 &lt;strong&gt;지원하는 여러 언어의 종류에는 Node js 런타임, Python 런타임, Ruby 런타임, Java 런타임, Go 런타임, .NET 런타임, 사용자 지정 런타임&lt;/strong&gt; 등이 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AWS Lambda를 사용하여 &lt;strong&gt;Amazon S3 버킷 또는 Amazon DynamoDB 테이블의 데이터 변경과 같은 이벤트에 대한 응답으로 코드를 실행&lt;/strong&gt;할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Amazon API Gateway를 사용하여 HTTP 요청에 대한 응답으로 코드를 실행&lt;/strong&gt;할 수도 있으며, 또는 &lt;strong&gt;AWS SDK를 사용하여 만든 API 호출을 통해 코드를 호출&lt;/strong&gt;할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;출처: &lt;a href=&quot;https://usefultoknow.tistory.com/entry/AWS-Lambda%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C&quot;&gt;https://usefultoknow.tistory.com/entry/AWS-Lambda란-무엇일까&lt;/a&gt; [UsefulToKnow]&lt;/p&gt;
+&lt;h3 id=&quot;aws-lambda-언제-사용해야-될까&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#aws-lambda-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC-%EB%90%A0%EA%B9%8C&quot; aria-label=&quot;aws lambda 언제 사용해야 될까 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🍔AWS Lambda 언제 사용해야 될까?&lt;/h3&gt;
+&lt;p&gt;코드를 계속 실행시키기 보다는 &lt;strong&gt;특정한 시기에만 실행시키는 경우&lt;/strong&gt;에 Lambda를 사용하면 유용하다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;서버 띄우지 않고 간단한 코드를 실행시키고 싶은 경우&lt;/li&gt;
+&lt;li&gt;특정 기간 또는 특정 주기로 코드를 실행시켜야 하는 경우&lt;/li&gt;
+&lt;li&gt;트리거가 실행될때만 코드를 실행시키고 싶은 경우&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;람다의 단점도 존재한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;코드 용량이 최대 250MB 이다.&lt;/li&gt;
+&lt;li&gt;함수 실행 시간은 최대 15분이다.&lt;/li&gt;
+&lt;li&gt;처음 함수 호출시 Cold Start를 하게되고 초기 지연시간이 발생한다.&lt;/li&gt;
+&lt;li&gt;비싸다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;aws-lambda-사용-사례&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#aws-lambda-%EC%82%AC%EC%9A%A9-%EC%82%AC%EB%A1%80&quot; aria-label=&quot;aws lambda 사용 사례 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🍟AWS Lambda 사용 사례&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;실시간 파일 처리&lt;/p&gt;
+&lt;p&gt;Amazon S3를 사용하여 업로드하는 즉시 데이터를 처리하도록 AWS Lambda를 트리거할 수 있습니다. Lambda를 사용하여 실시간으로 이미지를 썸네일하고, 동영상을 트랜스코딩하고, 파일을 인덱싱하고, 로그를 처리하고, 콘텐츠를 검증하고, 데이터를 수집 및 필터링할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;실시간 스트림 처리&lt;/p&gt;
+&lt;p&gt;AWS Lambda 및 Amazon Kinesis를 사용하여 애플리케이션 활동 추적, 트랜잭션 주문 처리, 클릭 스트림 분석, 데이터 정리, 지표 생성, 로그 필터링, 인덱싱, 소셜 미디어 분석, IoT 디바이스 데이터 텔레메트리 및 측정을 위한 실시간 스트리밍 데이터를 처리할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;추출, 변환 ,로드&lt;/p&gt;
+&lt;p&gt;AWS Lambda를 사용하여 DynamoDB 테이블의 모든 데이터 변경에 대한 데이터 검증, 필터링, 정렬 또는 기타 변환 작업을 수행하고 변환된 데이터를 다른 데이터 스토어로 로드할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IoT 백엔드&lt;/p&gt;
+&lt;p&gt;AWS Lambda 및 Amazon Kinesis를 사용하여 사물 인터넷(Internet of Things, IoT) 디바이스 데이터 텔레메트리 및 분석을 위한 백엔드를 구축할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;모바일 백엔드&lt;/p&gt;
+&lt;p&gt;AWS Lambda 및 Amazon API Gateway를 사용하여 API 요청을 인증 및 처리하도록 백엔드를 구축할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Web Application&lt;/p&gt;
+&lt;p&gt;AWS Lambda를 다른 AWS 서비스와 결합하면 확장성, 백업 또는 여러 데이터 센터 중복에 필요한 별도의 관리 작업 없이 개발자가 자동으로 확장 및 축소되고 여러 데이터 센터에 걸쳐 가용성이 높은 구성에서 실행되는 강력한 웹 애플리케이션을 구축할 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot;마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🌭마무리&lt;/h3&gt;
+&lt;p&gt;위와 같은 특성과 기능을 제공하므로 Lambda를 사용하여 &lt;strong&gt;Amazon S3 alc Amazon DynamoDB와 같은 AWS 서비스에 대한 데이터 처리 트리거를 손쉽게 빌드&lt;/strong&gt;하거나, &lt;strong&gt;Kinesis에 저장된 스트리밍 데이터를 처리하거나 AWS 규모, 성능, 보안에 따라 작동하는 자체 백엔드를 생성&lt;/strong&gt;할 수 있습니다. 또한 &lt;strong&gt;이벤트에 의해 트리거&lt;/strong&gt; 되고 &lt;strong&gt;CodePipeline 및 CodeBuild를 사용하여 자동으로 배포하는 함수로 구성된 서버리스 애플리케이션을 빌드&lt;/strong&gt;할 수 있습니다.
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-%EB%9E%8C%EB%8B%A4lambda-%EB%9E%80&quot;&gt;🎈 람다(Lambda) 란?&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#aws-lambda-%ED%8A%B9%EC%A7%95&quot;&gt;🍕AWS Lambda 특징&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#aws-lambda-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC-%EB%90%A0%EA%B9%8C&quot;&gt;🍔AWS Lambda 언제 사용해야 될까?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#aws-lambda-%EC%82%AC%EC%9A%A9-%EC%82%AC%EB%A1%80&quot;&gt;🍟AWS Lambda 사용 사례&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot;&gt;🌭마무리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 란?]]></title><description><![CDATA[🎈 AWS Simple Storage Service(S3) 란?  AWS S3 특징 제공하는 단순한 웹 서비스 인터페이스를 사용하여 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있습니다. 개발자는 Amazon…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-aws-simple-storage-services3-란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-aws-simple-storage-services3-%EB%9E%80&quot; aria-label=&quot; aws simple storage services3 란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 AWS Simple Storage Service(S3) 란?&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;AWS Simple Storage Service(S3)는 인터넷용 스토리지 서비스입니다. 이 서비스는 개발자가 더 쉽게 웹 규모 컴퓨팅 작업을 수행할 수 있도록 설계되었습니다.&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&quot;aws-s3-특징&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#aws-s3-%ED%8A%B9%EC%A7%95&quot; aria-label=&quot;aws s3 특징 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;AWS S3 특징&lt;/h3&gt;
 &lt;ul&gt;
@@ -50,6 +407,140 @@ S3 서비스 수준 계약으로 객체에 대해 99.999999999%의 내구성을 
 &lt;li&gt;&lt;a href=&quot;#aws-s3-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90&quot;&gt;AWS S3 기본 개념&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 생성]]></title><description><![CDATA[🎈 목적  🗑 Bucket 생성하기 1️⃣ AWS console 로그인을 하고 s3 서비스에 접근합니다. 버킷 만들기 클릭!  2️⃣ 버킷 이름, 리전 등을 지정해줍니다.  아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3-makeBucket/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3-makeBucket/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-목적&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot; aria-label=&quot; 목적 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 목적&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aws 에서 사용하는 s3 버킷 생성&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;-bucket-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot; bucket 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🗑 Bucket 생성하기&lt;/h2&gt;
+&lt;h2 id=&quot;1️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;1️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1️⃣&lt;/h2&gt;
+&lt;p&gt;AWS console 로그인을 하고 &lt;a href=&quot;https://console.aws.amazon.com/s3/home?region=ap-northeast-2&quot;&gt;s3 서비스&lt;/a&gt;에 접근합니다.&lt;/p&gt;
+&lt;p&gt;버킷 만들기 클릭!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 45.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABUElEQVQozzWQW24dIRBEZ//ybrKALMB//ov8GcfjmTs8uqGfMJcEkpRaAiRadaq26zxyzv2+e+9Yyvm4ABFLAcR5wfJ/pnKGlHPKOQOeV9gwRRFpvY8xzCzF+PPjAwDNVISZmIhEhESrGCCGEGKMABhT2q4QUkpENMZQM1hydxGpRGamqsupind1T4AJirWeMmwAQET3fc9l1UrUWhtj3CvIWBLm5j7R3Pfj8Xk8SDQDbCIiqiJibrKW53ONTlcVM+1P9caqLKKmZmZuYWJfARHvJTU7zvMMsS5hpVCkxkt/vWs8vTV3W0GstRZT/ofNIn+xQ4wJAEth5lJr9Sf9eKVvL/L2vY3hy9ZtHleMW62kInvm+/mcrTIDFhZZbK4qlVXvIa3T6o9Faq2qOpexlPVt9jGTm0KhXBhJfFEex7nvOzPv+1eIM9HXcRDRn7Z/AwI+A6qlIhN4AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket1.png&quot;
+        title=&quot;makebucket1.png&quot;
+        src=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png&quot;
+        srcset=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/e9ff0/makebucket1.png 180w,
+/static/d0c263a35dd6fda29557c82d14eb5830/f21e7/makebucket1.png 360w,
+/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png 720w,
+/static/d0c263a35dd6fda29557c82d14eb5830/078fe/makebucket1.png 934w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;2️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2️⃣&lt;/h2&gt;
+&lt;p&gt;버킷 이름, 리전 등을 지정해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 658px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 92.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABJ0AAASdAHeZh94AAACTUlEQVQ4y52UeW+cMBDF9/t/t0r9p1klaY5lD1gOH/jA2MCrZiCErJK0KtIPGws9zzzPeCd0i0slIXWLumlwLSvotv2U1ph1/Ipd1Qhk5wLnPEdeFKiFgnUOxlrGWrPyndAqSCL3Dw+42+/x626Pp8MJx/MZl8sF+bXE8SqYUyW/jHzLjl51XaMRAkpraK0hlYIidAupzUxrOPLv4AgpraIocC1L9H2PlNKG+E6MiH+BtHazX5S/xTCOK+PC23zajMMw8Po0TRgXaE5aLKgobSFY1HcdY52Hcx5dCLBdD2EDtAuQLqCLicVvH+c9do5ybw3Tx4jQ9wghwPtZlDcIEaaLcCFC+4g+zWLTEhmxCrKZ7VyDQkgWtnaOlFO6TXka2S/afCv6HqH3LFRcS2THI8qqYqx1s4fk15ZxRBqGNeUPgm5JuSiueH49oKxqNrbrAv7n4Qipdsh4+iDvYkqcEnv5FeHzdS4bemWnE55fXpBXDVrrYIyZW8/YZTTrSAHYt7XNul3+5wiL/IIsO+CQZVzkSgq01DVKwbQ0UtvpuXtozRhIKdeOojkdLNch7dD4CNlF1Mahah1MGuGGiaG5TSNbQSdL9tDhTJuCJmiNU9bO4UkG7A85fuyf8PP+Bb8vFV5LhddS4iwd6m5AlxJfGPv7Rz48qShijUZKNEKyrxyhtg4qAaVLKGyP3PQ4SouT8jgrz2t1GBBiWtLyfIBzy87XHM1XQbe0nlCK05puSmFa+OeyoR3I1Kqu+fpKS9l8vHXSUk4L6YY4/0Me/gH9qb0dGAv2CgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket2.png&quot;
+        title=&quot;makebucket2.png&quot;
+        src=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png&quot;
+        srcset=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/e9ff0/makebucket2.png 180w,
+/static/eb23b224cf64aaa70beb81cd624c5b3f/f21e7/makebucket2.png 360w,
+/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png 658w&quot;
+        sizes=&quot;(max-width: 658px) 100vw, 658px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 546px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 166.66666666666669%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAACXBIWXMAABJ0AAASdAHeZh94AAAD00lEQVRIx6VWW5LjNgzUzVM5xJ4jOUCukY9sxmO9KVFPviRKst0pgJLtSbybTFZVXSRoqgUCaNDRMA44xzHiJMHb6YQkSVAUJc5xirppsCwL5nmG957HZ/Caf9humhANQ484iZEXOZI0RikKHtM0Rp6nkLJGWRbIiwyiEijKnPcIUaKqKwhRoCgyVJUIhOM4oKpKNK1ELWs0jYSoJd6zEqdMoJAthqGDlBL08bZt0HUtz/u+Q9u1vNYPfSBUbsagNLq+x6gUtNbwywq/bJj8imW74Hq9Mi6XCy7HyLjudvidQhD11qNqexSl4JgR8TRNL2L1wLSv3W43PD/rtiGioG/bhtEYaGuhjMGgFNphYM8DFLphxKA1lNG819HHvIdfFiZirCsivxMaa2GnCcY6niuz287BOscfu+/Z1w7CIyR3QsKoDXvHozbszbhDWYue4mstB56OvKzr6yMfLtOx+Lg6HJOIiUQ9eXaEhDwMXk78LpEzluVBGLzT/BJ7ZYLHdDSK1zR7TN4z8eElrZNNe4iQPaT0UwyJKGQxhIBAdiCbmYwzfGD/yJF5IiOeiNin46UfBIUm6voOWZrgfD6jrhuuO6rDb8FN7l6nj7U9BKSUrh/wNc6QC4G6rlh6QV4Nz3kku+94JG3LRjLIpr1t10E0A5RxiOhLo/NwPtQj1dL/w8ZeRr12SLMclahCMe21dcPHGnv1HHuOeuQsq8kjyQoYY3iRKp42fBZMSEpxVGd7UI/AvsI079jrzu3yO+BYtpTltkWW5tzvKNOlqDDPR1bDi7RZ2QA7eazrwqr4O+gd9lApxUemXmhJZtYyWZgbbhidcmiVg3Iel+2fSaGEUoKjQxGaugt1FWP56Lfbd1LxvRgSSS0byKbhheesffZh6RnuJo/AzrP/IKeja/8X6RFHRPdIlufI8gJ3Xd+lRlkPmPYO/RL7lcDSo0RUVYVK1lBqhNYKaseoLWRvIHoLO3ts/6KWkBTqcdZhHEZcr7d7Oz/mt1sA33r33z7iuPW4wdKtd4pTyFriRx9OCsWHskwxooVQpOsnsXDH5uagqfUrxWVDGX+W3/QsvW/YR/LuWdZEVlfIi4J/JFk9pOWx7rKiWC+E5fEbwfOfpdBwSXXRubWIG41YDjiJFu+iwx9phbeywbnu8WchcRIdEjmyTXvIpn3vVYes0xCjZeSdRnTuZ8StwbkeEDcjklbjrewQyxFZF9aTRqEYHNs0Z7QaaatRmRXNBrQbUNobIrqPe0X3scVAd7E2GI1l+8O60ru9Q2mIXqM5/w75y0+Qv/6M9rcv+AuYrvQ7lOznHgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket3.png&quot;
+        title=&quot;makebucket3.png&quot;
+        src=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png&quot;
+        srcset=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/e9ff0/makebucket3.png 180w,
+/static/531397bf51c8d1cf783d1c8162e06c3b/f21e7/makebucket3.png 360w,
+/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png 546w&quot;
+        sizes=&quot;(max-width: 546px) 100vw, 546px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;3️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3️⃣&lt;/h2&gt;
+&lt;p&gt;저는 아래와 같이 &lt;code class=&quot;language-text&quot;&gt;leesungkibucket&lt;/code&gt; 이라는 이름으로 생성 하였습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 715px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABpUlEQVQoz4VSW5LUMAzM7bkEB+Gbb85A1TI7bMZ5+C3LjpPelTJZ4ItUdVlWZLXU0jDNC1ZrEWJETOn/kLgYNf6CD0Eh9hBCwOvtFcYYUCHknFFK0TPndIIIiVhRa1UwV1hrYaYZD2P0DCFikIcxRTDzM5CRUvpzrwyuFT4mhETY+oZtO3ER18rofdM3g/dBW/j7IyIcx/GPzzmnCa5v33e83N7w6z5i9oTSdiUeqBQ15CxPaFXMaotfWhaUwkomtvit86d+5oZkXhD9imGaDN4eBiFlEJ26xZRhQ0bIBa1VHcY8L0gqz6mx+AqfBOn7V8RvX5B+/sAgDO4JmZJqmgkuEgJJwoYqUD2r2vwcjPwTLVvfwa0r2UBUIJMWdg1oTU+pjLl8rohIcA1MWr7uUpDEFCK1B2Ggcq4EcUOpTQXvvSu887jff2NdrVYjp5kmPMykrS/LCu89SNaM6Ewo5brEiFSx9V0nfE05p4xxfMBapz5nHcZx1Lu0Ld1dAxOCM2HdNGFtHTgOrVAgCaQdSShL248DbBewXSF08l8Si+4qwcfavAMxOVJpcT4gEgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket4.png&quot;
+        title=&quot;makebucket4.png&quot;
+        src=&quot;/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png&quot;
+        srcset=&quot;/static/2991bb6828aece27363c2c204479dc9c/e9ff0/makebucket4.png 180w,
+/static/2991bb6828aece27363c2c204479dc9c/f21e7/makebucket4.png 360w,
+/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png 715w&quot;
+        sizes=&quot;(max-width: 715px) 100vw, 715px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;해당 버킷을 클릭하여 들어가 보면 저장 되어있는 객체들을 확인할수 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABkklEQVQoz41SyW7UQBD1/185I+UHEFcuXPIDkGMQkVgy8rjd++pePA9VzaIAEsHS06uuvco1CZdgQoSQEkpr+BDgvP8NVx3xa5geHz7h8eEzvj494fvzAdb/7fRngX9h+vnuDj8+vMe6LJDawDoyODZa5/67s1uHs1ggQ8SqFMS68uhHIZgP88xMiY21r8M5TEKsSDGibBtK2Zg3RmEupSDngvySWc7nN3FKjBgjpnmeobSCcw7+Mqo0HkcToemH+YiUImI6c4iBOeWERElSQqoDpQNbbZiU0rDOQhnNyYzzWJSFdBHWR0TuKnMgsQ8eUipobXAUEmo5wN+/Rfj4Blk+YzLWIcQEz2NXbLWi1orWzjKdklSKx2yt8RqoMxo1pYySEor4hnD4Am81JtqRVBq5bJyAAsLlVCiBpxUodStEySiGZPIjW+k76gBSLpgoSBsHnytaHzidTlydToC+MQZj33fGeIHeB3rv2PeB076j9Y6Jgg/HFT4V9N5YSV0pbdDHOHfW2g3twlc9+V9tdCG/AJ4WS8bp4TDkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket5.png&quot;
+        title=&quot;makebucket5.png&quot;
+        src=&quot;/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png&quot;
+        srcset=&quot;/static/65e6b186d785dc864b90fc94f691e701/e9ff0/makebucket5.png 180w,
+/static/65e6b186d785dc864b90fc94f691e701/f21e7/makebucket5.png 360w,
+/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png 720w,
+/static/65e6b186d785dc864b90fc94f691e701/01dae/makebucket5.png 721w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;저는 현재 폴더 만들기를 통하여 폴더를 만들어 놓은 모습입니다.&lt;/p&gt;
+&lt;p&gt;이로써 기본적인 버킷생성은 완료 하였습니다.&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot;&gt;🎈 목적&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;🗑 Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot;&gt;1️⃣&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot;&gt;2️⃣&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot;&gt;3️⃣&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 정책 편집]]></title><description><![CDATA[👀 사용 계기 프로젝트 진행 중 외부 api 연동 과제 진행 중에 private한 s3 스토리지에서 득정 도메인의 접근을 허용하는 방식이 필요하게 되었다. ❗TMI❗ : 네이버 ocr 기능을 사용 중 s…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3-referer/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3-referer/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-사용-계기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%82%AC%EC%9A%A9-%EA%B3%84%EA%B8%B0&quot; aria-label=&quot; 사용 계기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👀 사용 계기&lt;/h2&gt;
 &lt;p&gt;프로젝트 진행 중 외부 api 연동 과제 진행 중에 private한 s3 스토리지에서 득정 도메인의 접근을 허용하는 방식이 필요하게 되었다.&lt;/p&gt;
@@ -470,140 +961,6 @@ Add Statement 클릭 하면 아래와 같이 정책이 생성된다.
 &lt;li&gt;&lt;a href=&quot;#-http-referer%EB%9E%80&quot;&gt;🗑 HTTP Referer란?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;✅ Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#-%EC%A0%95%EC%B1%85-%ED%8E%B8%EC%A7%91&quot;&gt;♻ 정책 편집&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 생성]]></title><description><![CDATA[🎈 목적  🗑 Bucket 생성하기 1️⃣ AWS console 로그인을 하고 s3 서비스에 접근합니다. 버킷 만들기 클릭!  2️⃣ 버킷 이름, 리전 등을 지정해줍니다.  아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3-makeBucket/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-aws-study-s3-makeBucket/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-목적&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot; aria-label=&quot; 목적 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 목적&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aws 에서 사용하는 s3 버킷 생성&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;-bucket-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot; bucket 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🗑 Bucket 생성하기&lt;/h2&gt;
-&lt;h2 id=&quot;1️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;1️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1️⃣&lt;/h2&gt;
-&lt;p&gt;AWS console 로그인을 하고 &lt;a href=&quot;https://console.aws.amazon.com/s3/home?region=ap-northeast-2&quot;&gt;s3 서비스&lt;/a&gt;에 접근합니다.&lt;/p&gt;
-&lt;p&gt;버킷 만들기 클릭!&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 45.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABUElEQVQozzWQW24dIRBEZ//ybrKALMB//ov8GcfjmTs8uqGfMJcEkpRaAiRadaq26zxyzv2+e+9Yyvm4ABFLAcR5wfJ/pnKGlHPKOQOeV9gwRRFpvY8xzCzF+PPjAwDNVISZmIhEhESrGCCGEGKMABhT2q4QUkpENMZQM1hydxGpRGamqsupind1T4AJirWeMmwAQET3fc9l1UrUWhtj3CvIWBLm5j7R3Pfj8Xk8SDQDbCIiqiJibrKW53ONTlcVM+1P9caqLKKmZmZuYWJfARHvJTU7zvMMsS5hpVCkxkt/vWs8vTV3W0GstRZT/ofNIn+xQ4wJAEth5lJr9Sf9eKVvL/L2vY3hy9ZtHleMW62kInvm+/mcrTIDFhZZbK4qlVXvIa3T6o9Faq2qOpexlPVt9jGTm0KhXBhJfFEex7nvOzPv+1eIM9HXcRDRn7Z/AwI+A6qlIhN4AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket1.png&quot;
-        title=&quot;makebucket1.png&quot;
-        src=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png&quot;
-        srcset=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/e9ff0/makebucket1.png 180w,
-/static/d0c263a35dd6fda29557c82d14eb5830/f21e7/makebucket1.png 360w,
-/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png 720w,
-/static/d0c263a35dd6fda29557c82d14eb5830/078fe/makebucket1.png 934w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;2️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;2️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2️⃣&lt;/h2&gt;
-&lt;p&gt;버킷 이름, 리전 등을 지정해줍니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 658px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 92.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABJ0AAASdAHeZh94AAACTUlEQVQ4y52UeW+cMBDF9/t/t0r9p1klaY5lD1gOH/jA2MCrZiCErJK0KtIPGws9zzzPeCd0i0slIXWLumlwLSvotv2U1ph1/Ipd1Qhk5wLnPEdeFKiFgnUOxlrGWrPyndAqSCL3Dw+42+/x626Pp8MJx/MZl8sF+bXE8SqYUyW/jHzLjl51XaMRAkpraK0hlYIidAupzUxrOPLv4AgpraIocC1L9H2PlNKG+E6MiH+BtHazX5S/xTCOK+PC23zajMMw8Po0TRgXaE5aLKgobSFY1HcdY52Hcx5dCLBdD2EDtAuQLqCLicVvH+c9do5ybw3Tx4jQ9wghwPtZlDcIEaaLcCFC+4g+zWLTEhmxCrKZ7VyDQkgWtnaOlFO6TXka2S/afCv6HqH3LFRcS2THI8qqYqx1s4fk15ZxRBqGNeUPgm5JuSiueH49oKxqNrbrAv7n4Qipdsh4+iDvYkqcEnv5FeHzdS4bemWnE55fXpBXDVrrYIyZW8/YZTTrSAHYt7XNul3+5wiL/IIsO+CQZVzkSgq01DVKwbQ0UtvpuXtozRhIKdeOojkdLNch7dD4CNlF1Mahah1MGuGGiaG5TSNbQSdL9tDhTJuCJmiNU9bO4UkG7A85fuyf8PP+Bb8vFV5LhddS4iwd6m5AlxJfGPv7Rz48qShijUZKNEKyrxyhtg4qAaVLKGyP3PQ4SouT8jgrz2t1GBBiWtLyfIBzy87XHM1XQbe0nlCK05puSmFa+OeyoR3I1Kqu+fpKS9l8vHXSUk4L6YY4/0Me/gH9qb0dGAv2CgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket2.png&quot;
-        title=&quot;makebucket2.png&quot;
-        src=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png&quot;
-        srcset=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/e9ff0/makebucket2.png 180w,
-/static/eb23b224cf64aaa70beb81cd624c5b3f/f21e7/makebucket2.png 360w,
-/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png 658w&quot;
-        sizes=&quot;(max-width: 658px) 100vw, 658px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 546px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 166.66666666666669%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAACXBIWXMAABJ0AAASdAHeZh94AAAD00lEQVRIx6VWW5LjNgzUzVM5xJ4jOUCukY9sxmO9KVFPviRKst0pgJLtSbybTFZVXSRoqgUCaNDRMA44xzHiJMHb6YQkSVAUJc5xirppsCwL5nmG957HZ/Caf9humhANQ484iZEXOZI0RikKHtM0Rp6nkLJGWRbIiwyiEijKnPcIUaKqKwhRoCgyVJUIhOM4oKpKNK1ELWs0jYSoJd6zEqdMoJAthqGDlBL08bZt0HUtz/u+Q9u1vNYPfSBUbsagNLq+x6gUtNbwywq/bJj8imW74Hq9Mi6XCy7HyLjudvidQhD11qNqexSl4JgR8TRNL2L1wLSv3W43PD/rtiGioG/bhtEYaGuhjMGgFNphYM8DFLphxKA1lNG819HHvIdfFiZirCsivxMaa2GnCcY6niuz287BOscfu+/Z1w7CIyR3QsKoDXvHozbszbhDWYue4mstB56OvKzr6yMfLtOx+Lg6HJOIiUQ9eXaEhDwMXk78LpEzluVBGLzT/BJ7ZYLHdDSK1zR7TN4z8eElrZNNe4iQPaT0UwyJKGQxhIBAdiCbmYwzfGD/yJF5IiOeiNin46UfBIUm6voOWZrgfD6jrhuuO6rDb8FN7l6nj7U9BKSUrh/wNc6QC4G6rlh6QV4Nz3kku+94JG3LRjLIpr1t10E0A5RxiOhLo/NwPtQj1dL/w8ZeRr12SLMclahCMe21dcPHGnv1HHuOeuQsq8kjyQoYY3iRKp42fBZMSEpxVGd7UI/AvsI079jrzu3yO+BYtpTltkWW5tzvKNOlqDDPR1bDi7RZ2QA7eazrwqr4O+gd9lApxUemXmhJZtYyWZgbbhidcmiVg3Iel+2fSaGEUoKjQxGaugt1FWP56Lfbd1LxvRgSSS0byKbhheesffZh6RnuJo/AzrP/IKeja/8X6RFHRPdIlufI8gJ3Xd+lRlkPmPYO/RL7lcDSo0RUVYVK1lBqhNYKaseoLWRvIHoLO3ts/6KWkBTqcdZhHEZcr7d7Oz/mt1sA33r33z7iuPW4wdKtd4pTyFriRx9OCsWHskwxooVQpOsnsXDH5uagqfUrxWVDGX+W3/QsvW/YR/LuWdZEVlfIi4J/JFk9pOWx7rKiWC+E5fEbwfOfpdBwSXXRubWIG41YDjiJFu+iwx9phbeywbnu8WchcRIdEjmyTXvIpn3vVYes0xCjZeSdRnTuZ8StwbkeEDcjklbjrewQyxFZF9aTRqEYHNs0Z7QaaatRmRXNBrQbUNobIrqPe0X3scVAd7E2GI1l+8O60ru9Q2mIXqM5/w75y0+Qv/6M9rcv+AuYrvQ7lOznHgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket3.png&quot;
-        title=&quot;makebucket3.png&quot;
-        src=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png&quot;
-        srcset=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/e9ff0/makebucket3.png 180w,
-/static/531397bf51c8d1cf783d1c8162e06c3b/f21e7/makebucket3.png 360w,
-/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png 546w&quot;
-        sizes=&quot;(max-width: 546px) 100vw, 546px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;3️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;3️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3️⃣&lt;/h2&gt;
-&lt;p&gt;저는 아래와 같이 &lt;code class=&quot;language-text&quot;&gt;leesungkibucket&lt;/code&gt; 이라는 이름으로 생성 하였습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 715px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 54.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABpUlEQVQoz4VSW5LUMAzM7bkEB+Gbb85A1TI7bMZ5+C3LjpPelTJZ4ItUdVlWZLXU0jDNC1ZrEWJETOn/kLgYNf6CD0Eh9hBCwOvtFcYYUCHknFFK0TPndIIIiVhRa1UwV1hrYaYZD2P0DCFikIcxRTDzM5CRUvpzrwyuFT4mhETY+oZtO3ER18rofdM3g/dBW/j7IyIcx/GPzzmnCa5v33e83N7w6z5i9oTSdiUeqBQ15CxPaFXMaotfWhaUwkomtvit86d+5oZkXhD9imGaDN4eBiFlEJ26xZRhQ0bIBa1VHcY8L0gqz6mx+AqfBOn7V8RvX5B+/sAgDO4JmZJqmgkuEgJJwoYqUD2r2vwcjPwTLVvfwa0r2UBUIJMWdg1oTU+pjLl8rohIcA1MWr7uUpDEFCK1B2Ggcq4EcUOpTQXvvSu887jff2NdrVYjp5kmPMykrS/LCu89SNaM6Ewo5brEiFSx9V0nfE05p4xxfMBapz5nHcZx1Lu0Ld1dAxOCM2HdNGFtHTgOrVAgCaQdSShL248DbBewXSF08l8Si+4qwcfavAMxOVJpcT4gEgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket4.png&quot;
-        title=&quot;makebucket4.png&quot;
-        src=&quot;/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png&quot;
-        srcset=&quot;/static/2991bb6828aece27363c2c204479dc9c/e9ff0/makebucket4.png 180w,
-/static/2991bb6828aece27363c2c204479dc9c/f21e7/makebucket4.png 360w,
-/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png 715w&quot;
-        sizes=&quot;(max-width: 715px) 100vw, 715px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;해당 버킷을 클릭하여 들어가 보면 저장 되어있는 객체들을 확인할수 있습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 52.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABkklEQVQoz41SyW7UQBD1/185I+UHEFcuXPIDkGMQkVgy8rjd++pePA9VzaIAEsHS06uuvco1CZdgQoSQEkpr+BDgvP8NVx3xa5geHz7h8eEzvj494fvzAdb/7fRngX9h+vnuDj8+vMe6LJDawDoyODZa5/67s1uHs1ggQ8SqFMS68uhHIZgP88xMiY21r8M5TEKsSDGibBtK2Zg3RmEupSDngvySWc7nN3FKjBgjpnmeobSCcw7+Mqo0HkcToemH+YiUImI6c4iBOeWERElSQqoDpQNbbZiU0rDOQhnNyYzzWJSFdBHWR0TuKnMgsQ8eUipobXAUEmo5wN+/Rfj4Blk+YzLWIcQEz2NXbLWi1orWzjKdklSKx2yt8RqoMxo1pYySEor4hnD4Am81JtqRVBq5bJyAAsLlVCiBpxUodStEySiGZPIjW+k76gBSLpgoSBsHnytaHzidTlydToC+MQZj33fGeIHeB3rv2PeB076j9Y6Jgg/HFT4V9N5YSV0pbdDHOHfW2g3twlc9+V9tdCG/AJ4WS8bp4TDkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket5.png&quot;
-        title=&quot;makebucket5.png&quot;
-        src=&quot;/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png&quot;
-        srcset=&quot;/static/65e6b186d785dc864b90fc94f691e701/e9ff0/makebucket5.png 180w,
-/static/65e6b186d785dc864b90fc94f691e701/f21e7/makebucket5.png 360w,
-/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png 720w,
-/static/65e6b186d785dc864b90fc94f691e701/01dae/makebucket5.png 721w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;저는 현재 폴더 만들기를 통하여 폴더를 만들어 놓은 모습입니다.&lt;/p&gt;
-&lt;p&gt;이로써 기본적인 버킷생성은 완료 하였습니다.&lt;/p&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot;&gt;🎈 목적&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;🗑 Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot;&gt;1️⃣&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot;&gt;2️⃣&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot;&gt;3️⃣&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[현대 자동차 에서의 프로젝트]]></title><description><![CDATA[어느덧 3년 차라는 허울뿐인 개발자가 되었다 싶을 때쯤 현대자동차의 프로젝트에 투입되었다. 이전에 클라우드의 개념에 대해 자세히 모르던 나는 aws…]]></description><link>https://leesungki.github.io/sungkilee.github.io/gatsby-work-history-of-hyundai/</link><guid isPermaLink="false">https://leesungki.github.io/sungkilee.github.io/gatsby-work-history-of-hyundai/</guid><pubDate>Tue, 25 Jan 2022 04:40:00 GMT</pubDate><content:encoded>&lt;p&gt;어느덧 3년 차라는 허울뿐인 개발자가 되었다 싶을 때쯤 현대자동차의 프로젝트에 투입되었다.&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;이전에 클라우드의 개념에 대해 자세히 모르던 나는 aws 프로젝트를 접하게 된 거라 많이 떨렸다 항상 사용해 보지 않은 기술에 대한 떨림은 기분이 좋은 거 같다.&lt;/p&gt;
