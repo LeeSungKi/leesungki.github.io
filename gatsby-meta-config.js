@@ -2,7 +2,7 @@ module.exports = {
   title: `Re:제로부터 시작하는 개발일기`,
   description: `leesunggi92@gmail.com`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
-  siteUrl: `https://leesungki.github.io/sungkilee.github.io/`,
+  siteUrl: `https://leesungki.github.io`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
   comments: {
     utterances: {
