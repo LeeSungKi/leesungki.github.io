@@ -60,7 +60,7 @@ implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.1'
 implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 ```
 
-2. 데이터 소스 정의
+2. 데이터 소스 정의 application.yml
 ```yml
 spring:
     datasource:
