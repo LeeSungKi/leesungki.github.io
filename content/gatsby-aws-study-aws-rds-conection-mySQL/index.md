@@ -1,6 +1,6 @@
 ---
 emoji: 🎈
-title: AWS RDS 연동(mySQL)
+title: spring boot + AWS RDS 연동(mySQL)
 date: '2022-02-17 15:54:00'
 author: 쩡기
 tags: AWS RDS aws rds 데이터베이스 rds생성 rds란? aws rds mySQL rds연동

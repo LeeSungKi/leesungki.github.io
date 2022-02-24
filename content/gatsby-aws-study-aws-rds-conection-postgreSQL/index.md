@@ -1,6 +1,6 @@
 ---
 emoji: 🎈
-title: AWS RDS 연동(postgreSQL)
+title: spring boot + AWS RDS 연동(postgreSQL)
 date: '2022-02-17 14:54:00'
 author: 쩡기
 tags: AWS RDS aws rds 데이터베이스 rds생성 rds란? aws rds postgre rds연동
