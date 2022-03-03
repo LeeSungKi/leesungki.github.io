@@ -1,4 +1,588 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[leesunggi RSS Feed]]></title><description><![CDATA[leesunggi92@gmail.com]]></description><link>https://leesungki.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 02 Mar 2022 05:11:57 GMT</lastBuildDate><item><title><![CDATA[Spring Boot + Secrets Manager + RDS 연동]]></title><description><![CDATA[✅ 개요 AWS 의 SecretsManager의 RDS 정보를 받아 AWS RDS에 접근하여 데이터를 가져와보자
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[leesunggi RSS Feed]]></title><description><![CDATA[leesunggi92@gmail.com]]></description><link>https://leesungki.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 03 Mar 2022 08:28:11 GMT</lastBuildDate><item><title><![CDATA[Spring Boot + Secrets Manager + 다중 RDS 연동 (SSH 터널링)]]></title><description><![CDATA[✅ 개요 AWS 의 SecretsManager의 RDS 정보를 받아 두개의 AWS RDS에 접근하여 데이터를 가져와보자
+ 🔑RDS 생성 먼저 AWS 에 RDS 를 2개 생성해야 한다.
+나는 미리 생성해 놨다. 🦄 mySQL RDS…]]></description><link>https://leesungki.github.io/gatsby-springboot-study-multirds/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-springboot-study-multirds/</guid><pubDate>Thu, 03 Mar 2022 08:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot; aria-label=&quot; 개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✅ 개요&lt;/h2&gt;
+&lt;p&gt;AWS 의 SecretsManager의 RDS 정보를 받아 두개의 AWS RDS에 접근하여 데이터를 가져와보자
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;rds-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#rds-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;rds 생성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🔑RDS 생성&lt;/h3&gt;
+&lt;p&gt;먼저 AWS 에 RDS 를 2개 생성해야 한다.
+나는 미리 생성해 놨다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🦄 mySQL RDS 생성방법은 &lt;a href=&quot;https://leesungki.github.io/gatsby-aws-study-aws-rds-conection-mySQL/&quot;&gt;링크&lt;/a&gt;를 참고해주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🦄 postegreSQL RDS 생성방법은 &lt;a href=&quot;https://leesungki.github.io/gatsby-aws-study-aws-rds-conection-postgreSQL/&quot;&gt;링크&lt;/a&gt;를 참고해주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;✨ 비공개 RDS 접근 방법은 &lt;a href=&quot;https://leesungki.github.io/gatsby-aws-study-rds-private/&quot;&gt;링크&lt;/a&gt;를 참고해주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;secretsmanager-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#secretsmanager-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;secretsmanager 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🔑SecretsManager 사용&lt;/h3&gt;
+&lt;p&gt;생성한 보안암호에 AWS RDS의 정보들이 있다.&lt;/p&gt;
+&lt;p&gt;두개를 생성해야 한다.&lt;/p&gt;
+&lt;p&gt;나는 미리 생성해 놨다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🦄 SecretsManager 생성방법은 &lt;a href=&quot;https://leesungki.github.io/gatsby-aws-study-secretsManager-tutorial/#rds-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9E%90%EA%B2%A9%EC%A6%9D%EB%AA%85-%EB%B0%A9%EC%8B%9D&quot;&gt;링크&lt;/a&gt;를 참고해주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;aws-rds-연동&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#aws-rds-%EC%97%B0%EB%8F%99&quot; aria-label=&quot;aws rds 연동 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;AWS RDS 연동&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;의존성 추가&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;dependencies {    
+    implementation group: &apos;org.postgresql&apos;, name: &apos;postgresql&apos;, version: &apos;42.3.1&apos;
+    implementation group: &apos;mysql&apos;, name: &apos;mysql-connector-java&apos;, version: &apos;8.0.27&apos;
+    implementation &apos;org.springframework.boot:spring-boot-starter-data-jpa&apos;
+    implementation group: &apos;com.jcraft&apos;, name: &apos;jsch&apos;, version: &apos;0.1.55&apos;
+    implementation &apos;org.springframework.cloud:spring-cloud-starter-aws-secrets-manager-config:2.2.6.RELEASE&apos;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;jsch 는 private한 RDS에 접근하기위해 터널링시에 필요한 의존성이므로 추가해 주었다 밑에서 자세하게 다룰예정 일단은 추가해준다.&lt;/p&gt;
+&lt;p&gt;시크릿 매니저가 생성 되었다면 이제 해당 값을 가져오는 로직이 필요하다.
+나는 SecretManagerBuild class를 이용하여 진행하였다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🦄 SecretsManager 값 받아오기 &lt;a href=&quot;https://leesungki.github.io/gatsby-springboot-study-secretsManager/#secretmanagerbuild-class-%EC%82%AC%EC%9A%A9&quot;&gt;링크&lt;/a&gt;를 참고해주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;프로젝트 목록&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;common
+    ㄴconfig
+        ㄴDBmySQLconfig
+        ㄴDBpostgreSQLconfig
+entity
+    ㄴclassify
+        ㄴTbFile
+        ㄴTbFileRepository
+    ㄴecm
+        ㄴUdTblClassTemp
+        ㄴUdTblClassTempRepository            
+infra
+    ㄴaws
+        ㄴAwsSecret
+        ㄴSecretManagerBuild
+        ㄴSSHConnection
+resources
+    ㄴapplication.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;DBmySQLconfig: mysql 연동을 위한 config&lt;/li&gt;
+&lt;li&gt;DBpostgreSQLconfig: postgresql 연동을 위한 config&lt;/li&gt;
+&lt;li&gt;AwsSecret: secretsmanager mapping&lt;/li&gt;
+&lt;li&gt;SecretManagerBuild: build secretsmanager value&lt;/li&gt;
+&lt;li&gt;SSHConnection: rds 외부 접근시 터널링 처리&lt;/li&gt;
+&lt;li&gt;TbFile: mysql entity&lt;/li&gt;
+&lt;li&gt;TbFileRepository: mysql repo&lt;/li&gt;
+&lt;li&gt;UdTblClassTemp: postgre entity&lt;/li&gt;
+&lt;li&gt;UdTblClassTempRepository: postgresql repo&lt;/li&gt;
+&lt;li&gt;application.yml: 환경변수 등등&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;대략 이런식으로 구성을 하였다.&lt;/p&gt;
+&lt;p&gt;위의 링크를 참고하면 secretManger값을 받는 부분은 이해할수 있다.
+엔티티나 레파지토리 같은 부분도 따로 설명하지 않겠다.
+요번 시간 중요한 부분은 ssh터널링과 다중db 연동을 포커스하며 작성하겠다.&lt;/p&gt;
+&lt;p&gt;여기서부터 재작성 예정&lt;/p&gt;
+&lt;!-- 03/////////////////////04 --&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot;&gt;✅ 개요&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#rds-%EC%83%9D%EC%84%B1&quot;&gt;🔑RDS 생성&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#secretsmanager-%EC%82%AC%EC%9A%A9&quot;&gt;🔑SecretsManager 사용&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#aws-rds-%EC%97%B0%EB%8F%99&quot;&gt;AWS RDS 연동&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Intellij AWS RDS(ssh 터널링) 연결]]></title><description><![CDATA[개요 이전에 보안 강화를 위해 비공개 RDS를 만들어 EC2를 통한 접속구성을 했었다. 🎆이전 포스팅 그럼 IntelliJ에서 ssh 터널링을 통해 해당 rds에 어떻게 접근 할수 있을까? ✅ aws RDS(MY SQL) SSH…]]></description><link>https://leesungki.github.io/gatsby-springboot-study-intellij-sshrds/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-springboot-study-intellij-sshrds/</guid><pubDate>Thu, 03 Mar 2022 07:30:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B0%9C%EC%9A%94&quot; aria-label=&quot;개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;개요&lt;/h2&gt;
+&lt;p&gt;이전에 보안 강화를 위해 비공개 RDS를 만들어 EC2를 통한 접속구성을 했었다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🎆&lt;a href=&quot;https://leesungki.github.io/gatsby-aws-study-rds-private/&quot;&gt;이전 포스팅&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;그럼 IntelliJ에서 ssh 터널링을 통해 해당 rds에 어떻게 접근 할수 있을까?&lt;/p&gt;
+&lt;h2 id=&quot;-aws-rdsmy-sql-ssh-터널링-연결하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-aws-rdsmy-sql-ssh-%ED%84%B0%EB%84%90%EB%A7%81-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0&quot; aria-label=&quot; aws rdsmy sql ssh 터널링 연결하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✅ aws RDS(MY SQL) SSH 터널링 연결하기&lt;/h2&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;datasource-사용-key파일-활용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#datasource-%EC%82%AC%EC%9A%A9-key%ED%8C%8C%EC%9D%BC-%ED%99%9C%EC%9A%A9&quot; aria-label=&quot;datasource 사용 key파일 활용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;📌datasource 사용 (key파일 활용)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;intellj 오른쪽 상단에 datasource 탭 클릭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/8da521cc4551bbbab8075c64e56ceef3/intellij1.png&quot; alt=&quot;intellij1.PNG&quot;&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;좌측 + 버튼 클릭후 data source에서  mySQL 선택&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 646px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 109.44444444444446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAABJ0AAASdAHeZh94AAACW0lEQVQ4y6WVy27TQBiF/TaoSYRURBeNx3O/20lDiSpRIVgkUqUC4hFgV8EaCou+60EzdpxL0wvt4tdESebzOf/NhXYGSkuMy2OUVQlCxiBViYoJECZRpqB8KwjjOCYUcXICaSwol+DKQkiBQr25gJ9fQs0vYd59hZt/Rjj7BOMjpPEgKoBkiNiKBB5XLEf7mYJLg2L+4TtOlz9wsvyJ+PEK+v0VzPk3cOUgtQETag3KYIlK6E7pGp5Ul0ygkI7BeANjLVxw4IKBVARSKRgXoF3YVsdvA1dQqiwKHgJsbOBCAxNq2FCDCgWqI6T1UDYptb2KXYWbJ5MahTQu58v6CBebHkjMBL6e5u9CPUHFZXf5LsvtWSilszXa5SpdTCGUzXAXayjrNy4+ACRuBhOnfb6EthkYGwEfY1ZPhczVJI8CCgMqdPafIilNQO5ctpuAvm428vgQkLI9jStAzAyunsKGmK2nHFe8BdwP3NOwSaFtThGaKZRxffM+TuFeoEBdV3CxVddX+MlAJtHICB+arNL48B9V3gNMZ7QaPtR9sZ4FTJZZELBdD24X7EkKJUQ8h3ZxY0KeYzlVeXYG31V592H3Anf7b2VZR982djeWa8Dt5XAncPNHITV8nOQcttOj2vHbAJb7gLuWVwvCagMf23UWmkmemLTuq7REhO5W2fa99MAire6tILR9ojOwefQa0DTjUoMr0wKTWkLbV0B3Jhd5Hw6HQ/QxGmE4OMDLwyPo5S+8/XKD5uIv7OIabnENu/gDv/yNozHHwcELjNL/RyMMBgMcvnoNpgL+AWA5CH02t+f8AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;intelli2.png&quot;
+        title=&quot;intelli2.png&quot;
+        src=&quot;/static/900e25f00f38d667a5743185c381dffe/27524/intellj2.png&quot;
+        srcset=&quot;/static/900e25f00f38d667a5743185c381dffe/e9ff0/intellj2.png 180w,
+/static/900e25f00f38d667a5743185c381dffe/f21e7/intellj2.png 360w,
+/static/900e25f00f38d667a5743185c381dffe/27524/intellj2.png 646w&quot;
+        sizes=&quot;(max-width: 646px) 100vw, 646px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;SSH/SSL 탭 클릭후 Use SSH tunnel 체크 우측 … 클릭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/9f667841834c50650dee7b94c0b71332/intellijRDS1.png&quot; alt=&quot;intellijRDS1.PNG&quot;&gt;&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;아래 그림처럼 필요한 정보를 넣어준후 TEST CONNECTION 클릭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/f57c43bb58bb930f03b40b70b3cd723a/intelljRDS3.png&quot; alt=&quot;intelljRDS3.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;HOST: ec2 퍼블릭 ip
+USER NAME: ec2-user(리눅스기본 유저명)
+PRIVATE KEY FILE: key file 경로
+터널링이 무사히 된다면&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;data source 정보를 넣고 test connection 클릭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;name:사용자지정&lt;/li&gt;
+&lt;li&gt;Host:생성한 RDS의 엔드포인트&lt;/li&gt;
+&lt;li&gt;Port:생성한 RDS의 Port&lt;/li&gt;
+&lt;li&gt;User:생성한 RDS의 User&lt;/li&gt;
+&lt;li&gt;Password:생성한 RDS의 Password&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/cbb5013454e7fac1db5c11f1ffc30ddf/intellij3.png&quot; alt=&quot;intellij3.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;테스트가 성공적으로 이루어 졌으면 OK 버튼 클릭&lt;/p&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;쿼리 콘솔 확인&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;정상적으로 다했으면 아래와 같이 쿼리를 작성할수 있는 콘솔이 열린다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/dfb10b8ffea858c49ab491c856897d4f/intellij4.png&quot; alt=&quot;intellij4.PNG&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;datasource-사용-패스워드-활용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#datasource-%EC%82%AC%EC%9A%A9-%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C-%ED%99%9C%EC%9A%A9&quot; aria-label=&quot;datasource 사용 패스워드 활용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;📌datasource 사용 (패스워드 활용)&lt;/h3&gt;
+&lt;p&gt;AWS ec2 서버에는 password로 ssh접근이 안되도록 되어 있다.&lt;/p&gt;
+&lt;p&gt;아래 파일을 수정하여 접근이 되도록 해보자.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ec2인스턴스에 접근하여 비밀번호 설정&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;사용자 계정에 비밀번호를 지정해준다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo passwd ec2-user&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;ssh_config 변경해준다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo vi /etc/ssh/sshd_config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;PasswordAuthentication을 yes로 변경&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;PasswordAuthentication yes&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;인스턴스 재기동&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo service sshd restart&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;SSH/SSL 탭 클릭후 Use SSH tunnel 체크 우측 … 클릭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/9f667841834c50650dee7b94c0b71332/intellijRDS1.png&quot; alt=&quot;intellijRDS1.PNG&quot;&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;아래 그림처럼 필요한 정보를 넣어준후 TEST CONNECTION 클릭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/c9fefd38fd4e0a3249dc3cb9d5e1d246/intelljRDS4.png&quot; alt=&quot;intelljRDS4.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;HOST: ec2 퍼블릭 ip
+USER NAME: ec2-user(리눅스기본 유저명)
+Password: 접속 암호
+터널링이 무사히 된다면&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;data source 정보를 넣고 test connection 클릭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;name:사용자지정&lt;/li&gt;
+&lt;li&gt;Host:생성한 RDS의 엔드포인트&lt;/li&gt;
+&lt;li&gt;Port:생성한 RDS의 Port&lt;/li&gt;
+&lt;li&gt;User:생성한 RDS의 User&lt;/li&gt;
+&lt;li&gt;Password:생성한 RDS의 Password&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/cbb5013454e7fac1db5c11f1ffc30ddf/intellij3.png&quot; alt=&quot;intellij3.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;테스트가 성공적으로 이루어 졌으면 OK 버튼 클릭&lt;/p&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;쿼리 콘솔 확인&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;정상적으로 다했으면 아래와 같이 쿼리를 작성할수 있는 콘솔이 열린다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/dfb10b8ffea858c49ab491c856897d4f/intellij4.png&quot; alt=&quot;intellij4.PNG&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot;마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🌭마무리&lt;/h2&gt;
+&lt;p&gt;위와 같이 aws에서 비공개로 생성된 rds에 접근하는 방법을 알아보았다 다음에는 개발시 소스상에서 ssh 터널링을 통해 rds접근하여 데이터를 가져오는걸 포스팅 할예정이다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#%EA%B0%9C%EC%9A%94&quot;&gt;개요&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-aws-rdsmy-sql-ssh-%ED%84%B0%EB%84%90%EB%A7%81-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0&quot;&gt;✅ aws RDS(MY SQL) SSH 터널링 연결하기&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#datasource-%EC%82%AC%EC%9A%A9-key%ED%8C%8C%EC%9D%BC-%ED%99%9C%EC%9A%A9&quot;&gt;📌datasource 사용 (key파일 활용)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#datasource-%EC%82%AC%EC%9A%A9-%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C-%ED%99%9C%EC%9A%A9&quot;&gt;📌datasource 사용 (패스워드 활용)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot;&gt;🌭마무리&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS RDS Private + EC2 연결]]></title><description><![CDATA[✅ 개요 RDS를 생성하여 사용할때 외부에서의 접근을 허용하면 보안상의 약점이 생긴다. 이를 방지하기 위해 외부에서의 접근을 제한하는데 그렇다면 개발자가 어떻게 RDS에 접근을 할수 있을까? 방법은 EC2를 통한 접근이다. 이번 시간에는 비공개 RDS…]]></description><link>https://leesungki.github.io/gatsby-aws-study-rds-private/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-rds-private/</guid><pubDate>Thu, 03 Mar 2022 07:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot; aria-label=&quot; 개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✅ 개요&lt;/h2&gt;
+&lt;p&gt;RDS를 생성하여 사용할때 외부에서의 접근을 허용하면 보안상의 약점이 생긴다.&lt;/p&gt;
+&lt;p&gt;이를 방지하기 위해 외부에서의 접근을 제한하는데&lt;/p&gt;
+&lt;p&gt;그렇다면 개발자가 어떻게 RDS에 접근을 할수 있을까?&lt;/p&gt;
+&lt;p&gt;방법은 EC2를 통한 접근이다.&lt;/p&gt;
+&lt;p&gt;이번 시간에는 비공개 RDS를 생성하여 EC2에서 접근하는 방법을 알아보자.
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-rds-를-외부에-노출-시키지-않는-이유&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-rds-%EB%A5%BC-%EC%99%B8%EB%B6%80%EC%97%90-%EB%85%B8%EC%B6%9C-%EC%8B%9C%ED%82%A4%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%9D%B4%EC%9C%A0&quot; aria-label=&quot; rds 를 외부에 노출 시키지 않는 이유 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🔒 RDS 를 외부에 노출 시키지 않는 이유&lt;/h3&gt;
+&lt;p&gt;가장 큰 문제는 보안이다.&lt;/p&gt;
+&lt;p&gt;DB에 모든 정보들이 담겨져 있는 공간인데, 이것이 외부 네트워크에 노출이 되어 있으면 보안에 상당히 취약할 것.&lt;/p&gt;
+&lt;p&gt;그래서 VPC안에 있는 EC2를 통해서만 접속하게 하는것 이다.&lt;/p&gt;
+&lt;p&gt;또한 애플리케이션 서버 또한 안전하게 RDS에 접속할 수 있다는 장점이 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 710px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 84.44444444444446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABc0lEQVQ4y62TfW+bMBDG8/0/WP6Jli7N2hIJJRpi8R1gjHFAYPt8E7il6Us2qdtPlmXd6fFz55cV/wOrW4kQmGia/y4OH7ja5SY3nX9mw2PSY+liFTedtdaIWMzgy+rHQ35/nz8lv4rPAAAp5SQWQjjn/AwRhRC89yEQ8zS89+4t3ntrrRBiEiPi0mRMENGfz5mIiqJ4I06SZLvdrtfrLMtiJM7jOAoh9vv9brc7HA40g4irEIIQgpnrWhdFpXVTVVXXdWVZRnGjB0RslEJEAIgNhxAm8fl8TpKEme++n86iYQ7WWuccACilAODbXQZQLFVE2bNzLJuZ+75HRK1brXVZlkqppb3T6ZSmadM0dV1LKV+dmRkAxnEkoq7rjDGXmet3Yq3t+z7GjTHOuVfx8XjcbDZpml4ul6U8IsrzPMsyIYQxZom/P+3oHC9pvEJKWc20bXudstYOw/B8z23bImL5gfoFKeW7FCIqpVb/4UuGL/EbYgbWCw8JmTQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ec2RDS.png&quot;
+        title=&quot;ec2RDS.png&quot;
+        src=&quot;/static/5e4f51c91fbbe15ed8b4bc44f4409f1e/7131f/ec2RDS.png&quot;
+        srcset=&quot;/static/5e4f51c91fbbe15ed8b4bc44f4409f1e/e9ff0/ec2RDS.png 180w,
+/static/5e4f51c91fbbe15ed8b4bc44f4409f1e/f21e7/ec2RDS.png 360w,
+/static/5e4f51c91fbbe15ed8b4bc44f4409f1e/7131f/ec2RDS.png 710w&quot;
+        sizes=&quot;(max-width: 710px) 100vw, 710px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;위의 그림과 같이 SSH를 통해 EC2에 접속하고, EC2에서만 RDS로 접속할 수 있게 네트워크 구성을 한다 &lt;a href=&quot;https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-connect-ec2-bastion-host/&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-ec2-인스턴스-시작-및-구성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-ec2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%8B%9C%EC%9E%91-%EB%B0%8F-%EA%B5%AC%EC%84%B1&quot; aria-label=&quot; ec2 인스턴스 시작 및 구성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🦄 EC2 인스턴스 시작 및 구성&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;EC2 인스턴스 생성&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;일단 기본적으로 인스턴스를 생성 해야한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🎈 RDS &lt;a href=&quot;https://leesungki.github.io/gatsby-aws-study-aws-rds-conection-mySQL/&quot;&gt;생성방법&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;👓 EC2 &lt;a href=&quot;https://leesungki.github.io/gatsby-aws-study-ec2-tuto/&quot;&gt;생성방법&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;생성 중에 Network(네트워크)]에서 RDS DB 인스턴스가 사용하는 VPC를 선택합니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 656px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABJ0AAASdAHeZh94AAABVklEQVQoz12R227bMBBE9f//VfQhBZr2KU0dubJk3UiKFCmRulg8hWkHKEpgOLPYnX2YzaSUDHpEa421DqU0ou9TbbTm88UYOY7IEf/B8Z8+IlmlF/JWk7eGczdykY5Sb+Ry5SwDH/WQeo3dED7Sz0eCmGOqxV37h5Y+krWDo2wll1bSqJFaGGo5clWOsjeUneIqDJ12dHpCWo+yHmEm2sHS31nZh0cYstu+sa0r+7axhIAQPUYPLGHG2pHgPSF4JueYnEVpSytHOjkiB8O2Lskf/Jxms2dADxCTaVCK276zLgvOOay1hBA4juOZ233ygc//mTSZ8Ttj2LmzXQ567ShqgZ5Wqk7y6+MP73nB7/xC1XQJZd1SVA1lI1BuRboVPT/2ZO10Y1hAhZi4dxu18Um/nSu+vHzn67dXXn6+8fp+5cep4VQJilZyqjrqcaMYtnSoYYn8BdTbFs3KTZaIAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ec2RDS1.png&quot;
+        title=&quot;ec2RDS1.png&quot;
+        src=&quot;/static/abfb81fefbfef418dabbf9c60c1a7c88/748f4/ec2RDS1.png&quot;
+        srcset=&quot;/static/abfb81fefbfef418dabbf9c60c1a7c88/e9ff0/ec2RDS1.png 180w,
+/static/abfb81fefbfef418dabbf9c60c1a7c88/f21e7/ec2RDS1.png 360w,
+/static/abfb81fefbfef418dabbf9c60c1a7c88/748f4/ec2RDS1.png 656w&quot;
+        sizes=&quot;(max-width: 656px) 100vw, 656px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;나의 경우 위와같은 VPC를 사용한다.&lt;/p&gt;
+&lt;p&gt;보안 그룹 구성 에서 아래와 같이&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type(유형): 사용자 지정 TCP 규칙&lt;/li&gt;
+&lt;li&gt;Protocol(프로토콜): TCP&lt;/li&gt;
+&lt;li&gt;포트 범위: 22&lt;/li&gt;
+&lt;li&gt;Source(소스): 로컬 시스템의 IP 주소를 입력합니다. 기본적으로 소스 IP 주소는 모두에게 개방되어 있습니다. 하지만 로컬 퍼블릭 IP 주소에 대해서만 허용하도록 액세스를 제한할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/02fc57909e372c97ae17c7b5261bf9e8/ec2RDS2.png&quot; alt=&quot;ec2RDS2.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;그후 인스턴스 생성을 완료해 줍니다.
+나의 경우 아래처럼 생성하였다.
+&lt;img src=&quot;/7078b93c8f72b5700c2a99e27b87c824/ec2RDS3.png&quot; alt=&quot;ec2RDS3.PNG&quot;&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;RDS DB 인스턴스의 보안 그룹 구성&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Amazon RDS 콘솔을 열고
+RDS DB 인스턴스의 이름을 선택합니다.&lt;/p&gt;
+&lt;p&gt;나는 미리 private한 RDS를 생성해놨다.&lt;/p&gt;
+&lt;p&gt;연결 및 보안 탭을 선택&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/25abdb3f4f512fbf8090b55d35393536/ec2RDS4.png&quot; alt=&quot;ec2RDS4.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;보안 섹션에서 VPC 보안 그룹 아래의 링크를 선택 (나는 FlaskDB를 선택했다.)&lt;/p&gt;
+&lt;p&gt;보안 그룹을 선택하고 작업을 선택한 다음 인바운드 규칙 편집을 선택합니다.&lt;/p&gt;
+&lt;p&gt;규칙 추가를 선택하고 다음을 입력합니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type(유형): 사용자 지정 TCP 규칙&lt;/li&gt;
+&lt;li&gt;Protocol(프로토콜): TCP&lt;/li&gt;
+&lt;li&gt;Port Range(포트 범위): RDS DB 인스턴스의 포트를 입력합니다.&lt;/li&gt;
+&lt;li&gt;Source(소스): EC2 인스턴스의 프라이빗 IP 주소를 입력합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;저장 클릭.&lt;/p&gt;
+&lt;p&gt;다하면 아래처럼 내가 추가한 규칙이 보입니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/fb03aa81a24b60cfcf0a6721432d7ee8/ec2RDS5.png&quot; alt=&quot;ec2RDS5.PNG&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;-마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot; 마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎨 마무리&lt;/h2&gt;
+&lt;p&gt;이렇게 보안을 강화하기 위해 EC2를 통해 RDS 에 접근 할수있게 구성을 해줬다.&lt;/p&gt;
+&lt;p&gt;그럼 개발자가 개발시에 비공개 RDS에 접근하려면 어떻게 해야할까?&lt;/p&gt;
+&lt;p&gt;다음에는 그에대한 포스팅을 해볼 예정이다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot;&gt;✅ 개요&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-rds-%EB%A5%BC-%EC%99%B8%EB%B6%80%EC%97%90-%EB%85%B8%EC%B6%9C-%EC%8B%9C%ED%82%A4%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%9D%B4%EC%9C%A0&quot;&gt;🔒 RDS 를 외부에 노출 시키지 않는 이유&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-ec2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%8B%9C%EC%9E%91-%EB%B0%8F-%EA%B5%AC%EC%84%B1&quot;&gt;🦄 EC2 인스턴스 시작 및 구성&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-%EB%A7%88%EB%AC%B4%EB%A6%AC&quot;&gt;🎨 마무리&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS EC2 접속 방법]]></title><description><![CDATA[🎈 EC2 인스턴스 생성하기 먼저 테스트를 위해 인스턴스를 하나 생성 합니다. 🙏 ec2 생성방법은 링크를 참고해주세요! 해주세요~! ec2connect1.PNG 나는 이렇게 conect…]]></description><link>https://leesungki.github.io/gatsby-aws-study-ec2-conect-tuto/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-ec2-conect-tuto/</guid><pubDate>Thu, 03 Mar 2022 06:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-ec2-인스턴스-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-ec2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot; ec2 인스턴스 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 EC2 인스턴스 생성하기&lt;/h2&gt;
+&lt;p&gt;먼저 테스트를 위해 인스턴스를 하나 생성 합니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🙏 ec2 생성방법은 &lt;a href=&quot;https://leesungki.github.io/gatsby-aws-study-ec2-tuto/&quot;&gt;링크&lt;/a&gt;를 참고해주세요! 해주세요~!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/a6a87043f3ee88a8cc33faa746577115/ec2connect1.png&quot; alt=&quot;ec2connect1.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;나는 이렇게 conect라는 이름으로 생성해주었다&lt;/p&gt;
+&lt;h3 id=&quot;-프라이빗-키-파일을-통한-접속&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97-%ED%82%A4-%ED%8C%8C%EC%9D%BC%EC%9D%84-%ED%86%B5%ED%95%9C-%EC%A0%91%EC%86%8D&quot; aria-label=&quot; 프라이빗 키 파일을 통한 접속 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;💪 프라이빗 키 파일을 통한 접속&lt;/h3&gt;
+&lt;p&gt;인스턴스를 생서할때 다운받은 key 파일이 있을것이다.&lt;/p&gt;
+&lt;p&gt;나는 C:\Users\leesu 해당 경로에 옮겨주었다.&lt;/p&gt;
+&lt;p&gt;윈도우 사용자의 경우 해당 pem 파일의 권한을 수정해 줘야한다.&lt;/p&gt;
+&lt;p&gt;권한 수정은 👉 &lt;a href=&quot;https://chinsun9.github.io/2020/10/26/aws-ec2-keypair-%EC%84%A4%EC%A0%95/&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;생성한 인스턴스를 체크하고 연결버튼 클릭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/06b23b1c79ac9ac8b986518b980fcab7/ec2connect2.png&quot; alt=&quot;ec2connect2.PNG&quot;&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;SSH 클라이언트 클릭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/60760b2f092ce7c90b59b824c105daa6/ec2connect3.png&quot; alt=&quot;ec2connect3.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;맨아래 예시의 명령어를 복사하여 커멘드 창에서 실행&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/9673c09a5733c3acb11c187960b9bc16/ec2connect4.png&quot; alt=&quot;ec2connect4.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;접속이 완료된걸 확인할수 있다.&lt;/p&gt;
+&lt;h3 id=&quot;-session-manager-활용하여-접속하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-session-manager-%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0&quot; aria-label=&quot; session manager 활용하여 접속하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;💪 Session Manager 활용하여 접속하기&lt;/h3&gt;
+&lt;p&gt;EC2를 사용하다 보면 SSH Key 파일이 없는데 급하게 서버에 붙어야 하는 상황이 생기게 된다. AWS에서는 session manager 라는 기능을 제공하여 key 파일 없이 AWS console에서 EC2에 접속할 수 있도록 한다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.aws.amazon.com/ko_kr/systems-manager/latest/userguide/session-manager.html&quot;&gt;session manager란?&lt;/a&gt; 참고 바란다&lt;/p&gt;
+&lt;p&gt;EC2의 우측 상단에 있는 연결 버튼을 클릭하여 인스턴스에 연결 화면으로 이동한다. Session Manager 탭을 클릭하면 연결 버튼이 활성화 되어 있는 경우 바로 연결 하면 되지만, 대부분의 경우 아래와 같이 비활성화가 되어있다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/84da4bdd0a7c9aed845849859040abf7/ec2ssm1.png&quot; alt=&quot;ec2ssm1.PNG&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Session Manager(SSM) 사전 조건&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;session manager 를 사용하기 위해서는 아래 조건을 만족해야 한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;EC2 Role에 session manager 를 사용할 수 있는 권한이 포함되어야 한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EC2에 session manager agent 가 설치되어야 한다. (AMI 사용시 session manage agent가 포함된 경우도 있지만, 아닌경우 수동으로 설치해야 한다.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EC2의 outbound에 443 포트가 any로 오픈 되어 있어야 한다. SSM은 443으로 EC2와 통신하기 때문에 443을 any로 열어주어야 접속 가능하다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;EC2 Role에 Session Manager 권한(정책) 추가하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/bb6547713a277370fcef7952ff94a7cd/ec2ssm2.png&quot; alt=&quot;ec2ssm2.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;인스턴스 선택 후 작업 – 보안 – IAM 역할 수정을 선택한다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/631f1cdbcbd106883a9fc27dfb81230f/ec2ssm3.png&quot; alt=&quot;ec2ssm3.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;새IAM 역할 생성을 클릭한다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/d7a86d0046c83c115e358fc6b60ab903/ec2ssm4.png&quot; alt=&quot;ec2ssm4.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;역할 만들기 클릭한다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/4752eb9a110785a34ce45dca863d1d61/ec2ssm5.png&quot; alt=&quot;ec2ssm5.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;ec2에 체크후 다음 클릭&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/76057e1e4fdaf61ee1e18f7c1144950e/ec2ssm6.png&quot; alt=&quot;ec2ssm6.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;해당 롤 검색하여 체크후 다음 클릭&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/a0ce21ff9d08412ad9305bf9770437cf/ec2ssm7.png&quot; alt=&quot;ec2ssm7.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;역할이름을 작성후 역할 생성해준다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2c6b02f7218603b59214f296ff032feb/ec2ssm8.png&quot; alt=&quot;ec2ssm8.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;그다음 다시 인스턴스 선택 후 작업 -&gt; 보안 -&gt; IAM 역할 수정을 클릭해서&lt;/p&gt;
+&lt;p&gt;방금 생성한 IAM 역할을 인스턴스에 붙인다. AmazonEC2RoleforSSM 정책은 SSM을 사용하기 위해 AWS에서 관리하는 관리형 정책이다.&lt;/p&gt;
+&lt;p&gt;저장 클릭&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;EC2 에 SSM Agent 설치하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ssh터널링을 통해 인스턴스에 접근하여&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.aws.amazon.com/ko_kr/systems-manager/latest/userguide/sysman-manual-agent-install.html&quot;&gt;가이드 문서&lt;/a&gt;를 참고하여 각자의 OS에 맞는 명령어를 수행한다.&lt;/p&gt;
+&lt;p&gt;나의 경우 아래와 같이 설치를 하였다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/f271532a6f6855afc8adbc9a258c8cda/ec2ssm9.png&quot; alt=&quot;ec2ssm9.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;아래 명령어를 수행하여 ssm agent가 실행중인지 확인한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo systemctl status amazon-ssm-agent&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/9146d66f4735048fc1a7fe3e684280be/ec2ssm10.png&quot; alt=&quot;ec2ssm10.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;상태가 active가 아닌 stoppted, inactive, disabled로 나오는 경우 아래 명령어를 실행하여 서비스를 시작한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo systemctl enable amazon-ssm-agent&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;EC2의 outbound rule에 443 추가하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;EC2의 보안 그룹에 443 any Rule을 추가한다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/0dcfb790db162237859f023b450b3868/ec2ssm11.png&quot; alt=&quot;ec2ssm11.PNG&quot;&gt;&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;SSM을 활용하여 EC2에 연결하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위의 조건을 전부 만족하면 연결 버튼이 활성화 된다. 연결 버튼을 클릭하여 인스턴스에 접속한다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/64a26ac4fb92102c30c5bf5e11626616/ec2ssm12.png&quot; alt=&quot;ec2ssm12.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Role을 먼저 추가한 후 agent를 설치해야 agent 서비스가 실행되면서 role 의 정책을 확인한다.&lt;/p&gt;
+&lt;p&gt;위의 과정을 다 수행했는데도 제대로 연결이 되지 않는 경우 agnet를 재실행한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo systemctl restart amazon-ssm-agent&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;key 파일 없이도 EC2에 연결이 가능해졌다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/14f9776d068119b8c92e59c8a55d7b30/ec2ssm13.png&quot; alt=&quot;ec2ssm13.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;아래 명령어를 수행하여 SSH 접속과 동일하게 원하는 사용자로 변경하여 사용가능하다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo su - {user명}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 연결되는 세션은 AWS의 System Manager 서비스에서 조회 및 관리가 가능하다.&lt;/p&gt;
+&lt;h2 id=&quot;마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot;마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🌭마무리&lt;/h2&gt;
+&lt;p&gt;이상으로 EC2 인스턴스에 접속하는 방법에 대해 알아보았습니다.
+개발할때 세션 메니저를 통한 접속이 편하니 인프라팀에게 무조건 해달라고해라…&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-ec2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;🎈 EC2 인스턴스 생성하기&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97-%ED%82%A4-%ED%8C%8C%EC%9D%BC%EC%9D%84-%ED%86%B5%ED%95%9C-%EC%A0%91%EC%86%8D&quot;&gt;💪 프라이빗 키 파일을 통한 접속&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-session-manager-%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0&quot;&gt;💪 Session Manager 활용하여 접속하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot;&gt;🌭마무리&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS EC2 생성]]></title><description><![CDATA[🎈 EC2 인스턴스 생성하기 EC2 서비스에서 생성한 가상 서버를 인스턴스라 합니다. 서버를 켜고 끄는것은 인스턴스를 실행하고 종료한다는 의미와 같습니다. 인스턴스 시작 ec21.PNG 우측 상단에 region…]]></description><link>https://leesungki.github.io/gatsby-aws-study-ec2-tuto/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-ec2-tuto/</guid><pubDate>Thu, 03 Mar 2022 05:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-ec2-인스턴스-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-ec2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot; ec2 인스턴스 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 EC2 인스턴스 생성하기&lt;/h2&gt;
+&lt;p&gt;EC2 서비스에서 생성한 가상 서버를 인스턴스라 합니다.&lt;/p&gt;
+&lt;p&gt;서버를 켜고 끄는것은 인스턴스를 실행하고 종료한다는 의미와 같습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;인스턴스 시작&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/88033dc2c591de90e90ef2eebb58f71a/ec21.png&quot; alt=&quot;ec21.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;우측 상단에 region을 서울로 선택하고, “인스턴스 시작” 버튼을 클릭합니다.
+아래의 각 단계마다 ”?”아이콘 또는 링크에 자세한 공식문서 설명이 있으므로, 공식문서를 꼭 참고하시길 바랍니다.&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;AMI 선택&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/4575f6b34332d1542eff1f3798a89f7a/ec22.png&quot; alt=&quot;ec22.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;보시는 이미지들은 AWS에서 제공하는 이미지들입니다.&lt;/p&gt;
+&lt;p&gt;AMI는 서버에 필요한 운영체제와 여러 소프트웨어들이 적절히 구성된 상태로 제공되는 템플릿으로서, 이미지를 통해 인스턴스를 쉽게 만들 수 있습니다.&lt;/p&gt;
+&lt;p&gt;여기서는 “Amazon Linux 2 AMI (HVM), SSD Volume Type” 인스턴스를 선택합니다.&lt;/p&gt;
+&lt;p&gt;Amazon Linux 2는 차세대 Amazon Linux 운영 체제로, 현대식 애플리케이션 환경에 Linux 커뮤니티의 최신 향상 기능과 함께 장기적인 지원을 제공한다고 합니다.&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;인스턴스 유형 선택&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/39b97bb3e08fe650d839643b5e7ef69f/ec23.png&quot; alt=&quot;ec23.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;사용목적에 따라 CPU, 메모리 등을 선택하여 인스턴스를 생성할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;저는 프리티어를 사용할 것이므로 프리티어에 체크 후, 다음으로 넘어갑니다.&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;인스턴스 세부 정보 구성&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/39fe7632da518008a93e16ab61f462e0/ec24.png&quot; alt=&quot;ec24.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;세부 구성을 설정합니다.&lt;/p&gt;
+&lt;p&gt;모두 기본값으로 설정해도 무방합니다.&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;스토리지 추가&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/288740ecb26b1e25bd773e67df65831d/ec25.png&quot; alt=&quot;ec25.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;인스턴스의 스토리지를 설정합니다.&lt;/p&gt;
+&lt;p&gt;Root 장치는 꼭 있어야 합니다.&lt;/p&gt;
+&lt;p&gt;또한 볼륨 유형에 따라 비용의 차이가 있는데, 여기서는 기본 값인 범용 SSD를 선택합니다.&lt;/p&gt;
+&lt;p&gt;모두 기본값으로 설정하고 넘어가도 무방합니다.&lt;/p&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;태그 추가&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/1e3c7ee0f04fb75dc33b0b68a2a7a89a/ec26.png&quot; alt=&quot;ec26.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;고유의 메타데이터를 태그의 형태로 각 리소스에 배정하면 인스턴스, 이미지 및 기타 EC2 리소스를 쉽게 관리할 수 있는 태그를 설정합니다.&lt;/p&gt;
+&lt;p&gt;굳이 설정하지 않고 넘어가도 무방합니다.&lt;/p&gt;
+&lt;ol start=&quot;7&quot;&gt;
+&lt;li&gt;보안 그룹 구성&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/dd1a11053660f0b409d97b20d3da633c/ec27.png&quot; alt=&quot;ec27.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;인스턴스에 대한 트래픽을 제어하는 방화벽을 설정합니다.&lt;/p&gt;
+&lt;p&gt;인스턴스는 가상머신이므로 터미널을 통해 접속해야 하기 때문에, SSH 22번 포트만 기본값으로 작성되어있는 상태입니다.&lt;/p&gt;
+&lt;p&gt;추가적으로 방화벽 오픈이 필요하다면 입력해주시면 됩니다.&lt;/p&gt;
+&lt;p&gt;웹 서버로 활용되면 HTTP(80) / HTTPS(443) 정도 추가해줘도 좋을것 같습니다.&lt;/p&gt;
+&lt;ol start=&quot;8&quot;&gt;
+&lt;li&gt;인스턴스 시작 검토&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;적용 사항을 확인하고 “시작”버튼을 클릭합니다.&lt;/p&gt;
+&lt;ol start=&quot;9&quot;&gt;
+&lt;li&gt;키 페어 선택/생성&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/9fc05684b1bb591bd49b53f011b2d533/ec28.png&quot; alt=&quot;ec28.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;키 페어(key pair)는 SSH 터미널로 인스턴스에 접근할 때 꼭 필요한 파일입니다.&lt;/p&gt;
+&lt;p&gt;외부에 노출되어서도 안되며, 잃어버려서도 안되기 때문에 개인이 꼭!! 잘 보관하고 있어야 합니다.&lt;/p&gt;
+&lt;p&gt;키 쌍을 다운받고 “인스턴스 시작”을 눌러서 인스턴스를 시작합니다.&lt;/p&gt;
+&lt;ol start=&quot;10&quot;&gt;
+&lt;li&gt;인스턴스 확인&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/f14f55c2d36d4cf061d15e7a7e6f42f5/ec29.png&quot; alt=&quot;ec29.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이와 같이 “실행중” 상태가 됩니다.&lt;/p&gt;
+&lt;h2 id=&quot;마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot;마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🌭마무리&lt;/h2&gt;
+&lt;p&gt;이상으로 EC2 인스턴스를 생성하는 방법에 대해 알아보았습니다.&lt;/p&gt;
+&lt;p&gt;출처: &lt;a href=&quot;https://victorydntmd.tistory.com/61&quot;&gt;https://victorydntmd.tistory.com/61&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-ec2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;🎈 EC2 인스턴스 생성하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot;&gt;🌭마무리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS EC2 란?]]></title><description><![CDATA[🎈 Amazon EC2 란? Amazon Elastic Compute Cloud(Amazon EC2)는 Amazon Web Services(AWS) 클라우드에서 확장 가능 컴퓨팅 용량을 제공합니다. Amazon EC…]]></description><link>https://leesungki.github.io/gatsby-aws-study-ec2/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-ec2/</guid><pubDate>Thu, 03 Mar 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-amazon-ec2-란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-amazon-ec2-%EB%9E%80&quot; aria-label=&quot; amazon ec2 란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 Amazon EC2 란?&lt;/h2&gt;
+&lt;p&gt;Amazon Elastic Compute Cloud(Amazon EC2)는 Amazon Web Services(AWS) 클라우드에서 확장 가능 컴퓨팅 용량을 제공합니다.&lt;/p&gt;
+&lt;p&gt;Amazon EC2를 사용하면 하드웨어에 선투자할 필요가 없어 더 빠르게 애플리케이션을 개발하고 배포할 수 있습니다.&lt;/p&gt;
+&lt;h3 id=&quot;amazon-ec2의-기능&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#amazon-ec2%EC%9D%98-%EA%B8%B0%EB%8A%A5&quot; aria-label=&quot;amazon ec2의 기능 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Amazon EC2의 기능&lt;/h3&gt;
+&lt;p&gt;Amazon EC2는 다음의 기능을 제공합니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;인스턴스: 가상 컴퓨팅 환경&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mazon 머신 이미지(AMI): 서버에 필요한 운영체제와 여러 소프트웨어들이 적절히 구성된 상태로 제공되는 템플릿으로 인스턴스를 쉽게 만들 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;인스턴스 유형: 인스턴스를 위한 CPU, 메모리, 스토리지, 네트워킹 용량의 여러 가지 구성 제공&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;키 페어를 사용하여 인스턴스 로그인 정보 보호(AWS는 퍼블릭 키를 저장하고 사용자는 개인 키를 안전한 장소에 보관하는 방식)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;인스턴스 스토어 볼륨: 임시 데이터를 저장하는 스토리지 볼륨으로 인스턴스 중단, 최대 절전 모드로 전환 또는 종료 시 삭제됨&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Amazon Elastic Block Store(Amazon EBS), 즉 Amazon EBS 볼륨을 사용해 영구 스토리지 볼륨에 데이터 저장&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;인스턴스와 Amazon EBS 볼륨 등의 리소스를 다른 물리적 장소에서 액세스할 수 있는 리전 및 가용 영역&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;보안 그룹을 사용해 인스턴스에 연결할 수 있는 프로토콜, 포트, 소스 IP 범위를 지정하는 방화벽 기능&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;탄력적 IP 주소(EIP): 동적 클라우드 컴퓨팅을 위한 고정 IPv4 주소&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;태그: 사용자가 생성하여 Amazon EC2 리소스에 할당할 수 있는 메타데이터&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AWS 클라우드에서는 논리적으로 격리되어 있지만 원할 때마다 고객의 네트워크와 간편히 연결할 수 있는 가상 네트워크인 Virtual Private Clouds(VPC)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;출처: &lt;a href=&quot;https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/concepts.html&quot;&gt;https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/concepts.html&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-amazon-ec2-%EB%9E%80&quot;&gt;🎈 Amazon EC2 란?&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#amazon-ec2%EC%9D%98-%EA%B8%B0%EB%8A%A5&quot;&gt;Amazon EC2의 기능&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Spring Boot + Secrets Manager + RDS 연동]]></title><description><![CDATA[✅ 개요 AWS 의 SecretsManager의 RDS 정보를 받아 AWS RDS에 접근하여 데이터를 가져와보자
  🔑SecretsManager 사용 생성한 보안암호에 AWS RDS…]]></description><link>https://leesungki.github.io/gatsby-springboot-study-rdsSecret/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-springboot-study-rdsSecret/</guid><pubDate>Thu, 24 Feb 2022 05:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot; aria-label=&quot; 개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✅ 개요&lt;/h2&gt;
 &lt;p&gt;AWS 의 SecretsManager의 RDS 정보를 받아 AWS RDS에 접근하여 데이터를 가져와보자
 &lt;br&gt;&lt;/p&gt;
@@ -1167,6 +1751,140 @@ restored.ap-northeast-2.rds.amazonaws.com(백업 엔드포인트)
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 생성]]></title><description><![CDATA[🎈 목적  🗑 Bucket 생성하기 1️⃣ AWS console 로그인을 하고 s3 서비스에 접근합니다. 버킷 만들기 클릭!  2️⃣ 버킷 이름, 리전 등을 지정해줍니다.  아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!…]]></description><link>https://leesungki.github.io/gatsby-aws-study-s3-makeBucket/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-s3-makeBucket/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-목적&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot; aria-label=&quot; 목적 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 목적&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aws 에서 사용하는 s3 버킷 생성&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;-bucket-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot; bucket 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🗑 Bucket 생성하기&lt;/h2&gt;
+&lt;h2 id=&quot;1️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;1️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1️⃣&lt;/h2&gt;
+&lt;p&gt;AWS console 로그인을 하고 &lt;a href=&quot;https://console.aws.amazon.com/s3/home?region=ap-northeast-2&quot;&gt;s3 서비스&lt;/a&gt;에 접근합니다.&lt;/p&gt;
+&lt;p&gt;버킷 만들기 클릭!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 45.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABUElEQVQozzWQW24dIRBEZ//ybrKALMB//ov8GcfjmTs8uqGfMJcEkpRaAiRadaq26zxyzv2+e+9Yyvm4ABFLAcR5wfJ/pnKGlHPKOQOeV9gwRRFpvY8xzCzF+PPjAwDNVISZmIhEhESrGCCGEGKMABhT2q4QUkpENMZQM1hydxGpRGamqsupind1T4AJirWeMmwAQET3fc9l1UrUWhtj3CvIWBLm5j7R3Pfj8Xk8SDQDbCIiqiJibrKW53ONTlcVM+1P9caqLKKmZmZuYWJfARHvJTU7zvMMsS5hpVCkxkt/vWs8vTV3W0GstRZT/ofNIn+xQ4wJAEth5lJr9Sf9eKVvL/L2vY3hy9ZtHleMW62kInvm+/mcrTIDFhZZbK4qlVXvIa3T6o9Faq2qOpexlPVt9jGTm0KhXBhJfFEex7nvOzPv+1eIM9HXcRDRn7Z/AwI+A6qlIhN4AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket1.png&quot;
+        title=&quot;makebucket1.png&quot;
+        src=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png&quot;
+        srcset=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/e9ff0/makebucket1.png 180w,
+/static/d0c263a35dd6fda29557c82d14eb5830/f21e7/makebucket1.png 360w,
+/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png 720w,
+/static/d0c263a35dd6fda29557c82d14eb5830/078fe/makebucket1.png 934w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;2️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2️⃣&lt;/h2&gt;
+&lt;p&gt;버킷 이름, 리전 등을 지정해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 658px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 92.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABJ0AAASdAHeZh94AAACTUlEQVQ4y52UeW+cMBDF9/t/t0r9p1klaY5lD1gOH/jA2MCrZiCErJK0KtIPGws9zzzPeCd0i0slIXWLumlwLSvotv2U1ph1/Ipd1Qhk5wLnPEdeFKiFgnUOxlrGWrPyndAqSCL3Dw+42+/x626Pp8MJx/MZl8sF+bXE8SqYUyW/jHzLjl51XaMRAkpraK0hlYIidAupzUxrOPLv4AgpraIocC1L9H2PlNKG+E6MiH+BtHazX5S/xTCOK+PC23zajMMw8Po0TRgXaE5aLKgobSFY1HcdY52Hcx5dCLBdD2EDtAuQLqCLicVvH+c9do5ybw3Tx4jQ9wghwPtZlDcIEaaLcCFC+4g+zWLTEhmxCrKZ7VyDQkgWtnaOlFO6TXka2S/afCv6HqH3LFRcS2THI8qqYqx1s4fk15ZxRBqGNeUPgm5JuSiueH49oKxqNrbrAv7n4Qipdsh4+iDvYkqcEnv5FeHzdS4bemWnE55fXpBXDVrrYIyZW8/YZTTrSAHYt7XNul3+5wiL/IIsO+CQZVzkSgq01DVKwbQ0UtvpuXtozRhIKdeOojkdLNch7dD4CNlF1Mahah1MGuGGiaG5TSNbQSdL9tDhTJuCJmiNU9bO4UkG7A85fuyf8PP+Bb8vFV5LhddS4iwd6m5AlxJfGPv7Rz48qShijUZKNEKyrxyhtg4qAaVLKGyP3PQ4SouT8jgrz2t1GBBiWtLyfIBzy87XHM1XQbe0nlCK05puSmFa+OeyoR3I1Kqu+fpKS9l8vHXSUk4L6YY4/0Me/gH9qb0dGAv2CgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket2.png&quot;
+        title=&quot;makebucket2.png&quot;
+        src=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png&quot;
+        srcset=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/e9ff0/makebucket2.png 180w,
+/static/eb23b224cf64aaa70beb81cd624c5b3f/f21e7/makebucket2.png 360w,
+/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png 658w&quot;
+        sizes=&quot;(max-width: 658px) 100vw, 658px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 546px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 166.66666666666669%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAACXBIWXMAABJ0AAASdAHeZh94AAAD00lEQVRIx6VWW5LjNgzUzVM5xJ4jOUCukY9sxmO9KVFPviRKst0pgJLtSbybTFZVXSRoqgUCaNDRMA44xzHiJMHb6YQkSVAUJc5xirppsCwL5nmG957HZ/Caf9humhANQ484iZEXOZI0RikKHtM0Rp6nkLJGWRbIiwyiEijKnPcIUaKqKwhRoCgyVJUIhOM4oKpKNK1ELWs0jYSoJd6zEqdMoJAthqGDlBL08bZt0HUtz/u+Q9u1vNYPfSBUbsagNLq+x6gUtNbwywq/bJj8imW74Hq9Mi6XCy7HyLjudvidQhD11qNqexSl4JgR8TRNL2L1wLSv3W43PD/rtiGioG/bhtEYaGuhjMGgFNphYM8DFLphxKA1lNG819HHvIdfFiZirCsivxMaa2GnCcY6niuz287BOscfu+/Z1w7CIyR3QsKoDXvHozbszbhDWYue4mstB56OvKzr6yMfLtOx+Lg6HJOIiUQ9eXaEhDwMXk78LpEzluVBGLzT/BJ7ZYLHdDSK1zR7TN4z8eElrZNNe4iQPaT0UwyJKGQxhIBAdiCbmYwzfGD/yJF5IiOeiNin46UfBIUm6voOWZrgfD6jrhuuO6rDb8FN7l6nj7U9BKSUrh/wNc6QC4G6rlh6QV4Nz3kku+94JG3LRjLIpr1t10E0A5RxiOhLo/NwPtQj1dL/w8ZeRr12SLMclahCMe21dcPHGnv1HHuOeuQsq8kjyQoYY3iRKp42fBZMSEpxVGd7UI/AvsI079jrzu3yO+BYtpTltkWW5tzvKNOlqDDPR1bDi7RZ2QA7eazrwqr4O+gd9lApxUemXmhJZtYyWZgbbhidcmiVg3Iel+2fSaGEUoKjQxGaugt1FWP56Lfbd1LxvRgSSS0byKbhheesffZh6RnuJo/AzrP/IKeja/8X6RFHRPdIlufI8gJ3Xd+lRlkPmPYO/RL7lcDSo0RUVYVK1lBqhNYKaseoLWRvIHoLO3ts/6KWkBTqcdZhHEZcr7d7Oz/mt1sA33r33z7iuPW4wdKtd4pTyFriRx9OCsWHskwxooVQpOsnsXDH5uagqfUrxWVDGX+W3/QsvW/YR/LuWdZEVlfIi4J/JFk9pOWx7rKiWC+E5fEbwfOfpdBwSXXRubWIG41YDjiJFu+iwx9phbeywbnu8WchcRIdEjmyTXvIpn3vVYes0xCjZeSdRnTuZ8StwbkeEDcjklbjrewQyxFZF9aTRqEYHNs0Z7QaaatRmRXNBrQbUNobIrqPe0X3scVAd7E2GI1l+8O60ru9Q2mIXqM5/w75y0+Qv/6M9rcv+AuYrvQ7lOznHgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket3.png&quot;
+        title=&quot;makebucket3.png&quot;
+        src=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png&quot;
+        srcset=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/e9ff0/makebucket3.png 180w,
+/static/531397bf51c8d1cf783d1c8162e06c3b/f21e7/makebucket3.png 360w,
+/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png 546w&quot;
+        sizes=&quot;(max-width: 546px) 100vw, 546px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;3️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3️⃣&lt;/h2&gt;
+&lt;p&gt;저는 아래와 같이 &lt;code class=&quot;language-text&quot;&gt;leesungkibucket&lt;/code&gt; 이라는 이름으로 생성 하였습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 715px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABpUlEQVQoz4VSW5LUMAzM7bkEB+Gbb85A1TI7bMZ5+C3LjpPelTJZ4ItUdVlWZLXU0jDNC1ZrEWJETOn/kLgYNf6CD0Eh9hBCwOvtFcYYUCHknFFK0TPndIIIiVhRa1UwV1hrYaYZD2P0DCFikIcxRTDzM5CRUvpzrwyuFT4mhETY+oZtO3ER18rofdM3g/dBW/j7IyIcx/GPzzmnCa5v33e83N7w6z5i9oTSdiUeqBQ15CxPaFXMaotfWhaUwkomtvit86d+5oZkXhD9imGaDN4eBiFlEJ26xZRhQ0bIBa1VHcY8L0gqz6mx+AqfBOn7V8RvX5B+/sAgDO4JmZJqmgkuEgJJwoYqUD2r2vwcjPwTLVvfwa0r2UBUIJMWdg1oTU+pjLl8rohIcA1MWr7uUpDEFCK1B2Ggcq4EcUOpTQXvvSu887jff2NdrVYjp5kmPMykrS/LCu89SNaM6Ewo5brEiFSx9V0nfE05p4xxfMBapz5nHcZx1Lu0Ld1dAxOCM2HdNGFtHTgOrVAgCaQdSShL248DbBewXSF08l8Si+4qwcfavAMxOVJpcT4gEgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket4.png&quot;
+        title=&quot;makebucket4.png&quot;
+        src=&quot;/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png&quot;
+        srcset=&quot;/static/2991bb6828aece27363c2c204479dc9c/e9ff0/makebucket4.png 180w,
+/static/2991bb6828aece27363c2c204479dc9c/f21e7/makebucket4.png 360w,
+/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png 715w&quot;
+        sizes=&quot;(max-width: 715px) 100vw, 715px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;해당 버킷을 클릭하여 들어가 보면 저장 되어있는 객체들을 확인할수 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABkklEQVQoz41SyW7UQBD1/185I+UHEFcuXPIDkGMQkVgy8rjd++pePA9VzaIAEsHS06uuvco1CZdgQoSQEkpr+BDgvP8NVx3xa5geHz7h8eEzvj494fvzAdb/7fRngX9h+vnuDj8+vMe6LJDawDoyODZa5/67s1uHs1ggQ8SqFMS68uhHIZgP88xMiY21r8M5TEKsSDGibBtK2Zg3RmEupSDngvySWc7nN3FKjBgjpnmeobSCcw7+Mqo0HkcToemH+YiUImI6c4iBOeWERElSQqoDpQNbbZiU0rDOQhnNyYzzWJSFdBHWR0TuKnMgsQ8eUipobXAUEmo5wN+/Rfj4Blk+YzLWIcQEz2NXbLWi1orWzjKdklSKx2yt8RqoMxo1pYySEor4hnD4Am81JtqRVBq5bJyAAsLlVCiBpxUodStEySiGZPIjW+k76gBSLpgoSBsHnytaHzidTlydToC+MQZj33fGeIHeB3rv2PeB076j9Y6Jgg/HFT4V9N5YSV0pbdDHOHfW2g3twlc9+V9tdCG/AJ4WS8bp4TDkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket5.png&quot;
+        title=&quot;makebucket5.png&quot;
+        src=&quot;/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png&quot;
+        srcset=&quot;/static/65e6b186d785dc864b90fc94f691e701/e9ff0/makebucket5.png 180w,
+/static/65e6b186d785dc864b90fc94f691e701/f21e7/makebucket5.png 360w,
+/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png 720w,
+/static/65e6b186d785dc864b90fc94f691e701/01dae/makebucket5.png 721w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;저는 현재 폴더 만들기를 통하여 폴더를 만들어 놓은 모습입니다.&lt;/p&gt;
+&lt;p&gt;이로써 기본적인 버킷생성은 완료 하였습니다.&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot;&gt;🎈 목적&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;🗑 Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot;&gt;1️⃣&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot;&gt;2️⃣&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot;&gt;3️⃣&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 정책 편집]]></title><description><![CDATA[👀 사용 계기 프로젝트 진행 중 외부 api 연동 과제 진행 중에 private한 s3 스토리지에서 득정 도메인의 접근을 허용하는 방식이 필요하게 되었다. ❗TMI❗ : 네이버 ocr 기능을 사용 중 s…]]></description><link>https://leesungki.github.io/gatsby-aws-study-s3-referer/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-s3-referer/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-사용-계기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%82%AC%EC%9A%A9-%EA%B3%84%EA%B8%B0&quot; aria-label=&quot; 사용 계기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👀 사용 계기&lt;/h2&gt;
 &lt;p&gt;프로젝트 진행 중 외부 api 연동 과제 진행 중에 private한 s3 스토리지에서 득정 도메인의 접근을 허용하는 방식이 필요하게 되었다.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1586,140 +2304,6 @@ Add Statement 클릭 하면 아래와 같이 정책이 생성된다.
 &lt;li&gt;&lt;a href=&quot;#-http-referer%EB%9E%80&quot;&gt;🗑 HTTP Referer란?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;✅ Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#-%EC%A0%95%EC%B1%85-%ED%8E%B8%EC%A7%91&quot;&gt;♻ 정책 편집&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 생성]]></title><description><![CDATA[🎈 목적  🗑 Bucket 생성하기 1️⃣ AWS console 로그인을 하고 s3 서비스에 접근합니다. 버킷 만들기 클릭!  2️⃣ 버킷 이름, 리전 등을 지정해줍니다.  아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!…]]></description><link>https://leesungki.github.io/gatsby-aws-study-s3-makeBucket/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-s3-makeBucket/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-목적&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot; aria-label=&quot; 목적 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 목적&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aws 에서 사용하는 s3 버킷 생성&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;-bucket-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot; bucket 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🗑 Bucket 생성하기&lt;/h2&gt;
-&lt;h2 id=&quot;1️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;1️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1️⃣&lt;/h2&gt;
-&lt;p&gt;AWS console 로그인을 하고 &lt;a href=&quot;https://console.aws.amazon.com/s3/home?region=ap-northeast-2&quot;&gt;s3 서비스&lt;/a&gt;에 접근합니다.&lt;/p&gt;
-&lt;p&gt;버킷 만들기 클릭!&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 45.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABUElEQVQozzWQW24dIRBEZ//ybrKALMB//ov8GcfjmTs8uqGfMJcEkpRaAiRadaq26zxyzv2+e+9Yyvm4ABFLAcR5wfJ/pnKGlHPKOQOeV9gwRRFpvY8xzCzF+PPjAwDNVISZmIhEhESrGCCGEGKMABhT2q4QUkpENMZQM1hydxGpRGamqsupind1T4AJirWeMmwAQET3fc9l1UrUWhtj3CvIWBLm5j7R3Pfj8Xk8SDQDbCIiqiJibrKW53ONTlcVM+1P9caqLKKmZmZuYWJfARHvJTU7zvMMsS5hpVCkxkt/vWs8vTV3W0GstRZT/ofNIn+xQ4wJAEth5lJr9Sf9eKVvL/L2vY3hy9ZtHleMW62kInvm+/mcrTIDFhZZbK4qlVXvIa3T6o9Faq2qOpexlPVt9jGTm0KhXBhJfFEex7nvOzPv+1eIM9HXcRDRn7Z/AwI+A6qlIhN4AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket1.png&quot;
-        title=&quot;makebucket1.png&quot;
-        src=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png&quot;
-        srcset=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/e9ff0/makebucket1.png 180w,
-/static/d0c263a35dd6fda29557c82d14eb5830/f21e7/makebucket1.png 360w,
-/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png 720w,
-/static/d0c263a35dd6fda29557c82d14eb5830/078fe/makebucket1.png 934w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;2️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;2️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2️⃣&lt;/h2&gt;
-&lt;p&gt;버킷 이름, 리전 등을 지정해줍니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 658px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 92.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABJ0AAASdAHeZh94AAACTUlEQVQ4y52UeW+cMBDF9/t/t0r9p1klaY5lD1gOH/jA2MCrZiCErJK0KtIPGws9zzzPeCd0i0slIXWLumlwLSvotv2U1ph1/Ipd1Qhk5wLnPEdeFKiFgnUOxlrGWrPyndAqSCL3Dw+42+/x626Pp8MJx/MZl8sF+bXE8SqYUyW/jHzLjl51XaMRAkpraK0hlYIidAupzUxrOPLv4AgpraIocC1L9H2PlNKG+E6MiH+BtHazX5S/xTCOK+PC23zajMMw8Po0TRgXaE5aLKgobSFY1HcdY52Hcx5dCLBdD2EDtAuQLqCLicVvH+c9do5ybw3Tx4jQ9wghwPtZlDcIEaaLcCFC+4g+zWLTEhmxCrKZ7VyDQkgWtnaOlFO6TXka2S/afCv6HqH3LFRcS2THI8qqYqx1s4fk15ZxRBqGNeUPgm5JuSiueH49oKxqNrbrAv7n4Qipdsh4+iDvYkqcEnv5FeHzdS4bemWnE55fXpBXDVrrYIyZW8/YZTTrSAHYt7XNul3+5wiL/IIsO+CQZVzkSgq01DVKwbQ0UtvpuXtozRhIKdeOojkdLNch7dD4CNlF1Mahah1MGuGGiaG5TSNbQSdL9tDhTJuCJmiNU9bO4UkG7A85fuyf8PP+Bb8vFV5LhddS4iwd6m5AlxJfGPv7Rz48qShijUZKNEKyrxyhtg4qAaVLKGyP3PQ4SouT8jgrz2t1GBBiWtLyfIBzy87XHM1XQbe0nlCK05puSmFa+OeyoR3I1Kqu+fpKS9l8vHXSUk4L6YY4/0Me/gH9qb0dGAv2CgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket2.png&quot;
-        title=&quot;makebucket2.png&quot;
-        src=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png&quot;
-        srcset=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/e9ff0/makebucket2.png 180w,
-/static/eb23b224cf64aaa70beb81cd624c5b3f/f21e7/makebucket2.png 360w,
-/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png 658w&quot;
-        sizes=&quot;(max-width: 658px) 100vw, 658px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 546px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 166.66666666666669%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAACXBIWXMAABJ0AAASdAHeZh94AAAD00lEQVRIx6VWW5LjNgzUzVM5xJ4jOUCukY9sxmO9KVFPviRKst0pgJLtSbybTFZVXSRoqgUCaNDRMA44xzHiJMHb6YQkSVAUJc5xirppsCwL5nmG957HZ/Caf9humhANQ484iZEXOZI0RikKHtM0Rp6nkLJGWRbIiwyiEijKnPcIUaKqKwhRoCgyVJUIhOM4oKpKNK1ELWs0jYSoJd6zEqdMoJAthqGDlBL08bZt0HUtz/u+Q9u1vNYPfSBUbsagNLq+x6gUtNbwywq/bJj8imW74Hq9Mi6XCy7HyLjudvidQhD11qNqexSl4JgR8TRNL2L1wLSv3W43PD/rtiGioG/bhtEYaGuhjMGgFNphYM8DFLphxKA1lNG819HHvIdfFiZirCsivxMaa2GnCcY6niuz287BOscfu+/Z1w7CIyR3QsKoDXvHozbszbhDWYue4mstB56OvKzr6yMfLtOx+Lg6HJOIiUQ9eXaEhDwMXk78LpEzluVBGLzT/BJ7ZYLHdDSK1zR7TN4z8eElrZNNe4iQPaT0UwyJKGQxhIBAdiCbmYwzfGD/yJF5IiOeiNin46UfBIUm6voOWZrgfD6jrhuuO6rDb8FN7l6nj7U9BKSUrh/wNc6QC4G6rlh6QV4Nz3kku+94JG3LRjLIpr1t10E0A5RxiOhLo/NwPtQj1dL/w8ZeRr12SLMclahCMe21dcPHGnv1HHuOeuQsq8kjyQoYY3iRKp42fBZMSEpxVGd7UI/AvsI079jrzu3yO+BYtpTltkWW5tzvKNOlqDDPR1bDi7RZ2QA7eazrwqr4O+gd9lApxUemXmhJZtYyWZgbbhidcmiVg3Iel+2fSaGEUoKjQxGaugt1FWP56Lfbd1LxvRgSSS0byKbhheesffZh6RnuJo/AzrP/IKeja/8X6RFHRPdIlufI8gJ3Xd+lRlkPmPYO/RL7lcDSo0RUVYVK1lBqhNYKaseoLWRvIHoLO3ts/6KWkBTqcdZhHEZcr7d7Oz/mt1sA33r33z7iuPW4wdKtd4pTyFriRx9OCsWHskwxooVQpOsnsXDH5uagqfUrxWVDGX+W3/QsvW/YR/LuWdZEVlfIi4J/JFk9pOWx7rKiWC+E5fEbwfOfpdBwSXXRubWIG41YDjiJFu+iwx9phbeywbnu8WchcRIdEjmyTXvIpn3vVYes0xCjZeSdRnTuZ8StwbkeEDcjklbjrewQyxFZF9aTRqEYHNs0Z7QaaatRmRXNBrQbUNobIrqPe0X3scVAd7E2GI1l+8O60ru9Q2mIXqM5/w75y0+Qv/6M9rcv+AuYrvQ7lOznHgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket3.png&quot;
-        title=&quot;makebucket3.png&quot;
-        src=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png&quot;
-        srcset=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/e9ff0/makebucket3.png 180w,
-/static/531397bf51c8d1cf783d1c8162e06c3b/f21e7/makebucket3.png 360w,
-/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png 546w&quot;
-        sizes=&quot;(max-width: 546px) 100vw, 546px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;3️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;3️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3️⃣&lt;/h2&gt;
-&lt;p&gt;저는 아래와 같이 &lt;code class=&quot;language-text&quot;&gt;leesungkibucket&lt;/code&gt; 이라는 이름으로 생성 하였습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 715px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 54.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABpUlEQVQoz4VSW5LUMAzM7bkEB+Gbb85A1TI7bMZ5+C3LjpPelTJZ4ItUdVlWZLXU0jDNC1ZrEWJETOn/kLgYNf6CD0Eh9hBCwOvtFcYYUCHknFFK0TPndIIIiVhRa1UwV1hrYaYZD2P0DCFikIcxRTDzM5CRUvpzrwyuFT4mhETY+oZtO3ER18rofdM3g/dBW/j7IyIcx/GPzzmnCa5v33e83N7w6z5i9oTSdiUeqBQ15CxPaFXMaotfWhaUwkomtvit86d+5oZkXhD9imGaDN4eBiFlEJ26xZRhQ0bIBa1VHcY8L0gqz6mx+AqfBOn7V8RvX5B+/sAgDO4JmZJqmgkuEgJJwoYqUD2r2vwcjPwTLVvfwa0r2UBUIJMWdg1oTU+pjLl8rohIcA1MWr7uUpDEFCK1B2Ggcq4EcUOpTQXvvSu887jff2NdrVYjp5kmPMykrS/LCu89SNaM6Ewo5brEiFSx9V0nfE05p4xxfMBapz5nHcZx1Lu0Ld1dAxOCM2HdNGFtHTgOrVAgCaQdSShL248DbBewXSF08l8Si+4qwcfavAMxOVJpcT4gEgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket4.png&quot;
-        title=&quot;makebucket4.png&quot;
-        src=&quot;/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png&quot;
-        srcset=&quot;/static/2991bb6828aece27363c2c204479dc9c/e9ff0/makebucket4.png 180w,
-/static/2991bb6828aece27363c2c204479dc9c/f21e7/makebucket4.png 360w,
-/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png 715w&quot;
-        sizes=&quot;(max-width: 715px) 100vw, 715px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;해당 버킷을 클릭하여 들어가 보면 저장 되어있는 객체들을 확인할수 있습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 52.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABkklEQVQoz41SyW7UQBD1/185I+UHEFcuXPIDkGMQkVgy8rjd++pePA9VzaIAEsHS06uuvco1CZdgQoSQEkpr+BDgvP8NVx3xa5geHz7h8eEzvj494fvzAdb/7fRngX9h+vnuDj8+vMe6LJDawDoyODZa5/67s1uHs1ggQ8SqFMS68uhHIZgP88xMiY21r8M5TEKsSDGibBtK2Zg3RmEupSDngvySWc7nN3FKjBgjpnmeobSCcw7+Mqo0HkcToemH+YiUImI6c4iBOeWERElSQqoDpQNbbZiU0rDOQhnNyYzzWJSFdBHWR0TuKnMgsQ8eUipobXAUEmo5wN+/Rfj4Blk+YzLWIcQEz2NXbLWi1orWzjKdklSKx2yt8RqoMxo1pYySEor4hnD4Am81JtqRVBq5bJyAAsLlVCiBpxUodStEySiGZPIjW+k76gBSLpgoSBsHnytaHzidTlydToC+MQZj33fGeIHeB3rv2PeB076j9Y6Jgg/HFT4V9N5YSV0pbdDHOHfW2g3twlc9+V9tdCG/AJ4WS8bp4TDkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket5.png&quot;
-        title=&quot;makebucket5.png&quot;
-        src=&quot;/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png&quot;
-        srcset=&quot;/static/65e6b186d785dc864b90fc94f691e701/e9ff0/makebucket5.png 180w,
-/static/65e6b186d785dc864b90fc94f691e701/f21e7/makebucket5.png 360w,
-/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png 720w,
-/static/65e6b186d785dc864b90fc94f691e701/01dae/makebucket5.png 721w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;저는 현재 폴더 만들기를 통하여 폴더를 만들어 놓은 모습입니다.&lt;/p&gt;
-&lt;p&gt;이로써 기본적인 버킷생성은 완료 하였습니다.&lt;/p&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot;&gt;🎈 목적&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;🗑 Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot;&gt;1️⃣&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot;&gt;2️⃣&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot;&gt;3️⃣&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 란?]]></title><description><![CDATA[🎈 AWS Simple Storage Service(S3) 란?  AWS S3 특징 제공하는 단순한 웹 서비스 인터페이스를 사용하여 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있습니다. 개발자는 Amazon…]]></description><link>https://leesungki.github.io/gatsby-aws-study-s3/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-s3/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-aws-simple-storage-services3-란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-aws-simple-storage-services3-%EB%9E%80&quot; aria-label=&quot; aws simple storage services3 란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 AWS Simple Storage Service(S3) 란?&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;AWS Simple Storage Service(S3)는 인터넷용 스토리지 서비스입니다. 이 서비스는 개발자가 더 쉽게 웹 규모 컴퓨팅 작업을 수행할 수 있도록 설계되었습니다.&lt;/code&gt;&lt;/p&gt;
