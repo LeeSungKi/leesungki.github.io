@@ -1,0 +1,1429 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.dfc954c2224f2c4aa697.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-8d7d79679b70dbe27172b6460e7a7910.woff2) format("woff2"),url(/static/montserrat-latin-100-ec38980a9e0119a379e2a9b3dbb1901a.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e279051046ba1286706adc886cf1c96b.woff2) format("woff2"),url(/static/montserrat-latin-100italic-3b325a3173c8207435cd1b76e19bf501.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-9d266fbbfa6cab7009bd56003b1eeb67.woff2) format("woff2"),url(/static/montserrat-latin-200-2d8ba08717110d27122e54c34b8a5798.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-6e5b3756583bb2263eb062eae992735e.woff2) format("woff2"),url(/static/montserrat-latin-200italic-a0d6f343e4b536c582926255367a57da.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-00b3e893aab5a8fd632d6342eb72551a.woff2) format("woff2"),url(/static/montserrat-latin-300-ea303695ceab35f17e7d062f30e0173b.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-56f34ea368f6aedf89583d444bbcb227.woff2) format("woff2"),url(/static/montserrat-latin-300italic-54b0bf2c8c4c12ffafd803be2466a790.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-b71748ae4f80ec8c014def4c5fa8688b.woff2) format("woff2"),url(/static/montserrat-latin-400-0659a9f4e90db5cf51b50d005bff1e41.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-6eed6b4cbb809c6efc7aa7ddad6dbe3e.woff2) format("woff2"),url(/static/montserrat-latin-400italic-7583622cfde30ae49086d18447ab28e7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-091b209546e16313fd4f4fc36090c757.woff2) format("woff2"),url(/static/montserrat-latin-500-edd311588712a96bbf435fad264fff62.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c90ced68b46050061d1a41842d6dfb43.woff2) format("woff2"),url(/static/montserrat-latin-500italic-5146cbfe02b1deea5dffea27a5f2f998.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-0480d2f8a71f38db8633b84d8722e0c2.woff2) format("woff2"),url(/static/montserrat-latin-600-b77863a375260a05dd13f86a1cee598f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-cf46ffb11f3a60d7df0567f8851a1d00.woff2) format("woff2"),url(/static/montserrat-latin-600italic-c4fcfeeb057724724097167e57bd7801.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7dbcc8a5ea2289d83f657c25b4be6193.woff2) format("woff2"),url(/static/montserrat-latin-700-99271a835e1cae8c76ef8bba99a8cc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-c41ad6bdb4bd504a843d546d0a47958d.woff2) format("woff2"),url(/static/montserrat-latin-700italic-6779372f04095051c62ed36bc1dcc142.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-db9a3e0ba7eaea32e5f55328ace6cf23.woff2) format("woff2"),url(/static/montserrat-latin-800-4e3c615967a2360f5db87d2f0fd2456f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-bf45bfa14805969eda318973947bc42b.woff2) format("woff2"),url(/static/montserrat-latin-800italic-fe82abb0bcede51bf724254878e0c374.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-e66c7edc609e24bacbb705175669d814.woff2) format("woff2"),url(/static/montserrat-latin-900-8211f418baeb8ec880b80ba3c682f957.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-4454c775e48152c1a72510ceed3603e2.woff2) format("woff2"),url(/static/montserrat-latin-900italic-efcaa0f6a82ee0640b83a0916e6e8d68.woff) format("woff")}.search-input-wrapper{align-items:center;display:none;margin-top:3px;width:180px}@media(min-width:768px){.search-input-wrapper{display:flex}}.search-icon{color:var(--primary-text-color);margin-right:2px}.search-input{height:100%;width:100%}.search-input .MuiAutocomplete-inputRoot{padding-right:0!important}.search-input .MuiInputBase-input{color:var(--primary-text-color)!important;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;font-weight:500;padding-bottom:2px!important}.search-input .MuiInput-underline:before{border-bottom-width:1px}.search-input .MuiInput-underline:after,.search-input .MuiInput-underline:before{border-bottom-color:var(--primary-text-color)}.page-header-wrapper{display:flex;height:60px;justify-content:center;width:100%}.page-header-wrapper .page-header{align-items:center;display:flex;justify-content:space-between;max-width:720px;width:100%}.page-header-wrapper .page-header .link{color:var(--primary-text-color);font-size:17px;font-weight:700}@media(min-width:768px){.page-header-wrapper .page-header .link{font-size:20px;font-weight:700}}.page-header-wrapper .page-header .trailing-section{align-items:center;display:flex}.page-header-wrapper .page-header .trailing-section .link{margin-right:10px}@media(min-width:768px){.page-header-wrapper .page-header .trailing-section .link{margin-right:20px}}.page-footer-wrapper{align-items:center;display:flex;height:62px;justify-content:center;margin-top:auto;width:100%}.page-footer-wrapper .page-footer{max-width:720px;text-align:center;width:100%}.page-footer-wrapper .page-footer .link{color:var(--primary-text-color);font-size:20px;font-weight:700;margin-right:20px}.page-footer-wrapper .page-footer a{color:#3a95ff}.dark-mode-button-wrapper{align-items:center;bottom:20px;display:flex;justify-content:center;position:fixed;right:20px}.dark-mode-button{-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);background-color:#363f47!important;border-radius:50px;box-shadow:0 5px 25px rgba(0,0,0,.12);cursor:pointer;height:50px;width:50px;z-index:3}.dark-mode-icon{color:#fff}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{border:0;font-size:100%;font:inherit;margin:0;padding:0;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}a{outline:none;text-decoration:none}html{--background-color:#fff;--primary-text-color:#000;--secondary-text-color:#9e9e9e;--content-text-color:#37352f;--button-background-color:#6e6d7a;--button-text-color:#363f47;--tab-text-color:#6e6d7a;--tab-hover-text-color:#0d0c22;--tab-selected-background-color:rgba(13,12,34,.05);--bio-link-icon-color:rgba(0,0,0,.54);--about-link-icon-color:#a8a8a8;--chip-background-color:#f3f3f4;--link-text-color:#90b0ec;--post-card-border-color:rgba(0,0,0,.12);--markdown-table-even-cell-background-color:#f6f8fa;--markdown-table-border-color:#dfe2e5;--markdown-blockquote-border-color:#90b0ec;--markdown-border-color:#e1e4e8;--markdown-blockquote-background-color:hsla(44,6%,50%,.15)}html[data-theme=dark]{--background-color:#232326;--primary-text-color:#e6e6e6;--secondary-text-color:#768390;--content-text-color:#e6e6e6;--button-background-color:#444c56;--button-text-color:#363f47;--tab-text-color:#768390;--tab-hover-text-color:#acbac7;--tab-selected-background-color:#373e47;--chip-background-color:#323a42;--bio-link-icon-color:#e6e6e6;--about-link-icon-color:#a8a8a8;--link-text-color:#90b0ec;--post-card-border-color:#363f47;--markdown-table-even-cell-background-color:#2d333b;--markdown-table-border-color:#444c56;--markdown-blockquote-border-color:#90b0ec;--markdown-border-color:#e1e4e8}*{-webkit-appearance:none;appearance:none;box-sizing:border-box}html{font-size:14px;height:100%;overflow-y:scroll;width:100%}body{background-color:var(--background-color)!important}a{color:var(--link-text-color)}.page-wrapper{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--primary-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;justify-content:center;min-height:100vh;padding-left:15px;padding-right:15px;word-break:keep-all}.page-wrapper,.page-wrapper .page-content{align-items:center;display:flex;flex-direction:column;width:100%}.page-wrapper .page-content{max-width:720px}.icon{color:var(--about-link-icon-color);font-size:20px}.social-links .icon{color:var(--bio-link-icon-color);font-size:30px}@keyframes blinking-cursor{0%{opacity:0}50%{opacity:1}to{opacity:0}}.bio{color:var(--primary-text-color);display:flex;flex-direction:column;justify-content:space-between;margin-bottom:120px;margin-top:120px;width:100%}@media(min-width:768px){.bio{align-items:center;flex-direction:row}}.bio .introduction{display:flex;flex-direction:column;word-break:keep-all}.bio .introduction .react-rotating-text-cursor{animation:blinking-cursor .8s cubic-bezier(.68,.01,.01,.99) 0s infinite}.bio .introduction strong{display:inline-block;font-weight:600}.bio .introduction.korean{font-size:32px;font-weight:100;line-height:1.2}.bio .introduction.korean .title .react-rotating-text-cursor{font-size:35px;line-height:35px}@media(min-width:768px){.bio .introduction.korean{font-size:40px}.bio .introduction.korean .title .react-rotating-text-cursor{font-size:45px;line-height:45px}}.bio .introduction.english{font-family:montserrat;font-size:25px;line-height:1.2}@media(min-width:768px){.bio .introduction.english{font-size:45px}}.bio .introduction.english .name{font-size:35px;font-weight:600}.bio .introduction.english .job{font-size:35px}.bio .introduction.english .description{font-size:20px;font-weight:200;margin-top:8px}.bio .introduction.english .social-links{display:flex;margin-top:20px}.bio .thumbnail{display:none;width:250px}@media(min-width:768px){.bio .thumbnail{display:block}}.section-header-wrapper{display:flex;justify-content:center;margin-bottom:32px;width:100%}.section-header-wrapper .section-header{border-bottom:4px solid var(--primary-text-color);color:var(--primary-text-color);font-size:30px;font-weight:700;padding-bottom:5px}.timestamp-section{align-items:center;display:flex;flex-direction:column;justify-content:center;margin-bottom:50px;width:100%;word-break:keep-all}.timestamp-section .body{padding:0 10px;width:100%}.timestamp-section .body .timestamp{border-left:2px solid #bdbdbd;display:flex;font-size:18px;font-weight:400;justify-items:center;margin-left:5px;padding:10px 0;width:100%}.timestamp-section .body .timestamp:first-child{padding-top:7px}.timestamp-section .body .timestamp:last-child{padding-bottom:7px}.timestamp-section .body .timestamp:before{align-self:center;background-color:var(--background-color);border:2px solid #828282;border-radius:10px;content:"";height:10px;left:-1px;position:relative;transform:translatex(-50%);width:10px}.timestamp-section .body .timestamp .date{align-self:center;color:#828282;margin-left:5px;margin-right:5px;min-width:115px;width:115px}@media(min-width:768px){.timestamp-section .body .timestamp .date{min-width:200px;width:200px}}.timestamp-section .body .timestamp .activity{line-height:23px;width:100%}.project-section{align-items:center;justify-content:center}.project-section,.project-section .project{display:flex;flex-direction:column;width:100%}.project-section .project{margin-bottom:30px;padding:15px}.project-section .project .head{font-size:20px;font-weight:700;line-height:30px;margin-bottom:10px}.project-section .project .body{display:flex;flex-direction:column;width:100%}.project-section .project .body .thumbnail{margin-bottom:10px;width:100%}.project-section .project .body .tech-stack{display:flex;margin-bottom:10px;margin-top:10px}.project-section .project .body .tech-stack .tech{background-color:var(--chip-background-color);border-radius:10px;font-size:15px;font-weight:500;margin-right:5px;padding:5px 7px}.project-section .project .body .description{font-size:16px;font-weight:400;line-height:1.4}@media(min-width:768px){.project-section .project .body{flex-direction:column}.project-section .project .body .content{margin-top:0}}.post-header{border-bottom:1px solid var(--post-card-border-color);display:flex;flex-direction:column;justify-content:center;margin-bottom:40px;margin-top:20px;padding-bottom:10px;width:100%;word-break:keep-all}.post-header .emoji{font-size:78px;margin-bottom:20px}.post-header .categories{margin-bottom:5px}.post-header .categories .category{color:var(--primary-text-color);font-weight:600;margin-right:4px}.post-header .categories .category:hover{text-decoration:underline}.post-header .title{color:var(--primary-text-color);font-size:32px;font-weight:600;line-height:1.3;margin-bottom:6px}.post-header .info{color:var(--secondary-text-color);display:flex;flex-wrap:wrap;font-size:16px;font-weight:500;line-height:1.5;width:100%}.post-header .info .author{margin-right:4px}.post-header .info strong{color:var(--primary-text-color);font-weight:600}.post-navigator{column-gap:1.4%;display:grid;grid-template-columns:49.3% 49.3%;width:100%}.post-navigator .post-card{border:1px solid var(--post-card-border-color);border-radius:6px;color:var(--primary-text-color);cursor:pointer;display:flex;flex-direction:column;padding:15px;transition:transform .2s;width:100%}.post-navigator .post-card:hover .title{text-decoration:underline}.post-navigator .post-card.prev{margin-right:auto}.post-navigator .post-card.next{margin-left:auto}.post-navigator .post-card .direction{color:gray;font-size:14px;font-weight:500;margin-bottom:5px}.post-navigator .post-card .title{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:7px}.markdown .octicon{fill:currentColor;display:inline-block;vertical-align:text-bottom}.markdown .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}.markdown .anchor:focus{outline:none}.markdown h1 .octicon-link,.markdown h2 .octicon-link,.markdown h3 .octicon-link,.markdown h4 .octicon-link,.markdown h5 .octicon-link,.markdown h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}.markdown h1:hover .anchor,.markdown h2:hover .anchor,.markdown h3:hover .anchor,.markdown h4:hover .anchor,.markdown h5:hover .anchor,.markdown h6:hover .anchor{text-decoration:none}.markdown h1:hover .anchor .octicon-link,.markdown h2:hover .anchor .octicon-link,.markdown h3:hover .anchor .octicon-link,.markdown h4:hover .anchor .octicon-link,.markdown h5:hover .anchor .octicon-link,.markdown h6:hover .anchor .octicon-link{visibility:visible}.markdown h1:hover .anchor .octicon-link:before,.markdown h2:hover .anchor .octicon-link:before,.markdown h3:hover .anchor .octicon-link:before,.markdown h4:hover .anchor .octicon-link:before,.markdown h5:hover .anchor .octicon-link:before,.markdown h6:hover .anchor .octicon-link:before{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' aria-hidden='true' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z'/%3E%3C/svg%3E");content:" ";display:inline-block;height:16px;width:16px}.markdown{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;word-wrap:break-word;color:var(--content-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;font-weight:500;line-height:1.5}.markdown details{display:block}.markdown summary{display:list-item}.markdown a{background-color:initial}.markdown a:active,.markdown a:hover{outline-width:0}.markdown strong{font-weight:inherit;font-weight:bolder}.markdown h1{margin:.67em 0}.markdown img{border-style:none}.markdown code,.markdown kbd,.markdown pre{font-family:monospace,monospace;font-size:1em}.markdown hr{box-sizing:initial;overflow:visible}.markdown input{font:inherit;margin:0;overflow:visible}.markdown [type=checkbox]{box-sizing:border-box;padding:0}.markdown *{box-sizing:border-box}.markdown input{font-family:inherit;font-size:inherit;line-height:inherit}.markdown a{border-bottom:.05em solid;border-bottom-color:var(--link-text-color);border-left-color:var(--link-text-color);border-right-color:var(--link-text-color);border-top-color:var(--link-text-color);color:var(--link-text-color);text-decoration:none}.markdown a.anchor{border-bottom:none}.markdown strong{font-weight:700}.markdown hr{background:transparent;border-bottom:1px solid var(--markdown-blockquote-border-color);height:0;margin:15px 0;overflow:hidden}.markdown hr:after,.markdown hr:before{content:"";display:table}.markdown hr:after{clear:both}.markdown table{border-collapse:collapse;border-spacing:0}.markdown td,.markdown th{padding:0}.markdown details summary{cursor:pointer}.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6{margin-bottom:0;margin-top:0}.markdown h1{font-size:32px}.markdown h1,.markdown h2{font-weight:600}.markdown h2{font-size:24px}.markdown h3{font-size:20px}.markdown h3,.markdown h4{font-weight:600}.markdown h4{font-size:16px}.markdown h5{font-size:14px}.markdown h5,.markdown h6{font-weight:600}.markdown h6{font-size:12px}.markdown p{margin-bottom:10px;margin-top:0}.markdown blockquote{margin:0}.markdown ol,.markdown ul{margin-bottom:0;margin-top:0;padding-left:0}.markdown ol ol,.markdown ul ol{list-style-type:lower-roman}.markdown ol ol ol,.markdown ol ul ol,.markdown ul ol ol,.markdown ul ul ol{list-style-type:lower-alpha}.markdown dd{margin-left:0}.markdown code,.markdown pre{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px}.markdown code.language-text{border-radius:3px;font-size:85%;padding:.2em .4em}.markdown :not(pre)>code.language-text{background:hsla(44,6%,50%,.15);color:#eb5757;overflow-wrap:break-word}.markdown pre{margin-bottom:0;margin-top:0}.markdown input::-webkit-inner-spin-button,.markdown input::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}.markdown :checked+.radio-label{border-color:#0366d6;position:relative;z-index:1}.markdown .border{border:1px solid var(--markdown-border-color)!important}.markdown .border-0{border:0!important}.markdown .border-bottom{border-bottom:1px solid var(--markdown-border-color)!important}.markdown .rounded-1{border-radius:3px!important}.markdown .bg-white{background-color:transparent!important}.markdown .bg-gray-light{background-color:#fafbfc!important}.markdown .text-gray-light{color:#6a737d!important}.markdown .pl-3,.markdown .px-3{padding-left:16px!important}.markdown .px-3{padding-right:16px!important}.markdown .f6{font-size:12px!important}.markdown .lh-condensed{line-height:1.25!important}.markdown .text-bold{font-weight:600!important}.markdown .pl-c{color:#6a737d}.markdown .pl-c1,.markdown .pl-s .pl-v{color:#005cc5}.markdown .pl-e,.markdown .pl-en{color:#6f42c1}.markdown .pl-s .pl-s1,.markdown .pl-smi{color:#24292e}.markdown .pl-ent{color:#22863a}.markdown .pl-k{color:#d73a49}.markdown .pl-pds,.markdown .pl-s,.markdown .pl-s .pl-pse .pl-s1,.markdown .pl-sr,.markdown .pl-sr .pl-cce,.markdown .pl-sr .pl-sra,.markdown .pl-sr .pl-sre{color:#032f62}.markdown .pl-smw,.markdown .pl-v{color:#e36209}.markdown .pl-bu{color:#b31d28}.markdown .pl-ii{background-color:#b31d28;color:#fafbfc}.markdown .pl-c2{background-color:#d73a49;color:#fafbfc}.markdown .pl-c2:before{content:"^M"}.markdown .pl-sr .pl-cce{color:#22863a;font-weight:700}.markdown .pl-ml{color:#735c0f}.markdown .pl-mh,.markdown .pl-mh .pl-en,.markdown .pl-ms{color:#005cc5;font-weight:700}.markdown .pl-mi{color:#24292e;font-style:italic}.markdown .pl-mb{color:#24292e;font-weight:700}.markdown .pl-md{background-color:#ffeef0;color:#b31d28}.markdown .pl-mi1{background-color:#f0fff4;color:#22863a}.markdown .pl-mc{background-color:#ffebda;color:#e36209}.markdown .pl-mi2{background-color:#005cc5;color:#f6f8fa}.markdown .pl-mdr{color:#6f42c1;font-weight:700}.markdown .pl-ba{color:#586069}.markdown .pl-sg{color:#959da5}.markdown .pl-corl{color:#032f62;text-decoration:underline}.markdown .mb-0{margin-bottom:0!important}.markdown .my-2{margin-bottom:8px!important;margin-top:8px!important}.markdown .pl-0{padding-left:0!important}.markdown .py-0{padding-bottom:0!important;padding-top:0!important}.markdown .pl-1{padding-left:4px!important}.markdown .pl-2{padding-left:8px!important}.markdown .py-2{padding-bottom:8px!important;padding-top:8px!important}.markdown .pl-3{padding-left:16px!important}.markdown .pl-4{padding-left:24px!important}.markdown .pl-5{padding-left:32px!important}.markdown .pl-6{padding-left:40px!important}.markdown .pl-7{padding-left:48px!important}.markdown .pl-8{padding-left:64px!important}.markdown .pl-9{padding-left:80px!important}.markdown .pl-10{padding-left:96px!important}.markdown .pl-11{padding-left:112px!important}.markdown .pl-12{padding-left:128px!important}.markdown hr{border-bottom-color:#eee}.markdown kbd{background-color:#fafbfc;border:1px solid #d1d5da;border-radius:3px;box-shadow:inset 0 -1px 0 #d1d5da;color:#444d56;display:inline-block;font:11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;line-height:10px;padding:3px 5px;vertical-align:middle}.markdown:after,.markdown:before{content:"";display:table}.markdown:after{clear:both}.markdown>:first-child{margin-top:0!important}.markdown>:last-child{margin-bottom:0!important}.markdown a:not([href]){color:inherit;text-decoration:none}.markdown blockquote,.markdown details,.markdown dl,.markdown ol,.markdown p,.markdown pre,.markdown table,.markdown ul{margin-bottom:16px;margin-top:0}.markdown hr{background-color:var(--markdown-border-color);border:0;height:.25em;margin:24px 0;padding:0}.markdown blockquote{background-color:var(--markdown-blockquote-background-color);border-left:.25em solid var(--markdown-blockquote-border-color);color:var(--primary-text-color);padding:0 1em}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}.markdown h1{font-size:2em}.markdown h2{font-size:1.5em}.markdown h3{font-size:1.25em}.markdown h4{font-size:1em}.markdown h5{font-size:.875em}.markdown h6{color:#6a737d;font-size:.85em}.markdown ol,.markdown ul{padding-left:2em}.markdown ol ol,.markdown ol ul,.markdown ul ol,.markdown ul ul{margin-bottom:0;margin-top:0}.markdown ol{list-style-type:decimal}.markdown ul{list-style-type:disc}.markdown li{word-wrap:break-all;display:list-item;text-align:-webkit-match-parent}.markdown li>p{margin-top:16px}.markdown li+li{margin-top:.25em}.markdown dl{padding:0}.markdown dl dt{font-size:1em;font-style:italic;font-weight:600;margin-top:16px;padding:0}.markdown dl dd{margin-bottom:16px;padding:0 16px}.markdown table{display:block;overflow:auto;width:100%}.markdown table th{font-weight:600}.markdown table td,.markdown table th{border:1px solid var(--markdown-table-border-color);padding:6px 13px}.markdown table tr{border-top:1px solid var(--markdown-table-border-color)}.markdown table tr:nth-child(2n){background-color:var(--markdown-table-even-cell-background-color)}.markdown img{background-color:transparent;box-sizing:initial;display:block;margin:0 auto;max-width:100%}.markdown img[align=right]{padding-left:20px}.markdown img[align=left]{padding-right:20px}.markdown code{background-color:rgba(27,31,35,.05);border-radius:3px;font-size:85%;margin:0;padding:.2em .4em}.markdown pre{word-wrap:normal}.markdown pre>code{background:transparent;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.markdown .highlight{margin-bottom:16px}.markdown .highlight pre{margin-bottom:0;word-break:normal}.markdown .highlight pre,.markdown pre{background-color:#f6f8fa;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}.markdown pre code{word-wrap:normal;background-color:initial;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}.markdown .commit-tease-sha{color:#444d56;display:inline-block;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:90%}.markdown .full-commit .btn-outline:not(:disabled):hover{border-color:#005cc5;color:#005cc5}.markdown .blob-wrapper{overflow-x:auto;overflow-y:hidden}.markdown .blob-wrapper-embedded{max-height:240px;overflow-y:auto}.markdown .blob-num{color:rgba(27,31,35,.3);cursor:pointer;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;line-height:20px;min-width:50px;padding-left:10px;padding-right:10px;text-align:right;-webkit-user-select:none;-ms-user-select:none;user-select:none;vertical-align:top;white-space:nowrap;width:1%}.markdown .blob-num:hover{color:rgba(27,31,35,.6)}.markdown .blob-num:before{content:attr(data-line-number)}.markdown .blob-code{line-height:20px;padding-left:10px;padding-right:10px;position:relative;vertical-align:top}.markdown .blob-code-inner{word-wrap:normal;color:#24292e;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;overflow:visible;white-space:pre}.markdown .pl-token.active,.markdown .pl-token:hover{background:#ffea7f;cursor:pointer}.markdown .tab-size[data-tab-size="1"]{-moz-tab-size:1;-o-tab-size:1;tab-size:1}.markdown .tab-size[data-tab-size="2"]{-moz-tab-size:2;-o-tab-size:2;tab-size:2}.markdown .tab-size[data-tab-size="3"]{-moz-tab-size:3;-o-tab-size:3;tab-size:3}.markdown .tab-size[data-tab-size="4"]{-moz-tab-size:4;-o-tab-size:4;tab-size:4}.markdown .tab-size[data-tab-size="5"]{-moz-tab-size:5;-o-tab-size:5;tab-size:5}.markdown .tab-size[data-tab-size="6"]{-moz-tab-size:6;-o-tab-size:6;tab-size:6}.markdown .tab-size[data-tab-size="7"]{-moz-tab-size:7;-o-tab-size:7;tab-size:7}.markdown .tab-size[data-tab-size="8"]{-moz-tab-size:8;-o-tab-size:8;tab-size:8}.markdown .tab-size[data-tab-size="9"]{-moz-tab-size:9;-o-tab-size:9;tab-size:9}.markdown .tab-size[data-tab-size="10"]{-moz-tab-size:10;-o-tab-size:10;tab-size:10}.markdown .tab-size[data-tab-size="11"]{-moz-tab-size:11;-o-tab-size:11;tab-size:11}.markdown .tab-size[data-tab-size="12"]{-moz-tab-size:12;-o-tab-size:12;tab-size:12}.markdown .task-list-item{list-style-type:none}.markdown .task-list-item+.task-list-item{margin-top:3px}.markdown .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown .table-of-contents{align-items:flex-start;display:flex;flex-direction:column;justify-content:center;position:fixed;right:0;top:75px;width:340px}@media(max-width:1300px){.markdown .table-of-contents{display:none}}.markdown .table-of-contents ul{cursor:pointer;list-style-type:none}.markdown .table-of-contents ul li a{border-bottom:none;color:var(--secondary-text-color);font-size:14px;height:30px;padding:6px 2px;width:100%}.markdown .table-of-contents ul p{margin:0}.markdown .gatsby-resp-image-wrapper{display:flex!important;justify-content:center!important;max-height:560px!important;width:100%!important}.markdown .gatsby-resp-image-wrapper img{height:auto!important;max-height:560px!important;max-width:100%!important;position:relative!important;width:auto!important}.markdown .gatsby-resp-image-wrapper+em{color:#6a737d;display:block;font-size:15px;font-style:italic;text-align:center}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}.post-content{margin-bottom:20px;width:100%}.category-page-header-wrapper,.post-content{display:flex;flex-direction:column;justify-content:center}.category-page-header-wrapper{align-items:center;margin-bottom:30px;margin-top:30px}.category-page-header-wrapper .category-page-title{border-bottom:3px solid var(--primary-text-color);font-size:40px;font-weight:700;margin-bottom:15px;padding-bottom:7px;text-align:center;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}.category-page-header-wrapper .category-page-subtitle{font-size:20px;font-weight:500;padding-bottom:10px;text-align:center}.post-card-wrapper{display:flex;justify-content:center;min-height:150px;width:100%}.post-card-wrapper .post-card{border:1px solid var(--post-card-border-color);border-radius:6px;color:var(--primary-text-color);cursor:pointer;display:flex;flex-direction:column;height:100%;margin-bottom:15px;max-width:720px;padding:15px;transition:transform .2s;width:100%}.post-card-wrapper .post-card:hover .title{text-decoration:underline}@media(min-width:768px){.post-card-wrapper .post-card{margin-bottom:0}}.post-card-wrapper .post-card .title{font-size:18px;font-weight:600;line-height:1.4;margin-bottom:7px}.post-card-wrapper .post-card .description{-webkit-line-clamp:3;-webkit-box-orient:vertical;color:var(--primary-text-color);display:-webkit-box;font-size:13px;line-height:20px;margin-bottom:10px;overflow:hidden;text-overflow:ellipsis}.post-card-wrapper .post-card .info{color:var(--about-link-icon-color);display:flex;font-size:14px;justify-content:space-between;margin-top:auto}.post-card-wrapper .post-card .info .categories{display:flex}.post-card-wrapper .post-card .info .categories .category{margin-left:4px}.post-card-wrapper .post-card .info .categories .category:hover{text-decoration:underline}.post-card-column-wrapper{display:flex;justify-content:center;width:100%}.post-card-column-wrapper .post-card-column{align-items:center;display:flex;flex-direction:column}.post-card-column-wrapper .post-card-column .post-card-wrapper{margin-bottom:10px}.post-card-column-wrapper .post-card-column .more-post-card-button{background-color:var(--button-background-color);font-size:15px;font-weight:500;height:40px}.post-tabs-wrapper{align-self:flex-start;display:flex;flex-direction:column;justify-content:center;top:0;width:100%}.post-tabs-wrapper .post-tabs{display:flex;height:40px;justify-content:center;margin-bottom:12px;max-width:760px;width:100%}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTab-root{color:var(--tab-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:17px;font-weight:500;height:40px;min-height:auto;min-width:auto;padding:10px 12px;transition:all .2s ease}.post-tabs-wrapper .post-tabs .mui-tabs .Mui-selected,.post-tabs-wrapper .post-tabs .mui-tabs .MuiTab-root :hover{color:var(--tab-hover-text-color);transition:all .2s ease}.post-tabs-wrapper .post-tabs .mui-tabs .Mui-selected{background-color:var(--tab-selected-background-color);border-radius:8px;font-weight:600}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabScrollButton-root{height:40px;width:20px}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabs-scrollable{height:40px}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabs-indicator{display:none}</style><meta name="generator" content="Gatsby 3.14.6"/><style data-emotion="css-global o6gwfi">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:rgba(0, 0, 0, 0.87);font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;background-color:#fff;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#fff;}</style><style data-emotion="css-global 1prfaxn">@-webkit-keyframes mui-auto-fill{from{display:block;}}@keyframes mui-auto-fill{from{display:block;}}@-webkit-keyframes mui-auto-fill-cancel{from{display:block;}}@keyframes mui-auto-fill-cancel{from{display:block;}}</style><style data-emotion="css 1l6di18 feqhe6 11tfndm mnn31 vubbuv 1yxmbwk 6flbmm">.css-1l6di18.Mui-focused .MuiAutocomplete-clearIndicator{visibility:visible;}@media (pointer: fine){.css-1l6di18:hover .MuiAutocomplete-clearIndicator{visibility:visible;}}.css-1l6di18 .MuiAutocomplete-tag{margin:3px;max-width:calc(100% - 6px);}.css-1l6di18 .MuiAutocomplete-inputRoot{-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}.MuiAutocomplete-hasPopupIcon.css-1l6di18 .MuiAutocomplete-inputRoot,.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiAutocomplete-inputRoot{padding-right:30px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiAutocomplete-inputRoot{padding-right:56px;}.css-1l6di18 .MuiAutocomplete-inputRoot .MuiAutocomplete-input{width:0;min-width:30px;}.css-1l6di18 .MuiInput-root{padding-bottom:1px;}.css-1l6di18 .MuiInput-root .MuiInput-input{padding:4px 4px 4px 0px;}.css-1l6di18 .MuiInput-root.MuiInputBase-sizeSmall .MuiInput-input{padding:2px 4px 3px 0;}.css-1l6di18 .MuiOutlinedInput-root{padding:9px;}.MuiAutocomplete-hasPopupIcon.css-1l6di18 .MuiOutlinedInput-root,.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiOutlinedInput-root{padding-right:39px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiOutlinedInput-root{padding-right:65px;}.css-1l6di18 .MuiOutlinedInput-root .MuiAutocomplete-input{padding:7.5px 4px 7.5px 6px;}.css-1l6di18 .MuiOutlinedInput-root .MuiAutocomplete-endAdornment{right:9px;}.css-1l6di18 .MuiOutlinedInput-root.MuiInputBase-sizeSmall{padding:6px;}.css-1l6di18 .MuiOutlinedInput-root.MuiInputBase-sizeSmall .MuiAutocomplete-input{padding:2.5px 4px 2.5px 6px;}.css-1l6di18 .MuiFilledInput-root{padding-top:19px;padding-left:8px;}.MuiAutocomplete-hasPopupIcon.css-1l6di18 .MuiFilledInput-root,.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiFilledInput-root{padding-right:39px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiFilledInput-root{padding-right:65px;}.css-1l6di18 .MuiFilledInput-root .MuiFilledInput-input{padding:7px 4px;}.css-1l6di18 .MuiFilledInput-root .MuiAutocomplete-endAdornment{right:9px;}.css-1l6di18 .MuiFilledInput-root.MuiInputBase-sizeSmall{padding-bottom:1px;}.css-1l6di18 .MuiFilledInput-root.MuiInputBase-sizeSmall .MuiFilledInput-input{padding:2.5px 4px;}.css-1l6di18 .MuiInputBase-hiddenLabel{padding-top:8px;}.css-1l6di18 .MuiAutocomplete-input{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;text-overflow:ellipsis;opacity:1;}.css-feqhe6{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:relative;min-width:0;padding:0;margin:0;border:0;vertical-align:top;width:100%;}.css-11tfndm{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.4375em;letter-spacing:0.00938em;color:rgba(0, 0, 0, 0.87);box-sizing:border-box;position:relative;cursor:text;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;position:relative;}.css-11tfndm.Mui-disabled{color:rgba(0, 0, 0, 0.38);cursor:default;}label+.css-11tfndm{margin-top:16px;}.css-11tfndm:after{border-bottom:2px solid #1976d2;left:0;bottom:0;content:"";position:absolute;right:0;-webkit-transform:scaleX(0);-moz-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);-webkit-transition:-webkit-transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;transition:transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;pointer-events:none;}.css-11tfndm.Mui-focused:after{-webkit-transform:scaleX(1);-moz-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);}.css-11tfndm.Mui-error:after{border-bottom-color:#d32f2f;-webkit-transform:scaleX(1);-moz-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);}.css-11tfndm:before{border-bottom:1px solid rgba(0, 0, 0, 0.42);left:0;bottom:0;content:"\00a0";position:absolute;right:0;-webkit-transition:border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;pointer-events:none;}.css-11tfndm:hover:not(.Mui-disabled):before{border-bottom:2px solid rgba(0, 0, 0, 0.87);}@media (hover: none){.css-11tfndm:hover:not(.Mui-disabled):before{border-bottom:1px solid rgba(0, 0, 0, 0.42);}}.css-11tfndm.Mui-disabled:before{border-bottom-style:dotted;}.css-mnn31{font:inherit;letter-spacing:inherit;color:currentColor;padding:4px 0 5px;border:0;box-sizing:content-box;background:none;height:1.4375em;margin:0;-webkit-tap-highlight-color:transparent;display:block;min-width:0;width:100%;-webkit-animation-name:mui-auto-fill-cancel;animation-name:mui-auto-fill-cancel;-webkit-animation-duration:10ms;animation-duration:10ms;}.css-mnn31::-webkit-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31::-moz-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31:-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31::-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31:focus{outline:0;}.css-mnn31:invalid{box-shadow:none;}.css-mnn31::-webkit-search-decoration{-webkit-appearance:none;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-webkit-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-moz-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:-ms-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-ms-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-webkit-input-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-moz-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus:-ms-input-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-ms-input-placeholder{opacity:0.42;}.css-mnn31.Mui-disabled{opacity:1;-webkit-text-fill-color:rgba(0, 0, 0, 0.38);}.css-mnn31:-webkit-autofill{-webkit-animation-duration:5000s;animation-duration:5000s;-webkit-animation-name:mui-auto-fill;animation-name:mui-auto-fill;}.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}.css-1yxmbwk{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-1yxmbwk::-moz-focus-inner{border-style:none;}.css-1yxmbwk.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1yxmbwk{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1yxmbwk:hover{background-color:rgba(0, 0, 0, 0.04);}@media (hover: none){.css-1yxmbwk:hover{background-color:transparent;}}.css-1yxmbwk.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}.css-6flbmm{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:2.1875rem;}</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><script>
+  
+  function gaOptout(){document.cookie=disableStr+'=true; expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/',window[disableStr]=!0}var gaProperty='0',disableStr='ga-disable-'+gaProperty;document.cookie.indexOf(disableStr+'=true')>-1&&(window[disableStr]=!0);
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', '0', 'auto', {});
+      ga('set', 'anonymizeIp', true);
+      
+      
+      
+      
+      }</script><link rel="icon" href="/favicon-32x32.png?v=e074320756b5e5524f90c7df2e8815fa" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=e074320756b5e5524f90c7df2e8815fa"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=e074320756b5e5524f90c7df2e8815fa"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=e074320756b5e5524f90c7df2e8815fa"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=e074320756b5e5524f90c7df2e8815fa"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=e074320756b5e5524f90c7df2e8815fa"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=e074320756b5e5524f90c7df2e8815fa"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=e074320756b5e5524f90c7df2e8815fa"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=e074320756b5e5524f90c7df2e8815fa"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><title data-react-helmet="true">VUE 3 + CLI 4 + VUETIFY,QUASAR 개발 환경 구성</title><meta data-react-helmet="true" name="viewport" content="initial-scale=1, width=device-width"/><meta data-react-helmet="true" property="og:title" content="VUE 3 + CLI 4 + VUETIFY,QUASAR 개발 환경 구성"/><meta data-react-helmet="true" property="og:site_title" content="VUE 3 + CLI 4 + VUETIFY,QUASAR 개발 환경 구성"/><meta data-react-helmet="true" name="description" content="🎋 개요 이번에 개발 환경을 VUE 3 로  구성했던 경험을 포스팅할 예정 환경 구성 VUE CLI VUE 개발을 쉽게해주는 번들러 나는 WEB PACK 설정 BABEL 설정 같은걸 알아서 해준다 설치를 해준다. vue cli 공식문서 참고 나는 vue3study_2 라는 폴더에 설치했다.
+vue create vue3_project_set
+vue3_project_set 로 프로젝트 생성  vue3 로 진행할꺼기 때문에 해당 옵션 선택 vuex 와 vue-router 도 추가해준다. 마지막으로 나는 vuetify를 사용할꺼기때문에 추가해준다. 이제 eslint + pretter 설정을좀 해줘야한다. vscode 에 elint 와 pretter 설정은 구글에 잘나와있다. 저장시에 자동으로 포멧해주는 설정만 setting.json에 기입해주면된다. 그리고 cli 로 프로젝트 생성시에 위의 모든것들을 옵션으로 할수있다. 
+바로 위처럼 수동으로 선택해주면
+ 스페이스바를 눌러 내가원하…"/><meta data-react-helmet="true" property="og:description" content="🎋 개요 이번에 개발 환경을 VUE 3 로  구성했던 경험을 포스팅할 예정 환경 구성 VUE CLI VUE 개발을 쉽게해주는 번들러 나는 WEB PACK 설정 BABEL 설정 같은걸 알아서 해준다 설치를 해준다. vue cli 공식문서 참고 나는 vue3study_2 라는 폴더에 설치했다.
+vue create vue3_project_set
+vue3_project_set 로 프로젝트 생성  vue3 로 진행할꺼기 때문에 해당 옵션 선택 vuex 와 vue-router 도 추가해준다. 마지막으로 나는 vuetify를 사용할꺼기때문에 추가해준다. 이제 eslint + pretter 설정을좀 해줘야한다. vscode 에 elint 와 pretter 설정은 구글에 잘나와있다. 저장시에 자동으로 포멧해주는 설정만 setting.json에 기입해주면된다. 그리고 cli 로 프로젝트 생성시에 위의 모든것들을 옵션으로 할수있다. 
+바로 위처럼 수동으로 선택해주면
+ 스페이스바를 눌러 내가원하…"/><meta data-react-helmet="true" property="og:author" content="이성기"/><meta data-react-helmet="true" property="og:image" content="/og-image.png"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="google-site-verification" content="NIs0QhmetlWroylVB41Dz3fVQcuHAzP8e2DvVMjFPus"/><meta data-react-helmet="true" name="naver-site-verification" content="c695577700808f46f7ac9db8f39c8a2a3f9dd14d"/><script data-react-helmet="true" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6901713023068431" crossorigin="anonymous"></script><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4.woff2"/><style>@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc-.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxM.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc-.woff) format("woff")}</style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" title="leesunggi RSS Feed" href="/rss.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link as="script" rel="preload" href="/webpack-runtime-e9805bccd97e26a87656.js"/><link as="script" rel="preload" href="/framework-04d6a54209505769ded2.js"/><link as="script" rel="preload" href="/app-dd69a674e8569be0bf1e.js"/><link as="script" rel="preload" href="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-153148a4d91acc214703.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-js-db518fb661aaeb5c4da4.js"/><link as="fetch" rel="preload" href="/page-data/gatsby-vue-study-vuetify/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1073350324.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1956554647.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2938748437.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="page-wrapper"><header class="page-header-wrapper"><div class="page-header"><div class="front-section"><a class="link" href="/">Re:제로부터 시작하는 개발일기</a></div><div class="trailing-section"><a class="link" href="/about">about</a><a class="link" href="/posts">posts</a><div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1l6di18" role="combobox" aria-expanded="false"><div class="search-input-wrapper"><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root search-input css-feqhe6"><div class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-11tfndm"><input type="text" aria-invalid="false" autoComplete="off" value="" class="MuiInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mnn31" aria-autocomplete="list" autoCapitalize="none" spellcheck="false"/><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search-icon css-vubbuv" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="SearchOutlinedIcon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></div></div></div></div></div></div></header><main class="page-content"><header class="post-header"><div class="emoji">🧶</div><div class="info"><div class="categories"><a class="category" href="/posts/VUE">VUE</a></div></div><h1 class="title">VUE 3 + CLI 4 + VUETIFY,QUASAR 개발 환경 구성</h1><div class="info"><div class="author">posted by <strong>쩡기</strong>,</div> <!-- -->March 04, 2022</div></header><div class="post-content"><div class="markdown"><h2 id="-개요" style="position:relative;"><a href="#-%EA%B0%9C%EC%9A%94" aria-label=" 개요 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🎋 개요</h2>
+<p>이번에 개발 환경을 VUE 3 로  구성했던 경험을 포스팅할 예정</p>
+<h3 id="환경-구성" style="position:relative;"><a href="#%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1" aria-label="환경 구성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>환경 구성</h3>
+<ol>
+<li>VUE CLI</li>
+</ol>
+<p>VUE 개발을 쉽게해주는 번들러 나는 WEB PACK 설정 BABEL 설정 같은걸 알아서 해준다 설치를 해준다.</p>
+<blockquote>
+<p>vue cli 공식문서 <a href="https://cli.vuejs.org/">참고</a></p>
+</blockquote>
+<p>나는 vue3study_2 라는 폴더에 설치했다.
+vue create vue3_project_set
+vue3_project_set 로 프로젝트 생성</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 507px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABNElEQVQoz3WQTW+CQBRFR9TGaloVtYA1RYQZCoqC39TYxoV24aL//9ecRojGNrq4meRl3nn3XlHtT3nsJ2iGT+Ut5qE3pmgGVOyEqjOnZIWU3ZSyu0Z0FOLFp/BPp/n5FVp3gjCGmQrWCNHxEfqAgvFO0QqzQ6XehFJvfFks3IMaAcJaHLHiPVbyTTvao/spbT+l3B0hdIlo+YiWh2jL7Ni1oz/AtkR7jRDq40C8+0Eud0SfMe5yzua4wpkFND0Pd+FRs4cUzRNEZfBLvCuw6Ei0k4n6dE9jdqAWbtBnWypqSbANCTcR3sJn/DWgLgPsxMGcxDw588zNzcjWEKF7c8wwpeFOacklz84UXa5oqXUeu6nyXpuSmh1nf88ubwKzbs4dXeTls45CyxbUpSeh34ucA38BVu63vJtETjwAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs1.png"
+        title="vuejs1.png"
+        src="/static/987fb1dfa95fb1ba17e711c98be8f5ec/3ebb1/vuejs1.png"
+        srcset="/static/987fb1dfa95fb1ba17e711c98be8f5ec/e9ff0/vuejs1.png 180w,
+/static/987fb1dfa95fb1ba17e711c98be8f5ec/f21e7/vuejs1.png 360w,
+/static/987fb1dfa95fb1ba17e711c98be8f5ec/3ebb1/vuejs1.png 507w"
+        sizes="(max-width: 507px) 100vw, 507px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>vue3 로 진행할꺼기 때문에 해당 옵션 선택</p>
+<p>vuex 와 vue-router 도 추가해준다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">vue add vuex
+vue add router //history mode 는 y로 해준다.</code></pre></div>
+<p>마지막으로 나는 vuetify를 사용할꺼기때문에 추가해준다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">vue add vuetify // 옵션은 V3 로해준다 </code></pre></div>
+<p>이제 eslint + pretter 설정을좀 해줘야한다.</p>
+<p>vscode 에 elint 와 pretter 설정은 구글에 잘나와있다.</p>
+<p>저장시에 자동으로 포멧해주는 설정만 setting.json에 기입해주면된다.</p>
+<p>그리고 cli 로 프로젝트 생성시에 위의 모든것들을 옵션으로 할수있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 361px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 28.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQY03WPyU7CUBhGf4hjSLWAgEoLdPBehlJaQsugKEgYHDbGhe//JMcoaiTG1Tmrb5BDf07GTsjWUrK14afvNcbImULyDlLwyJQVmbL+RY2U/vFCf0Uwe8UZPVEbbGjP3iiHa6zeHC9ZYUcLMuUWUlRIUW9Z+lvw7WJ4EenyhWj2jEqX9O9HdG7a6HFCskqZPA4otZqYvsbuuVRDzcFlF8l/FZypnZVy0oiIpg800wXV4JrmcIxKYio6QqeK0fKceujSnrhMn+sEU0Wp2cEdOLiDK4xGFyn4P6Gy7yWYw0dOkw1HwR1GMCcXbzhq3WLEd+SHU47Da3K6R97zyNUVx7bG9BWHVoPWZI2fLBDTIVvRiFy0EauHWCFS7SKXHcT6YIB8XKvGiB0jlc7OzU+aVxhOzKnXR4rble8VD6VwCY8OMAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs2.png"
+        title="vuejs2.png"
+        src="/static/e5902a7a21b7825a54b378f866e15682/39d76/vuejs2.png"
+        srcset="/static/e5902a7a21b7825a54b378f866e15682/e9ff0/vuejs2.png 180w,
+/static/e5902a7a21b7825a54b378f866e15682/f21e7/vuejs2.png 360w,
+/static/e5902a7a21b7825a54b378f866e15682/39d76/vuejs2.png 361w"
+        sizes="(max-width: 361px) 100vw, 361px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+바로 위처럼 수동으로 선택해주면
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 357px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACR0lEQVQ4y3WSaVPiQBCGJ/HAVVwECQjIEUiAEAIx4ZAjyCGoIOtWuaX//5c8W0nWY3flw1vdPVP9zMzbI07MJSlnw5m5IFqbotgPxMxbInmbk0KLU/UKkTYQGRORbSIyjbDOWR/rOQvJV6qOiGhtxptXBve/sGdb+nfP1PpL3MVPeqtnLG9N2pmjeE+cj7YcNyfE3SVRd0XMHKMMH4k6S6TaCMk/bL9koY3vsKc/AhnDe5z5E8OHl6A2x2tG6xeM6xUVZ0rRnmDfPFKyJ7S8DZ35E+l6H5GoIClVhCg0EJUGZXdG01sT1zqBoiWblHFNxhwipeuImBo0iXMNcVYOY7yMOFODXErVEL4OCibHdQejf8vVZI1S7fC91EZWdESsFDYkNeSkjpTUkBQd2Y/+WqqGnK6HMKUaxqOSy2mlx3frhtx4i9JZURiuOdT7yFqfvUoXWXWR9euglgpXYV7pIV0Y76A3CUm1kWouCWtCyjfY9BB+k+qyp/WCRh8kl7shsOggG15QS+kvgIGHRptqZ445WBHJGKFfvj+BfI/+eOfHpP7h5dszP0HFUcHiVHcpd+ao7py43iXdGJAyBiRrvWAwh1nzv5u8A/zJfq73i00idYeLxiD4MpctL5isOX7Anm6xJhtOiu3gZruA72Bfh3mLqO6gOjOq/SX5thdAG8N7EnqX40KL/S/M3wn0T1dqfVR3RtYaUeksMIZ3aN0FIqHt9OpfqLd5DfO9izoH2QaRyyaHOZOjyybf8lagv8zeAXvb8/32898/MmVNyO79ugAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs3.png"
+        title="vuejs3.png"
+        src="/static/2479095275cdfd8f3c03e1352a14635d/22d0a/vuejs3.png"
+        srcset="/static/2479095275cdfd8f3c03e1352a14635d/e9ff0/vuejs3.png 180w,
+/static/2479095275cdfd8f3c03e1352a14635d/22d0a/vuejs3.png 357w"
+        sizes="(max-width: 357px) 100vw, 357px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>스페이스바를 눌러 내가원하는 플러그인을 설치할수있다.
+개인적으로 너무편한기능이였다
+vue 버전과 eslint+prettier 설정등 여러 설정을 수동으로 할수있다.</p>
+<p>다 추가한 package.json 파일이다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 343px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 143.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAYAAACqhkzFAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFBElEQVRIx42VW3Pa2BKFZTuODeaOQIiLESCBhIS4SeIqxMWOnWROcmYe5v//k29qb2zHOZVMnYcusUVp7bW6V3crRXuOtnykEiRo0Ymiv6Hkb8nYIan6mFvNQ1F7KKqFUulzUR28PX8VSqY3RI0OdJ7+S3kaowZ7tMWJlDmj2A2pmRs0a0fd3nCl2/8KJgFzfZfMMKK2fCTnRBS8NXdWyG3do9pd0bQS7p2EVGuMUu1z8cbyd4ADj5Q5pRocqIZ7Cn5Mxl6QsSMq4x2V4ZY7YyrZ3jbc/4PhwOPODlBnCeo0Idubo/sH9PGRdvREpj9H0QakmiM+NkcoFetf86jk+h53gznq/EiqPeGmNaJsrag7B+pWTL4zJ90Yc6OPyLQmXOuOLNArqPIrwHR/RiU4UnBXsuKl2Z67/oyPjRGaucX0num6n+j7zxS6IR9qzm8rfpbsBBT9GHWyk5W+68xJNXwagx2Gc5LP++EDlvdM2zmhDVZnoF/IVrKWS8qaoS0epP+u6q4swL1zwnCO9LxPFIzZzzL/h917lkrNDLis2tIS0rxlC6Vkvt0u/xO/tZcPflfdV3DVXcj8lScx5emO8mxHabIl7y7J2iHX9RF31RFKsfvuI/N8uWpyUe2/Y9hHyZhDysGeRvxMJdijzhOK4y2V4EBtcSLnLKn4IrcJ6a4olEvVXFNoh+iDmNS9j6L+kK5kTYe8v6K5/0pxvCEnmA2WqMGR1u4zpUksq64tH2QXXelDav0tzUGCbm2p9tcvBXrtZdOhHCTU42cKo5WUm3NWkmFz95mCtyLnrlCDRJr/tjMm256gm1tq5pqef+JSf2cjwbA4i2nuv0iGIvLumkp4koDF0VoyEwyzTiQlqr0VbfuEMTxQ6IRc1Oz3gEPy/ppm8kWyEyxz9pJKeKQZP8txVhhtUcexHBC5+znG8ESpHaGaq7M73ttGMCzNd9Q3T+S9FYXRmswgojiJJTuRw3RvRroxwnAf0c2YtnvktuXJyl9q9k/+lAwL0+2LZAGQ0Ew+yxzmh4vzJcMlV7UhOSOg1U/ouo+o/SUXmv0CZP2wjczhC6CQXBrHlCcJRX9Lwd9I6Vp0oCjez8+FERa6MaakWz4t+4jhPND1HrgRrEXr5UYrKVmdxmQHCwlSiQ5knIibtk938oQ1+UJ9sKPl77nSHdlBgtWV5shhIZ6XYmiIiS2GQzU8UJnvKYw2EkQbrOXELhsRJWPOR83luupwXRu+dYmMsvkjfzKHYgU4gZQrWi83XJC2AkqjLRV3S9ndyDSIpZUeBFzoNmlZ7YDc/YxCZ37OX+XdTskOQ9nLYkFl7Qg1OtF+/EZpFpMbrynOEvLuCt1PKPdWNO2EhhOTaU7JGlPZPW8+PC+p8C3Zgk1xmlAJD1Q9wTJG83akGh7XNZeiEaH1Nuel9Sq98r6XXwCr4fEM5m/J9xd8qA5RO0sa1o5SOyDdnrzkrHcO1fr1+BIrIOMIyTuyg4grXQzYCN1OuB8eMbwDGWPGZdXhRrJ03lboa5f8xDBnj7hzBMMTWXtBaZag777IDrlu+dy2xljjr3S8J3r+J7kVhaFf46rm/HRWsobJreFS9tdkOj65/kxGNYipzbekO2PKkxVlX3RMyAfNIt/waHRW1ISlxGrN36MU2ufQd3+TCr+9RTr6Tir6Tmb9F5n1n9zO/yPP6cX5vTjfzP8gHX4nLb4Jvsnz6/t/ANBBJDcus+nxAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs4.png"
+        title="vuejs4.png"
+        src="/static/bcb036800cce75afc8b35381300d620f/41431/vuejs4.png"
+        srcset="/static/bcb036800cce75afc8b35381300d620f/e9ff0/vuejs4.png 180w,
+/static/bcb036800cce75afc8b35381300d620f/41431/vuejs4.png 343w"
+        sizes="(max-width: 343px) 100vw, 343px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>잘 추가된것을 알수있다.</p>
+<p>서버를 실행해보자
+npm run serve
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72.22222222222221%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAABV0lEQVQ4y52Tf1KCQBiGvWM36hbdoBs0/dkRyhrTGRlBwNRtgw3k5+7TLGSiolk788EO+70P77sLA04MbezV8CTh6lZyfbck0e0zYzg5BsbYhuPSjcoQJHDzWPPga8of4OkadOmm8+oGqlvovQuvsp3rjvhQ0zg8hJmePNZZ1ROzr3cPuG1wHIfxeIzruniehzubMfdcRqMXfN9jOHxGCHHeYXcxz3PEWjTAMAxZLN4IAonrCoLgvYGVZfn3yAZDUeRkWYpS9m6o639ELouaTVJQZBXrVYTjLPH9FVLmpCkopakqc3nkqqwpsrKpTZoRxxlKbYhj6xLS1Dq9ANhtKCsaN9OpYDJZMJ+vCcOIJOH7c/ol8i52u3tWZKc2mpQRcayaNa33gRc71FqTRBmfUcrclwTBB0LUKLX/Z5x1eHjautYYvRPZE7Z7t+VcBOxrPHbT784CvwCVD0shPE3mbgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs5.png"
+        title="vuejs5.png"
+        src="/static/a283f66a606766a120012f418ff453df/37523/vuejs5.png"
+        srcset="/static/a283f66a606766a120012f418ff453df/e9ff0/vuejs5.png 180w,
+/static/a283f66a606766a120012f418ff453df/f21e7/vuejs5.png 360w,
+/static/a283f66a606766a120012f418ff453df/37523/vuejs5.png 720w,
+/static/a283f66a606766a120012f418ff453df/3cd52/vuejs5.png 857w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>잘 실행된걸 알수있다.</p>
+<p>이제 우리가 개발하면서 코드 규약을 정해 자동으로 검사해주고 수정해주는 eslint+prettier를 설정해볼거다.</p>
+<p>사실 기본적으로 해주는것들을 잘사용해도 괜찮지만 간단한것만좀 추가해볼 예정이다.</p>
+<p>package.json에 보면 eslint 와 prettier에 관한 설정이있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 265px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 142.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcCAYAAABh2p9gAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEX0lEQVRIx42WW1faeBTFI3hBEeSecCeB3BNIiASQogJWbcWptjNr5mne5hPMWnPpF5iP/ZtFwGpra/twVsICds7+n733iZBSTHLelLx3SimcUQoXlAYzct0p9VfXZJwxe5LDUbWPUFTZKukvlpDVbfbaNiljiBguKPhnbFcdsrVjXG2Ga1+SqLsIhc76D0UtqhcB97UeafeE4vE5h+oxe3WPvWbAVlFjW7LYEo1HkOJ3O3TY77hkjDFiOCche6SMMQfqiB3RIFntsifZxDbdfZdyRrc51DzSosehFtK4uKVxvmS31SPbCnDsK/rdt+xK1g8CahaH1oBkZ4iQVRAyCsKRjJDrIBRUhHx7fd2APQUVvqAfne8KMGkFZNwpB4oXUU6qQXTdLtvs1ryI7nc7e3jg6gwTHZe8d0ZzvqQ8vaI6uyHjnpBoBSSNaSSXqAqdzZQ39w9VVIlHg1PXHabNYwrKhJb7Gse7Jxz+huHdUjbmWP5P6M41TeMC23+H2J7QMhdo3SV+/w6ju8Tu3SBZr4iJ+gNgQK45RNIn1I0ZXf8dinVBQR7SNBc09DPM3i0d+4qmscDo3VCzTknWeiTrPql6n+2KQ1wyHwHz8hjZucLq3WO6d5jde2TjEsv7QNf/wHTyB2H4K3r3Bse/5Ug5ZkvSEfIP1NWHodhrwNaYm/mf/L78j+X5P9zO/+Vu8ZE3Z3+znP3F7eIjrvcLQraJkJMjoK+JXMhoJilrSFo94ag2INeacFQPydRHpGshqdogqkx9SELyIvfEROPbU450aIdknClbYgehpCJIOrGKyVZZRxA1BFEnXl1ZUCe+suIGJLax4lONClnDIdF2KAxmNGdLCsE50nBOfb6kdnpF7ewN0uQ1sZrFbrPPbitAyDTWEskpzwQfWS+p9siu6HanSOMLCt4pxXBOSg+JV2zavdf4wXssb0mpM0G2LmiaVxjONRVjQmzFovjUy0afZM1nX/bJ9l5FiXOoDdiu2AiiQbpxTNOYI3Um0e+Kypi8MkZqn7BfdT/LyU9nmLKmay+nWgjZNkKuvfbxgyuiySrr+/zmu+iz+llORh0mNJdsd0plcok4WlDwplHI5vxr9lr9CORrk/1ywtF9ruOQrPfYKpsR5X3FZ6dqR2eSkAfEy/ZatKUnkyy+FBKdHpJ6uqYSUV0HQGxj9njZ+iSRH8rDlGJTeXVJZSWR2VsK4znSaEExXFCfXpIyh6SaAYVauHr6M4rPANMdM5JNXgvJt0d0w3vSbS+iFZOMT8tpR7Q+G8C3d4rhcKB1ycoDSvKYpr7gsBWwU7aJlwzioslu2Y4WVaJmfzW5ny8p1SWvjAiO31NUJhw1fHLymF7wnrZ9iRf8jNu/QzJGkdBf7HAlmwPdpW7PcHo35OQhlv8Os7ekaoyjwaxWaaxkEBNNYqvMe5Gy6pBoOKQaAVV1ykHNo6ydRUG7X3Efc+5JvUi51PEoVEcIeflxw61Mv3LGN149Xurwf2A/9cV38A9hAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs6.png"
+        title="vuejs6.png"
+        src="/static/243e26051cf273a23df6c88e528daae7/78e79/vuejs6.png"
+        srcset="/static/243e26051cf273a23df6c88e528daae7/e9ff0/vuejs6.png 180w,
+/static/243e26051cf273a23df6c88e528daae7/78e79/vuejs6.png 265w"
+        sizes="(max-width: 265px) 100vw, 265px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>rules에 규약을 정할수있다.
+나는 “쌍따옴표를” => ‘홀따옴표로 자동으로 검사변경해줄예정이다’</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 316px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 60.55555555555555%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAByUlEQVQoz52S3W/SYBTGy2R8FFhpoXRuWErL27IiLYOOQtmnqHMmGu+89drFCxOzf/9nKBXUQGK8eHLOxZvfeZ7zHknzfGQ3QBku0OMlWrigZI4odiIkzVmr0UNSs6q7SE2PXMtF0r1UudZWkuYNkJ0AxbpAj+5Qgjn1MKF+foPyMkEbXaEOE/TJNUeDhErHp2b2NtC1fgOqnk9NjKibU5RhwmlwhxW+wRq/puZFyGJCyQqpuhGHZkDhxENui8zZn7ANsNoLqVszSk6Ebs0wrBktOyb/3M+iim1tupuYafx9QMWaorgLau0AyVjtSnBw3N8of+LzzOhzaJxxkO4vg+k7IlfFChhT78/QxBA1uMJ89YnTy/e0bz9gzN6iR0uK5hhT3DAYPlDpnCM1xZ7IYh1Z8S5o+DHm/SP9z0/0Pn6n8/CNzv0jjekXnOuvRMsn/Hc/KDgxUsPZD1w5rLkJqjmhYM+RxSXF7pyyk1CyE/JmTNlaoDjXlLsLcsd+GnsnsNILadoRR3ZAoeUjNWwkzU4dpP2qNn/1mTKYtGuHFW+M2h1RaTvpL/49dZ92OxRnyN6Y/ItRehb7Hv7zEEME6N0kPZMt7P+BPwE0TD63e6g08wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs7.png"
+        title="vuejs7.png"
+        src="/static/73db9d2609dd2fe628c92986d47eb35f/67145/vuejs7.png"
+        srcset="/static/73db9d2609dd2fe628c92986d47eb35f/e9ff0/vuejs7.png 180w,
+/static/73db9d2609dd2fe628c92986d47eb35f/67145/vuejs7.png 316w"
+        sizes="(max-width: 316px) 100vw, 316px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이렇게 설정해주었다.</p>
+<p>그리고 vue의 환경변수 파일과 build 명령어를 나눠줘보자
+보통 개발할때 local,dev,prod 이렇게 3가지의 환경이 많아
+3가지로 나눠볼생각이다.</p>
+<p>root 디렉토리에 .env.local  , .env.development , env.production 이렇게 3개의 파일을 만들어주자.</p>
+<p>env.local은 로컬환경에서 사용할 환경변수를 정의해주자</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 366px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 11.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAl0lEQVQI1x3G2QvBAADA4cl4ocjVVrPDmiMKLVGabc4HbEoUOWIi/v/3n9rDV5+Q1m2Eokl5EKC6F9TJGcU5oXlXCr01tUVEfflC825U/Tuqd0f3b0ijA8Y8wpg9YrnOioQyRMjoPYSSSb4fIrtvJOdJZfxEW/zI2Sey3SPG9IvsfRDbe0Rrg9gIYklrQ7K+jZ9qhqRaO/5BNT/dJG+xWgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs8.png"
+        title="vuejs8.png"
+        src="/static/de885ef414c938478a841fd87534e46a/8b153/vuejs8.png"
+        srcset="/static/de885ef414c938478a841fd87534e46a/e9ff0/vuejs8.png 180w,
+/static/de885ef414c938478a841fd87534e46a/f21e7/vuejs8.png 360w,
+/static/de885ef414c938478a841fd87534e46a/8b153/vuejs8.png 366w"
+        sizes="(max-width: 366px) 100vw, 366px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>나는 이렇게 두개를 추가했다 로컬에서 백앤드 api로 요청할 주소와 빌드된 환경을 알기위해 mode 도추가했다.</p>
+<p>그리고 package.json 파일의 빌드 명령어도 수정해보자.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 467px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 38.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABuklEQVQoz02PW3PSUBSFk7bQYgEtk3CSQAMBcg93DTQUAqVFhxmn1qqvKg/6/3/B5xCR+rBmnVl79jrflq6CBHWQ8sabovkpOT1AUh3kqstJ1cs8ewvvmP+b/Z8d/XU0RXu3puTEqJ2EmpuidW7R7DnX7grDnqPbcwwnpWSOcaIPGO4Cw1lQacXI4uXTfalUjGIq/TkXZg/T2xcsqDkppndHw18j2jMsf03ZHFFzVtjRe6xgjWrfZGWSaiMpnRfCUjRBxPcUOmNUb4YWpFxZMQ1/lZVW2zNawX1GpLQTvN4W0Znh9LYUzRHF+phyc3QgdJGKYYwyXlHpz1DeplxYAxRrmtHuF/eUTW/FtbukFTwg2kmWu73t34ucW0rmEFkcTi73E8RkgzJaUo3X5JsDat4S039Ad1Lq3ppWuKHu3REOnxCdeZZHw0/ZzOpuODVCJNVDFj5SefINsfxOafSVZrLDutnRiH/gJr8yNeKf+MlvjGRHIXrmVfDEuf/IZfhMIfhMMfrCefBIzv2YSbq0pshagCxCzrQueaPPqb73HvlanzO9S07vcaJ3kUSAJMKDgqP2u7IWIWshfwCvY+SA11RkUwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs9.png"
+        title="vuejs9.png"
+        src="/static/9a110561e4472b1565bf7a83ab4a4300/85ff8/vuejs9.png"
+        srcset="/static/9a110561e4472b1565bf7a83ab4a4300/e9ff0/vuejs9.png 180w,
+/static/9a110561e4472b1565bf7a83ab4a4300/f21e7/vuejs9.png 360w,
+/static/9a110561e4472b1565bf7a83ab4a4300/85ff8/vuejs9.png 467w"
+        sizes="(max-width: 467px) 100vw, 467px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>나는이처럼 로컬에서의 환경 빌드되는 것들과 개발 운영을 나눠서 해놨고</p>
+<p>lint명령어는 자동으로 규약에맞게 수정해주는 명령어지만 이미자동으로 설정을 해놨기에 쓸일이 없을듯싶다.</p>
+<p>이렇게 기본적인 개발환경셋팅은 했지만 추가적으로 vue에서 프로젝트가 build될때 번들링을 기본적으로 prefech로 해주는데</p>
+<p>이렇게하면 플젝이 커질수록 초기 로딩이 느려진다.</p>
+<p>그렇기에 vue.config.js에 그부분을 false로해주자.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 304px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 93.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAADmklEQVQ4y32U21faWBTGg4CoVbkEEhKuCQTIhQjhGuQioFa0Lm1nbG1nTd/mbV468/+v36wEte20Mw/f2vuck3z59nf2jlBab1DmF8iTOekTn/zsHHm6Ruz6JGodRKeH1hsiHGlEpAaCaCBkjG3MNYhIzZcY5rV+j8JwjTa9oTK5oTA4pzx8jXZ6i+ZfUfFf0zp/pHL6lkT5BMkfIc98ku0+QvYr0QuharscG30q3hJjfIXiTFHdOXsVj0S5Q6zoEi+ecKAPEHJN4lWLfd1ht+w8kXxPKhRshyO9h+IskMyAbIVkTUmUPKKqQ1wyOSi7IY61LvGchZAziUkWkdy23GeElhQcl7S9IuduyHXuKQx+RereI3VuOTJ8ctUR+uASfXSFO70lX5sgGD7p8pCEarOTbxHNt8IYEhcdl7jWRHGntOd3NP1r9P6C1njM5HxJ92xB2uiRce/IWBfI3Tek2jPKp3O0xZqSf0bFnyF6Uw5q48BDB7E6IK467MjBlyziqs2uarFfsokrJjHFIqY4RPNWeB4gppihqmeFkfBdE0G1bES9H/qT1Dok9S4p3dsaLNa/8cj4zq//RMFuc1zvITZH4e0W3BmyfUo8UCWbCNKPrfF/CC+lMLymOLoh379C6l6QdmYcFE9Iql2EbJ3Iv1Vkf97U4brotEnULPK9FbJ3SWn6jqp/h9q7QfEuqZ49UJnckzKn7DdclMWYTDA5YuOHHnwh3K+3UQaXqKNrXgV+2j202zVJe0AkZxHN20SC8gNlkkG8YP9U3QvhXr1NcXxNZfaWtD0jUXXJTkYowymHRpdDo8OrWoek2Uf2JsRK1k/Jnggd9qsOsrdGGWzIthfsqm6oQuqMkXsT5K6PaA/CvL5cc6CdPCk0vumAJwSzLGsTdmQbIV1DSNfDmRWkoMQWgtjcxuc8ZYRnz/0YeYa8hVBd/ELh8gv65i+U5Z+Ur76gX//NkfeZvc57jkcfSYz/IGo+EDMf2G0/EnceibYe2Gk+EG29J2p+IO58YNf5iFDojFHG79DOPlGaf6K8+A1t+XsY5eE95eVn8qePiL07st4bDvQ5qcYKMbhEf0N+vCE3uCBZXxEtjxBqwyGHNY+0NQn9SzV9ko0RuZMVkjsj216Sbp2SbI5JNUfsqTaH+TYpyyPX7pNqdUm3OhwXuuzIDYTG/IJYMIMpDSGtI2RqCBl9uw5R/bofePzc3IHXqeDZ+vYPHu43+QdWABEjMXuf9gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs10.png"
+        title="vuejs10.png"
+        src="/static/f21b26c3b4a6afc765f53e2b5911ad58/c1724/vuejs10.png"
+        srcset="/static/f21b26c3b4a6afc765f53e2b5911ad58/e9ff0/vuejs10.png 180w,
+/static/f21b26c3b4a6afc765f53e2b5911ad58/c1724/vuejs10.png 304w"
+        sizes="(max-width: 304px) 100vw, 304px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>vue.config.js 에는 웹팩과 서버설정등을 할수있다.
+하는김에 서버설정도 좀 바꿔줬다</p>
+<p>마지막으로 서버를 실행해보자
+npm run local</p>
+<p>여기까지 정상적으로 되었다면 완료.
+이제
+vuex, vue-router, axios 의 구성을 좀 바꿔줄예정</p>
+<p>vue-router 부터 보자
+나중에 라우터가 많아지면 정의가 불편하기때문에 모듈로 나눠줄예정이다.</p>
+<p>그리고 views 의 컴포넌트로 폴더로 관리할예정이다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">router
+	ㄴmodules
+		ㄴlogin.router.js
+	ㄴindex.js
+views
+	ㄴmain
+		ㄴMain.vue
+	ㄴlogin
+		ㄴLogin.vue</code></pre></div>
+<p>router > index.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 544px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 65.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACK0lEQVQ4y3WTaVPiQBCGB8IhKgjhTAwSyUUuAkgQlkULSpfdqi394P//Lc9WEhfx+vBU93T1vD1V/Y4Q4W+k0QbZGqPf7hiudnSn95xaMf34Dnu7R19t0eJ7ZHdCMdxx6i5ouDe0oiU1Z0au4yDadhbzN09I/hZ9sUeLdwwWd0jXc8QgpqIHNIKYMyNC9uP0ct2dcTIIES0L0bQQLfu9YNeJOOuPqWghUs+mdDlKm3MtM20WspVdls1M4EjkK0TLDdGcB+pXMTVvSrn/Or1tv5E0duyM5Nw6Jhtw6G26Pt1wjzJ5pjd7pD5aUdTnFBSXouJRVD2k3oiCkkQXKalrPgXVo3jpUeoHaZ7Uc91RMjykokWcmxvK/Rll1aNuTKnpYy6uIxrGlJLqUtXHFHsOJwMfOZjT8G6Q/YyL0ZRzM6KkBoje7A+14JnLxQtK/EI9fEIyHimYvygYj1n+Gg/58O0sDR8O9QTR9G7JqxHlqyml/hRJjRBd/5UQoUTkPqJG6Z2MyVEeIRJ75LUJZ3pMQQ1T0arxg3NjTfV6RkVxEW2LfCch2a5NLl2AmdY/UXfXqN6enrPjdLhCDvZ0or/I/p5W8IDi/0S2l8jWhIazpmZtqJrrdEH/vffONh1zTHe0pKL6CNlAJP6Th4imcbBCZlznk8CXgqWrCaLnIZINqSFF1edEC8knFmgf/4K3/P2gD0OEuSZnLMnZG4SxomrMaSdeTF7c/v5HfPfCf3upWTjlY4wnAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs11.png"
+        title="vuejs11.png"
+        src="/static/f39c78d15bb4b083ade0f0324000321a/b3e51/vuejs11.png"
+        srcset="/static/f39c78d15bb4b083ade0f0324000321a/e9ff0/vuejs11.png 180w,
+/static/f39c78d15bb4b083ade0f0324000321a/f21e7/vuejs11.png 360w,
+/static/f39c78d15bb4b083ade0f0324000321a/b3e51/vuejs11.png 544w"
+        sizes="(max-width: 544px) 100vw, 544px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>router > login.router.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 568px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABI0lEQVQoz6WRy07CYBCFf6Fc20IUyrVqLb2JtBVLWyPBhUYwYSE73fn+T/GZFq0u3CiLL+ckMzmZnBFicoeYrRH2PfWRjeg6HPVchLbXvyJadkJ1dIlqBbS9G0p9719BReBpukVxbhkmK7T5EtHzEF37G83Jr841o2P/ztduJ3igP99x7K1QrBjZimnoV8hnPsp5gDTwaOgzaqMplfEU2QqRzQB5EqB8+qbhUzd8ygMPMY4eGaY7VGdJTQ9pWzHKJEK+iFDNBdIoQDYiqnpIRQ9R3ATVjVHdhJaX5Ko6MU1rgaRfIxbJC9ryHS1942TxStPf0k63VL1nSuYTkrWhPFlTtja5L5nrHzwVPtvJ5qJuzPcdaO5BzyieIrqZcXKK4g/gA86X0ice/QsOAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs12.png"
+        title="vuejs12.png"
+        src="/static/90e2b19dd124a41ff067e07b7fa204ee/10e91/vuejs12.png"
+        srcset="/static/90e2b19dd124a41ff067e07b7fa204ee/e9ff0/vuejs12.png 180w,
+/static/90e2b19dd124a41ff067e07b7fa204ee/f21e7/vuejs12.png 360w,
+/static/90e2b19dd124a41ff067e07b7fa204ee/10e91/vuejs12.png 568w"
+        sizes="(max-width: 568px) 100vw, 568px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이렇게 모듈에 로그인 라우터를 따로만들어 index.js에 구조할당해서 관리한다.</p>
+<p>이번에는 store 를 관리하기 편하게 바꿔보자.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">store
+	ㄴmodules
+		ㄴlogin
+			ㄴindex.js
+			ㄴlogins.actions.js
+			ㄴlogins.mutations.js
+			ㄴlogins.getters.js
+			ㄴlogins.state.js
+		ㄴmain
+			ㄴ.....</code></pre></div>
+<p>일단 구조는 이렇다</p>
+<p>store > modules > login > index.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 383px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 61.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2ElEQVQoz52SS2/aQBCA104gDahVEmwwMWA7wc/YPAwY7JiHidKkTdrSW6Vee6j6/+9fxaO3HJIePs1KO/p2ZmeENHhGDL9Qtme0Rgua8YKTsKA0eKRs9KjFOWZxz0WUoE9ympOcytWQkh7skJseQnX21B2E1H/aCUvWGMmc8C5c4WRrjPGSRj9HDtaIm3tKRogWZ1irO/TpknY6R58tUPszyq0IWfOQ6i7iX4XH5gjZSjgJFri3d3QmS8xpwQd/hggfkf05VSuiPV/TSZdo44x2tkKfzmnEKadWH7nhI6ToAdH/zFFngNyJOfFu0XspzUGOGmUIr0AEa0q6jzbMMOYFF2FCfZhyOc0588d7kWLvKxSNG0QjQNQ9RDNCaFtuKF8GiJqNpNpIir3/o21UnAP27n57lurOTiapLqI6/kg121CJFlSzr5xm3zmP5xjJ9JDsvortg7t46YeY2TPm7BNab0U9WvC+G3EWj6h0BwjFfbV0J9S8kM5wzfWo4FjzEOcWotZFnF8hlO6B69djJSuc5Q+u02+0xk+UzRS5NeGonSC33o4wbje4D38IHn5zVfxCSX5S8jf/jTAGIxRnSruXo7rJ29p7CT3OERf2fg1U500DeGkofwGoNUfJWjqR+AAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs13.png"
+        title="vuejs13.png"
+        src="/static/7605312f737d7ed434c6b8354c2e046a/d0c94/vuejs13.png"
+        srcset="/static/7605312f737d7ed434c6b8354c2e046a/e9ff0/vuejs13.png 180w,
+/static/7605312f737d7ed434c6b8354c2e046a/f21e7/vuejs13.png 360w,
+/static/7605312f737d7ed434c6b8354c2e046a/d0c94/vuejs13.png 383w"
+        sizes="(max-width: 383px) 100vw, 383px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>store > modules > login > actions.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 527px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 30.555555555555554%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQElEQVQY03XPbW/BYBTG8Y4NQ41Qqp5V7xst1VaZYbxassgeJESW7Pt/jf+iZG+WvfjlJCe5Tq6jFM2A2mAVKfXmNJxndLmkLJ7QxALNWqA2A9J1j3TNu8yrTN3/lTTGxCp9FFWukeGJzuSADI64j98M/RN978DA3TOeHgkWX/THnzjTA254REz2yPE75nCHae/o2W9UzA1xXaLErSVpsSDnbMhac/JiRXW0pThYEtcdMi2PopyTqNqoHR+1HRCrX9sUeygl60I7EygpY0ih66FZUwpmSFmEqE0XteXy0PVI1W0SxpBcZxJR2y7Jmk1c73NTln8ome6M9uwDfbTF8F+Q61eq7pqCHZJsOuTNELXlEyvLqNVZFNTE32PnhtluyG1twp3hkGgMSLYc7jsjMr3zzo5eTjdclJK4BK7+O/oDaLSmaV+id08AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs14.png"
+        title="vuejs14.png"
+        src="/static/8175edb4a907cfe3998aa76ed83af8f6/44385/vuejs14.png"
+        srcset="/static/8175edb4a907cfe3998aa76ed83af8f6/e9ff0/vuejs14.png 180w,
+/static/8175edb4a907cfe3998aa76ed83af8f6/f21e7/vuejs14.png 360w,
+/static/8175edb4a907cfe3998aa76ed83af8f6/44385/vuejs14.png 527w"
+        sizes="(max-width: 527px) 100vw, 527px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>store > modules > login >mutations.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 397px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 16.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAArUlEQVQI133LXwvBUBzG8aNQRqT9YWOtsHOyM03GpEbhRrwMyoVS3v/FV7PkzsWnp1/P8xP19EwzvdBQOUZ6wohyvPyKf3gwOr3w8jvj45Nge6Pma3rTBcNkT3e8pB/v8OOMapBgBBF1N0Q4aoant9hyzUAvsMI5DbWipTPayQbhTjFVhhttqPYihDkp2bJMKywVt60QnZFGmBJhFaX8McOPSjH6PjmSiqP+kLwByKVSBr4rb8cAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs15.png"
+        title="vuejs15.png"
+        src="/static/f0789df9369783797f5c06c3e1339d9e/4c04a/vuejs15.png"
+        srcset="/static/f0789df9369783797f5c06c3e1339d9e/e9ff0/vuejs15.png 180w,
+/static/f0789df9369783797f5c06c3e1339d9e/f21e7/vuejs15.png 360w,
+/static/f0789df9369783797f5c06c3e1339d9e/4c04a/vuejs15.png 397w"
+        sizes="(max-width: 397px) 100vw, 397px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>store > modules > login > state.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 164px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67.07317073170731%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACH0lEQVQ4y62TaU8TURSGz20kpJWtdGagC22HzkyZrtKyFawLQimyyBIja0KACCpRooTIojExfjLxLz+mU0T5qPjhyb3nnuTNWd4rMryKzLxFFj6g5o5RlTVkbBmJl5ClU6T+Gqm9RJ4eIfUjfPc3EbNKphwn4tpIMI0yHJSR9pDWRJ6APYgyh5AeFwlZ+HozqB6XVrNMYmIZieRR0SIqWkBF8oju4u9z8MccRE9fi3mCnf0uQcsiXK6Tq2+Rmd8nVV2kLZmny6pQm3uFdCfx6RZKSyGhFEq3EM1BNBtp3L34ig57EC07TH9lFfvBBvGR5wStRwRiY4TsKUYe7iHdLqLlEKOAipaR8D3EyHmnipQ8fNEm0pF/gjm5h/34gLbKNn3T77HmTkkvnuOuXGLOf8ReuaS48Y3E7AmB4hZdo2/oq51h1s5I1i/oGN6lJb9Oa2Hzl+Au1tQhd6s7pFYuyL34TGHtC7GZY+ylTwztfGd0/wfO0hn+wiadI4fYz75izZ4TnTwhNv2OQGmbltw60p4qYORKjM8eEExXkaCDhDLNNvUsorneJqWrMbMMKlxAenOINoDoGcTI4osUPVS4iLSbWTTXobZwRHp82Ruwz3A81BXNuGkP0W1Ugz/yjbdr2hID+ONpEsUpugfGEd25YYO/RfrLCZJDE0gojQTN34l/FBbNNjEKE9zxDHu76jzBhtOlO3UtduuWb/zD/1DhT0SVacxvt2+xAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs16.png"
+        title="vuejs16.png"
+        src="/static/50eff68f7335cce088e3dbab9bdc3956/2001c/vuejs16.png"
+        srcset="/static/50eff68f7335cce088e3dbab9bdc3956/2001c/vuejs16.png 164w"
+        sizes="(max-width: 164px) 100vw, 164px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>store > modules > login > getters.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 274px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABDUlEQVQY042I20vCcABGf5t4mVqZU6PItmVrcy4vZTdwG2LTZfWgZOarD0XUQ0H9/Se0IOghejic7zsi3b4kFcxInlyT3D8l2QiJn4+RDwLWqgHa2RjV9pCNFlrTwe30OQxvafkeG9UawvJxgg5F+wihWogr06XszUlE72SGH6S9B8zwiePRG/WbVza7c8qjZ7YHjxR7LyiNCUp9QqZ5R7Y1JdOckmvPUOozEu49otvxyZo9hBUhO0PkvQvSVsiqM2ClOkCxQhS3j2KHpOwhsh4Q04OlZe3LkuYT031iho+ohRHxLQeR20HK6wjVQOQNxLqOWPzl/m4LChVEYfcXlZ8uVBOpZCGV7H9i/ckniGWOH6oILN4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs17.png"
+        title="vuejs17.png"
+        src="/static/c18beec517a73e6fae5aa664a386a392/d3fa7/vuejs17.png"
+        srcset="/static/c18beec517a73e6fae5aa664a386a392/e9ff0/vuejs17.png 180w,
+/static/c18beec517a73e6fae5aa664a386a392/d3fa7/vuejs17.png 274w"
+        sizes="(max-width: 274px) 100vw, 274px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>store >index.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 287px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACHElEQVQ4y52SyW/aYBBHhz17Swyx2QPYLMbEgNkJS9hKILQJqVTlkkuv/f+vr4KkUaqmUtPD04xG+j3pm/lEnDtc3W+INWfPaHOq19Gql1jTFcXBjHxnSHm65Lw15mOmhhhDpH6PFKYcZC3SVzNUp0sgaeM+yyNi3+BqbJDiFf5MHb05RO+NCZlNfBczPJUlPr3GYdYi0RkSuxxz1hyg2B3CdpvUYMp5b8RJ3sGfLCNycY2rcYeYE1ypGrHhmtjlkj1zgBh9vKU5Ab3Hsd4k3pmR6s7QnCHm9DOhiy5qrUfE6eBPWHhjFiLlBVJbI/kRkm4hzi1Su0Wqa9zpBkepBpq9ImyvCRbnOw7SfSrLR47SdeQohQR1JGQ84TrLo1gDIs6CaHXCYayE3pzgUQvIaRZRdETJIqEtOhI2dtUVzuFW82zzrxFPpITWWBJtXhOtfyLaWpFsr/AlqmilDseZKhLK/RncEn6ab+tL79ZMVGeBWpuhVsZojWuCZp+g0UYttJ6Fxu+ycO7N/kmoFlHKo92zE60lYXvEXryM0V6yv12yor8Z/BviiVokexsSvVuU8pSQPeU44/Ah4yCKgVst/JPoReiPmBzGK8SrQ8r9FdnmHF+kiFfNPR/inQT0CcHSDSfWDcboEa3xlUBujjs9wpsd4828DzlxHoj1vxMwN4i+xpX7gq+4wW/e/xfSfvjBfqqyu+Trff36Cu/lJwwzaODEdU1fAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs18.png"
+        title="vuejs18.png"
+        src="/static/515162d04bc0a303d946107729cdce09/480fd/vuejs18.png"
+        srcset="/static/515162d04bc0a303d946107729cdce09/e9ff0/vuejs18.png 180w,
+/static/515162d04bc0a303d946107729cdce09/480fd/vuejs18.png 287w"
+        sizes="(max-width: 287px) 100vw, 287px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>views>login>login.vue</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 354px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 168.8888888888889%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAiCAYAAABfqvm9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFOElEQVRIx52We2/aaBbGbUICARybizHEEIINvoMh3AMZQtI0yabt7FRTzUgzGq1WWu33/wS/lW0ISdqutvvHo/cYvxzO5TnPQSi6KyrTX1CGnyiPPqDYc8SqTUpzETXnhyFIbY/q4A6l/0C20UNQLYRiG0HtktLs2PkOQtVKzujO93BiuMjeiOroHm1wS96c0Jh/Iq2HCLKRXCp3YoiRXem++pG3EE4MD8nuUb24Q5t9RrJXtCYbvOWGs96EY3NAyV5QdqakGj65sxCh1EEomckPVboIZTNBEqGH7IbI9oKT/hM5e81pb46/WODOV6juCHt+jRYu0MNr9N6KgjGg2t9Qsudkz4YcmUuk7oIDLYrQjCIMKAbXnPjvqI0eGHz4i9b0HdVgSaO/xJ1vkOwJ7eUjjfkdldGaSrjhfHpP9eIRuf+AZE5IRSlLhkvZvaAyfKTorZHaQxR3Rc6YcXw+RjYnVOxLcp0xWXtMzpshhUsOmyGKNafQvSTXnpBSu0nKSiekOXpPafx3ZOeKQ72PUDKSmsT12dYrrlsHoWgiKC+atbu7a4rcmXDiXiP1Hsg7NxT9aw7rzvOFmJM7W3uBb3U4QmpLyIjIEe/iaCpWgrccq2zTUhMuit/ioeyskII7lNHPlNxLDjSLdN3l8NSLzx254890n3TdI6VZiDUXoeYi1qJgHFI1J45cENxbhPkXRGuF3DIxVvcEd0/ogyXm5Q1lb059eIV380B7cUtrskY2bNLeGiF8Im0MaS7WVAcL0noPQfRuECe/IFg/Ifq3iLPPCP2/kTVD8o0o/Rc12pbh+VndPz+nLJkB1eETmntPrTlHqodxcaNUU9V9vb7t6IWznS0bLifuiHT4iOi/58C64qgZJpSIHVivOv62q1/PsulRsHpI5iXq5CNysCHd9Eg3PER1rzD/K2K1kdwhinPJ8VlIptGPo0qf+s/p/KBDD6U9IFX3EJTzhIdvavZfHby5J0iGR92/puyvkd0leXNMpuptx66LUNyO3I7skV3evnvZ4ZcRlsIl6sU99fFH6uNPqNaGgrEg0w4pemNkZ8SB7pI/s5HsIflOSMSOw1P/6wgjh4VzP+5q9vwSxbkl31lyYv1E5nyAPr9CHcxJ6z7yuY0azpHdC+RuP675SwWPKSYZPrq3pmCMyZz1ENUuYqwi7YQ60RpQzCTFKOXIjlA09+lX9rwUTkyfxuIBdXiHPvtA0Voh6WMO6gHp04CjVo+jZsBhwydVs8k0XY7bIXljQKYZkDMGZFse6VM3iTCiTa7jxYOuRNMy+ozaf08leEBxNuQ6Q6zbO+qjBUcNh3LHpjZe0lpeUw1naKMlJculaF9sHXb7yL0FtfGvNBZ/oI6e0FefkTpTBM1H0HrPEOshYr2PUA0Q1CCx1QCh1icVvwsRlPCO6vov9MW/qUz+pLn6B631P3He/YtC+DuZ3u9ke79xFHzhyP/CofcrGT+xYwQvbP9LJA4+5WBGxblBGP5Myl5T8h/Rp78hOzeUe09o/SvSo4+I7i2l8Q2VyZpiNxIRD7HmI2oeopacgtS2KQ1mnE4fkmW+FYToPIhEVO1yoHVfTUW0Lg9qdvzuK8UutD3UzoxsaxhL+jOfXmndTvJf/w355ijKpsNxxHil/bz9d072p7VfQur35zi5408pBWuO7WuUINp43v5L6ve18LtikdF7ZJoD0s0LjlqjeFKSXdvZO/0BCROi2mXaU7LtCUrngmNjStZckm+P/78Ic+0xBXdD3lpRtmcUrEvyTqQ2k7iL4g86/A8T3oid2iIWFgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs19.png"
+        title="vuejs19.png"
+        src="/static/df0b7fd2fb3dda51f4896bdbe3733efe/8f50f/vuejs19.png"
+        srcset="/static/df0b7fd2fb3dda51f4896bdbe3733efe/e9ff0/vuejs19.png 180w,
+/static/df0b7fd2fb3dda51f4896bdbe3733efe/8f50f/vuejs19.png 354w"
+        sizes="(max-width: 354px) 100vw, 354px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>결과</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 331px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 26.111111111111107%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAm0lEQVQY03WPzQrEIAyEff/38uZFDx4KXqStSOsfpUgvzhJB6C5uQBLHJPPJnHNY1xXHccBai33fe01aaw0UI4963EMI0FpDCIFlWZBSAiul4DxPPM+DnDO897iuCzHGryWzhdSrlALnvGcyYEQkpYQxBtu2dXE2PNNqrR2CAAiMoNh9392JcMfjGJp9eUb9DjYT/zX/Er6Nx/kAQieDl8Hh0AIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs20.png"
+        title="vuejs20.png"
+        src="/static/a1d527381a646de6d2d5b7d61c69af14/62452/vuejs20.png"
+        srcset="/static/a1d527381a646de6d2d5b7d61c69af14/e9ff0/vuejs20.png 180w,
+/static/a1d527381a646de6d2d5b7d61c69af14/62452/vuejs20.png 331w"
+        sizes="(max-width: 331px) 100vw, 331px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>로그인 컴포넌트에서 입력한 test 를 액션을통해 뮤테이션을거쳐 스테이트에 넣어준다.</p>
+<p>그후 로그인 컴포넌트에서는 스테이트에저장된 값을 가져온다 지금은 옵션api로 코딩했지만 추후 composion api 로변경예정</p>
+<p>이렇게 기본적으로 스토어도 모듈화시켜서 사용하면 편하다.</p>
+<p>이렇게 라우터와 스토어를 나눴고 이제 액션에서 api를 호출하는것을 해볼생각이다 axios를 사용할예정인데 백앤드를 먼저 간단하게 json server 로 구성할생각이다.</p>
+<p>프로젝트와 같은 레벨에 json-server 폴더를 만들었다.</p>
+<p>json-server 사용법은 인터넷에 잘나와있다. <a href="https://redux-advanced.vlpt.us/3/01.html">참고</a></p>
+<p>공식: <a href="https://github.com/typicode/json-server">https://github.com/typicode/json-server</a></p>
+<p>json-server 폴더 하위에 db.json파일을 만들어서 리턴 데이터를 정의했다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 266px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 116.1111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAAsTAAALEwEAmpwYAAADO0lEQVQ4y52UWXPaSBSFG7BZwmIkhFkFtnaB0EIQCPAkGdvjeJyHqfJUTdVM8jK/Yn7+N4VE4i2UU3k4pe4Hndu3z3dbnHsGouWQa1uIloGQDYRiInb7tknu1CF3au+/r0tokUV1ZFM1Amr2kqa3oaLPqZ8vGQW/pUV2hlmBH5Dqu8img+zOURbv6ayuOFY9GtoKLfyIUIz9CX9MYuQ7SIbDwE8ontnUpgnHQx/R0lMzIelZ5ZaJUKz9j9b3zbIT7g2DNW/sGXVrjqQuaQwiGu6G7uaGsjqj5oYcDybZHbdthKxnRdvmvriZmX4z9NdUrBl1I0RRV8hqTM1a0vASikOPqr2gZi0ojQMKHYeOtUYax5T7M6TzmNp4loX50jCipa5oDhc03DXdzRWn8SWDd3eYd/c0nBghjTmfXBO8vUd1r3DDOxr6W/Jd97ChNFykqbfjK5RwS3kcklMsnPB3NslnzNknZGNvkgbnHGo5QlET5GHWcie5Rp5tqLsLqo5PYxTTNbY0x0tKgxlH/elzbJ4a1oyQk/6cWi9MWzY+/UnlLKQZrmgnu3Y1REtDKPtA2k8Tf5JyxZxSm66pm8sUjRQVKUtQyLu1eRCXg4aN2ZrSOMoY/DaCVorKVwbFIaifc7gzPPESKsOI486EouqnmBz1JxT6LvnububtF20+PuXLO9QzDncpn0wysI+7LlU3oqRmYGcGxsM0PZ73w9jE1O0VTX/NyXSNMv/A4Jdb6s4qNbODW7TJDR3jAsu/TRF6xXAHdkJve4Myf4+y+JVeconiJBR7Hj37XYqPrCWc6mtKqv862FVzgRx9QIkuKI98ROMcw/tIOL+n51xQGE6ytlv6Iw4DNzUcBk/vcAd2c7pFu71H8tYcDXyU7YqyNt0/EGZ6oofH9ys2MwtJtxjMllTMCTV7TnUQUGw7FFUPOdhy1HPIdxzK2oRCz8pGbQf1LpD2M43mEZITMY6veGPH1PxLSlqC6PrkegFC8cj1QnL9ENEJ0nW+H5Hvh9+V0K//Qtn+TfzHf7QW/3Lk/UPJ/7zXF0rBl0f71yXO4jmF0RLZfkdxvCI3XFJQl+R/UkLWNYRkPAx8OnI/r/8Bj+htYd9J1wQAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs21.png"
+        title="vuejs21.png"
+        src="/static/1924f5f76fae4ac97310e60087c9c397/b4ffe/vuejs21.png"
+        srcset="/static/1924f5f76fae4ac97310e60087c9c397/e9ff0/vuejs21.png 180w,
+/static/1924f5f76fae4ac97310e60087c9c397/b4ffe/vuejs21.png 266w"
+        sizes="(max-width: 266px) 100vw, 266px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>json-server 를 실행하고 기본실행시 포트는 3000 번이다.</p>
+<p>postman으로 요청을 날려 확인해봤다.</p>
+<p>이렇게 유저정보를 넣었고 이제 Axios를 설치해보자</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">npm i axios</code></pre></div>
+<p>package.json에 추가된다.</p>
+<p>나는 모든 api요청은 services 폴더에서 관리할 예정이다.</p>
+<p>services 하위에 api.common.js 를생성한다.</p>
+<p>services > api.common.js</p>
+<p>process.env.VUE_APP_API 는 환경변수이다</p>
+<p>env.local 파일에 요청주소를 맞춰주자</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 303px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 15%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA3klEQVQI1y2OTUsCUQAAn5cORepzdQO319tXuUsmtbVLiK5GCOnmWpJBRdhBkA4dgqQPhOrcpb88kXQYZo4jCpUQkdM4J1NMOkf1Zpj+K+XOE6b/Rq4+xb/6QnWfKbUf0ek77mDO9vAD7/ITN3lBdWcE4292Jz+IJRMhpMtafYRq3eE0r9k4HuM0b/GSB+TeGXY0xOtN2Ozco+IbiocppT/CwcJyP8EOz7GiC0RmPUBYW2T9BsVaG6vWolCNkTsx5eiUFXNAxvZZrRxhVRss6wCRVYsJkdeIvIuQ5r81v8XTXwRSkFePAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs22.png"
+        title="vuejs22.png"
+        src="/static/cc5de593ec702622024989a26b713826/6728c/vuejs22.png"
+        srcset="/static/cc5de593ec702622024989a26b713826/e9ff0/vuejs22.png 180w,
+/static/cc5de593ec702622024989a26b713826/6728c/vuejs22.png 303w"
+        sizes="(max-width: 303px) 100vw, 303px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>현재 json-server의 요청 주소를넣어주고</p>
+<p>api.common.js 를 작성</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 429px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 117.77777777777779%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAAAsTAAALEwEAmpwYAAADT0lEQVQ4y5WVV3PiSBSFWyBjY7MYg0kiCBQQKLQkLIIZk8Yej11Tm6b2af////i2COuwNrPjh1NXKlWfPvfc0y2Rkg8I7458f0InmXPqXCPcL6jWCG00oxRMUBs+SqWPUt2j4uze34EQDYloBKQ1H7U+IF0boDYClOqmSo40l3Slh7i09rAR5d5h5PtLMs4KzX/kWE+oyxVmck/JmVGRd2jRPWUrIdOKOW7FqJq/XbhT+RZioUf0vN/oud8474yoeHOK9pQLM6FsS3LGNTnzhrw9p+AsyHVGiLJ9mNDu+nQHX2lbXzhvjkm3As7MkFMj5NSMyOoep4Yk03IRhS6iYCBKG8LnNl8R5iyHSyfGmjzSjlaU5Bjn4YGKvKZyNaO7uqUzX9GaLil5Ey68ETkrOti2cLoeR7rHUWdA1gg4qnuc6HI7nLQ2IO9ccdqVnBkhOTMi3xuS1eVuceUtqRi1A9r9RxrGmpOapDhJuJyMSW0icNlDFK1ti08o7id9yMOmGXDcCMlqIZm6R0b3yBpyR7jx6M2i3g6HYlN0RhStmPNuSN2bku9EVJwx6douwOq+pqqbFp/DLWruNsibjbf2VHfPwg7X1OI5ndENRvIJOf9MMxjTkGPc6xuqg4S8vaDgb07QHYp5jeLdIfpLUuYNFXNKO17T9pfktRgxMCTCu0WxZlzYU7rDW6rep6381EZJ+YU/L+u7djiIfMffZapkvcK7wf03d/+pr3BUd8k0fDKNgJweodY9cp1oq0xcWIii/bxR2dkH2vnBlMMlTX+EGU8whzOMZEYrmFAwJVV3SGUQc9ZNyBlD0lX7ifTg0XPdT2Tje87jNQW5xArn6PECe/IZJ15Rtoac6DFneoj6M4SaMSDtLRDhrwh7QTtY0p99o5vckW1EiJLz4tp6bvkgYdB2yTblLlfVPhtPt75qHsome6/ObO//FfpmjBJ8RbhrFOuGmj2lES65aF1xXPV+ePcdaLnPyWCGkI+kenNawRxNLraT/yjZTmHLQ31S0n/9cU8oPkJ40hxsbxBlY3zR3NWStb9EnY8rFPoVopMgWhGKNUW0Y37pRuR0iSgZL35OP4l0+B01+gvV/x01+RtFfqcY/cHl8E9S3RWqsf4Q/gFy1Xk2GcGgJgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs23.png"
+        title="vuejs23.png"
+        src="/static/b0544c6d6269e72aff1bf129faa78fc0/3d026/vuejs23.png"
+        srcset="/static/b0544c6d6269e72aff1bf129faa78fc0/e9ff0/vuejs23.png 180w,
+/static/b0544c6d6269e72aff1bf129faa78fc0/f21e7/vuejs23.png 360w,
+/static/b0544c6d6269e72aff1bf129faa78fc0/3d026/vuejs23.png 429w"
+        sizes="(max-width: 429px) 100vw, 429px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>services > login>login.service.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 389px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABz0lEQVQoz22Se3OaQBRHLz5Qm6SNQREUxPpAVlFJgiJoXtPWNkk7ab//hzmd4DRNnPxx5vx25u7duzsrH/0EY7rBmm0xgxWaPUU6cwq2ouKGlDuTNxRtRbkzRXemedbMMdL0c+dZpjtkfo/ej3EvNpSGa0R9oTaOcdItRriiGaWYUYIdbzidLGkn13ibWz4MIgqHDbWWQlqKgjVBdyLK7Rl6Z07JnlFxLyhaU8T0KbUVRStAswKk4e9p+i/NXqyNbxB1R62fYIY7DHVHI9xxGtzRWjxQ+7xC7AnNxRorztC7cwqt4O1Ub65sh0g7zKfMsxMhlqLUGiHGAGmM0JpjxBjtebX5PaQafacc/0H3rzm+/El19ZvKMOXY6efNxHxuNEQar8gPGiLNf+vRvvb5CdrBOfXZV4z5L5zFNwbxjk4/o+JcUnEjaq0FVS+m2r18ca23zH1kR5x0LzjyFlTacwqWQjrqHL0XIqMM6S355CeYKuXEv+J0kGLaa+rqlrPgmjN1Sz33DfXRlnYnxQuusCcJZ70k/1biLu/5OP5B0U0pdTMK3QztlTUvQ3PTA9a5xcuQZ7v72qK3RYzkiZJ6ouw/UB4//sc/8Hv4B9l/5C+vjw7KFlY/wQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs24.png"
+        title="vuejs24.png"
+        src="/static/beb02ed82c9ab678d9eb5ae0f3421612/00a4e/vuejs24.png"
+        srcset="/static/beb02ed82c9ab678d9eb5ae0f3421612/e9ff0/vuejs24.png 180w,
+/static/beb02ed82c9ab678d9eb5ae0f3421612/f21e7/vuejs24.png 360w,
+/static/beb02ed82c9ab678d9eb5ae0f3421612/00a4e/vuejs24.png 389w"
+        sizes="(max-width: 389px) 100vw, 389px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>store>modules>login>login.actions.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 479px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.111111111111114%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6klEQVQoz32Sa1faQBCGN1UrVAnBJISbIUouJOSCXIIgl2q1Ry2ltfZz//+/eHoC1kpr++E9Z3bPzLPzzo4oTH8g9x4wz79gXjxyMvtOPV1x0PvGYf+R2sUD2nBJoXuP0luipiuKvSXa6Ctycs/RcIVytqQQ3/PWuUGI/meEfcFBOEdOFhjxB4zoCjm8YbeVUvYTzLMFrfMrSqdnWOkl1mBCKRpSbAXkrQ65ZkDODNgxXITip5Q7U7RwRtEbI58OUewR9XDKu+MYoTnkGgn54wRJ89irhOzXOwjdQyq7CNVBqC5Cc9d3ohL0OBl8pJFcYXUv0ZwUobbWyVLZQ2TSnI0ygL6JJd19gm5LHDo+BW+OFtxhda+phXOkWoxk+AjVXr/8nKy7a9AW4M+z7HYo2WOavVus/jUFb0alu0DvTChEExQ7RtI93hjttaRMWXdl79nFFrDohiinI/T4Ds2foIVDjGRMc7ygms4xxwvyZsSRnaJEU46iEbnq35397tCLkO0xO9WY/XrMfiNEaNnc2pu5qc66wwzwa3avWd2yXLTPMfufaA1uUYP3qNEMPRixW2k/WXtR8AL2GlTIboia7aGZkGuE7NViDpoJ+YbPjtHeKvpXvP3LVgep7G/2KLP4tBabvfq/vdeAPwE36CeA2V5X4AAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs25.png"
+        title="vuejs25.png"
+        src="/static/7c7c8733cf6f02e18ce1c0760a40e4ea/a9b70/vuejs25.png"
+        srcset="/static/7c7c8733cf6f02e18ce1c0760a40e4ea/e9ff0/vuejs25.png 180w,
+/static/7c7c8733cf6f02e18ce1c0760a40e4ea/f21e7/vuejs25.png 360w,
+/static/7c7c8733cf6f02e18ce1c0760a40e4ea/a9b70/vuejs25.png 479w"
+        sizes="(max-width: 479px) 100vw, 479px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>store>modules>login>login.mutations.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 384px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 18.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA0UlEQVQY023JQUsCQRjG8dmsdbVuq402FRi7hTg7M0Kgm5QhltslurhG5yJPfv/bPxpUNujw432e9xHR+JX6zZhwWBAO57QGD0j75PXulki34HL0xqmZU7/SpLcj+pMFSudcuCl2WtAdGBr9nDSfIK6LDcnsm/jxE/n8Reg+6M3W6JcN8f2ayKxoZCWRt6RpSo7dO0278k5+symJTOmvEDLj6NxRU5aaMoiu4VBZQmU5OLMIqQk62Z7oaP/7o7qJOEG00r2gvcsJor3tFcE/qtsPcSpxQd3kgaMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs26.png"
+        title="vuejs26.png"
+        src="/static/cf9858502a9e1d647148215979d6e028/804b2/vuejs26.png"
+        srcset="/static/cf9858502a9e1d647148215979d6e028/e9ff0/vuejs26.png 180w,
+/static/cf9858502a9e1d647148215979d6e028/f21e7/vuejs26.png 360w,
+/static/cf9858502a9e1d647148215979d6e028/804b2/vuejs26.png 384w"
+        sizes="(max-width: 384px) 100vw, 384px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>store>modules>login>login.state.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 132px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 49.24242424242424%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/klEQVQoz42P21NSARCH1zkkaQIHuXhBwbwcCDgcQEIRqgFEJQUNFCJBH3IKL01ONlO91fTQdHnoxdd66A/9Gjo21TRdHr7Znf3t/nZXFJ+OMh5B8cVQfFEzDyRRtCzKWNis9fJxHeVaHiUQQxkJoQRSWLQcfZMGo8ZNsjsNbAEDkY1TZO0MqT5FGi+RlROkeIisdBFvCMnsI91zpPwIqTxB1l8g9edI/ghZO0bm8vgTSSoHmwyO64iayKIurOAotbCnizhSBexBA3s4hX06hCNZwH79FvbsbRyZEkPJIrbFZRzpIqqRYWg6ylx2iTsHVa74E4hRqjCZq+KZr6AaWzhiFdT5bTzpBq50E9Wo4oxv4UzWcCZqTCztMlU+wVt6iC2ygTpfZzjVQE21sEYbSGi5hW2xjdZ4ReHxJ4zOR0rPvqC33uJfPcOq7zKx8Yb43mdi9ffMbL5jtn3OVOcD1tgeFr1HB4vexmp0EKPcxLVQw720z0ThCO+NB/gKhwzoTQaNFgP6DoPxNmr6gNFcF1f6Pu7iKVd3X2OL38US3sYa3aE/YiK17jaeWA4ZnjVx9eIM4g0inuBF1BD3hdbDPWf2ujX6vMFfkPXjOqF8ncuB+LfGvpHvombi+X3oB5q57GdW71XxZ6pc8kVMwz8O/x/SPxYx37kwk79e9G/DrzYlKC+R9TlBAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs27.png"
+        title="vuejs27.png"
+        src="/static/d27d5139905b350de99bd730f148f32b/06c4e/vuejs27.png"
+        srcset="/static/d27d5139905b350de99bd730f148f32b/06c4e/vuejs27.png 132w"
+        sizes="(max-width: 132px) 100vw, 132px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이렇게 액션에서 해당 서비스를 호출하여 받은값을 뮤테이션하여 스테이트에 저장하는 로직을 작성한다.</p>
+<p>마지막으로 Login.vue 컴포넌트도 변경한다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 607px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 98.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACmElEQVQ4y5WVW3PSUBSFEyANpOFWCJcGSmkI5HLCLRWL0It22jpVW6vO9MHR//8vPieBInW04MOak9lJ9nxn7ZUTqdS/oDi8RW30kfY6SOUuUtlerEYPufJ/krKWizG6pOifUx/M0ZouOw2BYnrIlah5ZyXZsGNJy1U2uqva6l7BHVMYvicX3GJP33E4OacRXlAdvKXozMk7p2jWG9LWDLkWIFV8pKpAqvpr12sywivM+U+aZz9ozh+xzr5jnj6SO/5CfvxANrijMP6G3v9McXCPPrgj492SDe4pjL+y638kH9yh9T+R8T4g5SyXsndKoTclte+jmoKU6aEcCJSmIFVfWLBjCjJNwc5BgNIQqM2AzOEwrqcjixp+XJeMYI4xeUBrv4o9kZ5UXspYDulpfRpYtJY6a7Vlfcfso7aOSdT85w+U/tIkGsKmKSviirR/QckZU/ZPyHXGsSrBFP1QkGgfk2yHZO0hybq3samUCq5IOxdo4hLNOSHdcFFMn3Tsn4Nc95FrHsq+R6LqbG5YcEKywQ3q0Qw5emHdoz89XTZ7qamU7Xjo3RM0a0Ky7sYULxJsIix2hqjNQZz+1eRKS8qSvTXZ7y33RpSH11RHt+StGbodotsj1IZLrjsi0xJL6u6WhNYQ9SAK6IBUPQqoR2rfI1XrxQFP1nrPMrnRwz03pDS6xghu2D2corZCCm5IuuWjHwn2xGuy3TF6WyBX3c2EescnZ88oOmfk7QmpekToxmSRYtp9dxGhyhaxydkCvTtD680wB1dkrSnp9jGJowkZa+Hl6hPcZssFe4DS7MeHqVRxSFQ9EjUHueaSqEWkzrODdjNhu0+yHk2y9zzIxjrV4vTeKjbaUYhmz1BM8c8XFoTdrX4BvwBG1AeDbXfBXgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs28.png"
+        title="vuejs28.png"
+        src="/static/82cbe32681821e5642cb8d07fd33ddea/ef9e5/vuejs28.png"
+        srcset="/static/82cbe32681821e5642cb8d07fd33ddea/e9ff0/vuejs28.png 180w,
+/static/82cbe32681821e5642cb8d07fd33ddea/f21e7/vuejs28.png 360w,
+/static/82cbe32681821e5642cb8d07fd33ddea/ef9e5/vuejs28.png 607w"
+        sizes="(max-width: 607px) 100vw, 607px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>화면을보자</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 332px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 13.333333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAYUlEQVQI15WMSwrAIBBDvf8BBRfu3PgZ3fgZEE1xoMu2NBAmIcxTMUaklOC9RwgBtVYc7b3xpHtba0kupSDnLF1ZawVERNBay/gHOOeEcw7GGIwxoN4evoDn9t7FzIzWGi7qrOqX+gglRgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs29.png"
+        title="vuejs29.png"
+        src="/static/6a9e42ca1afce03a86f7a6dc534df59f/f8dc5/vuejs29.png"
+        srcset="/static/6a9e42ca1afce03a86f7a6dc534df59f/e9ff0/vuejs29.png 180w,
+/static/6a9e42ca1afce03a86f7a6dc534df59f/f8dc5/vuejs29.png 332w"
+        sizes="(max-width: 332px) 100vw, 332px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>아이디값을 입력하여 전송한다. id:1</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 327px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 21.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqElEQVQY042Oy6qGMAwG+/6P5ROI4EZFUbzbFm+4ajs/KXR3FidQQuiXyShjLfu+Y4xhnme0Nrzvi3MO7/2fzzmPDwFrLXVdUxQFTdNEhtq2jXEc+b6PdV3p+54QAv+p8zwpy5Isy8jzPIopgVRVxbIsEZxMJay1ZpqmaCL/13XRdR3DMHAcB23bRrs0P8+DkrCEZEFsE1CW7/uOUDkqXWY5mrLSEyjVDwG4LfzuFvKiAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs30.png"
+        title="vuejs30.png"
+        src="/static/408b2fe868f014efcb55a1b1a8779d32/00e65/vuejs30.png"
+        srcset="/static/408b2fe868f014efcb55a1b1a8779d32/e9ff0/vuejs30.png 180w,
+/static/408b2fe868f014efcb55a1b1a8779d32/00e65/vuejs30.png 327w"
+        sizes="(max-width: 327px) 100vw, 327px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>개발자 툴에서 network탭에서 호출이 정상적으로 되었는지 확인해보자</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 698px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37.222222222222214%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABBElEQVQoz4WQ227DIBBE/f9f2IdWUeJgbIxtcGwuvp0K0lapEilIo2Fhd5ihuJQldaOw4w1jxzvGkcGO6K6naVtUqzhdGz5OkmutEaKi1R2NaqmkpO06KlnTG0PRdR1SSpZlyYgx/nEIAast1gSm2RNixHmfz+99ETfPee+cw3tPobWmLEsSJ/F0ua5rHtr3HWc8/hbY3QzHwbuVHQohGIYBay2DMfmlX+F5cIzK4rQm9j1bjCTZ4zheokhCKbJSCmtMFk7uUuxt254cHD8ujwe3/wTruuHz84vz+cI0zcyz4zZN2HFkWdangcf6ZWRR1ZRCIqqGSjYImVjlOoT45ObdH34D86UeaUseh5kAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs31.png"
+        title="vuejs31.png"
+        src="/static/6db976a57cc157477769070b9354c595/487bb/vuejs31.png"
+        srcset="/static/6db976a57cc157477769070b9354c595/e9ff0/vuejs31.png 180w,
+/static/6db976a57cc157477769070b9354c595/f21e7/vuejs31.png 360w,
+/static/6db976a57cc157477769070b9354c595/487bb/vuejs31.png 698w"
+        sizes="(max-width: 698px) 100vw, 698px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이렇게 json-server를 이용하여 간단하게 axios까지 구현해봤다.</p>
+<p>이제 로그인 을 했을때에 main으로가고 유저 정보가 없을때에는 login페이지로 가게끔 라우터를 바꿔보자</p>
+<p>일단 path가 라우터에 명시된게 아닐경우 무조건 ’/‘메인으로 가게끔 추가하자
+router>index.js</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 242px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 65.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACIklEQVQ4y6WSWW8SURiGD50WHCgtZRkYls4wMCszwICQYWmhLW2NtsakF95Yo9HEGC/0F3jhH39Mh6p1Sarx4sl38n7nvDnfIlQtYktxEUUTUbTWsXQnfiPO/6L9Mdces1VzSdV8HtTXbKouyVqHZNWLzzek6j5yw2dL9WKkihPrUuXmbSe+L5UdRMYJyFhdcu2QSmeMPljQCKbUgjkVNyKn98nqIXrvENWLUN0ItTMhpXpx3DVC9HCBNzklq3cRGdun5MzQrHOszgXpakiibpPzR+w6A7TpklJvRvt4hRJOUcKIbXtAeTgmpQfrNil3ypdtn6p3RMt5jOE+Ilt/iKS65NwxOXdIY7ag0I2oRXOK/hglnCDrXbJ2n21tyIbixEYJxY6JS95pj7C8S+zOUwzvEsd7wr55isibpJ2QtNFDKriIvRZir73+Vf52ELdG3w3TlkfRmqCZJ+j2ikylS2Nygaz1EQUDqWyxoVhIZZtEyfwNEdP+gewNaY6uCMavMIfPKVjHNM9fI5sHiHIXUe4j1D6Jap+NangvYvfgBeryPfuTj4QnnxmffUGPPpE/ekP96h3t6w/kp29JBtekevcjMsEMbfUSdXBFprlENpYk9UM2m3OS5gFpb4HcWiJpMyRtfi8iqRloR8+o91aInRqi2EIUDUShhcgbiD0j7uVa/wvU5oTtWp9E2bmdlPPT1P4VkW+MSKtBvAKxcLOc/2H4FfeJYgj7LKX+AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs32.png"
+        title="vuejs32.png"
+        src="/static/f952aca24e99492f4d45acd49d00d45b/a1a85/vuejs32.png"
+        srcset="/static/f952aca24e99492f4d45acd49d00d45b/e9ff0/vuejs32.png 180w,
+/static/f952aca24e99492f4d45acd49d00d45b/a1a85/vuejs32.png 242w"
+        sizes="(max-width: 242px) 100vw, 242px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이제 라우터에 지정된 path가 아닌경우 무조건 main으로 리다이렉트한다.</p>
+<p>이제조금 복잡해진다
+나는 로그인할때 jwt토큰을 발급받아 localstorege에 저장해서 토큰의 여부로 사용자가 정상 로그인한걸 확인할것이다.</p>
+<p>일단 라우터가 실행되기전에 로그인이 필요한 페이지인지 확인후 로그인여부를 확인한다 (토큰여부)</p>
+<p>그후 로그인 필요한페이지 접근시 로그인여부가 true면 라우터가 진행되고 false면 로그인페이지로 리다이렉트 시킨다.</p>
+<p>router > index.js</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> jwtUtil <span class="token keyword">from</span> <span class="token string">'@/shared/utils/token-util'</span><span class="token punctuation">;</span><span class="token comment">//토큰이 을 로컬스토리지에 set해주거나 get하는 로직을 임포트</span>
+
+<span class="token comment">//라우터가 실행되기전에 실행한다 </span>
+router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
+  <span class="token comment">//로그인 안한경우에만오는 페이지 login.router 해당 </span>
+  <span class="token keyword">const</span> onlyWhenNotLoggedIn <span class="token operator">=</span> to<span class="token punctuation">.</span>matched<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span> 
+    <span class="token punctuation">(</span><span class="token parameter">record</span><span class="token punctuation">)</span> <span class="token operator">=></span> record<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>onlyWhenNotLoggedIn 
+  <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token comment">//로그인여부 </span>
+  <span class="token keyword">const</span> loggedIn <span class="token operator">=</span> <span class="token function">isValidAccessToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token comment">//로그인 필요한 페이지 접근 시 </span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>matched<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">record</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">!</span><span class="token operator">!</span>record<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>auth<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment">//토근존재여부 판단 </span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>loggedIn<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">{</span> 
+        path<span class="token operator">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span> 
+        params<span class="token operator">:</span> <span class="token punctuation">{</span> nextUrl<span class="token operator">:</span> to<span class="token punctuation">.</span>fullPath <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+      <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+  <span class="token punctuation">}</span> 
+  <span class="token comment">//로그인 필요없는페이지 접근 </span>
+  <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>matched<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">record</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">!</span>record<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>auth<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment">//로그인 되어 있는데 다시 로긍니 페이지로 이동한다면 </span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>loggedIn <span class="token operator">&amp;&amp;</span> onlyWhenNotLoggedIn<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">{</span> 
+        name<span class="token operator">:</span> <span class="token string">'main'</span><span class="token punctuation">,</span> 
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+      <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+  <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">//토큰생성 여부 판단 </span>
+<span class="token keyword">function</span> <span class="token function">isValidAccessToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  <span class="token comment">//로컬스토리지에 저장된 토큰가져온다. </span>
+  <span class="token keyword">const</span> accessToken <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'accessToken'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token keyword">if</span> <span class="token punctuation">(</span> 
+    <span class="token operator">!</span>accessToken <span class="token operator">||</span> 
+    accessToken <span class="token operator">===</span> <span class="token string">'null'</span> <span class="token operator">||</span> 
+    accessToken <span class="token operator">===</span> <span class="token string">'undefined'</span> <span class="token operator">||</span> 
+    <span class="token operator">!</span>jwtUtil<span class="token punctuation">.</span><span class="token function">isValidJwt</span><span class="token punctuation">(</span>accessToken<span class="token punctuation">)</span> <span class="token comment">//유효성검사 </span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span> 
+  <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span></code></pre></div>
+<p>shared > utils > token-util.js</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> tokenUtil <span class="token operator">=</span> <span class="token punctuation">{</span> 
+  <span class="token comment">//로컬스토리지에 토큰 셋팅해준다 </span>
+  <span class="token function-variable function">setItem</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+  <span class="token comment">//로컬스토리지에 토큰 갸져온다 </span>
+  <span class="token function-variable function">getItem</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">return</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+  <span class="token comment">//로컬스토리지에 토큰 제거 </span>
+  <span class="token function-variable function">removeItem</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+  <span class="token comment">//토큰 유효성검사 </span>
+  <span class="token function">isValidJwt</span><span class="token punctuation">(</span><span class="token parameter">jwt</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>jwt <span class="token operator">||</span> jwt<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token function">atob</span><span class="token punctuation">(</span>jwt<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">const</span> exp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>exp <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">const</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">return</span> now <span class="token operator">&lt;</span> exp<span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+  <span class="token function">invalidateJwt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'vuex'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'accessToken'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+  <span class="token function">invalidateJwtAndReload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'vuex'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'accessToken'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    location<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+<span class="token punctuation">}</span><span class="token punctuation">;</span> 
+<span class="token keyword">export</span> <span class="token keyword">default</span> tokenUtil<span class="token punctuation">;</span></code></pre></div>
+<p>jwt토큰관련해서는 공식문서를 참고하는게 필요하다</p>
+<p>기본적으로 유효기간이있고 해당유효기간이 만료하면 다시로그인을 하는 방식으로 보통 많이 구성한다.</p>
+<p>jwt토큰은 백앤드에서 발급해주는 식이지만 현재 백앤드서버는 구성안하여서 약식으로 하겠다.</p>
+<p>중요한흐름은 로그인시 토큰을 발급 => 로컬스토리지에저장=> 페이지 이동시마다 토큰유무를 파악 => 없는경우 로그인페이지로 리다이렉트
+해당 흐름이다.</p>
+<p>이제 로그인 컴포넌트를 조금 수정해보자</p>
+<p>views > login > Login.vue</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span> 
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span> 
+    Login Page 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lof<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span> 
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> 
+          <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ids<span class="token punctuation">"</span></span> 
+          <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>loginForm.username<span class="token punctuation">"</span></span> 
+          <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inputUsername<span class="token punctuation">"</span></span> 
+          <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>아이디 입력<span class="token punctuation">"</span></span> 
+          <span class="token attr-name">outlined</span> 
+        <span class="token punctuation">/></span></span> 
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span> 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span> 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>log_foot<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">@click.prevent</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>handleSubmit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> Login <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">></span></span> //버튼클릭시 로그인 함수실행 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span> 
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"> 
+<span class="token keyword">import</span> <span class="token punctuation">{</span> mapActions<span class="token punctuation">,</span> mapState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span> 
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> 
+  name<span class="token operator">:</span> <span class="token string">'Login'</span><span class="token punctuation">,</span> 
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> 
+      loginForm<span class="token operator">:</span> <span class="token punctuation">{</span> 
+        username<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> 
+        password<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> 
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+    <span class="token punctuation">}</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>inputUsername<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span> 
+    <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token string">'login'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'LOGIN_TEST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token function">handleSubmit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">//로그인 액션 실행 </span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">LOGIN_TEST</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>loginForm<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'accessToken'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">//accessToken 있을시에 main으로 라우팅해준다 </span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'main'</span><span class="token punctuation">,</span> params<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+<span class="token comment">//accessToken 없을시에 login으로 라우팅해준다          </span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span> params<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span> 
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+<span class="token punctuation">}</span><span class="token punctuation">;</span> 
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre></div>
+<p>store > modules > login > login.actions.js</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//로그인에서 사용할 service 추가 </span>
+<span class="token keyword">import</span> loginService <span class="token keyword">from</span> <span class="token string">'@/services/login/login.service.js'</span><span class="token punctuation">;</span> 
+<span class="token comment">//로그인시 토큰 및 로컬스토리지 비워주기위해</span>
+<span class="token keyword">import</span> tokenUtil <span class="token keyword">from</span> <span class="token string">'@/shared/utils/token-util'</span><span class="token punctuation">;</span> 
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">LOGIN_TEST</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> commit <span class="token punctuation">}</span><span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
+  <span class="token comment">//JWT and localstorege 비워준다 </span>
+  tokenUtil<span class="token punctuation">.</span><span class="token function">invalidateJwt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token comment">//액션에서 api 요청예정 </span>
+  <span class="token keyword">return</span> loginService 
+    <span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>username<span class="token punctuation">)</span> 
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
+      <span class="token keyword">const</span> user <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span> 
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span> user<span class="token punctuation">.</span>username<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'accessToken'</span><span class="token punctuation">,</span> user<span class="token punctuation">.</span>accessToken<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+      <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'SET_USER'</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span><span class="token punctuation">)</span> 
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>로그인시에 accessToken과 username을 로컬스토리지에 저장해준다.</p>
+<p>해당데이터 기준으로 사용자의 로그인 여부를 판단한다.</p>
+<p>처음 메인 진입에 accessToken이 없으므로 login 페이지로 리다이렉드된다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 303px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 23.333333333333332%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAXUlEQVQY06WQMQoAIAwD/f8PC+IgVTuIgpM4GKmDD6iBQqBwJHE5Z5RS4L2HetXe+55FTiGtNcQYEUL4B845McZA7x211vcwA0UERARmxlrrpTMDtW5K6e6oSX8rHybGiTfepJJnAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs33.png"
+        title="vuejs33.png"
+        src="/static/99ff1141cbc500244b0bf3e99cec24ca/6728c/vuejs33.png"
+        srcset="/static/99ff1141cbc500244b0bf3e99cec24ca/e9ff0/vuejs33.png 180w,
+/static/99ff1141cbc500244b0bf3e99cec24ca/6728c/vuejs33.png 303w"
+        sizes="(max-width: 303px) 100vw, 303px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>로그인을 정상적으로 할때 아래와같이 메인으로 라우팅되며 로컬스토리지에 저장된 데이터도 확인이 가능하다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 640px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 114.44444444444446%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAAsTAAALEwEAmpwYAAACnUlEQVQ4y62UwW7TQBCG8w68LgfuHBDvwA1x4MaxUkUlJJSqhUJJ28RObMdxbSde27v2Ot4P7aYpadoAEow0mtnx+PM/uysPOGC9MYCh7mAYNkSZdHXj6r/Mrvu+d/mVf83gKdjmHUNcGd6N4dmLMa8/zCh6ML1xz7dcBzQb4DSYPQ3s74AzYXg5hOcfUt5+a5iUm3q/B9yqjsLosML+7oX3N4Y33w2f4u02/ILtA8MwZLBb2OabMTZ7mErDq1MISnOnzjzo291XB9z90iG7XkF34PFvFWqtaduWruucr9drt6bfrJumcdH2Wbf5I4W7wNFoxMnJCWdnZ5yfn+N5Hqenp/wYjbi4uOD4+JjLy0vXd3R05PrcId5dm/uRH45rP9A7t41bt2q3cff+PTmytbVeU60UjdSoStOq7uCe2lGLothsx77CLVCWLV8/+oyGET8+h4TX2aOT3/YKIRgOh+R5/jcjPzzBP9UOjryvZL++C/vtPfwbIIaDwEcK+Uc7eLH/xR8dyv+yyAKruqaWkrqW2Fwq5aJqmk1dKkRZIW0UgrKqXE+rO5q2QcqSohBo3THxPAb+LCCcxyRpRpzccpvlRHFMNI9dXK4KsjwnyQXXsxR/viRbFq43zTNu0wVBFJOvCq5uxgy86YzxxHcgq6SSimkQMJ545MsVhRBUVY0oS6paUoiSRZIQLxKyfMmyEKyKgrKquZlMGIw9n7MvXx3dKi1rief7XI6umAYhcZI6T9IcqVpEJRld3VDWirZbo1qNbDRdD0E0Z2Cl2yTNl6xEiahqJp7PNJgTximV0rRraDpD0+HWwTyhqJSrK21Qunf/S1sfTPwpi9vUgax8q9ACs7xwjartaB2sd9Gua6VRen1fb3SP/QeF8wU/ARaG+LitC0J3AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs34.png"
+        title="vuejs34.png"
+        src="/static/7ce5cc7cf2023f28c349a11ce49dc8d5/6af66/vuejs34.png"
+        srcset="/static/7ce5cc7cf2023f28c349a11ce49dc8d5/e9ff0/vuejs34.png 180w,
+/static/7ce5cc7cf2023f28c349a11ce49dc8d5/f21e7/vuejs34.png 360w,
+/static/7ce5cc7cf2023f28c349a11ce49dc8d5/6af66/vuejs34.png 640w"
+        sizes="(max-width: 640px) 100vw, 640px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>자 이제 여기까지 대략 jwt토큰을 백앤드에서 받는다는 가정으로 구현해봤다.</p>
+<p>모든라우팅이 이루어지기 전에 로컬스토리지의 accessToken여부를 판단하고 없다면 로그인페이지로 리다이렉트 시켰고</p>
+<p>이제 모든 api 요청을 할때도 accessToken의 유효성을 판단해줘야한다.</p>
+<p>services > api.common.js</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> tokenUtill <span class="token keyword">from</span> <span class="token string">'@/shared/utils/token-util'</span><span class="token punctuation">;</span> 
+
+<span class="token comment">//api 요청에 실행 로직 추가 </span>
+Api<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  <span class="token comment">//토큰가져옴 </span>
+  <span class="token keyword">const</span> acToken <span class="token operator">=</span> tokenUtill<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'accessToken'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>acToken<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'Authorization'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>acToken<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span> 
+  <span class="token keyword">return</span> config<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//api 응답에 실행 </span>
+Api<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span> 
+  <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">return</span> response<span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+  <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">const</span> errorResponse <span class="token operator">=</span> error<span class="token operator">?.</span>response<span class="token punctuation">;</span> 
+    <span class="token keyword">const</span> errorStatus <span class="token operator">=</span> errorResponse<span class="token operator">?.</span>status<span class="token punctuation">;</span> 
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">!</span>errorStatus <span class="token operator">===</span> <span class="token number">401</span> <span class="token operator">||</span> errorStatus <span class="token operator">===</span> <span class="token number">403</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      tokenUtill<span class="token punctuation">.</span><span class="token function">invalidateJwtAndReload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">return</span> error<span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span> 
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> Api<span class="token punctuation">;</span></code></pre></div>
+<p>이렇게 axios 의 요청이 실행되기전 accessToken 이있는경우 요청 헤더에 토큰을 담고 요청을 진행한다.</p>
+<p>없는경우 헤더에 토큰을 못담기때문에 서버에서 에러를 보내준다. 이부분은 서버에 구현이 필요하지만 있다는 가정하에 진행한다.</p>
+<p>에러를 받았을때의 로직도 추가한다.</p>
+<p>에러상태가 401 또는 403 일때 로컬스토리지에 데이터를 비워주고 현재페이지 리로드한다.</p>
+<p>그럼 토큰이없기때문에 메인으로 자동 리다이렉드 된다.</p>
+<p>사실이기능은 서버랑 같이 구현되어야하는 부분이여서 아직 확인하기가 좀 힘들다.</p>
+<p><strong><code class="language-text">보통 api호출시 데이터를 받아오는데 진행사항 표현하는 로더기능도 이쪽에 추가한다.</code></strong></p>
+<p>이번에는 vuex의 데이터를 로컬스토리지에 저장하여 사용하게 해주는 플러그인을 사용해보자.</p>
+<p>vuex store 의 데이터는 새로고침시 사라진다 dom에 뿌려지기때문</p>
+<p>하지만 우리는 계속해서 데이터를 사용하고 싶은 경우가있다</p>
+<p>이때문에 나온 플러그인이라고 생각하자 먼저 로그인을하고난후 로그인 정보를 getters로 받아와서 뿌려준 메인화면이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 68.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhElEQVQ4y41TTU+DQBDtD/I3+Q803j3r1ZNn26MHLybGaxs1kqZfKcSkCa3SWmwE+wXysbDzlKW2lAJ1ksmyy+ybNzNvSygwTgSAMLQIN505lrafON8Yrfacc5TywUQotCVwViccnPdQ7TtweHyexPwXIK0ATRe4aBHKLRvPkw27vYC0DqS1h6uSqyPC1Qsw9eI9T8QUMqRE2uSFuQfU3mMwykm+l+FW6alEWcm3AJMglmWh2WxCkRWoqgpN0yDLMgaDgVjb7TZ0XYckSVAUZT/DyFjgC/c8D4wxsfq+D9d14UbfjIEFAQIerhTBRSu2GEbmWD5MfQlr5mJhOgDla9QYTzB+HcIYf2yklga0Fx763QlGPRPDnoGAhTt9XTAHjU8V990n3LZquOs8QpmN4Ia+6HVmyVmTD0koGnVDxeHDJY4bFRw1KjjtXONEKuPNMsT/0s6EecIzJh/1zbZtfNs2AhZgan6JfZSQ/hhm6Sot3PUkiQRo2mMyBU+vqPzc9/8L+APIjEDQLn3p6wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs35.png"
+        title="vuejs35.png"
+        src="/static/47643a2f4d4a2581b228e42d7abc628e/37523/vuejs35.png"
+        srcset="/static/47643a2f4d4a2581b228e42d7abc628e/e9ff0/vuejs35.png 180w,
+/static/47643a2f4d4a2581b228e42d7abc628e/f21e7/vuejs35.png 360w,
+/static/47643a2f4d4a2581b228e42d7abc628e/37523/vuejs35.png 720w,
+/static/47643a2f4d4a2581b228e42d7abc628e/6e9ba/vuejs35.png 731w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이렇게 로그인한 유저의 정보가 보인다.</p>
+<p>하지만 새로 고침시에 이렇게 유저의 정보가 사라지는걸 알수있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 64.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYUlEQVQ4y42TzU7CQBDH+4I+h6/iyURj9GL04IEjJnowRg/GgCHSaEhrt9CsBgVRWxGpH+129292obDQFtlk2p2v3850pwYKlhBCPtS+3mVotIfSipFZFKXByIeNkqTc+MBKqY/VA4ogntqLmIVArhIEKl1g7SpC2fnFUwityn+AaRvTCkY6FwJ7NnDZTWGzfn2fqXD+2/CxagfA43AcsyB+AtRPYYwhiqKJLeEcgidKGEuUP45j9c7rKAP033zUajVYlgXXddFqtUAIged5ME0TlFI4joNqtYowDDNQY1H5eTYu+JwulKTxhp743hviwX5BxwvwfN/PnJ7GDXo+qO2i2bgDkil4pmW5fr5i+J1PfLyGGATfmVuU1ZXb19i4PcZ6/RBb5hF2yTnIoDOBLtWyPkIlWsEmOcFO8wz79ALb5BRWvz0LzJvBedii3033G1hi6dBEcDA5QjxRIyVFv5Q/cdDzdh+UH6MAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs36.png"
+        title="vuejs36.png"
+        src="/static/55818cf333991d511183d67ffe661cb7/37523/vuejs36.png"
+        srcset="/static/55818cf333991d511183d67ffe661cb7/e9ff0/vuejs36.png 180w,
+/static/55818cf333991d511183d67ffe661cb7/f21e7/vuejs36.png 360w,
+/static/55818cf333991d511183d67ffe661cb7/37523/vuejs36.png 720w,
+/static/55818cf333991d511183d67ffe661cb7/c483d/vuejs36.png 751w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이를 해결하기 위해 라이브러리 추가</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">npm install --save vuex-persistedstate</code></pre></div>
+<p>vuex-persistedstate 4.x (for Vuex 4 and Vue 3) 공식 문서 참고</p>
+<p>store > index.js</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"vuex"</span><span class="token punctuation">;</span> 
+<span class="token keyword">import</span> createPersistedState <span class="token keyword">from</span> <span class="token string">"vuex-persistedstate"</span><span class="token punctuation">;</span> 
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span><span class="token punctuation">{</span> 
+  <span class="token comment">// ... </span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">createPersistedState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>다시 로그인을 해보자</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 91.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsTAAALEwEAmpwYAAACTklEQVQ4y62SyW4TQRCG5z15DA5cuESCh8gdCQ4IQS7cEoE4gEQUsYggbMfb7PtMT8/iWT7U7TixjY2EREm/urqq6++/usvggA2DwqBRdvDkveD0wta5/jauzhwy4xhhrysGLix48Crj5K2HVensvxOulayLFwJOv/Z8sKFsN4QcNeNe1XC3btD3a5VvJgNXvvJ7un6T63dqDiocjlxdDdAdUbRfY2yrUiaEYDQaYZkWvu9jWTa2ZeE6NuPxGMdxmM1mTCYTuq5jv/6Pltt2hee52I6tCQPfX69hiGmahFFEFMfYjsP6QYad1o1tsqZukVlN1wx0zfGHX8kKEaca+4J2CPO4ZPLFZX7tY40jhs0H3LakWpzLkHc/Lzn7eM7Zp3N+pTZVt9pV+LcP2X6fpms5uXrJw8/PeHT1nKffXvP48gWT3L0bemO7YHtk9uObgqwsCNMYWVd4UUCQRLT9/ecYh0j+hn5Qs7iG8hW28wb/2YwkTRFFQZrl5KIgF0Lvs1xoqFiW5zqufVHgRTlelCFkRVmWCJGRpBmikBizxRLXD4iSlDjNsB2XxdLED8I7InVYIc0y4iRlNDWZmR5hnBIlCUEU4PohQRRjTOcLvv+4xvF8hCwxLYvZfKHJwyghUvNWSGRZUdaNLvL8gLppKGRJISuKstb5oqwwbNdjfDPFU4pEgWnZjCZTlpZHLmuEbKianrodWPUQJjmm4+t9vdqgX6MdMG5mcxSpujkvJEvT0ntZrVh1aDTtQNP22s+LEi+ISPNCI05zjSQTOvcbmP5w7cjcABsAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs37.png"
+        title="vuejs37.png"
+        src="/static/a23d27a8cb4a6b03785d0e0f0dcbe2da/37523/vuejs37.png"
+        srcset="/static/a23d27a8cb4a6b03785d0e0f0dcbe2da/e9ff0/vuejs37.png 180w,
+/static/a23d27a8cb4a6b03785d0e0f0dcbe2da/f21e7/vuejs37.png 360w,
+/static/a23d27a8cb4a6b03785d0e0f0dcbe2da/37523/vuejs37.png 720w,
+/static/a23d27a8cb4a6b03785d0e0f0dcbe2da/f7616/vuejs37.png 766w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이렇게 로컬 스토리지에 추가된것이 보인다 이제 새로고침을 해도 유저의 정보는 로컬 스토리지에 있기때문에 사라지지 않는다.</p>
+<p>추가적으로 내가 사용하는 eslint + prettier 설정이다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token string">"rules"</span><span class="token operator">:</span> <span class="token punctuation">{</span> 
+      <span class="token string">"no-console"</span><span class="token operator">:</span><span class="token string">"off"</span><span class="token punctuation">,</span> 
+      <span class="token string">"no-unused-vars"</span><span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">,</span> 
+      
+      <span class="token string">"prettier/prettier"</span><span class="token operator">:</span> <span class="token punctuation">[</span> 
+        <span class="token string">"error"</span><span class="token punctuation">,</span> 
+        <span class="token punctuation">{</span> 
+        <span class="token string">"semi"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//세미콜론사용안함 </span>
+        <span class="token string">"tabWidth"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">//탭간격 </span>
+        <span class="token string">"arrowParens"</span><span class="token operator">:</span> <span class="token string">"avoid"</span><span class="token punctuation">,</span> <span class="token comment">//화살표함수사용시 단일값 () 안씀 </span>
+        <span class="token string">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//""=>'' 로바꿈 </span>
+        <span class="token string">"htmlWhitespaceSensitivity"</span><span class="token operator">:</span> <span class="token string">"ignore"</span><span class="token punctuation">,</span> 
+        <span class="token string">"trailingComma"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span> <span class="token comment">//마지막 , 안씀 </span>
+        <span class="token string">"endOfLine"</span><span class="token operator">:</span> <span class="token string">"auto"</span> 
+        <span class="token punctuation">}</span> 
+      <span class="token punctuation">]</span> 
+    <span class="token punctuation">}</span></code></pre></div>
+<p>이정도이다 나중에 더 추가 할수도 있다.</p>
+<p>이제 로그아웃을 만들어주자 비교적 간단하다
+views > main > main.vue</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-col</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> 
+          <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>logout<span class="token punctuation">"</span></span> 
+          <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>font-weight-bold<span class="token punctuation">"</span></span> 
+          <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background-color</span><span class="token punctuation">:</span> #42b983</span><span class="token punctuation">"</span></span></span> 
+        <span class="token punctuation">></span></span> 
+          Log-out 
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">></span></span> 
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-col</span><span class="token punctuation">></span></span>//버튼추가해줬다
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token comment">//약식</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+methods<span class="token operator">:</span> <span class="token punctuation">{</span> 
+    <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token string">'login'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'LOGOUT'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token function">logout</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'로그아웃'</span><span class="token punctuation">)</span> 
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">LOGOUT</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//클릭시 로그아웃 액션호출 </span>
+    <span class="token punctuation">}</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>  
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre></div>
+<p>store > modules> login > login.actions.js</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">LOGOUT</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
+  tokenUtil<span class="token punctuation">.</span><span class="token function">invalidateJwtAndReload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//로컬스토리지 비워주고 화면 리로드한다. </span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>이렇게 로그아웃도 완료되었다.</p>
+<p>이제 뷰에서 많이 사용하는 mixin 을 설정할꺼다 전역으로 공통적으로 사용하는기능을 넣고 빼서 사용한다.</p>
+<p>공식문서 참고 <a href="https://v3.vuejs.org/guide/mixins.html#option-merging">https://v3.vuejs.org/guide/mixins.html#option-merging</a> 일단 파일을 만들어준다.</p>
+<p>shared > mixins > global-mixin.js</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> 
+  <span class="token comment">//methods </span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span> 
+    <span class="token comment">//배열의 길이 </span>
+    <span class="token function">isListLength</span><span class="token punctuation">(</span><span class="token parameter">list</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">return</span> list<span class="token punctuation">.</span>length 
+    <span class="token punctuation">}</span> 
+  <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span></code></pre></div>
+<p>간단하게 배열의 길이를 구해주는 메서드 작성
+main.js 에 믹스인 추가</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> globalMixin <span class="token keyword">from</span> <span class="token string">'@/shared/mixins/global-mixin'</span>
+app<span class="token punctuation">.</span><span class="token function">mixin</span><span class="token punctuation">(</span>globalMixin<span class="token punctuation">)</span></code></pre></div>
+<p>일전에 만든 List.vue 컴포넌트에서 게시들의 갯수를 가져와보자</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mx-auto<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">></span></span> 
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> 
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>번호<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span> 
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>제목<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span> 
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>list length<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span> 
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span> 
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">></span></span> 
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">></span></span> 
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item in list<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item.id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>{{ item.id }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> 
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span> 
+                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>detail(item)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
+                    {{ item.title }} 
+                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> 
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> 
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>{{ isListLength(list) }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>//믹스인사용 
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span> 
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">></span></span> 
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span></code></pre></div>
+<p>이런식으로 {{}} 콧수염 태그안에 사용한다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 48.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABXklEQVQoz41SXUvDMBTtH5/iky/+DmEKKpv44KsgOLaK80UHFms3+7G262rbpPk6ksx9VIvswiHkJvfknNxr4Z9QSpk1CAI4joN9whJCoA2McwMuBIqyxCLLVjmxzbfVWXVdGyVSyg2UVI1X3ckbBnf3f9QIKRp1GhZjbGvxZ60lx830EX1vhAt3gN7HENeejUt3gNvZGD1viGmZNL5lY3lNqA/Wh1+M4PjpCkf2OTp2FwfDLjoPp+iMujh57uPQPsM4dVcqldzUarQScin0TYDJ1b4gWEYJoLdMQtXc2NtbIZMCBalQlAUoq5EuUgRhAEIpKlIh13nO2gl1UxqESplOVoSgKkvoB7MsM6NDKQUhxHTdECo07BrLutW/Q0Kh5gw1peZSnueI53MzFpwxo1T/XescpmlqFOwiThPMQh9Tf4YwjuC473iZvMKPQnwGPjx/hiiJscyWZj53a78B4soDk69gW1oAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs38.png"
+        title="vuejs38.png"
+        src="/static/96fe7d5d7eaf144cdf47d4faf5d99b9a/37523/vuejs38.png"
+        srcset="/static/96fe7d5d7eaf144cdf47d4faf5d99b9a/e9ff0/vuejs38.png 180w,
+/static/96fe7d5d7eaf144cdf47d4faf5d99b9a/f21e7/vuejs38.png 360w,
+/static/96fe7d5d7eaf144cdf47d4faf5d99b9a/37523/vuejs38.png 720w,
+/static/96fe7d5d7eaf144cdf47d4faf5d99b9a/01dae/vuejs38.png 721w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+위와 같이 작동한다.</p>
+<p>이와같이 vue cli 4를 이용한 vue 프로젝트 설정을 끝냈다.</p>
+<p>근데 진짜 짜증 나는건 vuetify3 이 정식 릴리즈 버전도아니고 알파버전이라 지원되는 컴포넌트도 적고 vue3에 아직 사용을 불가능했다.</p>
+<p>하…그래서 고민하고 찾다가 알아낸…대망의 quasar (퀘이사)</p>
+<p>위의 내용을그대로 진행하되 vuetify 를 quasar 로대체해서 진행을 해보겠다.</p>
+<p>일단 기존 프로젝트 생성은 같다</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">vue create vue3_project_quasar
+//생성해주고 기존과같이 옵션적용</code></pre></div>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 700px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 24.444444444444443%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVQY00WOy3bBYBhFPQztG7gP2rgFRSMiRCJ/EhISVQQtWu2b7y4x6GCvc75vcNZOPWk+ihfzYm9oGwEN3aOsupQVQUkRlPsuhZ5NrqmTk/V7NnUKrXFCsT3+7y2dlOJERIcrs/cT4eGH+faCt/3G256Y7z4J4jN6tEcLY0ZhjLbcMQxjmk6EbPnUjTmyeUdSbVJtM2C2uTDbnBGrj2TYW5/xtxtG0QIlWKAKG8WaormCvm2jObfbZCBMuhMT1bYYCAtJc0gp7oro+Mtyf03s/N1XYuqsL6iLI1p4ojNd0bNCupMljZHP82hBxQiRhj6VvkBS7lRvhlJ/ysBZ0ZkE9Kwlr9Mwydtv6L4xEBGy4VNq6Tzm6zzkG2QKDTJFmUy+TjpbJZOtJaSzNf4AmeHMpRwtE2kAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs39.png"
+        title="vuejs39.png"
+        src="/static/1527d18ce1050c713580b7bc8aed75f4/8c557/vuejs39.png"
+        srcset="/static/1527d18ce1050c713580b7bc8aed75f4/e9ff0/vuejs39.png 180w,
+/static/1527d18ce1050c713580b7bc8aed75f4/f21e7/vuejs39.png 360w,
+/static/1527d18ce1050c713580b7bc8aed75f4/8c557/vuejs39.png 700w"
+        sizes="(max-width: 700px) 100vw, 700px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">vue add quasar //quasar로 갈아타기</code></pre></div>
+<p>여기에서 옵션이 중요 퀘이사는 자체적인 cli를 제공하는데 (안써봄)</p>
+<p>나는 이미 vue cli를 사용하기 땜에 퀘이사를 설치할때 수동으로  가져오는 방식으로 해야 라우터가 정상 작동한다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 15.555555555555555%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuUlEQVQI1z2MzWqDQAAGt4Rg6SVorNtqLkGjrj9BjGw0IrQstA1CqO//MFM0pIdhPubwCVn2nMxE3H6hLj9kw4gaRpLuG1l9YMcaN9HYhwY7avBUhzO3WPOyrxGvMcIJEduIp3m/VwONmag+bxTDuBx6tcFJW1zVsk00nmqX08XpGZl1C3OTquMtv7A5aIRfIOSxJ+uvNOYXWRtWoWbtZ6xkihXkWEHB867E2s1+UN5bUPz3tZ8jZMofG6pWv0Uy1zwAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="vuejs40.png"
+        title="vuejs40.png"
+        src="/static/bd1b63d4c90819e896adbc4bf8893f95/37523/vuejs40.png"
+        srcset="/static/bd1b63d4c90819e896adbc4bf8893f95/e9ff0/vuejs40.png 180w,
+/static/bd1b63d4c90819e896adbc4bf8893f95/f21e7/vuejs40.png 360w,
+/static/bd1b63d4c90819e896adbc4bf8893f95/37523/vuejs40.png 720w,
+/static/bd1b63d4c90819e896adbc4bf8893f95/f3c12/vuejs40.png 764w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>저 첫번째 옵션 꼭 no 해준다.</p>
+<p>그렇게 퀘이사가 설치되면 vue.config.js, quasar-user-optios.js 파일이생성된다 그리고 styles 폴더도</p>
+<p>vue.config.js 이거야 뭐 익숙하다 웹펙,서버설정,바벨,퀘이사등 cli에서 주관하는 설정파일 여기에 퀘이사 사용 코드가 자동으로 등록되어있다.</p>
+<p>이제 문제는 quasar-user-optios.js 이다 퀘이사에서 제공하는 플러그인을 정의해놓는곳 트리쉐이킹에 용의한거아닐까? 하는 생각…</p>
+<p>마지막으로 styles 폴더에는 scss 관련 정의 내가처음 옵션에서 사용한다고해서 생성 된듯하다 근데 이건 나중에 생각하자</p>
+<p>그렇게 서버를실행해보자</p>
+<p>그러면 vuetify 가 아닌 quasar를 사용해서 구성이 가능해진다.</p>
+<h2 id="-마무리" style="position:relative;"><a href="#-%EB%A7%88%EB%AC%B4%EB%A6%AC" aria-label=" 마무리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🎪 마무리</h2>
+<p>프론트 영역은 확실히 트랜드에 민감해서 그런지 새로나오고 없어지는 라이브러리 들이 굉장히 많고</p>
+<p>기존에 사용하던 것들도 업데이트가 빠르게 되는편이라 항상 잘보고 사용해야 한듯싶다.</p>
+<p>사실 vuetify던 quasar던 어떤걸 사용해도 크게 개발상에 문제가 느껴지지는 않지만</p>
+<p>난 개인적으로 vuetify가 더 사용하기 편했고 vue3에 맞게 업데이트가 된다면 vuetify를 계속 사용하지 싶다…</p>
+<p>요번 포스팅은 과거에 내가 프로젝트때 정리를 대충했던걸 옮겨놓은 거라(그땐 블로그를 안했으니..)</p>
+<p>너무 두서없고 양조절도 못했다 나중에 시간이 된다면 vue 관련 포스팅을 좀더 할예정이다.
+<br>
+<br></p>
+<div class="table-of-contents">
+<ul>
+<li>
+<p><a href="#-%EA%B0%9C%EC%9A%94">🎋 개요</a></p>
+<ul>
+<li><a href="#%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1">환경 구성</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#-%EB%A7%88%EB%AC%B4%EB%A6%AC">🎪 마무리</a></p>
+</li>
+</ul>
+</div></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/gatsby-js-study-eventSource/"><div class="direction">이전 글</div><div class="title">SSE(단반향통신) Event Source 처리</div></a></div><div class="post-navigator-card-wrapper"><a class="post-card next" href="/gatsby-java-study/"><div class="direction">다음 글</div><div class="title">Java 외부 api 호출 방법</div></a></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2022<!-- -->  💥<a href="https://www.github.com">이성기</a>💥</p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/gatsby-vue-study-vuetify/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-ec7b97a53b7889a28dad.js"],"app":["/app-dd69a674e8569be0bf1e.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-ee7ff288a33839d07a9c.js"],"component---src-pages-404-js":["/component---src-pages-404-js-fe336f36ddf1cae22468.js"],"component---src-pages-about-js":["/component---src-pages-about-js-94b17245231fbb6d6bd9.js"],"component---src-pages-index-js":["/component---src-pages-index-js-dbeca8a658be712271d7.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-db518fb661aaeb5c4da4.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-ec848b5ee3317614618b.js"]};/*]]>*/</script><script src="/polyfill-ec7b97a53b7889a28dad.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-db518fb661aaeb5c4da4.js" async=""></script><script src="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-153148a4d91acc214703.js" async=""></script><script src="/app-dd69a674e8569be0bf1e.js" async=""></script><script src="/framework-04d6a54209505769ded2.js" async=""></script><script src="/webpack-runtime-e9805bccd97e26a87656.js" async=""></script></body></html>
