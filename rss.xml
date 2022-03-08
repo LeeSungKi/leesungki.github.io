@@ -1,6 +1,391 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[leesunggi RSS Feed]]></title><description><![CDATA[leesunggi92@gmail.com]]></description><link>https://leesungki.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 07 Mar 2022 06:02:03 GMT</lastBuildDate><item><title><![CDATA[AWS S3 파일 업로드,다운로드]]></title><description><![CDATA[👀 개요 이전 포스팅 에서 S3에 대해서 간단하게 다뤘었다. 요번에는 S3에 파일을 업로드하는 과정을 포스팅 하려한다. ❗ S3에 대해서는 이전 포스팅 참고 S3란? 🦺 S3 버킷 생성에 대해서는 이전 포스팅 참고 S3 버킷 생성 🗑 S…]]></description><link>https://leesungki.github.io/gatsby-springboot-study-s3-service/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-springboot-study-s3-service/</guid><pubDate>Mon, 07 Mar 2022 04:26:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot; aria-label=&quot; 개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👀 개요&lt;/h2&gt;
-&lt;p&gt;이전 포스팅 에서 S3에 대해서 간단하게 다뤘었다.&lt;/p&gt;
-&lt;p&gt;요번에는 S3에 파일을 업로드하는 과정을 포스팅 하려한다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[leesunggi RSS Feed]]></title><description><![CDATA[leesunggi92@gmail.com]]></description><link>https://leesungki.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 08 Mar 2022 05:43:08 GMT</lastBuildDate><item><title><![CDATA[SpringBoot + naver crova ocr 사용]]></title><description><![CDATA[개요 이전 포스팅에서 naver crova ocr 에대해 다뤘었다. 참고 해당 글을 보면 이미 나는 naver ocr api를 생성했고 요번 글에서는 springboot 에서 해당 api를 사용하는 방법을 포스팅 하겠다. 📌 multipart…]]></description><link>https://leesungki.github.io/gatsby-springboot-study-ocr/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-springboot-study-ocr/</guid><pubDate>Tue, 08 Mar 2022 05:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B0%9C%EC%9A%94&quot; aria-label=&quot;개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;개요&lt;/h2&gt;
+&lt;p&gt;이전 포스팅에서 naver crova ocr 에대해 다뤘었다. &lt;a href=&quot;https://leesungki.github.io/gatsby-naverOCR-study/&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;해당 글을 보면 이미 나는 naver ocr api를 생성했고&lt;/p&gt;
+&lt;p&gt;요번 글에서는 springboot 에서 해당 api를 사용하는 방법을 포스팅 하겠다.&lt;/p&gt;
+&lt;h3 id=&quot;-multipartform-data-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-multipartform-data-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot; multipartform data 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;📌 multipart/form-data 사용&lt;/h3&gt;
+&lt;p&gt;호출 방식은 두가지로 나뉜다 하지만 나는 로컬에 저장된 이미지 파일을 사용 할꺼라서 form-data 방식으로 호출한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🎀 다른 방식은 해당 문서 &lt;a href=&quot;https://api.ncloud-docs.com/docs/ai-application-service-ocr-ocr&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;프로젝트 구조&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;controller
+    ㄴCheckController
+infra
+    ㄴnaver
+        ㄴocr
+            ㄴNaverOcrApi
+utill
+    ㄴJsonUtill           &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;CheckController&lt;/li&gt;
+&lt;li&gt;NaverOcrApi&lt;/li&gt;
+&lt;li&gt;JsonUtill : 데이터 가공을위함 필수 X&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Json 관련 의존성은 기재 안하겠다 본인이 가공할거면 편한걸 사용하면 된다.&lt;/p&gt;
+&lt;p&gt;NaverOcrApi&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/**
+ * Naver OCR API Service (네이버 ocr api 호출)
+ */&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;NaverOcrApi&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * 네이버 ocr api 호출한다
+     * @param {string} type 호출 메서드 타입
+     * @param {string} filePath 파일 경로
+     * @param {string} naver_secretKey 네이버 시크릿키 값
+     * @param {string} ext 확장자
+     * @returns {List} 추출 text list
+     */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;callApi&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; type&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; filePath&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; naver_secretKey&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; ext&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; apiURL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;자신이 생성한 APIGW URL&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; secretKey &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; naver_secretKey&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; imageFile &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; filePath&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; parseData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;URL&lt;/span&gt; url &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;apiURL&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;HttpURLConnection&lt;/span&gt; con &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;HttpURLConnection&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;url&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;openConnection&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setUseCaches&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setDoInput&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setDoOutput&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setReadTimeout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;30000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setRequestMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;type&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; boundary &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;----&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; UUID&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;randomUUID&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;replaceAll&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;-&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setRequestProperty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Content-Type&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;multipart/form-data; boundary=&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; boundary&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setRequestProperty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;X-OCR-SECRET&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; secretKey&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+            &lt;span class=&quot;token class-name&quot;&gt;JSONObject&lt;/span&gt; json &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JSONObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            json&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;V2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            json&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;requestId&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; UUID&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;randomUUID&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            json&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;timestamp&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;currentTimeMillis&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;JSONObject&lt;/span&gt; image &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JSONObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            image&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;format&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ext&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            image&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;demo&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;JSONArray&lt;/span&gt; images &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JSONArray&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            images&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;image&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            json&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;images&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; images&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; postParams &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; json&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+            con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;DataOutputStream&lt;/span&gt; wr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;DataOutputStream&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getOutputStream&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;long&lt;/span&gt; start &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;currentTimeMillis&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;File&lt;/span&gt; file &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;imageFile&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token function&quot;&gt;writeMultiPart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;wr&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; postParams&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; file&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; boundary&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            wr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+            &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; responseCode &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getResponseCode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;BufferedReader&lt;/span&gt; br&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;responseCode &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                br &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;BufferedReader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;InputStreamReader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getInputStream&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                br &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;BufferedReader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;InputStreamReader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;con&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getErrorStream&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; inputLine&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;StringBuffer&lt;/span&gt; response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;StringBuffer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;inputLine &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; br&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;readLine&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;inputLine&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            br&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+            parseData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;jsonparse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Exception&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; parseData&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * writeMultiPart
+     * @param {OutputStream} out 데이터를 출력
+     * @param {string} jsonMessage 요청 params
+     * @param {File} file 요청 파일
+     * @param {String} boundary 경계
+     */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;writeMultiPart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;OutputStream&lt;/span&gt; out&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; jsonMessage&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;File&lt;/span&gt; file&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; boundary&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;throws&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;IOException&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;StringBuilder&lt;/span&gt; sb &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;StringBuilder&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        sb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;--&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;boundary&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;\r\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        sb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Content-Disposition:form-data; name=\&quot;message\&quot;\r\n\r\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        sb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;jsonMessage&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        sb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;\r\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;file &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isFile&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;--&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; boundary &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;\r\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token class-name&quot;&gt;StringBuilder&lt;/span&gt; fileString &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;StringBuilder&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            fileString
+                    &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Content-Disposition:form-data; name=\&quot;file\&quot;; filename=&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            fileString&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;\&quot;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;\&quot;\r\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            fileString&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Content-Type: application/octet-stream\r\n\r\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;fileString&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+            &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;FileInputStream&lt;/span&gt; fis &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;FileInputStream&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;file&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; buffer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;8192&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; count&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;count &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; fis&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;buffer&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;buffer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; count&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;\r\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+            out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;--&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; boundary &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;--\r\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * 데이터 가공
+     * @param {StringBuffer} response 응답값
+     * @returns {List} result text list
+     */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;jsonparse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;StringBuffer&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ParseException&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;//json 파싱&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;JSONParser&lt;/span&gt; jp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JSONParser&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;JSONObject&lt;/span&gt; jobj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;JSONObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; jp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;//images 배열 obj 화&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;JSONArray&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JSONArrayPerson&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;JSONArray&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;jobj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;images&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;JSONObject&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JSONObjImage&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;JSONObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;JSONArrayPerson&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;JSONArray&lt;/span&gt; s &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;JSONArray&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JSONObjImage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;fields&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; m &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JsonUtill&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getListMapFromJsonArray&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; as &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; as&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;inferText&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;JsonUtill&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JsonUtill&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * JSONObject =&gt; Map&amp;lt;String, String&gt;
+     * @param {JSONObject} jsonObject
+     * @returns {Map} map
+     */&lt;/span&gt;
+    &lt;span class=&quot;token annotation punctuation&quot;&gt;@SuppressWarnings&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;unchecked&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getMapFromJsonObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;JSONObject&lt;/span&gt; jsonObject&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; map &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            map &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ObjectMapper&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;readValue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;jsonObject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toJSONString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;JsonParseException&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;JsonMappingException&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;IOException&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; map&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * JSONArray =&gt; List&amp;lt;Map&amp;lt;String, String&gt;&gt;
+     * @param {jsonArray} jsonArray
+     * @returns {List} list
+     */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getListMapFromJsonArray&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;JSONArray&lt;/span&gt; jsonArray&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; list &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;jsonArray &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+            &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; jsonSize &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; jsonArray&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+            &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; jsonSize&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+                &lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; map &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getMapFromJsonObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;JSONObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;jsonArray&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                list&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;map&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; list&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;CheckController&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token annotation punctuation&quot;&gt;@RestController&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;CheckController&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;token annotation punctuation&quot;&gt;@GetMapping&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/naverOcr&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ResponseEntity&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ocr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;throws&lt;/span&gt;  &lt;span class=&quot;token class-name&quot;&gt;IOException&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; fileName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;mey.jpg&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;File&lt;/span&gt; file &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ResourceUtils&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getFile&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;classpath:static/image/test/&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;fileName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;NaverOcrApi&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;callApi&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;POST&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getPath&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;자신의 네이버 시크릿 키&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;jpg&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ResponseEntity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;result&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;HttpStatus&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;OK&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;-postman-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-postman-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot; postman 호출 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🏆 Postman 호출&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/302c89cc1ee62f565a1ccd0defc1c0a7/springbootocr.png&quot; alt=&quot;springbootocr.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이렇게 내가 원하는 이미지의 텍스트를 추출 할수가 있다.&lt;/p&gt;
+&lt;h2 id=&quot;마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot;마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🌭마무리&lt;/h2&gt;
+&lt;p&gt;생각보다 문서도 잘되어있고… 내가 굳이 따로 글을 쓸필요가 있을까 싶을정도 이지만…&lt;/p&gt;
+&lt;p&gt;그래도 나중에 내가 다시 사용할때 어떻게 사용했는지 알기위해 이 글을 쓴다..&lt;/p&gt;
+&lt;p&gt;외부 api 사용은 정말 해당 api를 제공하는 제공측의 문서의 퀄리티에 따라서 사용 난이도가 변하는거 같다..&lt;/p&gt;
+&lt;p&gt;그런 부분에서 네이버는 역시 대기업이구나 라는걸 다시한번 느꼈다..&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#%EA%B0%9C%EC%9A%94&quot;&gt;개요&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-multipartform-data-%EC%82%AC%EC%9A%A9&quot;&gt;📌 multipart/form-data 사용&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-postman-%ED%98%B8%EC%B6%9C&quot;&gt;🏆 Postman 호출&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot;&gt;🌭마무리&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[NAVER cloud OCR API 사용 방법]]></title><description><![CDATA[✨ 개요 내가 진행 했던 프로젝트 에서 네이버 클라우드 플렛폼에서 지원하는 OCR API를 사용하여 이미지의 텍스트를 추출하는 작업을 담당 했었고 해당 작업을 정리하기 위해 포스팅을 하려 한다. 👓 OCR? OCR(Optical character…]]></description><link>https://leesungki.github.io/gatsby-naverOCR-study/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-naverOCR-study/</guid><pubDate>Tue, 08 Mar 2022 04:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot; aria-label=&quot; 개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✨ 개요&lt;/h2&gt;
+&lt;p&gt;내가 진행 했던 프로젝트 에서 네이버 클라우드 플렛폼에서 지원하는 OCR API를 사용하여 이미지의 텍스트를 추출하는 작업을 담당 했었고&lt;/p&gt;
+&lt;p&gt;해당 작업을 정리하기 위해 포스팅을 하려 한다.&lt;/p&gt;
+&lt;h2 id=&quot;-ocr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-ocr&quot; aria-label=&quot; ocr permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👓 OCR?&lt;/h2&gt;
+&lt;p&gt;OCR(Optical character recognition, 광학 문자 인식)은 이미지(사진) 속 글자 위치를 찾고 어떤 글자인지 자동으로 알아내는 기술입니다.&lt;/p&gt;
+&lt;p&gt;OCR은 다양한 형태의 글자를 이해하기 위해 독자적인 글자 영역 검출 및 인식 기술을 보유하고 있습니다.&lt;/p&gt;
+&lt;p&gt;또한 손쉽게 템플릿을 만들고 원하는 영역을 지정한 뒤, 필요한 글자만 빠르게 추출하는 기능을 제공합니다.&lt;/p&gt;
+&lt;h3 id=&quot;-naver-clova-ocr-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-naver-clova-ocr-&quot; aria-label=&quot; naver clova ocr  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;📷 Naver CLOVA OCR ?&lt;/h3&gt;
+&lt;p&gt;CLOVA OCR 서비스는 네이버의 AI 기술을 활용하여 주요 비즈니스 활용에 최적화된 고성능 OCR 인식 모델을 적용하였습니다.&lt;/p&gt;
+&lt;p&gt;문자 인식이 제공되는 언어는 한국어, 영어, 일본어이며, 필기체 인식은 한국어와 일본어가 지원됩니다.&lt;/p&gt;
+&lt;p&gt;CLOVA OCR은 문서 레이아웃 분석 및 글자를 읽는 순서 방향을 추정하여 둥글게 곡선으로 배열되거나 기울어진 문자, 필기체 인식 등 고성능 AI 모델바탕으로 높은 수준의 정확도를 제공합니다.&lt;/p&gt;
+&lt;p&gt;OCR분야 가장 권위있는 글로벌 챌린지ICDAR2019 4개 분야에서 1위, CVPR 및 ICCV 국제학회 논문 선정 등 독보적기술력이 집약된 CLOVA OCR을 네이버 클라우드 플랫폼을 통해 손쉽게 이용할 수 있습니다&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🎫 네이버 에서 제공하는 기능에 대한 부분은 공식 문서를 참고하자. &lt;a href=&quot;https://www.ncloud.com/product/aiService/ocr&quot;&gt;출처&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;-clova-ocr-사용-가이드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-clova-ocr-%EC%82%AC%EC%9A%A9-%EA%B0%80%EC%9D%B4%EB%93%9C&quot; aria-label=&quot; clova ocr 사용 가이드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎏 CLOVA OCR 사용 가이드&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;CLOVA OCR 사용하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;https://console.ncloud.com/dashboard&quot;&gt;콘솔&lt;/a&gt;에 접속 후 아래의 단계를 거쳐 쉽게 서비스를 이용할 수 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 1. 서비스 이용 신청 및 약관 동의&lt;/li&gt;
+&lt;li&gt;Step 2. 도메인 생성&lt;/li&gt;
+&lt;li&gt;Step 3. 템플릿 생성&lt;/li&gt;
+&lt;li&gt;Step 4. 테스트 및 분석&lt;/li&gt;
+&lt;li&gt;Step 5. 컴포넌트&lt;/li&gt;
+&lt;li&gt;Step 6. 설정&lt;/li&gt;
+&lt;li&gt;Step 7. 배포 관리&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Step 1. 서비스 이용 신청 및 약관 동의&lt;/p&gt;
+&lt;p&gt;CLOVA OCR 서비스를 이용하기 위해서는 이용 신청 및 약관 동의가 필요합니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ncloud.com/product/aiService/ocr&quot;&gt;바로가기&lt;/a&gt; 해당 페이지 접속후 이용 신청하기 클릭&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/425f95c78a7066cb228f8623e25065fc/OCR.png&quot; alt=&quot;OCR.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;[상품 이용신청] 버튼을 클릭하여 약관에 동의한 후 다음 단계로 이동합니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/97e9521723dbeb9a4a7e18c87c606824/OCR1.png&quot; alt=&quot;OCR1.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Step 2. 도메인 생성&lt;/p&gt;
+&lt;p&gt;본격적으로 CLOVA OCR 서비스를 제작하기 위해 도메인을 생성합니다.&lt;/p&gt;
+&lt;p&gt;콘솔에서 Domain 클릭후 도메인 생성 클릭&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/4a3512fa3ba9973599cff877b35c453a/OCR2.png&quot; alt=&quot;OCR2.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/c38428b052152d685008c1b31417fe0d/OCR3.png&quot; alt=&quot;OCR3.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;도메인 생성이 완료되면 도메인 목록을 확인할 수 있습니다. 텍스트 추출만 가능한 General 도메인은 ‘Text OCR’(API Gateway 연동), ‘Demo’(Table 자동 추출 제공) 버튼이 동작 메뉴에 나타나고 Template 도메인의 경우 ‘템플릿 빌더’ 실행 버튼이 노출됩니다.&lt;/p&gt;
+&lt;p&gt;선택한 도메인의 동작 메뉴에서 템플릿 빌더 버튼을 클릭하면 도메인 정보를 확인할 수 있고 새로운 창에서 OCR 빌더가 실행됩니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/32dec9c7a9149bcd1f6e3c6f59ed111c/OCR4.png&quot; alt=&quot;OCR4.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;동작 메뉴에서 Text OCR 버튼을 클릭하면, 템플릿 설정 없이 전체 텍스트만 추출 가능한 General OCR 연동 설정 pop-up 창이 노출되고 Custom API Gateway 설정을 통해 자동 연동이 가능합니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/b0b7f263f3462c0c1e17f834d9b29afe/OCR5.png&quot; alt=&quot;OCR5.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Custom API Gateway 연동&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Text OCR 버튼 클릭 시 외부 주소와 연동 설정이 가능한 창이 노출됩니다.&lt;/li&gt;
+&lt;li&gt;OCR Invoke URL은 외부 연동 Endpoint에 입력할 OCR API 주소를 의미합니다.&lt;/li&gt;
+&lt;li&gt;API Gateway 이용 신청이 되어 있는 경우, 자동 연동 (Interlock) 버튼을 클릭해 손쉽게 자동 연동할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;자세한 내용은 공식 가이드 문서 &lt;a href=&quot;https://guide.ncloud-docs.com/docs/ocr-ocr-1-1&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;위의 내용은 간략한 가이드 이다 꼭 공식 가이드 문서를 참고하자&lt;/p&gt;
+&lt;p&gt;나는 도메인을 생성해준 다음 자동 APIGW 연동을 해주었다.&lt;/p&gt;
+&lt;p&gt;그렇게 해주면 아래와 같이 생성된 Secret Key를 통해 APIGW Invoke URL을 호출하면 사용할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ff86609b7dda85e496690bb9341f9437/OCR6.png&quot; alt=&quot;OCR6.PNG&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;-clova-ocr-api--호출-가이드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-clova-ocr-api--%ED%98%B8%EC%B6%9C-%EA%B0%80%EC%9D%B4%EB%93%9C&quot; aria-label=&quot; clova ocr api  호출 가이드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎨 CLOVA OCR API  호출 가이드&lt;/h4&gt;
+&lt;p&gt;CLOVA OCR API 호출 방법&lt;/p&gt;
+&lt;p&gt;Step 1. API 환경 설정하기&lt;/p&gt;
+&lt;p&gt;OCR 빌더에서 만든 도메인은 고유한 InvokeURL이 있습니다.&lt;/p&gt;
+&lt;p&gt;이 InvokeURL은 안전한 서비스를 위해 외부 서비스에 바로 공개되지 않습니다. 그리고 보안 및 서비스 처리 수준을 높이기 위해서 API Gateway 상품에 연동하여 사용하도록 설계되어 있습니다.&lt;/p&gt;
+&lt;p&gt;Step 2. 자동으로 API Gateway 연동하기&lt;/p&gt;
+&lt;p&gt;API Gateway와 연동하는 방법에는 자동과 수동이 있으며, 자동연동 기능을 선택하시면 몇 번의 클릭으로 쉽게 API Gateway 연동을 완료하실 수 있습니다.&lt;/p&gt;
+&lt;p&gt;이 단계에서는 Secret Key 와 OCR Invoke URL을 생성합니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Text OCR 사용하기&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/b66c5600045ee0ccdefd86c75186907c/OCR7.png&quot; alt=&quot;OCR7.PNG&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Secret Key를 생성합니다.&lt;/li&gt;
+&lt;li&gt;APIGW 자동연동 버튼을 클릭합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/f6a57a3bdadf986b6dff0032d63b9dfa/OCR8.png&quot; alt=&quot;OCR8.PNG&quot;&gt;
+API Gateway 서비스의 이용 신청이 되어 있지 않다면, 먼저 신청을 완료해야 합니다.
+&lt;img src=&quot;/28d8dea80b7c890a220e855b379cff6f/OCR9.png&quot; alt=&quot;OCR9.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;APIGW 연동이 완료되었습니다.&lt;/p&gt;
+&lt;p&gt;중요한 정보인 Secret Key 와 OCR Invoke URL 값을 복사해 놓습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Secret Key : {X-OCR-SECRET}&lt;/li&gt;
+&lt;li&gt;OCR Invoke URL : {OCR Invoke URL}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Step 3. API Gateway 생성 URL 확인하기&lt;/p&gt;
+&lt;p&gt;콘솔에서 API Gateway 상품으로 이동합니다.&lt;/p&gt;
+&lt;p&gt;My Products에 OCR_CUSTOM_API_KR 이라는 Product가 생성되어 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/fb5d24b3083a0f400929ff90590f5e79/OCR10.png&quot; alt=&quot;OCR10.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/01ef924fcbc39bcf0582a8539b772ba3/OCR11.png&quot; alt=&quot;OCR11.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;여기까지 정상적으로 표시되었다면, API 호출 준비가 완료되었습니다.&lt;/p&gt;
+&lt;p&gt;Step 4. Postman으로 API 호출해 보기 (TEXT OCR)&lt;/p&gt;
+&lt;p&gt;Text OCR API를 실행할 경우 업로드 된 이미지의 텍스트 추출이 가능합니다.&lt;/p&gt;
+&lt;p&gt;Postman에서 새로운 API를 생성하고 호출방식을 POST로 설정합니다.&lt;/p&gt;
+&lt;p&gt;Invoke URL 주소에 OCR에서 생성한 API Gateway의 InvokeURL을 입력합니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/94d034afa8799ea1dffbd00644e16fd3/OCR12.png&quot; alt=&quot;OCR12.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Header 항목에 아래와 같이 X-OCR-SECRET 정보를 입력합니다.&lt;/p&gt;
+&lt;p&gt;Content-Type : application/json&lt;/p&gt;
+&lt;p&gt;X-OCR-SECRET : {X-OCR-SECRET }&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/4fd99246bf11abcfbd5b63991d14735d/OCR13.png&quot; alt=&quot;OCR13.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;TEXT OCR 호출 BODY는 이미지 인식 요청 BODY 의 형식으로 넣습니다.&lt;/p&gt;
+&lt;p&gt;자세한 이미지 인식 요청 형식은 API 참조서를 확인해주세요&lt;/p&gt;
+&lt;p&gt;Request Body:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;images&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;format&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;png&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;medium&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token null keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://kr.object.ncloudstorage.com/ocr-img/OCR_ko(1)REAN_ko(1).png&quot;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;lang&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;ko&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;requestId&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;resultType&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;timestamp&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;$timestamp&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;V1&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/2dfb4913cdcacea89a98c01f501ecb23/OCR14.png&quot; alt=&quot;OCR14.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;SEND 버튼을 눌러서 응답을 확인합니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/081c6fd99b41ce1f97ae5df324146519/OCR15.png&quot; alt=&quot;OCR15.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;OCR 요청 방식은 &lt;a href=&quot;https://api.ncloud-docs.com/docs/ai-application-service-ocr-ocr&quot;&gt;여기&lt;/a&gt;에서 확인&lt;/p&gt;
+&lt;h2 id=&quot;-마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot; 마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎍 마무리&lt;/h2&gt;
+&lt;p&gt;기본적인 OCR 사용 방법을 기재해 보았다.&lt;/p&gt;
+&lt;p&gt;사실 가이드 문서에 이미 잘정리되어 있는 내용이라서 딱히 내가 추가적으로 기재할필요가 없다고 생각하나&lt;/p&gt;
+&lt;p&gt;이다음 포스팅에서는 스프링 부트에서 해당 OCR API 연동 및 사용 방법을 기록 하기 위해 간략히 OCR 가이드 방법을 기록 하였다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot;&gt;✨ 개요&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-ocr&quot;&gt;👓 OCR?&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-naver-clova-ocr-&quot;&gt;📷 Naver CLOVA OCR ?&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-clova-ocr-%EC%82%AC%EC%9A%A9-%EA%B0%80%EC%9D%B4%EB%93%9C&quot;&gt;🎏 CLOVA OCR 사용 가이드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-clova-ocr-api--%ED%98%B8%EC%B6%9C-%EA%B0%80%EC%9D%B4%EB%93%9C&quot;&gt;🎨 CLOVA OCR API  호출 가이드&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-%EB%A7%88%EB%AC%B4%EB%A6%AC&quot;&gt;🎍 마무리&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 파일 업로드,다운로드]]></title><description><![CDATA[👀 개요 이전 포스팅에서 S3에 대해서 간단하게 다뤘었다. 요번에는 S3에 파일을 올리는 과정을 포스팅하려 한다. ❗ S3에 대해서는 이전 포스팅 참고 S3란? 🦺 S3 버킷 생성에 대해서는 이전 포스팅 참고 S3 버킷 생성 🗑 S…]]></description><link>https://leesungki.github.io/gatsby-springboot-study-s3-service/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-springboot-study-s3-service/</guid><pubDate>Mon, 07 Mar 2022 04:26:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot; aria-label=&quot; 개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👀 개요&lt;/h2&gt;
+&lt;p&gt;이전 포스팅에서 S3에 대해서 간단하게 다뤘었다.&lt;/p&gt;
+&lt;p&gt;요번에는 S3에 파일을 올리는 과정을 포스팅하려 한다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;❗ S3에 대해서는 이전 포스팅 참고 &lt;a href=&quot;https://leesungki.github.io/gatsby-aws-study-s3/&quot;&gt;S3란?&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -11,13 +396,13 @@
 &lt;ol&gt;
 &lt;li&gt;버킷 생성&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;일단 나는 아래 그림처럼 file-upload-test-lee 라는 명칭으로 퍼블릭한 버킷을 하나 생성했다.
+&lt;p&gt;일단 나는 아래 그림처럼 file-upload-test-lee라는 명칭으로 퍼블릭한 버킷을 하나 생성했다.
 &lt;img src=&quot;/91144b0038b8571eb5bb57e1d78b64ea/springboots3.png&quot; alt=&quot;springboots3.PNG&quot;&gt;&lt;/p&gt;
 &lt;p&gt;해당 버킷을 클릭하여 들어가면 아무런 객체도 없는 상태이다.
 &lt;img src=&quot;/5e4d4a4ec6b71456c81895fe10675c62/springboots31.png&quot; alt=&quot;springboots31.PNG&quot;&gt;&lt;/p&gt;
-&lt;p&gt;그리고 iam 권한에 사용자에게 S3FullAccess 권한을 부여해야 합니다. (이것이 있어야 S3에 파일 업로드를 할 수 있습니다.)&lt;/p&gt;
-&lt;p&gt;일단 aws 상에서의 작업은 이정도만 해주면된다.&lt;/p&gt;
-&lt;p&gt;이제 실제 어플리케이션 에서 aws s3 서비스를 구현해 보자.&lt;/p&gt;
+&lt;p&gt;그리고 iam 권한에 사용자에게 S3 FullAccess 권한을 부여해야 합니다. (이것이 있어야 S3에 파일 업로드를 할 수 있습니다.)&lt;/p&gt;
+&lt;p&gt;일단 aws 상에서의 작업은 이 정도만 해주면 된다.&lt;/p&gt;
+&lt;p&gt;이제 실제 애플리케이션에서 aws s3 서비스를 구현해 보자.&lt;/p&gt;
 &lt;ol start=&quot;2&quot;&gt;
 &lt;li&gt;AmazonS3ClientBuilder 를 사용한 업로드 구현&lt;/li&gt;
 &lt;/ol&gt;
@@ -47,7 +432,7 @@ resources
 &lt;li&gt;application&lt;/li&gt;
 &lt;li&gt;mey.jpg: 로컬 테스트용 이미지파일을 넣어줬다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;먼저 나는 s3에 접근하기 위해 필요한 사용자의 정보를 secretmanager를 통해 받아올것이기 때문에 위와 같이 구조를 만들어 주었다.&lt;/p&gt;
+&lt;p&gt;먼저 나는 s3에 접근하기 위해 필요한 사용자의 정보를 secretmanager를 통해 받아올 것이기 때문에 위와 같이 구조를 만들어 주었다.&lt;/p&gt;
 &lt;p&gt;해당 부분에 대해서는 이전 포스팅을 참고 하자.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://leesungki.github.io/gatsby-springboot-study-secretsManager/&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;application.yml&lt;/p&gt;
@@ -196,7 +581,7 @@ resources
         &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Optional&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;S3에 접근후 내가 필요한 작업들을 정의해준다.&lt;/p&gt;
+&lt;p&gt;S3에 접근 후 내가 필요한 작업들을 정의해준다.&lt;/p&gt;
 &lt;p&gt;CheckController&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token annotation punctuation&quot;&gt;@RestController&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;CheckController&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -230,40 +615,40 @@ resources
         &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; s3Service&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;uploadTest/mey.jpg&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;나는 두가지 방식을 테스트 하려한다&lt;/p&gt;
-&lt;p&gt;첫번째 resources 영역에 내가 미리 넣어둔 이미지파일을 업로드 하는 방식&lt;/p&gt;
-&lt;p&gt;두번째 포스트 맨으로 multipartfile을 보내 업로드 하는 방식&lt;/p&gt;
-&lt;p&gt;사실 둘다 로컬에 한번 저장하는 과정이 필요하다 s3service를 보면 더 자세히 알수있다.&lt;/p&gt;
+&lt;p&gt;나는 두 가지 방식을 테스트하려 한다&lt;/p&gt;
+&lt;p&gt;첫 번째 resources 영역에 내가 미리 넣어둔 이미지 파일을 업로드하는 방식&lt;/p&gt;
+&lt;p&gt;두 번째 포스트 맨으로 multipartfile을 보내 업로드하는 방식&lt;/p&gt;
+&lt;p&gt;사실 둘 다 로컬에 한번 저장하는 과정이 필요하다 s3 service를 보면 더 자세히 알 수 있다.&lt;/p&gt;
 &lt;ol start=&quot;4&quot;&gt;
 &lt;li&gt;포스트 맨을 통한 테스트&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;먼저 첫번째 방식을 테스트 해보자 아래와같이 요청을 했을때&lt;/p&gt;
+&lt;p&gt;먼저 첫 번째 방식을 테스트해보자 아래와 같이 요청을 했을 때&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/d2cd2b36d8fc8ede145cc9291e5b2593/springboots32.png&quot; alt=&quot;springboots32.PNG&quot;&gt;&lt;/p&gt;
 &lt;p&gt;내가 생성한 버킷에 설정한 폴더명이 생기고 클릭해보면 로컬에 넣어놨던 파일이 저장되어 있다.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/e8d5cc1ad037cc188e1024714b22b5ca/springboots33.png&quot; alt=&quot;springboots33.PNG&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/aad62088b69c8694ec69ba188ec2ed6f/springboots34.png&quot; alt=&quot;springboots34.PNG&quot;&gt;&lt;/p&gt;
-&lt;p&gt;두번째 방식도 테스트를 해보자&lt;/p&gt;
+&lt;p&gt;두 번째 방식도 테스트를 해보자&lt;/p&gt;
 &lt;p&gt;아래와 같이 파일을 넣어서 요청해 보면&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/b63ed1f3be39f32466aa13d41e46e8de/springboots35.png&quot; alt=&quot;springboots35.PNG&quot;&gt;&lt;/p&gt;
-&lt;p&gt;같은 버킷의 폴더에 아래와 같이 내가보낸 파일이 업로드 된걸 볼수있다.&lt;/p&gt;
+&lt;p&gt;같은 버킷의 폴더에 아래와 같이 내가 보낸 파일이 업로드된 걸 볼 수 있다.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/f2c0d82b46ace6be0f081748ded7a793/springboots36.png&quot; alt=&quot;springboots36.PNG&quot;&gt;&lt;/p&gt;
 &lt;ol start=&quot;5&quot;&gt;
 &lt;li&gt;S3 객체 다운로드 테스트&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;브라우저 창을 하나 열고 다운로드 테스트를 해보자&lt;/p&gt;
-&lt;p&gt;아래처럼 내가 방금 업로드한 파일이 잘 다운로드 되는걸 확인할수 있다.&lt;/p&gt;
+&lt;p&gt;아래처럼 내가 방금 업로드한 파일이 잘 다운로드되는 걸 확인할 수 있다.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/30878cf845f3091536f74d31978985f5/springboots37.png&quot; alt=&quot;springboots37.PNG&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot;마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🌭마무리&lt;/h2&gt;
-&lt;p&gt;이처럼 간단하게 springboot를 사용하여 s3에 접근후 파일 업로드 다운로드를 구현해 보았다.&lt;/p&gt;
-&lt;p&gt;굉장히 간단한 예제이므로 공식문서등을 참고하여 좀더 여러 방식으로 사용이 가능하다 생각된다.&lt;/p&gt;
+&lt;p&gt;이처럼 간단하게 springboot를 사용하여 s3에 접근 후 파일 업로드 다운로드를 구현해 보았다.&lt;/p&gt;
+&lt;p&gt;굉장히 간단한 예제이므로 공식문서 등을 참고하여 좀 더 여러 방식으로 사용이 가능하다 생각된다.&lt;/p&gt;
 &lt;div class=&quot;table-of-contents&quot;&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot;&gt;👀 개요&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#-s3-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C&quot;&gt;🗑 S3 파일 업로드&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#%EB%A7%88%EB%AC%B4%EB%A6%AC&quot;&gt;🌭마무리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Java 외부 api 호출 방법]]></title><description><![CDATA[🎋 기초(외부 API 호출) 정말 간단한 컨트롤러 에서 사용하는 기본 예제이다. 🎍 마무리 컨트롤러 에서 지정한 외부 api를 호출하는 예제이다. 하지만 실제로는 외부api…]]></description><link>https://leesungki.github.io/gatsby-java-study/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-java-study/</guid><pubDate>Fri, 04 Mar 2022 08:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-기초외부-api-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EA%B8%B0%EC%B4%88%EC%99%B8%EB%B6%80-api-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot; 기초외부 api 호출 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎋 기초(외부 API 호출)&lt;/h2&gt;
-&lt;p&gt;정말 간단한 컨트롤러 에서 사용하는 기본 예제이다.&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Java 외부 api 호출 방법]]></title><description><![CDATA[🎋 기초(외부 API 호출) 정말 간단한 컨트롤러에서 사용하는 기본 예제이다. 🎍 마무리 컨트롤러에서 지정한 외부 api를 호출하는 예제이다. 하지만 실제로는 외부 api…]]></description><link>https://leesungki.github.io/gatsby-java-study/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-java-study/</guid><pubDate>Fri, 04 Mar 2022 08:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-기초외부-api-호출&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EA%B8%B0%EC%B4%88%EC%99%B8%EB%B6%80-api-%ED%98%B8%EC%B6%9C&quot; aria-label=&quot; 기초외부 api 호출 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎋 기초(외부 API 호출)&lt;/h2&gt;
+&lt;p&gt;정말 간단한 컨트롤러에서 사용하는 기본 예제이다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;controller&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;java&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;io&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;BufferedReader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -325,8 +710,8 @@ resources
 	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&quot;-마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot; 마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎍 마무리&lt;/h2&gt;
-&lt;p&gt;컨트롤러 에서 지정한 외부 api를 호출하는 예제이다.&lt;/p&gt;
-&lt;p&gt;하지만 실제로는 외부api를 호출한다음 다른 작업들을 많이 해주는편이다 그러므로 서비스단에서 작성해주는 경우가 많은거같다.
+&lt;p&gt;컨트롤러에서 지정한 외부 api를 호출하는 예제이다.&lt;/p&gt;
+&lt;p&gt;하지만 실제로는 외부 api를 호출한 다음 다른 작업들을 많이 해주는 편이다 그러므로 서비스단에서 작성해주는 경우가 많은 거 같다.
 &lt;br&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;div class=&quot;table-of-contents&quot;&gt;
@@ -334,19 +719,19 @@ resources
 &lt;li&gt;&lt;a href=&quot;#-%EA%B8%B0%EC%B4%88%EC%99%B8%EB%B6%80-api-%ED%98%B8%EC%B6%9C&quot;&gt;🎋 기초(외부 API 호출)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#-%EB%A7%88%EB%AC%B4%EB%A6%AC&quot;&gt;🎍 마무리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[VUE 3 + CLI 4 + VUETIFY,QUASAR 개발 환경 구성]]></title><description><![CDATA[🎋 개요 이번에 개발 환경을 VUE 3 로  구성했던 경험을 포스팅할 예정 환경 구성 VUE CLI VUE 개발을 쉽게해주는 번들러 나는 WEB PACK 설정 BABEL 설정 같은걸 알아서 해준다 설치를 해준다. vue cli…]]></description><link>https://leesungki.github.io/gatsby-vue-study-vuetify/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-vue-study-vuetify/</guid><pubDate>Fri, 04 Mar 2022 01:50:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot; aria-label=&quot; 개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎋 개요&lt;/h2&gt;
-&lt;p&gt;이번에 개발 환경을 VUE 3 로  구성했던 경험을 포스팅할 예정&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[VUE 3 + CLI 4 + VUETIFY,QUASAR 개발 환경 구성]]></title><description><![CDATA[🎋 개요 이번에 개발 환경을 VUE 3로 구성했던 경험을 포스팅할 예정 환경 구성 VUE CLI VUE 개발을 쉽게 해 주는 번들러 나는 WEB PACK 설정 BABEL 설정 같은 걸 알아서 해준다 설치를 해준다. vue cli…]]></description><link>https://leesungki.github.io/gatsby-vue-study-vuetify/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-vue-study-vuetify/</guid><pubDate>Fri, 04 Mar 2022 01:50:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EA%B0%9C%EC%9A%94&quot; aria-label=&quot; 개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎋 개요&lt;/h2&gt;
+&lt;p&gt;이번에 개발 환경을 VUE 3로 구성했던 경험을 포스팅할 예정&lt;/p&gt;
 &lt;h3 id=&quot;환경-구성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1&quot; aria-label=&quot;환경 구성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;환경 구성&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;VUE CLI&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;VUE 개발을 쉽게해주는 번들러 나는 WEB PACK 설정 BABEL 설정 같은걸 알아서 해준다 설치를 해준다.&lt;/p&gt;
+&lt;p&gt;VUE 개발을 쉽게 해 주는 번들러 나는 WEB PACK 설정 BABEL 설정 같은 걸 알아서 해준다 설치를 해준다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;vue cli 공식문서 &lt;a href=&quot;https://cli.vuejs.org/&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;나는 vue3study_2 라는 폴더에 설치했다.
 vue create vue3_project_set
-vue3_project_set 로 프로젝트 생성&lt;/p&gt;
+vue3_project_set로 프로젝트 생성&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 507px; &quot;
@@ -369,16 +754,16 @@ vue3_project_set 로 프로젝트 생성&lt;/p&gt;
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;vue3 로 진행할꺼기 때문에 해당 옵션 선택&lt;/p&gt;
+&lt;p&gt;vue3로 진행할 거기 때문에 해당 옵션 선택&lt;/p&gt;
 &lt;p&gt;vuex 와 vue-router 도 추가해준다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;vue add vuex
 vue add router //history mode 는 y로 해준다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;마지막으로 나는 vuetify를 사용할꺼기때문에 추가해준다.&lt;/p&gt;
+&lt;p&gt;마지막으로 나는 vuetify를 사용할 거기 때문에 추가해준다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;vue add vuetify // 옵션은 V3 로해준다 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이제 eslint + pretter 설정을좀 해줘야한다.&lt;/p&gt;
-&lt;p&gt;vscode 에 elint 와 pretter 설정은 구글에 잘나와있다.&lt;/p&gt;
-&lt;p&gt;저장시에 자동으로 포멧해주는 설정만 setting.json에 기입해주면된다.&lt;/p&gt;
-&lt;p&gt;그리고 cli 로 프로젝트 생성시에 위의 모든것들을 옵션으로 할수있다.&lt;/p&gt;
+&lt;p&gt;이제 eslint + pretter 설정을 좀 해줘야 한다.&lt;/p&gt;
+&lt;p&gt;vscode에 elint와 pretter 설정은 구글에 잘 나와있다.&lt;/p&gt;
+&lt;p&gt;저장 시에 자동으로 포맷해주는 설정만 setting.json에 기입해주면 된다.&lt;/p&gt;
+&lt;p&gt;그리고 cli로 프로젝트 생성 시에 위의 모든 것들을 옵션으로 할 수 있다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 361px; &quot;
@@ -423,9 +808,9 @@ vue add router //history mode 는 y로 해준다.&lt;/code&gt;&lt;/pre&gt;&lt;/d
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;스페이스바를 눌러 내가원하는 플러그인을 설치할수있다.
-개인적으로 너무편한기능이였다
-vue 버전과 eslint+prettier 설정등 여러 설정을 수동으로 할수있다.&lt;/p&gt;
+&lt;p&gt;스페이스바를 눌러 내가 원하는 플러그인을 설치할 수 있다.
+개인적으로 너무 편한 기능이었다
+vue 버전과 eslint+prettier 설정 등 여러 설정을 수동으로 할 수 있다.&lt;/p&gt;
 &lt;p&gt;다 추가한 package.json 파일이다.
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -448,7 +833,7 @@ vue 버전과 eslint+prettier 설정등 여러 설정을 수동으로 할수있�
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;잘 추가된것을 알수있다.&lt;/p&gt;
+&lt;p&gt;잘 추가된 것을 알 수 있다.&lt;/p&gt;
 &lt;p&gt;서버를 실행해보자
 npm run serve
 &lt;span
@@ -474,10 +859,10 @@ npm run serve
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;잘 실행된걸 알수있다.&lt;/p&gt;
-&lt;p&gt;이제 우리가 개발하면서 코드 규약을 정해 자동으로 검사해주고 수정해주는 eslint+prettier를 설정해볼거다.&lt;/p&gt;
-&lt;p&gt;사실 기본적으로 해주는것들을 잘사용해도 괜찮지만 간단한것만좀 추가해볼 예정이다.&lt;/p&gt;
-&lt;p&gt;package.json에 보면 eslint 와 prettier에 관한 설정이있다.&lt;/p&gt;
+&lt;p&gt;잘 실행된 걸 알 수 있다.&lt;/p&gt;
+&lt;p&gt;이제 우리가 개발하면서 코드 규약을 정해 자동으로 검사해주고 수정해주는 eslint+prettier를 설정해볼 거다.&lt;/p&gt;
+&lt;p&gt;사실 기본적으로 해주는 것들을 잘 사용해도 괜찮지만 간단한 것만 좀 추가해볼 예정이다.&lt;/p&gt;
+&lt;p&gt;package.json에 보면 eslint와 prettier에 관한 설정이 있다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 265px; &quot;
@@ -499,8 +884,8 @@ npm run serve
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;rules에 규약을 정할수있다.
-나는 “쌍따옴표를” =&gt; ‘홀따옴표로 자동으로 검사변경해줄예정이다’&lt;/p&gt;
+&lt;p&gt;rules에 규약을 정할 수 있다.
+나는 “큰따옴표를” =&gt; ‘홀 따옴표로 자동으로 검사 변경해 줄 예정이다’&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 316px; &quot;
@@ -523,11 +908,11 @@ npm run serve
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;이렇게 설정해주었다.&lt;/p&gt;
-&lt;p&gt;그리고 vue의 환경변수 파일과 build 명령어를 나눠줘보자
-보통 개발할때 local,dev,prod 이렇게 3가지의 환경이 많아
+&lt;p&gt;그리고 vue의 환경변수 파일과 build 명령어를 나눠줘 보자
+보통 개발할 때 local, dev, prod 이렇게 3가지의 환경이 많아
 3가지로 나눠볼생각이다.&lt;/p&gt;
-&lt;p&gt;root 디렉토리에 .env.local  , .env.development , env.production 이렇게 3개의 파일을 만들어주자.&lt;/p&gt;
-&lt;p&gt;env.local은 로컬환경에서 사용할 환경변수를 정의해주자&lt;/p&gt;
+&lt;p&gt;root 디렉터리에. env.local ,. env.development , env.production 이렇게 3개의 파일을 만들어주자.&lt;/p&gt;
+&lt;p&gt;env.local은 로컬 환경에서 사용할 환경변수를 정의해주자&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 366px; &quot;
@@ -550,7 +935,7 @@ npm run serve
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;나는 이렇게 두개를 추가했다 로컬에서 백앤드 api로 요청할 주소와 빌드된 환경을 알기위해 mode 도추가했다.&lt;/p&gt;
+&lt;p&gt;나는 이렇게 두 개를 추가했다 로컬에서 백앤드 api로 요청할 주소와 빌드된 환경을 알기 위해 mode 도추가 했다.&lt;/p&gt;
 &lt;p&gt;그리고 package.json 파일의 빌드 명령어도 수정해보자.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -574,11 +959,11 @@ npm run serve
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;나는이처럼 로컬에서의 환경 빌드되는 것들과 개발 운영을 나눠서 해놨고&lt;/p&gt;
-&lt;p&gt;lint명령어는 자동으로 규약에맞게 수정해주는 명령어지만 이미자동으로 설정을 해놨기에 쓸일이 없을듯싶다.&lt;/p&gt;
-&lt;p&gt;이렇게 기본적인 개발환경셋팅은 했지만 추가적으로 vue에서 프로젝트가 build될때 번들링을 기본적으로 prefech로 해주는데&lt;/p&gt;
-&lt;p&gt;이렇게하면 플젝이 커질수록 초기 로딩이 느려진다.&lt;/p&gt;
-&lt;p&gt;그렇기에 vue.config.js에 그부분을 false로해주자.&lt;/p&gt;
+&lt;p&gt;나는 이처럼 로컬에서의 환경 빌드되는 것들과 개발 운영을 나눠서 해놨고&lt;/p&gt;
+&lt;p&gt;lint명령어는 자동으로 규약에 맞게 수정해주는 명령어지만 이미자 동으로 설정을 해놨기에 쓸 일이 없을듯싶다.&lt;/p&gt;
+&lt;p&gt;이렇게 기본적인 개발환경 세팅은 했지만 추가적으로 vue에서 프로젝트가 build 될 때 번들링을 기본적으로 prefech로 해주는데&lt;/p&gt;
+&lt;p&gt;이렇게 하면 플젝이 커질수록 초기 로딩이 느려진다.&lt;/p&gt;
+&lt;p&gt;그렇기에 vue.config.js에 그 부분을 false로 해주자.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 304px; &quot;
@@ -600,16 +985,16 @@ npm run serve
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;vue.config.js 에는 웹팩과 서버설정등을 할수있다.
-하는김에 서버설정도 좀 바꿔줬다&lt;/p&gt;
+&lt;p&gt;vue.config.js 에는 웹팩과 서버 설정 등을 할 수 있다.
+하는 김에 서버 설정도 좀 바꿔줬다&lt;/p&gt;
 &lt;p&gt;마지막으로 서버를 실행해보자
 npm run local&lt;/p&gt;
 &lt;p&gt;여기까지 정상적으로 되었다면 완료.
 이제
-vuex, vue-router, axios 의 구성을 좀 바꿔줄예정&lt;/p&gt;
-&lt;p&gt;vue-router 부터 보자
-나중에 라우터가 많아지면 정의가 불편하기때문에 모듈로 나눠줄예정이다.&lt;/p&gt;
-&lt;p&gt;그리고 views 의 컴포넌트로 폴더로 관리할예정이다.&lt;/p&gt;
+vuex, vue-router, axios의 구성을 좀 바꿔줄 예정&lt;/p&gt;
+&lt;p&gt;vue-router부터 보자
+나중에 라우터가 많아지면 정의가 불편하기 때문에 모듈로 나눠줄 예정이다.&lt;/p&gt;
+&lt;p&gt;그리고 views의 컴포넌트로 폴더로 관리할 예정이다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;router
 	ㄴmodules
 		ㄴlogin.router.js
@@ -665,8 +1050,8 @@ views
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;이렇게 모듈에 로그인 라우터를 따로만들어 index.js에 구조할당해서 관리한다.&lt;/p&gt;
-&lt;p&gt;이번에는 store 를 관리하기 편하게 바꿔보자.&lt;/p&gt;
+&lt;p&gt;이렇게 모듈에 로그인 라우터를 따로 만들어 index.js에 구조 할당해서 관리한다.&lt;/p&gt;
+&lt;p&gt;이번에는 store를 관리하기 편하게 바꿔보자.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;store
 	ㄴmodules
 		ㄴlogin
@@ -856,12 +1241,12 @@ views
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;로그인 컴포넌트에서 입력한 test 를 액션을통해 뮤테이션을거쳐 스테이트에 넣어준다.&lt;/p&gt;
-&lt;p&gt;그후 로그인 컴포넌트에서는 스테이트에저장된 값을 가져온다 지금은 옵션api로 코딩했지만 추후 composion api 로변경예정&lt;/p&gt;
-&lt;p&gt;이렇게 기본적으로 스토어도 모듈화시켜서 사용하면 편하다.&lt;/p&gt;
-&lt;p&gt;이렇게 라우터와 스토어를 나눴고 이제 액션에서 api를 호출하는것을 해볼생각이다 axios를 사용할예정인데 백앤드를 먼저 간단하게 json server 로 구성할생각이다.&lt;/p&gt;
+&lt;p&gt;로그인 컴포넌트에서 입력한 test를 액션을 통해 뮤테이션을 거쳐 스테이트에 넣어준다.&lt;/p&gt;
+&lt;p&gt;그 후 로그인 컴포넌트에서는 스테이트에 저장된 값을 가져온다 지금은 옵션 api로 코딩했지만 추후 composion api 로변경예정&lt;/p&gt;
+&lt;p&gt;이렇게 기본적으로 스토어도 모듈화 시켜서 사용하면 편하다.&lt;/p&gt;
+&lt;p&gt;이렇게 라우터와 스토어를 나눴고 이제 액션에서 api를 호출하는 것을 해볼 생각이다 axios를 사용할 예정인데 백앤드를 먼저 간단하게 json server로 구성할 생각이다.&lt;/p&gt;
 &lt;p&gt;프로젝트와 같은 레벨에 json-server 폴더를 만들었다.&lt;/p&gt;
-&lt;p&gt;json-server 사용법은 인터넷에 잘나와있다. &lt;a href=&quot;https://redux-advanced.vlpt.us/3/01.html&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;json-server 사용법은 인터넷에 잘 나와있다. &lt;a href=&quot;https://redux-advanced.vlpt.us/3/01.html&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;공식: &lt;a href=&quot;https://github.com/typicode/json-server&quot;&gt;https://github.com/typicode/json-server&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;json-server 폴더 하위에 db.json파일을 만들어서 리턴 데이터를 정의했다.&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -885,9 +1270,9 @@ views
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;json-server 를 실행하고 기본실행시 포트는 3000 번이다.&lt;/p&gt;
+&lt;p&gt;json-server를 실행하고 기본 실행 시 포트는 3000번이다.&lt;/p&gt;
 &lt;p&gt;postman으로 요청을 날려 확인해봤다.&lt;/p&gt;
-&lt;p&gt;이렇게 유저정보를 넣었고 이제 Axios를 설치해보자&lt;/p&gt;
+&lt;p&gt;이렇게 유저 정보를 넣었고 이제 Axios를 설치해보자&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm i axios&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;package.json에 추가된다.&lt;/p&gt;
 &lt;p&gt;나는 모든 api요청은 services 폴더에서 관리할 예정이다.&lt;/p&gt;
@@ -1030,7 +1415,7 @@ views
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;이렇게 액션에서 해당 서비스를 호출하여 받은값을 뮤테이션하여 스테이트에 저장하는 로직을 작성한다.&lt;/p&gt;
+&lt;p&gt;이렇게 액션에서 해당 서비스를 호출하여 받은 값을 뮤테이션 하여 스테이트에 저장하는 로직을 작성한다.&lt;/p&gt;
 &lt;p&gt;마지막으로 Login.vue 컴포넌트도 변경한다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -1076,7 +1461,7 @@ views
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;아이디값을 입력하여 전송한다. id:1&lt;/p&gt;
+&lt;p&gt;아이디 값을 입력하여 전송한다. id:1&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 327px; &quot;
@@ -1122,8 +1507,8 @@ views
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;이렇게 json-server를 이용하여 간단하게 axios까지 구현해봤다.&lt;/p&gt;
-&lt;p&gt;이제 로그인 을 했을때에 main으로가고 유저 정보가 없을때에는 login페이지로 가게끔 라우터를 바꿔보자&lt;/p&gt;
-&lt;p&gt;일단 path가 라우터에 명시된게 아닐경우 무조건 ’/‘메인으로 가게끔 추가하자
+&lt;p&gt;이제 로그인을 했을 때에 main으로 가고 유저 정보가 없을 때에는 login페이지로 가게끔 라우터를 바꿔보자&lt;/p&gt;
+&lt;p&gt;일단 path가 라우터에 명시된 게 아닐 경우 무조건 ’/‘메인으로 가게끔 추가하자
 router&gt;index.js&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -1146,11 +1531,11 @@ router&gt;index.js&lt;/p&gt;
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;이제 라우터에 지정된 path가 아닌경우 무조건 main으로 리다이렉트한다.&lt;/p&gt;
-&lt;p&gt;이제조금 복잡해진다
-나는 로그인할때 jwt토큰을 발급받아 localstorege에 저장해서 토큰의 여부로 사용자가 정상 로그인한걸 확인할것이다.&lt;/p&gt;
-&lt;p&gt;일단 라우터가 실행되기전에 로그인이 필요한 페이지인지 확인후 로그인여부를 확인한다 (토큰여부)&lt;/p&gt;
-&lt;p&gt;그후 로그인 필요한페이지 접근시 로그인여부가 true면 라우터가 진행되고 false면 로그인페이지로 리다이렉트 시킨다.&lt;/p&gt;
+&lt;p&gt;이제 라우터에 지정된 path가 아닌 경우 무조건 main으로 리다이렉트 한다.&lt;/p&gt;
+&lt;p&gt;이제 조금 복잡해진다
+나는 로그인할 때 jwt토큰을 발급받아 localstorege에 저장해서 토큰의 여부로 사용자가 정상 로그인한 걸 확인할 것이다.&lt;/p&gt;
+&lt;p&gt;일단 라우터가 실행되기 전에 로그인이 필요한 페이지인지 확인 후 로그인 여부를 확인한다 (토큰 여부)&lt;/p&gt;
+&lt;p&gt;그 후 로그인 필요 한 페이지 접근 시 로그인 여부가 true면 라우터가 진행되고 false면 로그인 페이지로 리다이렉트 시킨다.&lt;/p&gt;
 &lt;p&gt;router &gt; index.js&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; jwtUtil &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@/shared/utils/token-util&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//토큰이 을 로컬스토리지에 set해주거나 get하는 로직을 임포트&lt;/span&gt;
 
@@ -1243,10 +1628,10 @@ router&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
 &lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; tokenUtil&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;jwt토큰관련해서는 공식문서를 참고하는게 필요하다&lt;/p&gt;
-&lt;p&gt;기본적으로 유효기간이있고 해당유효기간이 만료하면 다시로그인을 하는 방식으로 보통 많이 구성한다.&lt;/p&gt;
-&lt;p&gt;jwt토큰은 백앤드에서 발급해주는 식이지만 현재 백앤드서버는 구성안하여서 약식으로 하겠다.&lt;/p&gt;
-&lt;p&gt;중요한흐름은 로그인시 토큰을 발급 =&gt; 로컬스토리지에저장=&gt; 페이지 이동시마다 토큰유무를 파악 =&gt; 없는경우 로그인페이지로 리다이렉트
+&lt;p&gt;jwt토큰 관련해서는 공식문서를 참고하는 게 필요하다&lt;/p&gt;
+&lt;p&gt;기본적으로 유효기간이 있고 해당 유효기간이 만료하면 다시 로그인을 하는 방식으로 보통 많이 구성한다.&lt;/p&gt;
+&lt;p&gt;jwt토큰은 백앤드에서 발급해주는 식이지만 현재 백앤드 서버는 구성안 하여서 약식으로 하겠다.&lt;/p&gt;
+&lt;p&gt;중요한 흐름은 로그인 시 토큰을 발급 =&gt; 로컬 스토리지에 저장=&gt; 페이지 이동 시마다 토큰 유무를 파악 =&gt; 없는 경우 로그인 페이지로 리다이렉트
 해당 흐름이다.&lt;/p&gt;
 &lt;p&gt;이제 로그인 컴포넌트를 조금 수정해보자&lt;/p&gt;
 &lt;p&gt;views &gt; login &gt; Login.vue&lt;/p&gt;
@@ -1324,9 +1709,9 @@ router&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
       console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;로그인시에 accessToken과 username을 로컬스토리지에 저장해준다.&lt;/p&gt;
-&lt;p&gt;해당데이터 기준으로 사용자의 로그인 여부를 판단한다.&lt;/p&gt;
-&lt;p&gt;처음 메인 진입에 accessToken이 없으므로 login 페이지로 리다이렉드된다.&lt;/p&gt;
+&lt;p&gt;로그인 시에 accessToken과 username을 로컬 스토리지에 저장해준다.&lt;/p&gt;
+&lt;p&gt;해당 데이터 기준으로 사용자의 로그인 여부를 판단한다.&lt;/p&gt;
+&lt;p&gt;처음 메인 진입에 accessToken이 없으므로 login 페이지로 리 디렉트 된다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 303px; &quot;
@@ -1372,8 +1757,8 @@ router&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;자 이제 여기까지 대략 jwt토큰을 백앤드에서 받는다는 가정으로 구현해봤다.&lt;/p&gt;
-&lt;p&gt;모든라우팅이 이루어지기 전에 로컬스토리지의 accessToken여부를 판단하고 없다면 로그인페이지로 리다이렉트 시켰고&lt;/p&gt;
-&lt;p&gt;이제 모든 api 요청을 할때도 accessToken의 유효성을 판단해줘야한다.&lt;/p&gt;
+&lt;p&gt;모든 라우팅이 이루어지기 전에 로컬 스토리지의 accessToken여부를 판단하고 없다면 로그인 페이지로 리다이렉트 시켰고&lt;/p&gt;
+&lt;p&gt;이제 모든 api 요청을 할 때도 accessToken의 유효성을 판단해줘야 한다.&lt;/p&gt;
 &lt;p&gt;services &gt; api.common.js&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; tokenUtill &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@/shared/utils/token-util&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
 
@@ -1402,17 +1787,17 @@ Api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;interceptors&lt
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; 
 &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; Api&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이렇게 axios 의 요청이 실행되기전 accessToken 이있는경우 요청 헤더에 토큰을 담고 요청을 진행한다.&lt;/p&gt;
-&lt;p&gt;없는경우 헤더에 토큰을 못담기때문에 서버에서 에러를 보내준다. 이부분은 서버에 구현이 필요하지만 있다는 가정하에 진행한다.&lt;/p&gt;
-&lt;p&gt;에러를 받았을때의 로직도 추가한다.&lt;/p&gt;
-&lt;p&gt;에러상태가 401 또는 403 일때 로컬스토리지에 데이터를 비워주고 현재페이지 리로드한다.&lt;/p&gt;
-&lt;p&gt;그럼 토큰이없기때문에 메인으로 자동 리다이렉드 된다.&lt;/p&gt;
-&lt;p&gt;사실이기능은 서버랑 같이 구현되어야하는 부분이여서 아직 확인하기가 좀 힘들다.&lt;/p&gt;
+&lt;p&gt;이렇게 axios의 요청이 실행되기 전 accessToken 이 있는 경우 요청 헤더에 토큰을 담고 요청을 진행한다.&lt;/p&gt;
+&lt;p&gt;없는 경우 헤더에 토큰을 못 담기 때문에 서버에서 에러를 보내준다. 이 부분은 서버에 구현이 필요하지만 있다는 가정하에 진행한다.&lt;/p&gt;
+&lt;p&gt;에러를 받았을 때의 로직도 추가한다.&lt;/p&gt;
+&lt;p&gt;에러상태가 401 또는 403 일 때 로컬 스토리지에 데이터를 비워주고 현재 페이지 리로드 한다.&lt;/p&gt;
+&lt;p&gt;그럼 토큰이 없기 때문에 메인으로 자동 리 디렉트 된다.&lt;/p&gt;
+&lt;p&gt;사실이 기능은 서버랑 같이 구현되어야 하는 부분이어서 아직 확인하기가 좀 힘들다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;보통 api호출시 데이터를 받아오는데 진행사항 표현하는 로더기능도 이쪽에 추가한다.&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;이번에는 vuex의 데이터를 로컬스토리지에 저장하여 사용하게 해주는 플러그인을 사용해보자.&lt;/p&gt;
-&lt;p&gt;vuex store 의 데이터는 새로고침시 사라진다 dom에 뿌려지기때문&lt;/p&gt;
-&lt;p&gt;하지만 우리는 계속해서 데이터를 사용하고 싶은 경우가있다&lt;/p&gt;
-&lt;p&gt;이때문에 나온 플러그인이라고 생각하자 먼저 로그인을하고난후 로그인 정보를 getters로 받아와서 뿌려준 메인화면이다.&lt;/p&gt;
+&lt;p&gt;이번에는 vuex의 데이터를 로컬 스토리지에 저장하여 사용하게 해주는 플러그인을 사용해보자.&lt;/p&gt;
+&lt;p&gt;vuex store의 데이터는 새로고침 시 사라진다 dom에 뿌려 지기 때문&lt;/p&gt;
+&lt;p&gt;하지만 우리는 계속해서 데이터를 사용하고 싶은 경우가 있다&lt;/p&gt;
+&lt;p&gt;이 때문에 나온 플러그인이라고 생각하자 먼저 로그인을 하고 난 후 로그인 정보를 getters로 받아와서 뿌려준 메인화면이다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
@@ -1437,7 +1822,7 @@ Api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;interceptors&lt
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;이렇게 로그인한 유저의 정보가 보인다.&lt;/p&gt;
-&lt;p&gt;하지만 새로 고침시에 이렇게 유저의 정보가 사라지는걸 알수있다.&lt;/p&gt;
+&lt;p&gt;하지만 새로 고침 시에 이렇게 유저의 정보가 사라지는 걸 알 수 있다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
@@ -1495,7 +1880,7 @@ Api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;interceptors&lt
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;이렇게 로컬 스토리지에 추가된것이 보인다 이제 새로고침을 해도 유저의 정보는 로컬 스토리지에 있기때문에 사라지지 않는다.&lt;/p&gt;
+&lt;p&gt;이렇게 로컬 스토리지에 추가된 것이 보인다 이제 새로고침을 해도 유저의 정보는 로컬 스토리지에 있기 때문에 사라지지 않는다.&lt;/p&gt;
 &lt;p&gt;추가적으로 내가 사용하는 eslint + prettier 설정이다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;rules&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; 
       &lt;span class=&quot;token string&quot;&gt;&quot;no-console&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;off&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
@@ -1514,7 +1899,7 @@ Api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;interceptors&lt
         &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; 
       &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; 
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이정도이다 나중에 더 추가 할수도 있다.&lt;/p&gt;
+&lt;p&gt;이 정도이다 나중에 더 추가할 수도 있다.&lt;/p&gt;
 &lt;p&gt;이제 로그아웃을 만들어주자 비교적 간단하다
 views &gt; main &gt; main.vue&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;v-col&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;mb-4&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; 
@@ -1543,7 +1928,7 @@ methods&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span clas
   tokenUtil&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;invalidateJwtAndReload&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//로컬스토리지 비워주고 화면 리로드한다. &lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;이렇게 로그아웃도 완료되었다.&lt;/p&gt;
-&lt;p&gt;이제 뷰에서 많이 사용하는 mixin 을 설정할꺼다 전역으로 공통적으로 사용하는기능을 넣고 빼서 사용한다.&lt;/p&gt;
+&lt;p&gt;이제 뷰에서 많이 사용하는 mixin을 설정할 거다 전역으로 공통적으로 사용하는 기능을 넣고 빼서 사용한다.&lt;/p&gt;
 &lt;p&gt;공식문서 참고 &lt;a href=&quot;https://v3.vuejs.org/guide/mixins.html#option-merging&quot;&gt;https://v3.vuejs.org/guide/mixins.html#option-merging&lt;/a&gt; 일단 파일을 만들어준다.&lt;/p&gt;
 &lt;p&gt;shared &gt; mixins &gt; global-mixin.js&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; 
@@ -1605,10 +1990,10 @@ app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
       /&gt;
     &lt;/span&gt;
 위와 같이 작동한다.&lt;/p&gt;
-&lt;p&gt;이와같이 vue cli 4를 이용한 vue 프로젝트 설정을 끝냈다.&lt;/p&gt;
-&lt;p&gt;근데 진짜 짜증 나는건 vuetify3 이 정식 릴리즈 버전도아니고 알파버전이라 지원되는 컴포넌트도 적고 vue3에 아직 사용을 불가능했다.&lt;/p&gt;
-&lt;p&gt;하…그래서 고민하고 찾다가 알아낸…대망의 quasar (퀘이사)&lt;/p&gt;
-&lt;p&gt;위의 내용을그대로 진행하되 vuetify 를 quasar 로대체해서 진행을 해보겠다.&lt;/p&gt;
+&lt;p&gt;이와 같이 vue cli 4를 이용한 vue 프로젝트 설정을 끝냈다.&lt;/p&gt;
+&lt;p&gt;근데 진짜 짜증 나는 건 vuetify3 이 정식 릴리즈 버전도 아니고 알파버전이라 지원되는 컴포넌트도 적고 vue3에 아직 사용을 불가능했다.&lt;/p&gt;
+&lt;p&gt;하… 그래서 고민하고 찾다가 알아낸… 대망의 quasar (퀘이사)&lt;/p&gt;
+&lt;p&gt;위의 내용을 그대로 진행하되 vuetify를 quasar 로대체해서 진행을 해보겠다.&lt;/p&gt;
 &lt;p&gt;일단 기존 프로젝트 생성은 같다&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;vue create vue3_project_quasar
 //생성해주고 기존과같이 옵션적용&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1635,8 +2020,8 @@ app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;vue add quasar //quasar로 갈아타기&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;여기에서 옵션이 중요 퀘이사는 자체적인 cli를 제공하는데 (안써봄)&lt;/p&gt;
-&lt;p&gt;나는 이미 vue cli를 사용하기 땜에 퀘이사를 설치할때 수동으로  가져오는 방식으로 해야 라우터가 정상 작동한다.&lt;/p&gt;
+&lt;p&gt;여기에서 옵션이 중요 퀘이사는 자체적인 cli를 제공하는데 (안 써봄)&lt;/p&gt;
+&lt;p&gt;나는 이미 vue cli를 사용하기 때문에 퀘이사를 설치할 때 수동으로 가져오는 방식으로 해야 라우터가 정상 작동한다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
@@ -1660,20 +2045,20 @@ app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         decoding=&quot;async&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;저 첫번째 옵션 꼭 no 해준다.&lt;/p&gt;
-&lt;p&gt;그렇게 퀘이사가 설치되면 vue.config.js, quasar-user-optios.js 파일이생성된다 그리고 styles 폴더도&lt;/p&gt;
-&lt;p&gt;vue.config.js 이거야 뭐 익숙하다 웹펙,서버설정,바벨,퀘이사등 cli에서 주관하는 설정파일 여기에 퀘이사 사용 코드가 자동으로 등록되어있다.&lt;/p&gt;
-&lt;p&gt;이제 문제는 quasar-user-optios.js 이다 퀘이사에서 제공하는 플러그인을 정의해놓는곳 트리쉐이킹에 용의한거아닐까? 하는 생각…&lt;/p&gt;
-&lt;p&gt;마지막으로 styles 폴더에는 scss 관련 정의 내가처음 옵션에서 사용한다고해서 생성 된듯하다 근데 이건 나중에 생각하자&lt;/p&gt;
-&lt;p&gt;그렇게 서버를실행해보자&lt;/p&gt;
+&lt;p&gt;저 첫 번째 옵션 꼭 no 해준다.&lt;/p&gt;
+&lt;p&gt;그렇게 퀘이사가 설치되면 vue.config.js, quasar-user-optios.js 파일이 생성된다 그리고 styles 폴더도&lt;/p&gt;
+&lt;p&gt;vue.config.js 이거야 뭐 익숙하다 웹펙, 서버 설정, 바벨, 퀘이사 등 cli에서 주관하는 설정 파일 여기에 퀘이사 사용 코드가 자동으로 등록되어있다.&lt;/p&gt;
+&lt;p&gt;이제 문제는 quasar-user-optios.js이다 퀘이사에서 제공하는 플러그인을 정의해 놓는 곳 트리 쉐이킹에 용의 한 거 아닐까? 하는 생각…&lt;/p&gt;
+&lt;p&gt;마지막으로 styles 폴더에는 scss 관련 정의 내가 처음 옵션에서 사용한다고 해서 생성된듯하다 근데 이건 나중에 생각하자&lt;/p&gt;
+&lt;p&gt;그렇게 서버를 실행해 보자&lt;/p&gt;
 &lt;p&gt;그러면 vuetify 가 아닌 quasar를 사용해서 구성이 가능해진다.&lt;/p&gt;
 &lt;h2 id=&quot;-마무리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%A7%88%EB%AC%B4%EB%A6%AC&quot; aria-label=&quot; 마무리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎪 마무리&lt;/h2&gt;
-&lt;p&gt;프론트 영역은 확실히 트랜드에 민감해서 그런지 새로나오고 없어지는 라이브러리 들이 굉장히 많고&lt;/p&gt;
-&lt;p&gt;기존에 사용하던 것들도 업데이트가 빠르게 되는편이라 항상 잘보고 사용해야 한듯싶다.&lt;/p&gt;
-&lt;p&gt;사실 vuetify던 quasar던 어떤걸 사용해도 크게 개발상에 문제가 느껴지지는 않지만&lt;/p&gt;
+&lt;p&gt;프런트 영역은 확실히 트렌드에 민감해서 그런지 새로 나오고 없어지는 라이브러리들이 굉장히 많고&lt;/p&gt;
+&lt;p&gt;기존에 사용하던 것들도 업데이트가 빠르게 되는 편이라 항상 잘 보고 사용해야 한 듯싶다.&lt;/p&gt;
+&lt;p&gt;사실 vuetify 던 quasar 던 어떤 걸 사용해도 크게 개발상에 문제가 느껴지지는 않지만&lt;/p&gt;
 &lt;p&gt;난 개인적으로 vuetify가 더 사용하기 편했고 vue3에 맞게 업데이트가 된다면 vuetify를 계속 사용하지 싶다…&lt;/p&gt;
-&lt;p&gt;요번 포스팅은 과거에 내가 프로젝트때 정리를 대충했던걸 옮겨놓은 거라(그땐 블로그를 안했으니..)&lt;/p&gt;
-&lt;p&gt;너무 두서없고 양조절도 못했다 나중에 시간이 된다면 vue 관련 포스팅을 좀더 할예정이다.
+&lt;p&gt;요번 포스팅은 과거에 내가 프로젝트 때 정리를 대충 했던걸 옮겨놓은 거라(그땐 블로그를 안 했으니..)&lt;/p&gt;
+&lt;p&gt;너무 두서없고 양 조절도 못했다 나중에 시간이 된다면 vue 관련 포스팅을 좀 더 할 예정이다.
 &lt;br&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;div class=&quot;table-of-contents&quot;&gt;
@@ -3952,140 +4337,6 @@ S3 서비스 수준 계약으로 객체에 대해 99.999999999%의 내구성을 
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 생성]]></title><description><![CDATA[🎈 목적  🗑 Bucket 생성하기 1️⃣ AWS console 로그인을 하고 s3 서비스에 접근합니다. 버킷 만들기 클릭!  2️⃣ 버킷 이름, 리전 등을 지정해줍니다.  아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!…]]></description><link>https://leesungki.github.io/gatsby-aws-study-s3-makeBucket/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-s3-makeBucket/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-목적&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot; aria-label=&quot; 목적 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 목적&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aws 에서 사용하는 s3 버킷 생성&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;-bucket-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot; bucket 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🗑 Bucket 생성하기&lt;/h2&gt;
-&lt;h2 id=&quot;1️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;1️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1️⃣&lt;/h2&gt;
-&lt;p&gt;AWS console 로그인을 하고 &lt;a href=&quot;https://console.aws.amazon.com/s3/home?region=ap-northeast-2&quot;&gt;s3 서비스&lt;/a&gt;에 접근합니다.&lt;/p&gt;
-&lt;p&gt;버킷 만들기 클릭!&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 45.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABUElEQVQozzWQW24dIRBEZ//ybrKALMB//ov8GcfjmTs8uqGfMJcEkpRaAiRadaq26zxyzv2+e+9Yyvm4ABFLAcR5wfJ/pnKGlHPKOQOeV9gwRRFpvY8xzCzF+PPjAwDNVISZmIhEhESrGCCGEGKMABhT2q4QUkpENMZQM1hydxGpRGamqsupind1T4AJirWeMmwAQET3fc9l1UrUWhtj3CvIWBLm5j7R3Pfj8Xk8SDQDbCIiqiJibrKW53ONTlcVM+1P9caqLKKmZmZuYWJfARHvJTU7zvMMsS5hpVCkxkt/vWs8vTV3W0GstRZT/ofNIn+xQ4wJAEth5lJr9Sf9eKVvL/L2vY3hy9ZtHleMW62kInvm+/mcrTIDFhZZbK4qlVXvIa3T6o9Faq2qOpexlPVt9jGTm0KhXBhJfFEex7nvOzPv+1eIM9HXcRDRn7Z/AwI+A6qlIhN4AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket1.png&quot;
-        title=&quot;makebucket1.png&quot;
-        src=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png&quot;
-        srcset=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/e9ff0/makebucket1.png 180w,
-/static/d0c263a35dd6fda29557c82d14eb5830/f21e7/makebucket1.png 360w,
-/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png 720w,
-/static/d0c263a35dd6fda29557c82d14eb5830/078fe/makebucket1.png 934w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;2️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;2️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2️⃣&lt;/h2&gt;
-&lt;p&gt;버킷 이름, 리전 등을 지정해줍니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 658px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 92.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABJ0AAASdAHeZh94AAACTUlEQVQ4y52UeW+cMBDF9/t/t0r9p1klaY5lD1gOH/jA2MCrZiCErJK0KtIPGws9zzzPeCd0i0slIXWLumlwLSvotv2U1ph1/Ipd1Qhk5wLnPEdeFKiFgnUOxlrGWrPyndAqSCL3Dw+42+/x626Pp8MJx/MZl8sF+bXE8SqYUyW/jHzLjl51XaMRAkpraK0hlYIidAupzUxrOPLv4AgpraIocC1L9H2PlNKG+E6MiH+BtHazX5S/xTCOK+PC23zajMMw8Po0TRgXaE5aLKgobSFY1HcdY52Hcx5dCLBdD2EDtAuQLqCLicVvH+c9do5ybw3Tx4jQ9wghwPtZlDcIEaaLcCFC+4g+zWLTEhmxCrKZ7VyDQkgWtnaOlFO6TXka2S/afCv6HqH3LFRcS2THI8qqYqx1s4fk15ZxRBqGNeUPgm5JuSiueH49oKxqNrbrAv7n4Qipdsh4+iDvYkqcEnv5FeHzdS4bemWnE55fXpBXDVrrYIyZW8/YZTTrSAHYt7XNul3+5wiL/IIsO+CQZVzkSgq01DVKwbQ0UtvpuXtozRhIKdeOojkdLNch7dD4CNlF1Mahah1MGuGGiaG5TSNbQSdL9tDhTJuCJmiNU9bO4UkG7A85fuyf8PP+Bb8vFV5LhddS4iwd6m5AlxJfGPv7Rz48qShijUZKNEKyrxyhtg4qAaVLKGyP3PQ4SouT8jgrz2t1GBBiWtLyfIBzy87XHM1XQbe0nlCK05puSmFa+OeyoR3I1Kqu+fpKS9l8vHXSUk4L6YY4/0Me/gH9qb0dGAv2CgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket2.png&quot;
-        title=&quot;makebucket2.png&quot;
-        src=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png&quot;
-        srcset=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/e9ff0/makebucket2.png 180w,
-/static/eb23b224cf64aaa70beb81cd624c5b3f/f21e7/makebucket2.png 360w,
-/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png 658w&quot;
-        sizes=&quot;(max-width: 658px) 100vw, 658px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 546px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 166.66666666666669%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAACXBIWXMAABJ0AAASdAHeZh94AAAD00lEQVRIx6VWW5LjNgzUzVM5xJ4jOUCukY9sxmO9KVFPviRKst0pgJLtSbybTFZVXSRoqgUCaNDRMA44xzHiJMHb6YQkSVAUJc5xirppsCwL5nmG957HZ/Caf9humhANQ484iZEXOZI0RikKHtM0Rp6nkLJGWRbIiwyiEijKnPcIUaKqKwhRoCgyVJUIhOM4oKpKNK1ELWs0jYSoJd6zEqdMoJAthqGDlBL08bZt0HUtz/u+Q9u1vNYPfSBUbsagNLq+x6gUtNbwywq/bJj8imW74Hq9Mi6XCy7HyLjudvidQhD11qNqexSl4JgR8TRNL2L1wLSv3W43PD/rtiGioG/bhtEYaGuhjMGgFNphYM8DFLphxKA1lNG819HHvIdfFiZirCsivxMaa2GnCcY6niuz287BOscfu+/Z1w7CIyR3QsKoDXvHozbszbhDWYue4mstB56OvKzr6yMfLtOx+Lg6HJOIiUQ9eXaEhDwMXk78LpEzluVBGLzT/BJ7ZYLHdDSK1zR7TN4z8eElrZNNe4iQPaT0UwyJKGQxhIBAdiCbmYwzfGD/yJF5IiOeiNin46UfBIUm6voOWZrgfD6jrhuuO6rDb8FN7l6nj7U9BKSUrh/wNc6QC4G6rlh6QV4Nz3kku+94JG3LRjLIpr1t10E0A5RxiOhLo/NwPtQj1dL/w8ZeRr12SLMclahCMe21dcPHGnv1HHuOeuQsq8kjyQoYY3iRKp42fBZMSEpxVGd7UI/AvsI079jrzu3yO+BYtpTltkWW5tzvKNOlqDDPR1bDi7RZ2QA7eazrwqr4O+gd9lApxUemXmhJZtYyWZgbbhidcmiVg3Iel+2fSaGEUoKjQxGaugt1FWP56Lfbd1LxvRgSSS0byKbhheesffZh6RnuJo/AzrP/IKeja/8X6RFHRPdIlufI8gJ3Xd+lRlkPmPYO/RL7lcDSo0RUVYVK1lBqhNYKaseoLWRvIHoLO3ts/6KWkBTqcdZhHEZcr7d7Oz/mt1sA33r33z7iuPW4wdKtd4pTyFriRx9OCsWHskwxooVQpOsnsXDH5uagqfUrxWVDGX+W3/QsvW/YR/LuWdZEVlfIi4J/JFk9pOWx7rKiWC+E5fEbwfOfpdBwSXXRubWIG41YDjiJFu+iwx9phbeywbnu8WchcRIdEjmyTXvIpn3vVYes0xCjZeSdRnTuZ8StwbkeEDcjklbjrewQyxFZF9aTRqEYHNs0Z7QaaatRmRXNBrQbUNobIrqPe0X3scVAd7E2GI1l+8O60ru9Q2mIXqM5/w75y0+Qv/6M9rcv+AuYrvQ7lOznHgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket3.png&quot;
-        title=&quot;makebucket3.png&quot;
-        src=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png&quot;
-        srcset=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/e9ff0/makebucket3.png 180w,
-/static/531397bf51c8d1cf783d1c8162e06c3b/f21e7/makebucket3.png 360w,
-/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png 546w&quot;
-        sizes=&quot;(max-width: 546px) 100vw, 546px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;3️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;3️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3️⃣&lt;/h2&gt;
-&lt;p&gt;저는 아래와 같이 &lt;code class=&quot;language-text&quot;&gt;leesungkibucket&lt;/code&gt; 이라는 이름으로 생성 하였습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 715px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 54.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABpUlEQVQoz4VSW5LUMAzM7bkEB+Gbb85A1TI7bMZ5+C3LjpPelTJZ4ItUdVlWZLXU0jDNC1ZrEWJETOn/kLgYNf6CD0Eh9hBCwOvtFcYYUCHknFFK0TPndIIIiVhRa1UwV1hrYaYZD2P0DCFikIcxRTDzM5CRUvpzrwyuFT4mhETY+oZtO3ER18rofdM3g/dBW/j7IyIcx/GPzzmnCa5v33e83N7w6z5i9oTSdiUeqBQ15CxPaFXMaotfWhaUwkomtvit86d+5oZkXhD9imGaDN4eBiFlEJ26xZRhQ0bIBa1VHcY8L0gqz6mx+AqfBOn7V8RvX5B+/sAgDO4JmZJqmgkuEgJJwoYqUD2r2vwcjPwTLVvfwa0r2UBUIJMWdg1oTU+pjLl8rohIcA1MWr7uUpDEFCK1B2Ggcq4EcUOpTQXvvSu887jff2NdrVYjp5kmPMykrS/LCu89SNaM6Ewo5brEiFSx9V0nfE05p4xxfMBapz5nHcZx1Lu0Ld1dAxOCM2HdNGFtHTgOrVAgCaQdSShL248DbBewXSF08l8Si+4qwcfavAMxOVJpcT4gEgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket4.png&quot;
-        title=&quot;makebucket4.png&quot;
-        src=&quot;/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png&quot;
-        srcset=&quot;/static/2991bb6828aece27363c2c204479dc9c/e9ff0/makebucket4.png 180w,
-/static/2991bb6828aece27363c2c204479dc9c/f21e7/makebucket4.png 360w,
-/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png 715w&quot;
-        sizes=&quot;(max-width: 715px) 100vw, 715px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;해당 버킷을 클릭하여 들어가 보면 저장 되어있는 객체들을 확인할수 있습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 52.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABkklEQVQoz41SyW7UQBD1/185I+UHEFcuXPIDkGMQkVgy8rjd++pePA9VzaIAEsHS06uuvco1CZdgQoSQEkpr+BDgvP8NVx3xa5geHz7h8eEzvj494fvzAdb/7fRngX9h+vnuDj8+vMe6LJDawDoyODZa5/67s1uHs1ggQ8SqFMS68uhHIZgP88xMiY21r8M5TEKsSDGibBtK2Zg3RmEupSDngvySWc7nN3FKjBgjpnmeobSCcw7+Mqo0HkcToemH+YiUImI6c4iBOeWERElSQqoDpQNbbZiU0rDOQhnNyYzzWJSFdBHWR0TuKnMgsQ8eUipobXAUEmo5wN+/Rfj4Blk+YzLWIcQEz2NXbLWi1orWzjKdklSKx2yt8RqoMxo1pYySEor4hnD4Am81JtqRVBq5bJyAAsLlVCiBpxUodStEySiGZPIjW+k76gBSLpgoSBsHnytaHzidTlydToC+MQZj33fGeIHeB3rv2PeB076j9Y6Jgg/HFT4V9N5YSV0pbdDHOHfW2g3twlc9+V9tdCG/AJ4WS8bp4TDkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;makebucket5.png&quot;
-        title=&quot;makebucket5.png&quot;
-        src=&quot;/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png&quot;
-        srcset=&quot;/static/65e6b186d785dc864b90fc94f691e701/e9ff0/makebucket5.png 180w,
-/static/65e6b186d785dc864b90fc94f691e701/f21e7/makebucket5.png 360w,
-/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png 720w,
-/static/65e6b186d785dc864b90fc94f691e701/01dae/makebucket5.png 721w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;저는 현재 폴더 만들기를 통하여 폴더를 만들어 놓은 모습입니다.&lt;/p&gt;
-&lt;p&gt;이로써 기본적인 버킷생성은 완료 하였습니다.&lt;/p&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot;&gt;🎈 목적&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;🗑 Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot;&gt;1️⃣&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot;&gt;2️⃣&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot;&gt;3️⃣&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 정책 편집]]></title><description><![CDATA[👀 사용 계기 프로젝트 진행 중 외부 api 연동 과제 진행 중에 private한 s3 스토리지에서 득정 도메인의 접근을 허용하는 방식이 필요하게 되었다. ❗TMI❗ : 네이버 ocr 기능을 사용 중 s…]]></description><link>https://leesungki.github.io/gatsby-aws-study-s3-referer/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-s3-referer/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-사용-계기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%82%AC%EC%9A%A9-%EA%B3%84%EA%B8%B0&quot; aria-label=&quot; 사용 계기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👀 사용 계기&lt;/h2&gt;
 &lt;p&gt;프로젝트 진행 중 외부 api 연동 과제 진행 중에 private한 s3 스토리지에서 득정 도메인의 접근을 허용하는 방식이 필요하게 되었다.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -4505,6 +4756,140 @@ Add Statement 클릭 하면 아래와 같이 정책이 생성된다.
 &lt;li&gt;&lt;a href=&quot;#-http-referer%EB%9E%80&quot;&gt;🗑 HTTP Referer란?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;✅ Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#-%EC%A0%95%EC%B1%85-%ED%8E%B8%EC%A7%91&quot;&gt;♻ 정책 편집&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS S3 버킷 생성]]></title><description><![CDATA[🎈 목적  🗑 Bucket 생성하기 1️⃣ AWS console 로그인을 하고 s3 서비스에 접근합니다. 버킷 만들기 클릭!  2️⃣ 버킷 이름, 리전 등을 지정해줍니다.  아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!…]]></description><link>https://leesungki.github.io/gatsby-aws-study-s3-makeBucket/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-aws-study-s3-makeBucket/</guid><pubDate>Wed, 26 Jan 2022 04:54:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-목적&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot; aria-label=&quot; 목적 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎈 목적&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;aws 에서 사용하는 s3 버킷 생성&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;-bucket-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot; bucket 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🗑 Bucket 생성하기&lt;/h2&gt;
+&lt;h2 id=&quot;1️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;1️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1️⃣&lt;/h2&gt;
+&lt;p&gt;AWS console 로그인을 하고 &lt;a href=&quot;https://console.aws.amazon.com/s3/home?region=ap-northeast-2&quot;&gt;s3 서비스&lt;/a&gt;에 접근합니다.&lt;/p&gt;
+&lt;p&gt;버킷 만들기 클릭!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 45.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABUElEQVQozzWQW24dIRBEZ//ybrKALMB//ov8GcfjmTs8uqGfMJcEkpRaAiRadaq26zxyzv2+e+9Yyvm4ABFLAcR5wfJ/pnKGlHPKOQOeV9gwRRFpvY8xzCzF+PPjAwDNVISZmIhEhESrGCCGEGKMABhT2q4QUkpENMZQM1hydxGpRGamqsupind1T4AJirWeMmwAQET3fc9l1UrUWhtj3CvIWBLm5j7R3Pfj8Xk8SDQDbCIiqiJibrKW53ONTlcVM+1P9caqLKKmZmZuYWJfARHvJTU7zvMMsS5hpVCkxkt/vWs8vTV3W0GstRZT/ofNIn+xQ4wJAEth5lJr9Sf9eKVvL/L2vY3hy9ZtHleMW62kInvm+/mcrTIDFhZZbK4qlVXvIa3T6o9Faq2qOpexlPVt9jGTm0KhXBhJfFEex7nvOzPv+1eIM9HXcRDRn7Z/AwI+A6qlIhN4AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket1.png&quot;
+        title=&quot;makebucket1.png&quot;
+        src=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png&quot;
+        srcset=&quot;/static/d0c263a35dd6fda29557c82d14eb5830/e9ff0/makebucket1.png 180w,
+/static/d0c263a35dd6fda29557c82d14eb5830/f21e7/makebucket1.png 360w,
+/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png 720w,
+/static/d0c263a35dd6fda29557c82d14eb5830/078fe/makebucket1.png 934w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;2️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2️⃣&lt;/h2&gt;
+&lt;p&gt;버킷 이름, 리전 등을 지정해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 658px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 92.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABJ0AAASdAHeZh94AAACTUlEQVQ4y52UeW+cMBDF9/t/t0r9p1klaY5lD1gOH/jA2MCrZiCErJK0KtIPGws9zzzPeCd0i0slIXWLumlwLSvotv2U1ph1/Ipd1Qhk5wLnPEdeFKiFgnUOxlrGWrPyndAqSCL3Dw+42+/x626Pp8MJx/MZl8sF+bXE8SqYUyW/jHzLjl51XaMRAkpraK0hlYIidAupzUxrOPLv4AgpraIocC1L9H2PlNKG+E6MiH+BtHazX5S/xTCOK+PC23zajMMw8Po0TRgXaE5aLKgobSFY1HcdY52Hcx5dCLBdD2EDtAuQLqCLicVvH+c9do5ybw3Tx4jQ9wghwPtZlDcIEaaLcCFC+4g+zWLTEhmxCrKZ7VyDQkgWtnaOlFO6TXka2S/afCv6HqH3LFRcS2THI8qqYqx1s4fk15ZxRBqGNeUPgm5JuSiueH49oKxqNrbrAv7n4Qipdsh4+iDvYkqcEnv5FeHzdS4bemWnE55fXpBXDVrrYIyZW8/YZTTrSAHYt7XNul3+5wiL/IIsO+CQZVzkSgq01DVKwbQ0UtvpuXtozRhIKdeOojkdLNch7dD4CNlF1Mahah1MGuGGiaG5TSNbQSdL9tDhTJuCJmiNU9bO4UkG7A85fuyf8PP+Bb8vFV5LhddS4iwd6m5AlxJfGPv7Rz48qShijUZKNEKyrxyhtg4qAaVLKGyP3PQ4SouT8jgrz2t1GBBiWtLyfIBzy87XHM1XQbe0nlCK05puSmFa+OeyoR3I1Kqu+fpKS9l8vHXSUk4L6YY4/0Me/gH9qb0dGAv2CgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket2.png&quot;
+        title=&quot;makebucket2.png&quot;
+        src=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png&quot;
+        srcset=&quot;/static/eb23b224cf64aaa70beb81cd624c5b3f/e9ff0/makebucket2.png 180w,
+/static/eb23b224cf64aaa70beb81cd624c5b3f/f21e7/makebucket2.png 360w,
+/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png 658w&quot;
+        sizes=&quot;(max-width: 658px) 100vw, 658px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 546px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 166.66666666666669%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAACXBIWXMAABJ0AAASdAHeZh94AAAD00lEQVRIx6VWW5LjNgzUzVM5xJ4jOUCukY9sxmO9KVFPviRKst0pgJLtSbybTFZVXSRoqgUCaNDRMA44xzHiJMHb6YQkSVAUJc5xirppsCwL5nmG957HZ/Caf9humhANQ484iZEXOZI0RikKHtM0Rp6nkLJGWRbIiwyiEijKnPcIUaKqKwhRoCgyVJUIhOM4oKpKNK1ELWs0jYSoJd6zEqdMoJAthqGDlBL08bZt0HUtz/u+Q9u1vNYPfSBUbsagNLq+x6gUtNbwywq/bJj8imW74Hq9Mi6XCy7HyLjudvidQhD11qNqexSl4JgR8TRNL2L1wLSv3W43PD/rtiGioG/bhtEYaGuhjMGgFNphYM8DFLphxKA1lNG819HHvIdfFiZirCsivxMaa2GnCcY6niuz287BOscfu+/Z1w7CIyR3QsKoDXvHozbszbhDWYue4mstB56OvKzr6yMfLtOx+Lg6HJOIiUQ9eXaEhDwMXk78LpEzluVBGLzT/BJ7ZYLHdDSK1zR7TN4z8eElrZNNe4iQPaT0UwyJKGQxhIBAdiCbmYwzfGD/yJF5IiOeiNin46UfBIUm6voOWZrgfD6jrhuuO6rDb8FN7l6nj7U9BKSUrh/wNc6QC4G6rlh6QV4Nz3kku+94JG3LRjLIpr1t10E0A5RxiOhLo/NwPtQj1dL/w8ZeRr12SLMclahCMe21dcPHGnv1HHuOeuQsq8kjyQoYY3iRKp42fBZMSEpxVGd7UI/AvsI079jrzu3yO+BYtpTltkWW5tzvKNOlqDDPR1bDi7RZ2QA7eazrwqr4O+gd9lApxUemXmhJZtYyWZgbbhidcmiVg3Iel+2fSaGEUoKjQxGaugt1FWP56Lfbd1LxvRgSSS0byKbhheesffZh6RnuJo/AzrP/IKeja/8X6RFHRPdIlufI8gJ3Xd+lRlkPmPYO/RL7lcDSo0RUVYVK1lBqhNYKaseoLWRvIHoLO3ts/6KWkBTqcdZhHEZcr7d7Oz/mt1sA33r33z7iuPW4wdKtd4pTyFriRx9OCsWHskwxooVQpOsnsXDH5uagqfUrxWVDGX+W3/QsvW/YR/LuWdZEVlfIi4J/JFk9pOWx7rKiWC+E5fEbwfOfpdBwSXXRubWIG41YDjiJFu+iwx9phbeywbnu8WchcRIdEjmyTXvIpn3vVYes0xCjZeSdRnTuZ8StwbkeEDcjklbjrewQyxFZF9aTRqEYHNs0Z7QaaatRmRXNBrQbUNobIrqPe0X3scVAd7E2GI1l+8O60ru9Q2mIXqM5/w75y0+Qv/6M9rcv+AuYrvQ7lOznHgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket3.png&quot;
+        title=&quot;makebucket3.png&quot;
+        src=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png&quot;
+        srcset=&quot;/static/531397bf51c8d1cf783d1c8162e06c3b/e9ff0/makebucket3.png 180w,
+/static/531397bf51c8d1cf783d1c8162e06c3b/f21e7/makebucket3.png 360w,
+/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png 546w&quot;
+        sizes=&quot;(max-width: 546px) 100vw, 546px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3️⃣&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot; aria-label=&quot;3️⃣ permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3️⃣&lt;/h2&gt;
+&lt;p&gt;저는 아래와 같이 &lt;code class=&quot;language-text&quot;&gt;leesungkibucket&lt;/code&gt; 이라는 이름으로 생성 하였습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 715px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABpUlEQVQoz4VSW5LUMAzM7bkEB+Gbb85A1TI7bMZ5+C3LjpPelTJZ4ItUdVlWZLXU0jDNC1ZrEWJETOn/kLgYNf6CD0Eh9hBCwOvtFcYYUCHknFFK0TPndIIIiVhRa1UwV1hrYaYZD2P0DCFikIcxRTDzM5CRUvpzrwyuFT4mhETY+oZtO3ER18rofdM3g/dBW/j7IyIcx/GPzzmnCa5v33e83N7w6z5i9oTSdiUeqBQ15CxPaFXMaotfWhaUwkomtvit86d+5oZkXhD9imGaDN4eBiFlEJ26xZRhQ0bIBa1VHcY8L0gqz6mx+AqfBOn7V8RvX5B+/sAgDO4JmZJqmgkuEgJJwoYqUD2r2vwcjPwTLVvfwa0r2UBUIJMWdg1oTU+pjLl8rohIcA1MWr7uUpDEFCK1B2Ggcq4EcUOpTQXvvSu887jff2NdrVYjp5kmPMykrS/LCu89SNaM6Ewo5brEiFSx9V0nfE05p4xxfMBapz5nHcZx1Lu0Ld1dAxOCM2HdNGFtHTgOrVAgCaQdSShL248DbBewXSF08l8Si+4qwcfavAMxOVJpcT4gEgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket4.png&quot;
+        title=&quot;makebucket4.png&quot;
+        src=&quot;/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png&quot;
+        srcset=&quot;/static/2991bb6828aece27363c2c204479dc9c/e9ff0/makebucket4.png 180w,
+/static/2991bb6828aece27363c2c204479dc9c/f21e7/makebucket4.png 360w,
+/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png 715w&quot;
+        sizes=&quot;(max-width: 715px) 100vw, 715px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;해당 버킷을 클릭하여 들어가 보면 저장 되어있는 객체들을 확인할수 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABkklEQVQoz41SyW7UQBD1/185I+UHEFcuXPIDkGMQkVgy8rjd++pePA9VzaIAEsHS06uuvco1CZdgQoSQEkpr+BDgvP8NVx3xa5geHz7h8eEzvj494fvzAdb/7fRngX9h+vnuDj8+vMe6LJDawDoyODZa5/67s1uHs1ggQ8SqFMS68uhHIZgP88xMiY21r8M5TEKsSDGibBtK2Zg3RmEupSDngvySWc7nN3FKjBgjpnmeobSCcw7+Mqo0HkcToemH+YiUImI6c4iBOeWERElSQqoDpQNbbZiU0rDOQhnNyYzzWJSFdBHWR0TuKnMgsQ8eUipobXAUEmo5wN+/Rfj4Blk+YzLWIcQEz2NXbLWi1orWzjKdklSKx2yt8RqoMxo1pYySEor4hnD4Am81JtqRVBq5bJyAAsLlVCiBpxUodStEySiGZPIjW+k76gBSLpgoSBsHnytaHzidTlydToC+MQZj33fGeIHeB3rv2PeB076j9Y6Jgg/HFT4V9N5YSV0pbdDHOHfW2g3twlc9+V9tdCG/AJ4WS8bp4TDkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;makebucket5.png&quot;
+        title=&quot;makebucket5.png&quot;
+        src=&quot;/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png&quot;
+        srcset=&quot;/static/65e6b186d785dc864b90fc94f691e701/e9ff0/makebucket5.png 180w,
+/static/65e6b186d785dc864b90fc94f691e701/f21e7/makebucket5.png 360w,
+/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png 720w,
+/static/65e6b186d785dc864b90fc94f691e701/01dae/makebucket5.png 721w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;저는 현재 폴더 만들기를 통하여 폴더를 만들어 놓은 모습입니다.&lt;/p&gt;
+&lt;p&gt;이로써 기본적인 버킷생성은 완료 하였습니다.&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%A0%81&quot;&gt;🎈 목적&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;🗑 Bucket 생성하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#1%EF%B8%8F%E2%83%A3&quot;&gt;1️⃣&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2%EF%B8%8F%E2%83%A3&quot;&gt;2️⃣&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3%EF%B8%8F%E2%83%A3&quot;&gt;3️⃣&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[현대 자동차 에서의 프로젝트]]></title><description><![CDATA[어느덧 3년 차라는 허울뿐인 개발자가 되었다 싶을 때쯤 현대자동차의 프로젝트에 투입되었다. 이전에 클라우드의 개념에 대해 자세히 모르던 나는 aws…]]></description><link>https://leesungki.github.io/gatsby-work-history-of-hyundai/</link><guid isPermaLink="false">https://leesungki.github.io/gatsby-work-history-of-hyundai/</guid><pubDate>Tue, 25 Jan 2022 04:40:00 GMT</pubDate><content:encoded>&lt;p&gt;어느덧 3년 차라는 허울뿐인 개발자가 되었다 싶을 때쯤 현대자동차의 프로젝트에 투입되었다.&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;이전에 클라우드의 개념에 대해 자세히 모르던 나는 aws 프로젝트를 접하게 된 거라 많이 떨렸다 항상 사용해 보지 않은 기술에 대한 떨림은 기분이 좋은 거 같다.&lt;/p&gt;
