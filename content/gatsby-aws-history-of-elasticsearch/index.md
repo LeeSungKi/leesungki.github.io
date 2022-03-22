@@ -4,7 +4,7 @@ title: Elasticsearch 란?
 date: '2022-03-14 17:00:00'
 author: 쩡기
 tags: Elasticsearch aws opensearch aws elasticsearch Elasticsearch란?
-categories: aws
+categories: AWS
 imageUrl: 'elasticsearch.png'
 ---
 

@@ -4,7 +4,7 @@ title: OpenSearch 란?
 date: '2022-03-14 17:10:00'
 author: 쩡기
 tags: AWS OpenSearch aws elasticsearch OpenSearch란?
-categories: aws
+categories: AWS
 imageUrl: 'opensearch.png'
 ---
 

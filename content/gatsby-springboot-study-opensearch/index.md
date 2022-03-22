@@ -236,7 +236,7 @@ public class DataCheckController {
 ## 🌭마무리
 위와 같이 springboot에서 OpenSearch(Elasticsearch)에 인덱스를 생성해주었고 확인까지 할수 있었다.
 
-다음에는 OpenSearch(Elasticsearch)에 있는 데이터를 검색을 해보자.
+다음에는 OpenSearch(Elasticsearch)를 활용한 간단한 애플리케이션을 만들어 보자.
 
 <br>
 <br>

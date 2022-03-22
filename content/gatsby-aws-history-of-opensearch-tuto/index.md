@@ -4,7 +4,7 @@ title: AWS OpenSearch(Elasticsearch) 사용법
 date: '2022-03-14 17:30:00'
 author: 쩡기
 tags: AWS OpenSearch aws elasticsearch OpenSearch사용하기 OpenSearch연동 키바나 사용
-categories: aws
+categories: AWS
 imageUrl: 'elasticsearch.png'
 ---
 
