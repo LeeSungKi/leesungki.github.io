@@ -80,10 +80,10 @@ module.exports = {
         },
       },
       {
-        date: '2021.12 ~',
-        activity: '개인 블로그 개설 및 운영',
+        date: '2021.12 ~ 2022.09',
+        activity: '현대 프로젝트 투입',
         links: {
-          post: '',
+          post: '/gatsby-work-history-of-hyundai',
           github: '',
           demo: '',
         },
