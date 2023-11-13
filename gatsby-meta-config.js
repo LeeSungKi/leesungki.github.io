@@ -15,11 +15,11 @@ module.exports = {
     bio: {
       role: `개발팀`,
       description: ['사람에 가치를 두는', '능동적으로 일하는', '이로운 것을 만드는'],
-      thumbnail: 'profile.jpg', //sample.png Path to the image in the 'asset' folder
+      thumbnail: 'reteevLogo.png', //sample.png Path to the image in the 'asset' folder
     },
     social: {
       github: ``, //https://github.com/LeeSungKi
-      linkedIn: ``,//https://www.linkedin.com/in/jinhyeok-jeong-800871192
+      linkedIn: ``,
       email: `leesunggi92@gmail.com`,
       instaGram: `https://www.instagram.com/Kuro_pa`
     },
@@ -44,8 +44,8 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
-        date: '2018.11 ~',
-        activity: '(주)월드와이즈 입사',
+        date: '2022.09.01',
+        activity: '개발팀 리티브 창설',
         links: {
           post: '',
           github: '',
@@ -53,50 +53,14 @@ module.exports = {
         },
       },
       {
-        date: '2018.12 ~ 2020.01',
-        activity: 'LIG NEX1 파견',
+        date: '2023.06.01',
+        activity: '팀원 영입',
         links: {
-          post: '/gatsby-work-history-of-wordwise',
+          post: '',
           github: '',
           demo: '',
         },
       },
-      {
-        date: '2020.01 ~ 2020.08',
-        activity: 'KT DS 파견',
-        links: {
-          post: '/gatsby-work-history-of-ktds',
-          github: '',
-          demo: '',
-        },
-      },
-      {
-        date: '2021.08 ~ 2021.12',
-        activity: 'CJ대한통운 파견',
-        links: {
-          post: '/gatsby-work-history-of-cj',
-          github: '',
-          demo: '',
-        },
-      },
-      {
-        date: '2021.12 ~ 2022.09',
-        activity: '현대 프로젝트 투입',
-        links: {
-          post: '/gatsby-work-history-of-hyundai',
-          github: '',
-          demo: '',
-        },
-      },
-      /* {
-        date: '2021.02 ~',
-        activity: '개인 블로그 개발 및 운영',
-        links: {
-          post: '/gatsby-starter-zoomkoding-introduction',
-          github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
-          demo: 'https://www.zoomkoding.com',
-        },
-      }, */
     ],
 
     projects: [
@@ -118,7 +82,7 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
-        title: 'LIG NEX1 파견',
+        title: 'LIG NEX1',
         description:
           'MDM 시스템 운영 및 백오피스 개발, 홈페이지 유지보수, 리조트 예약 시스템 유지보수',
         techStack: ['Spring', 'Oracle', 'jQuery', 'MySql'],
@@ -130,7 +94,7 @@ module.exports = {
         },
       },
       {
-        title: 'KT DS 파견',
+        title: 'KT DS',
         description:
           '컨테이너 관리 시스템(FlyingCube) 화면 고도화',
         techStack: ['Vue.js', 'SpringBoot', 'Vuex', 'Axios', 'VueRouter' , 'Vuetify'],
@@ -142,13 +106,25 @@ module.exports = {
         },
       },
       {
-        title: 'CJ대한통운 파견',
+        title: 'CJ대한통운',
         description:
           '글로벌 포워딩 시스템(Q-brige) 오류 개선 및 추가 개발',
         techStack: ['Struts', 'MsSql', 'Ibsheet'],
         thumbnailUrl: 'cjimg.jpg',
         links: {
           post: '/gatsby-work-history-of-cj',
+          github: '',
+          demo: '',
+        },
+      },
+      {
+        title: '현대 오토에버',
+        description:
+            '지식 관리 서비스 개발',
+        techStack: ['Springboot', 'AWS', 'PostgreSQL'],
+        thumbnailUrl: 'hyundai.jpg',
+        links: {
+          post: '/gatsby-work-history-of-hyundai',
           github: '',
           demo: '',
         },
