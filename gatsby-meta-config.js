@@ -56,7 +56,7 @@ module.exports = {
         date: '2023.06.01',
         activity: '팀원 영입',
         links: {
-          post: '',
+          post: '/reteevHistoryTeam',
           github: '',
           demo: '',
         },
