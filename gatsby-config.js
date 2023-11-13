@@ -58,7 +58,7 @@ module.exports = {
         lang: `en`,
         display: `standalone`,
         start_url: `/`,
-        icon: `static/react-native-icon.png`,
+        icon: `static/reteev-favicon-white.png`,
         //static/favicon.png
       },
     },

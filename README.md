@@ -1,12 +1,12 @@
 <h1 align="center">
-  쩡기 Blog
+  Re:teeve Blog
 </h1>
 
 **Demo Websites**: [**Korean**](https://leesungki.github.io/sungkilee.github.io/)
 
 ## 👋 소개
 
-블로그를 직접 운영하기위해 🙌
+팀 블로그를 직접 운영하기위해 🙌
 
 ### 🏃‍♀️ 실행하기
 
@@ -29,3 +29,5 @@ $ npm start
 $ npm run deploy
 
 Published라는 메시지를 받으셨다면 배포는 끝
+```
+![img.png](img.png)
