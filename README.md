@@ -1,5 +1,5 @@
 <h1 align="center">
-  Re:teeve Blog
+  Re:teev Blog
 </h1>
 
 **Demo Websites**: [**Korean**](https://leesungki.github.io/sungkilee.github.io/)
@@ -30,4 +30,3 @@ $ npm run deploy
 
 Published라는 메시지를 받으셨다면 배포는 끝
 ```
-![img.png](img.png)
