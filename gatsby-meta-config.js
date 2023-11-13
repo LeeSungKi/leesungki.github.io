@@ -1,5 +1,5 @@
 module.exports = {
-  title: `Re:제로부터 시작하는 개발일기`,
+  title: `Re:teev 팀 블로그`,
   description: `leesunggi92@gmail.com`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://leesungki.github.io`,
@@ -11,9 +11,9 @@ module.exports = {
   },
   ga: '0', // Google Analytics Tracking ID
   author: {
-    name: `이성기`,
+    name: `Re:teev`,
     bio: {
-      role: `개발자`,
+      role: `개발팀`,
       description: ['사람에 가치를 두는', '능동적으로 일하는', '이로운 것을 만드는'],
       thumbnail: 'profile.jpg', //sample.png Path to the image in the 'asset' folder
     },
