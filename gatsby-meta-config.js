@@ -1,9 +1,9 @@
 module.exports = {
   title: `Re:teev 팀 블로그`,
-  description: `leesunggi92@gmail.com`,
+  description: `reteev 개발 팀 블로그`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://leesungki.github.io`,
-  ogImage: `/og-image.png`, // Path to your in the 'static' folder
+  ogImage: `/ogImage.png`, // Path to your in the 'static' folder
   comments: {
     utterances: {
       repo: `LeeSungKi/leesungki.github.io`, // `zoomkoding/zoomkoding-gatsby-blog`,
