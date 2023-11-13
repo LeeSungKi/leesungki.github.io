@@ -2,7 +2,7 @@
   Re:teev Blog
 </h1>
 
-**Demo Websites**: [**Korean**](https://leesungki.github.io/sungkilee.github.io/)
+**Demo Websites**: [**Korean**](https://leesungki.github.io/)
 
 ## 👋 소개
 
