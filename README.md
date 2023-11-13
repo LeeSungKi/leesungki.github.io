@@ -29,3 +29,5 @@ $ npm start
 $ npm run deploy
 
 Published라는 메시지를 받으셨다면 배포는 끝
+```
+![img.png](img.png)
