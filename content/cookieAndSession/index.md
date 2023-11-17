@@ -4,7 +4,7 @@ title: 쿠키 / 세션이란?
 date: '2023-11-17 13:23:00'
 author: 아구
 tags: Cookie & Session 이란?
-categories: java
+categories: JAVA
 imageUrl: 'java.png'
 ---
 
