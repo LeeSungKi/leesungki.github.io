@@ -5,7 +5,7 @@ date: '2023-11-17 13:23:00'
 author: 아구
 tags: Cookie & Session 이란?
 categories: cookie,session
-imageUrl: 'cookie.jpeg'
+imageUrl: 'java.png'
 ---
 
 ## 🎈 Elasticsearch는 무엇인가요? 
