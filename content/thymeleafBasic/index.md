@@ -1,7 +1,7 @@
 ---
 emoji: 🪼
 title: Thymeleaf-Basic(part.1 특징과 기본 표현식)
-date: '2022-03-24 16:25:00'
+date: '2023-12-03 19:25:00'
 author: 아구
 tags: Thymeleaf basic template engine server 타임리프 표현식
 categories: Thymeleaf
