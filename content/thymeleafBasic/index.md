@@ -44,40 +44,46 @@ imageUrl: 'thymeleaf.png'
 ```
 
 ## 🍘 타임리프 기본 표현식
-```toc
-• 간단한 표현:
-◦ 변수 표현식: ${...}
-◦ 선택 변수 표현식: *{...}
-◦ 메시지 표현식: #{...}
-◦ 링크 URL 표현식: @{...}
-◦ 조각 표현식: ~{...}
-• 리터럴
-◦ 텍스트: 'one text', 'Another one!',...
-◦ 숫자: 0, 34, 3.0, 12.3,...
-◦ 불린: true, false
-◦ 널: null
-◦ 리터럴 토큰: one, sometext, main,...
-• 문자 연산:
-◦ 문자합치기:+
-◦ 리터럴 대체: |The name is ${name}|
-• 산술 연산:
-◦ Binary operators: +, -, *, /, %
-◦ Minus sign (unary operator): -
-• 불린 연산:
-    ◦   Binary operators: and, or
-◦ Boolean negation (unary operator): !, not
-• 비교와 동등:
-◦ 비교:>,<,>=,<=(gt,lt,ge,le)
-◦ 동등 연산: ==, != (eq, ne)
-• 조건 연산:
-    ◦   If-then: (if) ? (then)
-◦ If-then-else: (if) ? (then) : (else)
-    ◦   Default: (value) ?: (defaultvalue)
-• 특별한 토큰:
-    ◦   No-Operation: _
+```txt
+1. 간단한 표현
+- 변수 표현식: ${...}
+- 선택 변수 표현식: *{...}
+- 메시지 표현식: #{...}
+- 링크 URL 표현식: @{...}
+- 조각 표현식: ~{...}
+
+2. 리터럴
+- 텍스트: 'one text', 'Another one!',...
+- 숫자: 0, 34, 3.0, 12.3,...
+- 불린: true, false
+- 널: null
+- 리터럴 토큰: one, sometext, main,...
+
+3. 문자 연산:
+- 문자합치기:+
+- 리터럴 대체: |The name is ${name}|
+
+4. 산술 연산:
+- Binary operators: +, -, *, /, %
+- Minus sign (unary operator): -
+
+5. 불린 연산:
+    -   Binary operators: and, or
+- Boolean negation (unary operator): !, not
+
+6. 비교와 동등:
+- 비교:>,<,>=,<=(gt,lt,ge,le)
+- 동등 연산: ==, != (eq, ne)
+7. 조건 연산:
+    -   If-then: (if) ? (then)
+- If-then-else: (if) ? (then) : (else)
+    -   Default: (value) ?: (defaultvalue)
+8. 특별한 토큰:
+    -   No-Operation: _
 
 ```
 
-참고:[타임리프_공식_doc](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#standard- expression-syntax)
+`참고`:[타임리프_공식_doc](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#standard- expression-syntax)
 
-**_part 2에서는 위의 소개된 기본 표현식을 직접 사용하여 어떻게 출력이 되는지 알아보겠다._** ps.김영한님의 mvc2강의에서...
+**_part 2에서는 위의 소개된 기본 표현식을 직접 사용하여 어떻게 출력이 되는지 알아보겠다._** 
+ps.김영한님의 mvc2강의에서...
