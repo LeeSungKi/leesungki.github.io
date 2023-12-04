@@ -126,6 +126,5 @@ package hello.thymeleaf.basic;
 ```
 
 - `th:inline="none"`: 타임리프는 `[[...]]` 를 해석하기 때문에, 화면에 `[[...]]` 글자를 보여줄 수 없다. 이 태그 안에서는 타임리프가 **해석하지 말라**는 옵션이다.
-
+`출처 ` : [링크](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2#)
 **_part 3 to be continue_** 
-**ps.김영한님의 mvc2강의에서..**
