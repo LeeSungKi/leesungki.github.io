@@ -83,7 +83,7 @@ imageUrl: 'thymeleaf.png'
 
 ```
 
-`참고`:[타임리프_공식_doc](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#standard- expression-syntax)
+`참고`:[타임리프_공식_doc](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#standard-expression-syntax)
 
 **_part 2에서는 위의 소개된 기본 표현식을 직접 사용하여 어떻게 출력이 되는지 알아보겠다._** 
 ps.김영한님의 mvc2강의에서...
