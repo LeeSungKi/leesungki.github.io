@@ -20,7 +20,7 @@ imageUrl: 'thymeleaf.png'
 - 다음은 예제를 통하여 좀 더 자세히 알아보도록 하자.
 
 ### 🐠 Controller
-``` BasicController.java
+``` java
 package hello.thymeleaf.basic;
   import org.springframework.stereotype.Controller;
   import org.springframework.ui.Model;
@@ -40,7 +40,7 @@ package hello.thymeleaf.basic;
 ```
 
 ### 🍕 HTML
-```text-basic.html
+```html
  <!DOCTYPE html>
   <html xmlns:th="http://www.thymeleaf.org">
   <head>
@@ -92,7 +92,7 @@ package hello.thymeleaf.basic;
 - 위와 같이 사용 할 수 있다.
 
 ### 🌭 해당 내용 컨트롤러에 추가
-``` BasicController.java
+``` java
 
     @GetMapping("/text-unescaped")
     public String textUnescaped(Model model) {
@@ -102,7 +102,7 @@ package hello.thymeleaf.basic;
 ```
 
 ## 🍘 추가된 내용을 HTML에서 받을때는~
-```text-unescape.html
+```html
 <!DOCTYPE html>
     <html xmlns:th="http://www.thymeleaf.org">
     <head>
