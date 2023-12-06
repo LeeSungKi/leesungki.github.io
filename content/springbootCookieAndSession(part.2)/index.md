@@ -15,7 +15,7 @@ imageUrl: 'springboot.png'
   - build.gradle에 의존성 추가가 되었는지 확인!
 ```properties
 
-  mplementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
