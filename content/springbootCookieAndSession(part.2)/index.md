@@ -9,58 +9,216 @@ imageUrl: 'springboot.png'
 ---
 
 ## 🎈 Start SpringBoot project 
-- 이클립스(혹은 sts4)를 쓰고있다면 new project -> Spring Starter Project로 생성!
+  - 이클립스(혹은 sts4)를 쓰고있다면 new project -> Spring Starter Project로 생성!
+  - intellij를 사용한다면 [start.spring.io](https://start.spring.io/)에서 프로젝트를 생성하자.
+  - 의존성 추가는 **lombok**과 **spring Web, thymeleaf, validation**을 추가해주고 임포트 혹은 다운을 받아 프로젝트를 실행!
+  - build.gradle에 의존성 추가가 되었는지 확인!
+```properties
 
+  mplementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+```
 =====
 
-## 🌵 회원 로그인 요구사항 정의
-1. 홈화면 (로그인 전)
-  * 회원 가입
-  * 로그인
-2. 홈화면 (로그인 이후)
-  * 로그인 한 회원의 이름(oo님 환영합니다)이 보이기
-  * 상품 관리 버튼
-  * 로그아웃 버튼
-3. 보안 요구사항 
-  * 로그인 사용자만 상품에 접근하며, 아이템관리가 가능하다.
-  * 만약 **로그인하지 않은 사용자가**접근시 로그인 화면으로 이동
-4. 회원 가입, 상품 관리
-`위와 같이 요구사항이 나왔다`
+## 🌵 홈 화면 개발
+1. HomeController
+  ```java
+    @GetMapping("/")
+    public String home() {
+        return "home";
+    }
+  ```
+2. home.html
+  ```html
+  <!DOCTYPE HTML>
+  <html xmlns:th="http://www.thymeleaf.org">
+  <head>
+  <meta charset="utf-8">
+  <link th:href="@{/css/bootstrap.min.css}"
+            href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="container" style="max-width: 600px">
+      <div class="py-5 text-center">
+  <h2>홈 화면</h2> </div>
+      <div class="row">
+          <div class="col">
+              <button class="w-100 btn btn-secondary btn-lg" type="button"
+                      th:onclick="|location.href='@{/members/add}'|">회원 가입</button>
+          </div>
+          <div class="col">
+              <button class="w-100 btn btn-dark btn-lg" onclick="location.href='items.html'"
+               th:onclick="|location.href='@{/login}'|" type="button">로그인</button>
+          </div>
+  </div>
+      <hr class="my-4">
+  </div> <!-- /container -->
+  </body>
+  </html>
+  ```
+3. 회원 가입
+```java
+//Member Entity객체
+@Data
+  public class Member {
+      private Long id;
+      @NotEmpty
+private String loginId; //로그인 ID @NotEmpty
+privateStringname;//사용자 이름 @NotEmpty
+private String password;
+}
+
+```
+
+```java
+//Repository 객체
+/**
+* 동시성 문제가 고려되어 있지 않음, 실무에서는 ConcurrentHashMap, AtomicLong 사용 고려
+*/
+  @Slf4j
+  @Repository
+  public class MemberRepository {
+    private static Map<Long, Member> store = new HashMap<>(); //static 사용
+    private static long sequence = 0L; //static 사용
+
+    public Member save(Member member) {
+      member.setId(++sequence);
+      log.info("save: member={}", member);
+      store.put(member.getId(), member);
+      return member;
+    }
+    public Member findById(Long id) {
+        return store.get(id);
+    }
+    public Optional<Member> findByLoginId(String loginId) {
+      return findAll().stream()
+            .filter(m -> m.getLoginId().equals(loginId))
+            .findFirst();
+    }
+    public List<Member> findAll() {
+      return new ArrayList<>(store.values());
+    }
+    public void clearStore() {
+      store.clear();
+    } 
+  }
+
+```
+
+```java
+//Contoller
+@Controller
+@RequiredArgsConstructor
+@RequestMapping("/members")
+public class MemberController {
+  private final MemberRepository memberRepository;
+  @GetMapping("/add")
+  public String addForm(@ModelAttribute("member") Member member) {
+      return "members/addMemberForm";
+  }
+  @PostMapping("/add")
+  public String save(@Valid @ModelAttribute Member member, BindingResult result) {
+    if (result.hasErrors()) {
+      return "members/addMemberForm";
+    }
+    memberRepository.save(member);
+    return "redirect:/";
+  }
+}
+```
+- 위의 컨트롤러 코드에서 `@ModelAttribute("member")`를 `@ModelAttribute`로 변경해도 결과는 같다. *본인은 대상을 직접 지정함*
 =====
 
-## 🌚 화면 정의서
-1. 홈화면 (로그인 전)
-  ![before_login](before_login.png)
+4. 회원 가입 뷰 템플릿(html)
+```html
+<!--templates/members/addMemberForm.html-->
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+        .field-error {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="py-5 text-center">
+  <h2>회원 가입</h2>
+</div>
+<h4 class="mb-3">회원 정보 입력</h4>
+  <form action="" th:action th:object="${member}" method="post">
+    <div th:if="${#fields.hasGlobalErrors()}">
+      <p class="field-error" th:each="err : ${#fields.globalErrors()}" th:text="${err}">전체 오류 메시지</p>
+    </div>
 
-2. 홈화면 (로그인 후)
-  ![after_login](after_login.png)
+<div>  
+  <label for="loginId">로그인 ID</label>
+  <input type="text" id="loginId" th:field="*{loginId}" class="form-control" th:errorclass="field-error">
+    <div class="field-error" th:errors="*{loginId}" /></div>
+    <div>
+      <label for="password">비밀번호</label>
+        <input type="password" id="password" th:field="*{password}" class="form-control" th:errorclass="field-error">
+          <div class="field-error" th:errors="*{password}" /></div>
+          <div>
+            <label for="name">이름</label>
+            <input type="text" id="name" th:field="*{name}" class="form-control" th:errorclass="field-error">
+            <div class="field-error" th:errors="*{name}" /></div>
 
-3. 회원가입
-  ![singup_form](singup_form.png)
+      <hr class="my-4">
+      <div class="row">
+        <div class="col">
+          <button class="w-100 btn btn-primary btn-lg" type="submit">회원가입</button>
+        </div>
+          <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg"
+              onclick="location.href='items.html'"
+              th:onclick="|location.href='@{/}'|" type="button">취소
+            </button>
+        </div>
+    </div>
+</form>
+</div> <!-- /container -->
+</body>
+</html>
+```
+**실행 결과를 로그로 확인**
 
-4. 로그인
-  ![login_form](login_form.png)
+## 회원용 테스트 데이터 추가하기!
+- test편의를 위해 회원의 데이터를 임의로 추가해보겠다.
+```java
+//id:test p/w:test! name:테스터  TestDataInit.java
+  @Component
+  @RequiredArgsConstructor
+  public class TestDataInit {
+      private final ItemRepository itemRepository;
+      private final MemberRepository memberRepository;
+/**
+* 테스트용 데이터 추가
+*/
+      @PostConstruct
+      public void init() {
+          itemRepository.save(new Item("itemA", 10000, 10));
+          itemRepository.save(new Item("itemB", 20000, 20));
+          Member member = new Member();
+          member.setLoginId("test");
+          member.setPassword("test!"); member.setName("테스터");
+          memberRepository.save(member);
+      }
+  } 
 
-5. 상품관리
-  ![item_list](item_list.png)
+```
 
-
-## 🌂 패키지 구조
-  * com.xxxxx.xxx
-    * domain
-      - item
-      - member
-      - login
-    * web
-      - item
-      - member
-      - login
-  `도메인과 웹을 분리시키고, domain에서 web에 대한 의존성이 발생하면 안된다.`
-  **도메인** : 화면,UI,기술 인프라 등등의 영역은 제외한 시스템이 구현해야 하는 핵심 비즈니스 업무 영역을 말함.
-  이후 web을 다른 기술로 변경하더라도 도메인은 그대로 유지 할 수 있어야 함.
-  이렇게 하려면 web은 domain을 알고 있지만, domain은 web을 모르도록 설계해야하는게 포인트다. 즉 의존성의 관계를 뜻한다.
-  예를들어, 웹의 패키지를 모두 삭제해도 도메인에는 어떠한 영향도 있어선 안되게 설계하는것이 중요 하다.
-
-- 이번편에서는 요구사항과 패키지 정리를 정해놓았고, 이후 요구사항과 패키지 정리에 맞추어 간단한 어플리케이션을 만들어 보도록 하겠다.
-
-**to be continue...(홈화면 개발)**
+**to be continue...(로그인 기능 개발)**
