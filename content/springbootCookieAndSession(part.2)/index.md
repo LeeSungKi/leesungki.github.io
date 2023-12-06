@@ -1,17 +1,16 @@
 ---
 emoji: 🪼
-title: SpringBoot의 로그인 처리 쿠키와 세션(part.1 요구사항 및 화면정의)
-date: '2023-12-06 18:32:00'
+title: SpringBoot의 로그인 처리 쿠키와 세션(part.2 홈화면 개발)
+date: '2023-12-06 20:12:00'
 author: 아구
 tags: SpringBoot login session cookie 쿠키와세션 로그인처리
 categories: SpringBoot
 imageUrl: 'springboot.png'
 ---
 
-## 🎈 이번 편에서는..
+## 🎈 Start SpringBoot project 
+- 이클립스(혹은 sts4)를 쓰고있다면 new project -> Spring Starter Project로 생성!
 
-- 해당편에서는 스프링부트에서 제공하는 기능들을 활용하여 로그인 처리를 목적으로 할것이다.
-- 차례대로 업그레이드 하면서 진행 할 예정이며, 이론적인 설명위주 보다는 예제 코드를 통해 로그인 처리를 어떻게 하는지에 대한 본질적인 접근으로 들어가도록 하겠다.
 =====
 
 ## 🌵 회원 로그인 요구사항 정의
