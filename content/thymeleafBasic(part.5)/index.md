@@ -1,7 +1,7 @@
 ---
 emoji: 🪼
 title: Thymeleaf-Basic(part.5 타임리프의 연산)
-date: '2023-12-06 16:32:00'
+date: '2023-12-07 17:32:00'
 author: 아구
 tags: Thymeleaf basic template engine server 타임리프 연산
 categories: Thymeleaf
