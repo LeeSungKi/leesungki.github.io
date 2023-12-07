@@ -252,7 +252,7 @@ response<span class="token punctuation">.</span><span class="token function">add
 </ul>
 <h3 id="보안-문제" style="position:relative;"><a href="#%EB%B3%B4%EC%95%88-%EB%AC%B8%EC%A0%9C" aria-label="보안 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>보안 문제</h3>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">* 쿠키 값은 임의로 변경 할 수 있다.
-  - 클라이언트가 쿠키를 강제로 변경하면 다른 사용자가 된다. 
+  - 클라이언트가 쿠키를 강제로 변경하면 다른 사용자가 된다.
   - 예를들어 크롬창에서 쿠키에 직접값을 입력하면 다른사용자가 되는것을 볼 수 있다 `개발자 모드 -> Application -> Cookie`에서 `memberId=1 => memberId=2` 이런식으로 말이다.
 * 쿠키에 보관된 정보는 훔칠 수 있다.
   - 만약 쿠키에 개인정보나, 신용카드 정보가 있다?라고 생각하면 아찔하다.
