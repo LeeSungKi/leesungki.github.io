@@ -9,7 +9,8 @@ imageUrl: 'springboot.png'
 ---
 
 ## 🎈 로그인 성공 시 세션 쿠키 생성
-  - 지난 시간에 이어 로그인에 필요한 세션 쿠키를 생성해 보도록 하자.
+
+- 지난 시간에 이어 로그인에 필요한 세션 쿠키를 생성해 보도록 하자.
 
 ```java
 @PostMapping("/login")
@@ -32,87 +33,100 @@ imageUrl: 'springboot.png'
     return "redirect:/";
 }
 ```
-  - 여기서 우리가 집중하여 볼것은 쿠키 생성 로직이다.
+
+- 여기서 우리가 집중하여 볼것은 쿠키 생성 로직이다.
+
 ### 쿠키 생성 로직
+
 ```java
 Cookie idCookie = new Cookie("memberId",String.valueOf(loginMember.getId()));
 response.addCookie(idCookie);
 ```
-  - 로그인에 성공시 쿠키를 생성하고 `HttpServletResponse`에 담는다. 쿠키의 이름은 `memberId`이고, 값은 회원의 `id`를 담아둔다. 웹 브라우저는 종료 전까지 회원의값(id)를 서버에 지속적으로 보내줄것이다.
-=====
+
+- # 로그인에 성공시 쿠키를 생성하고 `HttpServletResponse`에 담는다. 쿠키의 이름은 `memberId`이고, 값은 회원의 `id`를 담아둔다. 웹 브라우저는 종료 전까지 회원의값(id)를 서버에 지속적으로 보내줄것이다.
+
 ### 실행
-  - 크롬 브라우저를 통해 HTTP 응답 헤더에 쿠키가 추가된 것을 확인할 수 있다.
+
+- 크롬 브라우저를 통해 HTTP 응답 헤더에 쿠키가 추가된 것을 확인할 수 있다.
   ![check_cookie.png](check_cookie.png)
 
 ## 🌵 홈화면 로그인처리
+
 1. HomeController
-  ```java
-  @Slf4j
-  @Controller
-  @RequiredArgsConstructor
-  public class HomeController {
-      private final MemberRepository memberRepository;
-      
-      //    @GetMapping("/") *주의 기존거 주석처리 안하면 컴파일에러
-      public String home() {
+
+```java
+@Slf4j
+@Controller
+@RequiredArgsConstructor
+public class HomeController {
+    private final MemberRepository memberRepository;
+
+    //    @GetMapping("/") *주의 기존거 주석처리 안하면 컴파일에러
+    public String home() {
+      return "home";
+    }
+    @GetMapping("/")
+    public String homeLogin(@CookieValue(name = "memberId", required = false) Long memberId, Model model) {
+      if (memberId == null) {
         return "home";
       }
-      @GetMapping("/")
-      public String homeLogin(@CookieValue(name = "memberId", required = false) Long memberId, Model model) {
-        if (memberId == null) {
-          return "home";
-        }
-        //로그인
-        Member loginMember = memberRepository.findById(memberId);
-        if (loginMember == null) {
-          return "home";
-        }
-        model.addAttribute("member", loginMember);
-        return "loginHome";
+      //로그인
+      Member loginMember = memberRepository.findById(memberId);
+      if (loginMember == null) {
+        return "home";
       }
-  }
+      model.addAttribute("member", loginMember);
+      return "loginHome";
+    }
+}
+```
 
-  ```
-2. home.html
-  ```html
-  <!DOCTYPE HTML>
-  <html xmlns:th="http://www.thymeleaf.org">
+- 기존 `home()`메소드의 있는 `GetMapping`어노테이션은 꼭 주석처리를 하자.
+- `@CookieValue`를 사용하면 편리하게 쿠키를 조회 할 수 있다.
+- 로그인 하지 않은 사용자도 홈에 접근할 수 있기 때문에 `required=false`로 해주어야 한다.
+
+### 로직 분석
+
+- 로그인 쿠키(memberId)가 없는 사용자는 home()으로 보내며, 추가로 로그인 쿠키가 있어도 회원이 없다면, home으로 보낸다.
+- 로그인 쿠키(memberId)가 있는 사용자는 로그인 사용자 전용 홈 화면인 `loginHome`으로 보낸다. 추가적으로 홈화면에 회원 관련 정보도 출력해 주어야 하기 때문에 member데이터도 모델에 담아서 전달한다.
+
+2. home.html - 로그인 사용자 전용
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
-  <meta charset="utf-8">
-  <link th:href="@{/css/bootstrap.min.css}"
-            href="css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <link th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css" rel="stylesheet" />
   </head>
   <body>
-  <div class="container" style="max-width: 600px">
+    <div class="container" style="max-width: 600px">
       <div class="py-5 text-center">
-  <h2>홈 화면</h2> </div>
+        <h2>홈 화면</h2>
+      </div>
+      <h4 class="mb-3" th:text="|로그인:${member.name}|">로그인 사용자 이름</h4>
+      <hr class="my-4" />
       <div class="row">
-          <div class="col">
-              <button class="w-100 btn btn-secondary btn-lg" type="button"
-                      th:onclick="|location.href='@{/members/add}'|">회원 가입</button>
-          </div>
-          <div class="col">
-              <button class="w-100 btn btn-dark btn-lg" onclick="location.href='items.html'"
-               th:onclick="|location.href='@{/login}'|" type="button">로그인</button>
-          </div>
-  </div>
-      <hr class="my-4">
-  </div> <!-- /container -->
+        <div class="col">
+          <button
+            class="w-100 btn btn-secondary btn-lg"
+            type="button"
+            th:onclick="|location.href='@{/items}'|"
+          >
+            상품 관리
+          </button>
+        </div>
+        <div class="col">
+          <form th:action="@{/logout}" method="post">
+            <button class="w-100 btn btn-dark btn-lg" type="submit">로그아웃</button>
+          </form>
+        </div>
+      </div>
+      <hr class="my-4" />
+    </div>
+    <!-- /container -->
   </body>
-  </html>
-  ```
-3. 회원 가입
-```java
-//Member Entity객체
-@Data
-  public class Member {
-      private Long id;
-      @NotEmpty
-private String loginId; //로그인 ID @NotEmpty
-privateStringname;//사용자 이름 @NotEmpty
-private String password;
-}
-
+</html>
 ```
 
 ```java
@@ -145,7 +159,7 @@ private String password;
     }
     public void clearStore() {
       store.clear();
-    } 
+    }
   }
 
 ```
@@ -171,73 +185,104 @@ public class MemberController {
   }
 }
 ```
-- 위의 컨트롤러 코드에서 `@ModelAttribute("member")`를 `@ModelAttribute`로 변경해도 결과는 같다. *본인은 대상을 직접 지정함*
-=====
+
+- # 위의 컨트롤러 코드에서 `@ModelAttribute("member")`를 `@ModelAttribute`로 변경해도 결과는 같다. _본인은 대상을 직접 지정함_
 
 4. 회원 가입 뷰 템플릿(html)
+
 ```html
 <!--templates/members/addMemberForm.html-->
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <link th:href="@{/css/bootstrap.min.css}"
-          href="../css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
+    <link th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css" rel="stylesheet" />
     <style>
-        .container {
-            max-width: 560px;
-        }
-        .field-error {
-            border-color: #dc3545;
-            color: #dc3545;
-        }
+      .container {
+        max-width: 560px;
+      }
+      .field-error {
+        border-color: #dc3545;
+        color: #dc3545;
+      }
     </style>
-</head>
-<body>
-<div class="container">
-<div class="py-5 text-center">
-  <h2>회원 가입</h2>
-</div>
-<h4 class="mb-3">회원 정보 입력</h4>
-  <form action="" th:action th:object="${member}" method="post">
-    <div th:if="${#fields.hasGlobalErrors()}">
-      <p class="field-error" th:each="err : ${#fields.globalErrors()}" th:text="${err}">전체 오류 메시지</p>
-    </div>
-
-<div>  
-  <label for="loginId">로그인 ID</label>
-  <input type="text" id="loginId" th:field="*{loginId}" class="form-control" th:errorclass="field-error">
-    <div class="field-error" th:errors="*{loginId}" /></div>
-    <div>
-      <label for="password">비밀번호</label>
-        <input type="password" id="password" th:field="*{password}" class="form-control" th:errorclass="field-error">
-          <div class="field-error" th:errors="*{password}" /></div>
-          <div>
-            <label for="name">이름</label>
-            <input type="text" id="name" th:field="*{name}" class="form-control" th:errorclass="field-error">
-            <div class="field-error" th:errors="*{name}" /></div>
-
-      <hr class="my-4">
-      <div class="row">
-        <div class="col">
-          <button class="w-100 btn btn-primary btn-lg" type="submit">회원가입</button>
+  </head>
+  <body>
+    <div class="container">
+      <div class="py-5 text-center">
+        <h2>회원 가입</h2>
+      </div>
+      <h4 class="mb-3">회원 정보 입력</h4>
+      <form action="" th:action th:object="${member}" method="post">
+        <div th:if="${#fields.hasGlobalErrors()}">
+          <p class="field-error" th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+            전체 오류 메시지
+          </p>
         </div>
+
+        <div>
+          <label for="loginId">로그인 ID</label>
+          <input
+            type="text"
+            id="loginId"
+            th:field="*{loginId}"
+            class="form-control"
+            th:errorclass="field-error"
+          />
+          <div class="field-error" th:errors="*{loginId}" />
+        </div>
+        <div>
+          <label for="password">비밀번호</label>
+          <input
+            type="password"
+            id="password"
+            th:field="*{password}"
+            class="form-control"
+            th:errorclass="field-error"
+          />
+          <div class="field-error" th:errors="*{password}" />
+        </div>
+        <div>
+          <label for="name">이름</label>
+          <input
+            type="text"
+            id="name"
+            th:field="*{name}"
+            class="form-control"
+            th:errorclass="field-error"
+          />
+          <div class="field-error" th:errors="*{name}" />
+        </div>
+
+        <hr class="my-4" />
+        <div class="row">
           <div class="col">
-            <button class="w-100 btn btn-secondary btn-lg"
+            <button class="w-100 btn btn-primary btn-lg" type="submit">회원가입</button>
+          </div>
+          <div class="col">
+            <button
+              class="w-100 btn btn-secondary btn-lg"
               onclick="location.href='items.html'"
-              th:onclick="|location.href='@{/}'|" type="button">취소
+              th:onclick="|location.href='@{/}'|"
+              type="button"
+            >
+              취소
             </button>
+          </div>
         </div>
+      </form>
     </div>
-</form>
-</div> <!-- /container -->
-</body>
+    <!-- /container -->
+  </body>
 </html>
 ```
+
 **실행 결과를 로그로 확인**
 
 ## 회원용 테스트 데이터 추가하기!
+
 - test편의를 위해 회원의 데이터를 임의로 추가해보겠다.
+
 ```java
 //id:test p/w:test! name:테스터  TestDataInit.java
   @Component
@@ -257,7 +302,7 @@ public class MemberController {
           member.setPassword("test!"); member.setName("테스터");
           memberRepository.save(member);
       }
-  } 
+  }
 
 ```
 
