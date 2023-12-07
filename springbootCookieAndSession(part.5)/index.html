@@ -354,59 +354,54 @@
 <li>지금까지 개발한 세션 관리 기능을 실제 웹 애플리케이션에 적용하여 본다.</li>
 </ul>
 <h3 id="logincontroller-version2" style="position:relative;"><a href="#logincontroller-version2" aria-label="logincontroller version2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LoginController-version2</h3>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">```java
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">
+      <span class="token comment">//기존의 login메소드의 mapping은 주석처리!</span>
+      <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/login"</span><span class="token punctuation">)</span>
+      <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">loginV2</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Valid</span> <span class="token annotation punctuation">@ModelAttribute</span> <span class="token class-name">LoginForm</span> form<span class="token punctuation">,</span> <span class="token class-name">BindingResult</span>
+                            bindingResult<span class="token punctuation">,</span> <span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>bindingResult<span class="token punctuation">.</span><span class="token function">hasErrors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token string">"login/loginForm"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-    //기존의 login메소드의 mapping은 주석처리!
-    @PostMapping("/login")
-    public String loginV2(@Valid @ModelAttribute LoginForm form, BindingResult
-                          bindingResult, HttpServletResponse response) {
-      if (bindingResult.hasErrors()) {
-        return "login/loginForm";
-      }
+        <span class="token class-name">Member</span> loginMember <span class="token operator">=</span> loginService<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span>form<span class="token punctuation">.</span><span class="token function">getLoginId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>form<span class="token punctuation">.</span><span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"login? {}"</span><span class="token punctuation">,</span> loginMember<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>loginMember <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          bindingResult<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">"loginFail"</span><span class="token punctuation">,</span><span class="token string">"아이디 또는 비밀번호가 맞지 않습니다."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> <span class="token string">"login/loginForm"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-      Member loginMember = loginService.login(form.getLoginId(),form.getPassword());
-      log.info("login? {}", loginMember);
-      if (loginMember == null) {
-        bindingResult.reject("loginFail","아이디 또는 비밀번호가 맞지 않습니다.");
-        return "login/loginForm";
-      }
-
-      //로그인 성공 처리
-      //세션 관리자를 통해 세션을 생성하고, 회원 데이터 보관 sessionManager.createSession(loginMember, response);
-      return "redirect:/";
-    }
-    //기존의 로그아웃메소드의 매핑도 주석처리!
-    @PostMapping("/logout")
-    public String logoutV2(HttpServletRequest request) {
-      sessionManager.expire(request);
-      return "redirect:/";
-    }
-
-```
-
-  - `private final SessionManager`우리가 만들었던 로직을 주입시킨다.
+        <span class="token comment">//로그인 성공 처리</span>
+        <span class="token comment">//세션 관리자를 통해 세션을 생성하고, 회원 데이터 보관 sessionManager.createSession(loginMember, response);</span>
+        <span class="token keyword">return</span> <span class="token string">"redirect:/"</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">//기존의 로그아웃메소드의 매핑도 주석처리!</span>
+      <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/logout"</span><span class="token punctuation">)</span>
+      <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">logoutV2</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        sessionManager<span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"redirect:/"</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">  - `private final SessionManager`우리가 만들었던 로직을 주입시킨다.
   - `sessionManager.createSession(loginMeber, response);`로그인 성공 시 세션을 등록한다. 세션에 `loginMember`를 저장해두고, 쿠키도 함께 발행시키는 로직이다.
 
   - 로그아웃 시 해당 세션의 정보를 제거한다.
   - 로그인과 로그아웃을 만들었으니, 이제 컨트롤러에 입혀주도록 하자.</code></pre></div>
 <h3 id="homecontroller-homeloginv2" style="position:relative;"><a href="#homecontroller-homeloginv2" aria-label="homecontroller homeloginv2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HomeController-homeLoginV2</h3>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">```java
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">
+    <span class="token comment">//기존의 홈로그인의 매핑은 주석처리하자!</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">homeLoginV2</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> <span class="token class-name">Model</span> model<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-  //기존의 홈로그인의 매핑은 주석처리하자!
-  @GetMapping("/")
-  public String homeLoginV2(HttpServletRequest request, Model model) {
-
-    //세션 관리자에 저장된 회원 정보 조회
-    Member member = (Member)sessionManager.getSession(request); 
-    if (member == null) {
-      return "home";
-    }
-    //로그인
-    model.addAttribute("member", member); 
-    return "loginHome";
-  }
-
-```</code></pre></div>
+      <span class="token comment">//세션 관리자에 저장된 회원 정보 조회</span>
+      <span class="token class-name">Member</span> member <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Member</span><span class="token punctuation">)</span>sessionManager<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>member <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"home"</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">//로그인</span>
+      model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"member"</span><span class="token punctuation">,</span> member<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token string">"loginHome"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div>
 <ul>
 <li><code class="language-text">private final SessionManager sessionManager;</code>주입</li>
 <li>세션 관리자에서 저장된 회원 정보를 조회 한다. 만약 정보가 없으면, 쿠키나 세션이 없는 것 이므로, 로그인이 되지 않는 것으로 처리가 된다.</li>
@@ -416,7 +411,7 @@
 - 사실 세션이라는 것이 뭔가 특별한 것이 아니라 단지 쿠키를 사용하는데, 서버에서 데이터를 유지하는 방법일 뿐이라는 것을 이해했을거라 생각한다.
 - 그런데 프로젝트마다 이러한 세션 개념을 직접 개발하는것은... 개발자의 입장에서 상당히 불편할 것이다.
 - 그래서 등장하는것이 서블릿이다. 이 서블릿도 세션개념을 지원한다.
-- 이제는 직접 만드는 세션 말고 **서블릿이 공식 지원 하는 세션**에 대해 알아 보려 한다. 
+- 이제는 직접 만드는 세션 말고 **서블릿이 공식 지원 하는 세션**에 대해 알아 보려 한다.
 - 서블릿의 세션도 우리가 직접 만든 세션과 동작 방식이 아주 비슷하다. 추가로 세션을 일정시간 사용하지 않으면, 해당 세션을 삭제하는 기능도 제공한다.
 - 다음시간에는 서블릿에서 제공하는 세션에 대해 알아 보도록 하겠다.</code></pre></div>
 <p><strong>to be continue…(서블릿의 세션)</strong></p></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/springbootCookieAndSession(part.4)/"><div class="direction">이전 글</div><div class="title">SpringBoot의 로그인 처리 쿠키와 세션(part.4 세션 쿠키 활용)</div></a></div><div class="post-navigator-card-wrapper"></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2023<!-- -->  💥<a href="https://www.github.com">Re:teev</a>💥</p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/springbootCookieAndSession(part.5)/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-ec7b97a53b7889a28dad.js"],"app":["/app-7a414aa0485193ab4344.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-ee7ff288a33839d07a9c.js"],"component---src-pages-404-js":["/component---src-pages-404-js-fe336f36ddf1cae22468.js"],"component---src-pages-about-js":["/component---src-pages-about-js-94b17245231fbb6d6bd9.js"],"component---src-pages-index-js":["/component---src-pages-index-js-dbeca8a658be712271d7.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-db518fb661aaeb5c4da4.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-ec848b5ee3317614618b.js"]};/*]]>*/</script><script src="/polyfill-ec7b97a53b7889a28dad.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-db518fb661aaeb5c4da4.js" async=""></script><script src="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-153148a4d91acc214703.js" async=""></script><script src="/app-7a414aa0485193ab4344.js" async=""></script><script src="/framework-04d6a54209505769ded2.js" async=""></script><script src="/webpack-runtime-2df56f9be9e2d6e54840.js" async=""></script></body></html>
