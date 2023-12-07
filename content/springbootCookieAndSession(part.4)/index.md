@@ -43,7 +43,9 @@ Cookie idCookie = new Cookie("memberId",String.valueOf(loginMember.getId()));
 response.addCookie(idCookie);
 ```
 
-- # 로그인에 성공시 쿠키를 생성하고 `HttpServletResponse`에 담는다. 쿠키의 이름은 `memberId`이고, 값은 회원의 `id`를 담아둔다. 웹 브라우저는 종료 전까지 회원의값(id)를 서버에 지속적으로 보내줄것이다.
+- # 로그인에 성공시 쿠키를 생성하고 `HttpServletResponse`에 담는다. 
+- # 쿠키의 이름은 `memberId`이고, 값은 회원의 `id`를 담아둔다. 
+- # 웹 브라우저는 종료 전까지 회원의 값(id)를 서버에 지속적으로 보내줄것이다.
 
 ### 실행
 
