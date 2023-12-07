@@ -177,7 +177,7 @@ class SessionManagerTest {
 
   ### LoginController-version2
 
-      ```java
+    ```java
 
         //기존의 login메소드의 mapping은 주석처리!
         @PostMapping("/login")
@@ -205,7 +205,8 @@ class SessionManagerTest {
           return "redirect:/";
         }
 
-      ```
+    ```
+    
       - `private final SessionManager`우리가 만들었던 로직을 주입시킨다.
       - `sessionManager.createSession(loginMeber, response);`로그인 성공 시 세션을 등록한다. 세션에 `loginMember`를 저장해두고, 쿠키도 함께 발행시키는 로직이다.
 
@@ -215,6 +216,8 @@ class SessionManagerTest {
   ### HomeController-homeLoginV2
 
     ```java
+
+      //기존의 홈로그인의 매핑은 주석처리하자!
       @GetMapping("/")
       public String homeLoginV2(HttpServletRequest request, Model model) {
 
@@ -230,4 +233,16 @@ class SessionManagerTest {
 
     ```
 
-**to be continue...(세션 동작 방식)**
+  - `private final SessionManager sessionManager;`주입
+  - 세션 관리자에서 저장된 회원 정보를 조회 한다. 만약 정보가 없으면, 쿠키나 세션이 없는 것 이므로, 로그인이 되지 않는 것으로 처리가 된다.
+
+  ### 정리
+    - 이번편에는 세션과 쿠키의 개념을 명확하게 하기 위해(어떤역할을 하는지 어떤방식으로 동작하는지)직접 만들어 사용해 보았다.
+    - 사실 세션이라는 것이 뭔가 특별한 것이 아니라 단지 쿠키를 사용하는데, 서버에서 데이터를 유지하는 방법일 뿐이라는 것을 이해했을거라 생각한다.
+    - 그런데 프로젝트마다 이러한 세션 개념을 직접 개발하는것은... 개발자의 입장에서 상당히 불편할 것이다.
+    - 그래서 등장하는것이 서블릿이다. 이 서블릿도 세션개념을 지원한다.
+    - 이제는 직접 만드는 세션 말고 **서블릿이 공식 지원 하는 세션**에 대해 알아 보려 한다. 
+    - 서블릿의 세션도 우리가 직접 만든 세션과 동작 방식이 아주 비슷하다. 추가로 세션을 일정시간 사용하지 않으면, 해당 세션을 삭제하는 기능도 제공한다.
+    - 다음시간에는 서블릿에서 제공하는 세션에 대해 알아 보도록 하겠다.
+
+**to be continue...(서블릿의 세션)**
