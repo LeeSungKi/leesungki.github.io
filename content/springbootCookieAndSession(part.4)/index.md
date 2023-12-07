@@ -1,37 +1,77 @@
 ---
 emoji: 🪼
-title: SpringBoot의 로그인 처리 쿠키와 세션(part.2 홈화면 개발)
+title: SpringBoot의 로그인 처리 쿠키와 세션(part.4 세션 쿠키 활용)
 date: '2023-12-06 20:12:00'
 author: 아구
-tags: SpringBoot login session cookie 쿠키와세션 로그인처리
+tags: SpringBoot login session cookie 쿠키와세션 세션쿠키를 활용한 로그인처리
 categories: SpringBoot
 imageUrl: 'springboot.png'
 ---
 
-## 🎈 Start SpringBoot project 
-  - 이클립스(혹은 sts4)를 쓰고있다면 new project -> Spring Starter Project로 생성!
-  - intellij를 사용한다면 [start.spring.io](https://start.spring.io/)에서 프로젝트를 생성하자.
-  - 의존성 추가는 **lombok**과 **spring Web, thymeleaf, validation**을 추가해주고 임포트 혹은 다운을 받아 프로젝트를 실행!
-  - build.gradle에 의존성 추가가 되었는지 확인!
-```properties
+## 🎈 로그인 성공 시 세션 쿠키 생성
+  - 지난 시간에 이어 로그인에 필요한 세션 쿠키를 생성해 보도록 하자.
 
-  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+```java
+@PostMapping("/login")
+  public String login(@Valid @ModelAttribute LoginForm form, BindingResult
+  bindingResult, HttpServletResponse response) {
+    if (bindingResult.hasErrors()) {
+      return "login/loginForm";
+    }
+    Member loginMember = loginService.login(form.getLoginId(),
+    form.getPassword());
+    log.info("login? {}", loginMember);
+    if (loginMember == null) {
+      bindingResult.reject("loginFail","아이디 또는 비밀번호가 맞지 않습니다.");
+      return "login/loginForm";
+    }
+    //로그인 성공 처리
+    //쿠키에 시간 정보를 주지 않으면 세션 쿠키(브라우저 종료시 모두 종료)
+    Cookie idCookie = new Cookie("memberId",String.valueOf(loginMember.getId()));
+    response.addCookie(idCookie);
+    return "redirect:/";
+}
 ```
+  - 여기서 우리가 집중하여 볼것은 쿠키 생성 로직이다.
+### 쿠키 생성 로직
+```java
+Cookie idCookie = new Cookie("memberId",String.valueOf(loginMember.getId()));
+response.addCookie(idCookie);
+```
+  - 로그인에 성공시 쿠키를 생성하고 `HttpServletResponse`에 담는다. 쿠키의 이름은 `memberId`이고, 값은 회원의 `id`를 담아둔다. 웹 브라우저는 종료 전까지 회원의값(id)를 서버에 지속적으로 보내줄것이다.
 =====
+### 실행
+  - 크롬 브라우저를 통해 HTTP 응답 헤더에 쿠키가 추가된 것을 확인할 수 있다.
+  ![check_cookie.png](check_cookie.png)
 
-## 🌵 홈 화면 개발
+## 🌵 홈화면 로그인처리
 1. HomeController
   ```java
-    @GetMapping("/")
-    public String home() {
+  @Slf4j
+  @Controller
+  @RequiredArgsConstructor
+  public class HomeController {
+      private final MemberRepository memberRepository;
+      
+      //    @GetMapping("/") *주의 기존거 주석처리 안하면 컴파일에러
+      public String home() {
         return "home";
-    }
+      }
+      @GetMapping("/")
+      public String homeLogin(@CookieValue(name = "memberId", required = false) Long memberId, Model model) {
+        if (memberId == null) {
+          return "home";
+        }
+        //로그인
+        Member loginMember = memberRepository.findById(memberId);
+        if (loginMember == null) {
+          return "home";
+        }
+        model.addAttribute("member", loginMember);
+        return "loginHome";
+      }
+  }
+
   ```
 2. home.html
   ```html
