@@ -4,8 +4,8 @@ title: 창업의 시작, Design Thinking과 Lean Start-up
 date: '2025-01-24 09:00:00'  
 author: 쩡기  
 tags: 창업 디자인씽킹 린스타트업 스타트업 미끼기능 MVP  
-categories: 창업공식  
-imageUrl: 'reteevLogo.png'
+categories: 창업공식
+imageUrl: 'startup.png'
 ---
 ## 🎈 창업, 어디서부터 시작해야 할까요?
 
