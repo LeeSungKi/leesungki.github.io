@@ -1306,7 +1306,7 @@ RainHub의 비즈니스 모델은 분실률이 5%로 너무 낮아서도, 20%로
 
 > Genspark를 활용하여 PPT를 제작.
 
-[PPT 확인 하기](https://www.genspark.ai/agents?id=4beba14c-6d38-44c6-877c-807c191a55f0)
+[PPT 확인 하기](https://docs.google.com/presentation/d/1CVdyAy3vGpnxi25scw3EtNuQ365nomFUJGavcG_7lWc/edit?usp=drive_link)
 
 ---
 
@@ -1567,8 +1567,6 @@ UX 라이팅(Micro-copy): 앱 내 문구는 짧아야 합니다.
 
 ---
 
-
----
 
 # 🎨 **Step 6 — 브랜드 로고 제작 **
 
