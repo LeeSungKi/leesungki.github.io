@@ -64,138 +64,201 @@
         }
       }
     })
-  </script><title data-react-helmet="true">AWS S3 버킷 생성</title><meta data-react-helmet="true" name="viewport" content="initial-scale=1, width=device-width"/><meta data-react-helmet="true" property="og:title" content="AWS S3 버킷 생성"/><meta data-react-helmet="true" property="og:site_title" content="AWS S3 버킷 생성"/><meta data-react-helmet="true" name="description" content="🎈 목적  🗑 Bucket 생성하기 1️⃣ AWS console 로그인을 하고 s3 서비스에 접근합니다. 버킷 만들기 클릭!  2️⃣ 버킷 이름, 리전 등을 지정해줍니다.  아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!  3️⃣ 저는 아래와 같이  이라는 이름으로 생성 하였습니다.  해당 버킷을 클릭하여 들어가 보면 저장 되어있는 객체들을 확인할수 있습니다.  저는 현재 폴더 만들기를 통하여 폴더를 만들어 놓은 모습입니다. 이로써 기본적인 버킷생성은 완료 하였습니다. 🎈 목적 🗑 Bucket 생성하기 1️⃣ 2️⃣ 3️⃣"/><meta data-react-helmet="true" property="og:description" content="🎈 목적  🗑 Bucket 생성하기 1️⃣ AWS console 로그인을 하고 s3 서비스에 접근합니다. 버킷 만들기 클릭!  2️⃣ 버킷 이름, 리전 등을 지정해줍니다.  아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!  3️⃣ 저는 아래와 같이  이라는 이름으로 생성 하였습니다.  해당 버킷을 클릭하여 들어가 보면 저장 되어있는 객체들을 확인할수 있습니다.  저는 현재 폴더 만들기를 통하여 폴더를 만들어 놓은 모습입니다. 이로써 기본적인 버킷생성은 완료 하였습니다. 🎈 목적 🗑 Bucket 생성하기 1️⃣ 2️⃣ 3️⃣"/><meta data-react-helmet="true" property="og:author" content="Re:teev"/><meta data-react-helmet="true" property="og:image" content="/ogImage.png"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="google-site-verification" content="NIs0QhmetlWroylVB41Dz3fVQcuHAzP8e2DvVMjFPus"/><meta data-react-helmet="true" name="naver-site-verification" content="c695577700808f46f7ac9db8f39c8a2a3f9dd14d"/><script data-react-helmet="true" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6901713023068431" crossorigin="anonymous"></script><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabVmUiAo.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiAo.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bVmUiAo.woff2"/><style>@font-face{font-display:swap;font-family:Roboto;font-stretch:normal;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabVmUiAo.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-stretch:normal;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiAo.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-stretch:normal;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bVmUiAo.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-stretch:normal;font-style:normal;font-weight:300;src:url(/static/webfonts/l/font) format("woff"),url(/static/webfonts/l/font) format("woff"),url(/static/webfonts/l/font) format("woff")}</style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link as="script" rel="preload" href="/webpack-runtime-7e31cebe3ea491024046.js"/><link as="script" rel="preload" href="/framework-7c748554c9c876e5e1b6.js"/><link as="script" rel="preload" href="/app-ebf7ff47f46558574e2a.js"/><link as="script" rel="preload" href="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-275fa38ecda86df3d2a6.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-js-c4f28ccd583dc1bffa59.js"/><link as="fetch" rel="preload" href="/page-data/gatsby-aws-study-s3-makeBucket/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1073350324.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1956554647.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2938748437.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="page-wrapper"><header class="page-header-wrapper"><div class="page-header"><div class="front-section"><a class="link" href="/">Re:teev 팀 블로그</a></div><div class="trailing-section"><a class="link" href="/about">about</a><a class="link" href="/posts">posts</a><div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1l6di18" role="combobox" aria-expanded="false"><div class="search-input-wrapper"><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root search-input css-feqhe6"><div class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-11tfndm"><input type="text" aria-invalid="false" autoComplete="off" value="" class="MuiInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mnn31" aria-autocomplete="list" autoCapitalize="none" spellcheck="false"/><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search-icon css-vubbuv" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="SearchOutlinedIcon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></div></div></div></div></div></div></header><main class="page-content"><header class="post-header"><div class="emoji">🎟</div><div class="info"><div class="categories"><a class="category" href="/posts/AWS">AWS</a></div></div><h1 class="title">AWS S3 버킷 생성</h1><div class="info"><div class="author">posted by <strong>쩡기</strong>,</div> <!-- -->January 26, 2022</div></header><div class="post-content"><div class="markdown"><h2 id="-목적" style="position:relative;"><a href="#-%EB%AA%A9%EC%A0%81" aria-label=" 목적 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🎈 목적</h2>
-<p><code class="language-text">aws 에서 사용하는 s3 버킷 생성</code></p>
-<h2 id="-bucket-생성하기" style="position:relative;"><a href="#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0" aria-label=" bucket 생성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🗑 Bucket 생성하기</h2>
-<h2 id="1️⃣" style="position:relative;"><a href="#1%EF%B8%8F%E2%83%A3" aria-label="1️⃣ permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1️⃣</h2>
-<p>AWS console 로그인을 하고 <a href="https://console.aws.amazon.com/s3/home?region=ap-northeast-2">s3 서비스</a>에 접근합니다.</p>
-<p>버킷 만들기 클릭!</p>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 45.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABUElEQVQozzWQW24dIRBEZ//ybrKALMB//ov8GcfjmTs8uqGfMJcEkpRaAiRadaq26zxyzv2+e+9Yyvm4ABFLAcR5wfJ/pnKGlHPKOQOeV9gwRRFpvY8xzCzF+PPjAwDNVISZmIhEhESrGCCGEGKMABhT2q4QUkpENMZQM1hydxGpRGamqsupind1T4AJirWeMmwAQET3fc9l1UrUWhtj3CvIWBLm5j7R3Pfj8Xk8SDQDbCIiqiJibrKW53ONTlcVM+1P9caqLKKmZmZuYWJfARHvJTU7zvMMsS5hpVCkxkt/vWs8vTV3W0GstRZT/ofNIn+xQ4wJAEth5lJr9Sf9eKVvL/L2vY3hy9ZtHleMW62kInvm+/mcrTIDFhZZbK4qlVXvIa3T6o9Faq2qOpexlPVt9jGTm0KhXBhJfFEex7nvOzPv+1eIM9HXcRDRn7Z/AwI+A6qlIhN4AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="makebucket1.png"
-        title="makebucket1.png"
-        src="/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png"
-        srcset="/static/d0c263a35dd6fda29557c82d14eb5830/e9ff0/makebucket1.png 180w,
-/static/d0c263a35dd6fda29557c82d14eb5830/f21e7/makebucket1.png 360w,
-/static/d0c263a35dd6fda29557c82d14eb5830/37523/makebucket1.png 720w,
-/static/d0c263a35dd6fda29557c82d14eb5830/078fe/makebucket1.png 934w"
-        sizes="(max-width: 720px) 100vw, 720px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
-<h2 id="2️⃣" style="position:relative;"><a href="#2%EF%B8%8F%E2%83%A3" aria-label="2️⃣ permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2️⃣</h2>
-<p>버킷 이름, 리전 등을 지정해줍니다.</p>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 658px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 92.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABJ0AAASdAHeZh94AAACTUlEQVQ4y52UeW+cMBDF9/t/t0r9p1klaY5lD1gOH/jA2MCrZiCErJK0KtIPGws9zzzPeCd0i0slIXWLumlwLSvotv2U1ph1/Ipd1Qhk5wLnPEdeFKiFgnUOxlrGWrPyndAqSCL3Dw+42+/x626Pp8MJx/MZl8sF+bXE8SqYUyW/jHzLjl51XaMRAkpraK0hlYIidAupzUxrOPLv4AgpraIocC1L9H2PlNKG+E6MiH+BtHazX5S/xTCOK+PC23zajMMw8Po0TRgXaE5aLKgobSFY1HcdY52Hcx5dCLBdD2EDtAuQLqCLicVvH+c9do5ybw3Tx4jQ9wghwPtZlDcIEaaLcCFC+4g+zWLTEhmxCrKZ7VyDQkgWtnaOlFO6TXka2S/afCv6HqH3LFRcS2THI8qqYqx1s4fk15ZxRBqGNeUPgm5JuSiueH49oKxqNrbrAv7n4Qipdsh4+iDvYkqcEnv5FeHzdS4bemWnE55fXpBXDVrrYIyZW8/YZTTrSAHYt7XNul3+5wiL/IIsO+CQZVzkSgq01DVKwbQ0UtvpuXtozRhIKdeOojkdLNch7dD4CNlF1Mahah1MGuGGiaG5TSNbQSdL9tDhTJuCJmiNU9bO4UkG7A85fuyf8PP+Bb8vFV5LhddS4iwd6m5AlxJfGPv7Rz48qShijUZKNEKyrxyhtg4qAaVLKGyP3PQ4SouT8jgrz2t1GBBiWtLyfIBzy87XHM1XQbe0nlCK05puSmFa+OeyoR3I1Kqu+fpKS9l8vHXSUk4L6YY4/0Me/gH9qb0dGAv2CgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="makebucket2.png"
-        title="makebucket2.png"
-        src="/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png"
-        srcset="/static/eb23b224cf64aaa70beb81cd624c5b3f/e9ff0/makebucket2.png 180w,
-/static/eb23b224cf64aaa70beb81cd624c5b3f/f21e7/makebucket2.png 360w,
-/static/eb23b224cf64aaa70beb81cd624c5b3f/889a4/makebucket2.png 658w"
-        sizes="(max-width: 658px) 100vw, 658px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
-<p>아래의 다른 정책들은 건드리지 않고 일단 버킷 만들기 클릭!</p>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 546px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 166.66666666666669%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAACXBIWXMAABJ0AAASdAHeZh94AAAD00lEQVRIx6VWW5LjNgzUzVM5xJ4jOUCukY9sxmO9KVFPviRKst0pgJLtSbybTFZVXSRoqgUCaNDRMA44xzHiJMHb6YQkSVAUJc5xirppsCwL5nmG957HZ/Caf9humhANQ484iZEXOZI0RikKHtM0Rp6nkLJGWRbIiwyiEijKnPcIUaKqKwhRoCgyVJUIhOM4oKpKNK1ELWs0jYSoJd6zEqdMoJAthqGDlBL08bZt0HUtz/u+Q9u1vNYPfSBUbsagNLq+x6gUtNbwywq/bJj8imW74Hq9Mi6XCy7HyLjudvidQhD11qNqexSl4JgR8TRNL2L1wLSv3W43PD/rtiGioG/bhtEYaGuhjMGgFNphYM8DFLphxKA1lNG819HHvIdfFiZirCsivxMaa2GnCcY6niuz287BOscfu+/Z1w7CIyR3QsKoDXvHozbszbhDWYue4mstB56OvKzr6yMfLtOx+Lg6HJOIiUQ9eXaEhDwMXk78LpEzluVBGLzT/BJ7ZYLHdDSK1zR7TN4z8eElrZNNe4iQPaT0UwyJKGQxhIBAdiCbmYwzfGD/yJF5IiOeiNin46UfBIUm6voOWZrgfD6jrhuuO6rDb8FN7l6nj7U9BKSUrh/wNc6QC4G6rlh6QV4Nz3kku+94JG3LRjLIpr1t10E0A5RxiOhLo/NwPtQj1dL/w8ZeRr12SLMclahCMe21dcPHGnv1HHuOeuQsq8kjyQoYY3iRKp42fBZMSEpxVGd7UI/AvsI079jrzu3yO+BYtpTltkWW5tzvKNOlqDDPR1bDi7RZ2QA7eazrwqr4O+gd9lApxUemXmhJZtYyWZgbbhidcmiVg3Iel+2fSaGEUoKjQxGaugt1FWP56Lfbd1LxvRgSSS0byKbhheesffZh6RnuJo/AzrP/IKeja/8X6RFHRPdIlufI8gJ3Xd+lRlkPmPYO/RL7lcDSo0RUVYVK1lBqhNYKaseoLWRvIHoLO3ts/6KWkBTqcdZhHEZcr7d7Oz/mt1sA33r33z7iuPW4wdKtd4pTyFriRx9OCsWHskwxooVQpOsnsXDH5uagqfUrxWVDGX+W3/QsvW/YR/LuWdZEVlfIi4J/JFk9pOWx7rKiWC+E5fEbwfOfpdBwSXXRubWIG41YDjiJFu+iwx9phbeywbnu8WchcRIdEjmyTXvIpn3vVYes0xCjZeSdRnTuZ8StwbkeEDcjklbjrewQyxFZF9aTRqEYHNs0Z7QaaatRmRXNBrQbUNobIrqPe0X3scVAd7E2GI1l+8O60ru9Q2mIXqM5/w75y0+Qv/6M9rcv+AuYrvQ7lOznHgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="makebucket3.png"
-        title="makebucket3.png"
-        src="/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png"
-        srcset="/static/531397bf51c8d1cf783d1c8162e06c3b/e9ff0/makebucket3.png 180w,
-/static/531397bf51c8d1cf783d1c8162e06c3b/f21e7/makebucket3.png 360w,
-/static/531397bf51c8d1cf783d1c8162e06c3b/76aed/makebucket3.png 546w"
-        sizes="(max-width: 546px) 100vw, 546px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
-<h2 id="3️⃣" style="position:relative;"><a href="#3%EF%B8%8F%E2%83%A3" aria-label="3️⃣ permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3️⃣</h2>
-<p>저는 아래와 같이 <code class="language-text">leesungkibucket</code> 이라는 이름으로 생성 하였습니다.</p>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 715px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 54.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABpUlEQVQoz4VSW5LUMAzM7bkEB+Gbb85A1TI7bMZ5+C3LjpPelTJZ4ItUdVlWZLXU0jDNC1ZrEWJETOn/kLgYNf6CD0Eh9hBCwOvtFcYYUCHknFFK0TPndIIIiVhRa1UwV1hrYaYZD2P0DCFikIcxRTDzM5CRUvpzrwyuFT4mhETY+oZtO3ER18rofdM3g/dBW/j7IyIcx/GPzzmnCa5v33e83N7w6z5i9oTSdiUeqBQ15CxPaFXMaotfWhaUwkomtvit86d+5oZkXhD9imGaDN4eBiFlEJ26xZRhQ0bIBa1VHcY8L0gqz6mx+AqfBOn7V8RvX5B+/sAgDO4JmZJqmgkuEgJJwoYqUD2r2vwcjPwTLVvfwa0r2UBUIJMWdg1oTU+pjLl8rohIcA1MWr7uUpDEFCK1B2Ggcq4EcUOpTQXvvSu887jff2NdrVYjp5kmPMykrS/LCu89SNaM6Ewo5brEiFSx9V0nfE05p4xxfMBapz5nHcZx1Lu0Ld1dAxOCM2HdNGFtHTgOrVAgCaQdSShL248DbBewXSF08l8Si+4qwcfavAMxOVJpcT4gEgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="makebucket4.png"
-        title="makebucket4.png"
-        src="/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png"
-        srcset="/static/2991bb6828aece27363c2c204479dc9c/e9ff0/makebucket4.png 180w,
-/static/2991bb6828aece27363c2c204479dc9c/f21e7/makebucket4.png 360w,
-/static/2991bb6828aece27363c2c204479dc9c/d0c0e/makebucket4.png 715w"
-        sizes="(max-width: 715px) 100vw, 715px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
-<p>해당 버킷을 클릭하여 들어가 보면 저장 되어있는 객체들을 확인할수 있습니다.</p>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 52.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABkklEQVQoz41SyW7UQBD1/185I+UHEFcuXPIDkGMQkVgy8rjd++pePA9VzaIAEsHS06uuvco1CZdgQoSQEkpr+BDgvP8NVx3xa5geHz7h8eEzvj494fvzAdb/7fRngX9h+vnuDj8+vMe6LJDawDoyODZa5/67s1uHs1ggQ8SqFMS68uhHIZgP88xMiY21r8M5TEKsSDGibBtK2Zg3RmEupSDngvySWc7nN3FKjBgjpnmeobSCcw7+Mqo0HkcToemH+YiUImI6c4iBOeWERElSQqoDpQNbbZiU0rDOQhnNyYzzWJSFdBHWR0TuKnMgsQ8eUipobXAUEmo5wN+/Rfj4Blk+YzLWIcQEz2NXbLWi1orWzjKdklSKx2yt8RqoMxo1pYySEor4hnD4Am81JtqRVBq5bJyAAsLlVCiBpxUodStEySiGZPIjW+k76gBSLpgoSBsHnytaHzidTlydToC+MQZj33fGeIHeB3rv2PeB076j9Y6Jgg/HFT4V9N5YSV0pbdDHOHfW2g3twlc9+V9tdCG/AJ4WS8bp4TDkAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="makebucket5.png"
-        title="makebucket5.png"
-        src="/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png"
-        srcset="/static/65e6b186d785dc864b90fc94f691e701/e9ff0/makebucket5.png 180w,
-/static/65e6b186d785dc864b90fc94f691e701/f21e7/makebucket5.png 360w,
-/static/65e6b186d785dc864b90fc94f691e701/37523/makebucket5.png 720w,
-/static/65e6b186d785dc864b90fc94f691e701/01dae/makebucket5.png 721w"
-        sizes="(max-width: 720px) 100vw, 720px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
-<p>저는 현재 폴더 만들기를 통하여 폴더를 만들어 놓은 모습입니다.</p>
-<p>이로써 기본적인 버킷생성은 완료 하였습니다.</p>
+  </script><title data-react-helmet="true">RainHub 타깃 고객 2분류 전략 — 라이프스타일에 따라 달라지는 톤앤매너 설계</title><meta data-react-helmet="true" name="viewport" content="initial-scale=1, width=device-width"/><meta data-react-helmet="true" property="og:title" content="RainHub 타깃 고객 2분류 전략 — 라이프스타일에 따라 달라지는 톤앤매너 설계"/><meta data-react-helmet="true" property="og:site_title" content="RainHub 타깃 고객 2분류 전략 — 라이프스타일에 따라 달라지는 톤앤매너 설계"/><meta data-react-helmet="true" name="description" content="☔ 왜 같은 우산 서비스도 “말하는 방식”이 달라야 할까? RainHub는 우산 공유 플랫폼입니다. 기능만 보면 단순합니다. 비 오면 → QR 찍고 → 우산 빌림 → 아무 데서나 반납 하지만 서비스를 누가 쓰느냐에 따라 이 기능이 가지는 의미는 완전히 달라집니다. 어떤 사람에겐 “출근길 스트레스 해결” 이고 어떤 사람에겐 “가볍고 센스 있는 선택” 이 됩니다. 그래서 이번 글에서는 👉 RainHub의 타깃 고객을 라이프스타일 기준으로 2개로 나누고 👉 각 그룹에 맞는 셀링 포인트와 톤앤매너, 마케팅 문구를 정리해 봤습니다. 🎯 타깃 그룹 1. 출퇴근·외출이 잦은 도시 직장인 “비 오는 날, 생각할 게 하나라도 줄어들면 그게 곧 가치다.” 👤 누구에게? 외적 문제 갑작스러운 비에 우산을 못 챙김 우산을 회사·카페·지하철에 자주 분실 비 오는 날마다 우산을 새로 구매 내적 문제 “또 사야 해?”라는 귀찮음 출근길·퇴근길 동선이 꼬이는 스트레스 쓸데없는 소비에 대한 피로감 🎁 무엇을 제…"/><meta data-react-helmet="true" property="og:description" content="☔ 왜 같은 우산 서비스도 “말하는 방식”이 달라야 할까? RainHub는 우산 공유 플랫폼입니다. 기능만 보면 단순합니다. 비 오면 → QR 찍고 → 우산 빌림 → 아무 데서나 반납 하지만 서비스를 누가 쓰느냐에 따라 이 기능이 가지는 의미는 완전히 달라집니다. 어떤 사람에겐 “출근길 스트레스 해결” 이고 어떤 사람에겐 “가볍고 센스 있는 선택” 이 됩니다. 그래서 이번 글에서는 👉 RainHub의 타깃 고객을 라이프스타일 기준으로 2개로 나누고 👉 각 그룹에 맞는 셀링 포인트와 톤앤매너, 마케팅 문구를 정리해 봤습니다. 🎯 타깃 그룹 1. 출퇴근·외출이 잦은 도시 직장인 “비 오는 날, 생각할 게 하나라도 줄어들면 그게 곧 가치다.” 👤 누구에게? 외적 문제 갑작스러운 비에 우산을 못 챙김 우산을 회사·카페·지하철에 자주 분실 비 오는 날마다 우산을 새로 구매 내적 문제 “또 사야 해?”라는 귀찮음 출근길·퇴근길 동선이 꼬이는 스트레스 쓸데없는 소비에 대한 피로감 🎁 무엇을 제…"/><meta data-react-helmet="true" property="og:author" content="Re:teev"/><meta data-react-helmet="true" property="og:image" content="/ogImage.png"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="google-site-verification" content="NIs0QhmetlWroylVB41Dz3fVQcuHAzP8e2DvVMjFPus"/><meta data-react-helmet="true" name="naver-site-verification" content="c695577700808f46f7ac9db8f39c8a2a3f9dd14d"/><script data-react-helmet="true" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6901713023068431" crossorigin="anonymous"></script><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabVmUiAo.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiAo.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bVmUiAo.woff2"/><style>@font-face{font-display:swap;font-family:Roboto;font-stretch:normal;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabVmUiAo.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-stretch:normal;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiAo.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-stretch:normal;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bVmUiAo.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-stretch:normal;font-style:normal;font-weight:300;src:url(/static/webfonts/l/font) format("woff"),url(/static/webfonts/l/font) format("woff"),url(/static/webfonts/l/font) format("woff")}</style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link as="script" rel="preload" href="/webpack-runtime-7e31cebe3ea491024046.js"/><link as="script" rel="preload" href="/framework-7c748554c9c876e5e1b6.js"/><link as="script" rel="preload" href="/app-ebf7ff47f46558574e2a.js"/><link as="script" rel="preload" href="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-275fa38ecda86df3d2a6.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-js-c4f28ccd583dc1bffa59.js"/><link as="fetch" rel="preload" href="/page-data/aStartup14/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1073350324.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1956554647.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2938748437.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="page-wrapper"><header class="page-header-wrapper"><div class="page-header"><div class="front-section"><a class="link" href="/">Re:teev 팀 블로그</a></div><div class="trailing-section"><a class="link" href="/about">about</a><a class="link" href="/posts">posts</a><div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1l6di18" role="combobox" aria-expanded="false"><div class="search-input-wrapper"><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root search-input css-feqhe6"><div class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-11tfndm"><input type="text" aria-invalid="false" autoComplete="off" value="" class="MuiInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mnn31" aria-autocomplete="list" autoCapitalize="none" spellcheck="false"/><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search-icon css-vubbuv" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="SearchOutlinedIcon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></div></div></div></div></div></div></header><main class="page-content"><header class="post-header"><div class="emoji">☂️</div><div class="info"><div class="categories"><a class="category" href="/posts/창업공식">창업공식</a></div></div><h1 class="title">RainHub 타깃 고객 2분류 전략 — 라이프스타일에 따라 달라지는 톤앤매너 설계</h1><div class="info"><div class="author">posted by <strong>쩡기</strong>,</div> <!-- -->December 19, 2025</div></header><div class="post-content"><div class="markdown"><h1 id="-왜-같은-우산-서비스도-말하는-방식이-달라야-할까" style="position:relative;"><a href="#-%EC%99%9C-%EA%B0%99%EC%9D%80-%EC%9A%B0%EC%82%B0-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%8F%84-%EB%A7%90%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D%EC%9D%B4-%EB%8B%AC%EB%9D%BC%EC%95%BC-%ED%95%A0%EA%B9%8C" aria-label=" 왜 같은 우산 서비스도 말하는 방식이 달라야 할까 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>☔ 왜 같은 우산 서비스도 “말하는 방식”이 달라야 할까?</h1>
+<p>RainHub는 <strong>우산 공유 플랫폼</strong>입니다.<br>
+기능만 보면 단순합니다.</p>
+<ul>
+<li>비 오면 → QR 찍고 → 우산 빌림 → 아무 데서나 반납</li>
+</ul>
+<p>하지만 서비스를 <strong>누가</strong> 쓰느냐에 따라<br>
+이 기능이 가지는 의미는 완전히 달라집니다.</p>
+<ul>
+<li>어떤 사람에겐 <em>“출근길 스트레스 해결”</em> 이고</li>
+<li>어떤 사람에겐 <em>“가볍고 센스 있는 선택”</em> 이 됩니다.</li>
+</ul>
+<p>그래서 이번 글에서는<br>
+👉 <strong>RainHub의 타깃 고객을 라이프스타일 기준으로 2개로 나누고</strong><br>
+👉 <strong>각 그룹에 맞는 셀링 포인트와 톤앤매너, 마케팅 문구</strong>를 정리해 봤습니다.</p>
+<hr>
+<h1 id="-타깃-그룹-1-출퇴근외출이-잦은-도시-직장인" style="position:relative;"><a href="#-%ED%83%80%EA%B9%83-%EA%B7%B8%EB%A3%B9-1-%EC%B6%9C%ED%87%B4%EA%B7%BC%EC%99%B8%EC%B6%9C%EC%9D%B4-%EC%9E%A6%EC%9D%80-%EB%8F%84%EC%8B%9C-%EC%A7%81%EC%9E%A5%EC%9D%B8" aria-label=" 타깃 그룹 1 출퇴근외출이 잦은 도시 직장인 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🎯 타깃 그룹 1. 출퇴근·외출이 잦은 도시 직장인</h1>
+<blockquote>
+<p>“비 오는 날, 생각할 게 하나라도 줄어들면 그게 곧 가치다.”</p>
+</blockquote>
+<hr>
+<h2 id="-누구에게" style="position:relative;"><a href="#-%EB%88%84%EA%B5%AC%EC%97%90%EA%B2%8C" aria-label=" 누구에게 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>👤 누구에게?</h2>
+<h3 id="외적-문제" style="position:relative;"><a href="#%EC%99%B8%EC%A0%81-%EB%AC%B8%EC%A0%9C" aria-label="외적 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>외적 문제</h3>
+<ul>
+<li>갑작스러운 비에 우산을 못 챙김</li>
+<li>우산을 회사·카페·지하철에 자주 분실</li>
+<li>비 오는 날마다 우산을 새로 구매</li>
+</ul>
+<h3 id="내적-문제" style="position:relative;"><a href="#%EB%82%B4%EC%A0%81-%EB%AC%B8%EC%A0%9C" aria-label="내적 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>내적 문제</h3>
+<ul>
+<li>“또 사야 해?”라는 귀찮음</li>
+<li>출근길·퇴근길 동선이 꼬이는 스트레스</li>
+<li>쓸데없는 소비에 대한 피로감</li>
+</ul>
+<hr>
+<h2 id="-무엇을-제안할-것인가" style="position:relative;"><a href="#-%EB%AC%B4%EC%97%87%EC%9D%84-%EC%A0%9C%EC%95%88%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80" aria-label=" 무엇을 제안할 것인가 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🎁 무엇을 제안할 것인가?</h2>
+<h3 id="핵심-셀링-포인트" style="position:relative;"><a href="#%ED%95%B5%EC%8B%AC-%EC%85%80%EB%A7%81-%ED%8F%AC%EC%9D%B8%ED%8A%B8" aria-label="핵심 셀링 포인트 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>핵심 셀링 포인트</h3>
+<ul>
+<li>필요할 때 <strong>바로 빌리고</strong>,</li>
+<li>사용 후 <strong>어디서든 반납</strong></li>
+<li>우산을 <em>소유하지 않아도 되는 선택</em></li>
+</ul>
+<p>👉 <strong>시간·동선·생각을 줄여주는 서비스</strong></p>
+<hr>
+<h2 id="-어떻게-말할-것인가" style="position:relative;"><a href="#-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%A7%90%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80" aria-label=" 어떻게 말할 것인가 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🎨 어떻게 말할 것인가?</h2>
+<h3 id="타깃이-좋아할-분위기" style="position:relative;"><a href="#%ED%83%80%EA%B9%83%EC%9D%B4-%EC%A2%8B%EC%95%84%ED%95%A0-%EB%B6%84%EC%9C%84%EA%B8%B0" aria-label="타깃이 좋아할 분위기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>타깃이 좋아할 분위기</h3>
+<ul>
+<li>깔끔한</li>
+<li>효율적인</li>
+<li>스마트한</li>
+<li>군더더기 없는</li>
+</ul>
+<h3 id="마케팅-메시지" style="position:relative;"><a href="#%EB%A7%88%EC%BC%80%ED%8C%85-%EB%A9%94%EC%8B%9C%EC%A7%80" aria-label="마케팅 메시지 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>마케팅 메시지</h3>
+<blockquote>
+<p><strong>“비 오는 날의 번거로움, 우산 하나로 끝.”</strong><br>
+<strong>“사지 말고, 빌리세요. 출근길은 더 가볍게.”</strong></p>
+</blockquote>
+<p>RainHub는 이들에게<br>
+**‘편리한 인프라’**로 인식되어야 합니다.</p>
+<hr>
+<h1 id="-타깃-그룹-2-가볍게-움직이는-mz데이트여가-중심-사용자" style="position:relative;"><a href="#-%ED%83%80%EA%B9%83-%EA%B7%B8%EB%A3%B9-2-%EA%B0%80%EB%B3%8D%EA%B2%8C-%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-mz%EB%8D%B0%EC%9D%B4%ED%8A%B8%EC%97%AC%EA%B0%80-%EC%A4%91%EC%8B%AC-%EC%82%AC%EC%9A%A9%EC%9E%90" aria-label=" 타깃 그룹 2 가볍게 움직이는 mz데이트여가 중심 사용자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🎯 타깃 그룹 2. 가볍게 움직이는 MZ·데이트·여가 중심 사용자</h1>
+<blockquote>
+<p>“우산까지 들고 다니는 건… 솔직히 좀 투머치잖아?”</p>
+</blockquote>
+<hr>
+<h2 id="-누구에게-1" style="position:relative;"><a href="#-%EB%88%84%EA%B5%AC%EC%97%90%EA%B2%8C-1" aria-label=" 누구에게 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>👤 누구에게?</h2>
+<h3 id="외적-문제-1" style="position:relative;"><a href="#%EC%99%B8%EC%A0%81-%EB%AC%B8%EC%A0%9C-1" aria-label="외적 문제 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>외적 문제</h3>
+<ul>
+<li>갑작스러운 비로 약속·데이트 동선 붕괴</li>
+<li>우산이 짐처럼 느껴짐</li>
+<li>스타일을 해치는 소지품에 대한 거부감</li>
+</ul>
+<h3 id="내적-문제-1" style="position:relative;"><a href="#%EB%82%B4%EC%A0%81-%EB%AC%B8%EC%A0%9C-1" aria-label="내적 문제 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>내적 문제</h3>
+<ul>
+<li>비 오는 날에도 센스 있어 보이고 싶음</li>
+<li>소소한 불편을 똑똑하게 해결하고 싶은 욕구</li>
+<li>“이런 거 있으면 좋겠다”에 민감함</li>
+</ul>
+<hr>
+<h2 id="-무엇을-제안할-것인가-1" style="position:relative;"><a href="#-%EB%AC%B4%EC%97%87%EC%9D%84-%EC%A0%9C%EC%95%88%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80-1" aria-label=" 무엇을 제안할 것인가 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🎁 무엇을 제안할 것인가?</h2>
+<h3 id="핵심-셀링-포인트-1" style="position:relative;"><a href="#%ED%95%B5%EC%8B%AC-%EC%85%80%EB%A7%81-%ED%8F%AC%EC%9D%B8%ED%8A%B8-1" aria-label="핵심 셀링 포인트 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>핵심 셀링 포인트</h3>
+<ul>
+<li>잠깐 쓰고 반납하는 <strong>공유 경험</strong></li>
+<li>도시 곳곳에서 자연스럽게 만나는 서비스</li>
+<li>“안 들고 다녀도 되는 우산”</li>
+</ul>
+<p>👉 <strong>가볍고 감각적인 도시 라이프스타일</strong></p>
+<hr>
+<h2 id="-어떻게-말할-것인가-1" style="position:relative;"><a href="#-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%A7%90%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80-1" aria-label=" 어떻게 말할 것인가 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🎨 어떻게 말할 것인가?</h2>
+<h3 id="타깃이-좋아할-분위기-1" style="position:relative;"><a href="#%ED%83%80%EA%B9%83%EC%9D%B4-%EC%A2%8B%EC%95%84%ED%95%A0-%EB%B6%84%EC%9C%84%EA%B8%B0-1" aria-label="타깃이 좋아할 분위기 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>타깃이 좋아할 분위기</h3>
+<ul>
+<li>가볍고</li>
+<li>트렌디한</li>
+<li>감각적인</li>
+<li>부담 없는</li>
+</ul>
+<h3 id="마케팅-메시지-1" style="position:relative;"><a href="#%EB%A7%88%EC%BC%80%ED%8C%85-%EB%A9%94%EC%8B%9C%EC%A7%80-1" aria-label="마케팅 메시지 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>마케팅 메시지</h3>
+<blockquote>
+<p><strong>“비는 갑자기 와도, 우산은 항상 근처에.”</strong><br>
+<strong>“우산까지 들고 다니는 시대는 끝.”</strong></p>
+</blockquote>
+<p>RainHub는 이들에게<br>
+**‘센스 있는 선택지’**로 보여야 합니다.</p>
+<hr>
+<h1 id="-정리-같은-서비스-다른-언어" style="position:relative;"><a href="#-%EC%A0%95%EB%A6%AC-%EA%B0%99%EC%9D%80-%EC%84%9C%EB%B9%84%EC%8A%A4-%EB%8B%A4%EB%A5%B8-%EC%96%B8%EC%96%B4" aria-label=" 정리 같은 서비스 다른 언어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🧩 정리: 같은 서비스, 다른 언어</h1>
+<p>RainHub의 기능은 하나지만,<br>
+고객의 라이프스타일에 따라 <strong>전혀 다른 가치</strong>로 전달됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>도시 직장인</th>
+<th>MZ·여가 사용자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>핵심 가치</td>
+<td>효율 · 편의</td>
+<td>감각 · 가벼움</td>
+</tr>
+<tr>
+<td>감정 포인트</td>
+<td>귀찮음 제거</td>
+<td>센스 있는 선택</td>
+</tr>
+<tr>
+<td>톤앤매너</td>
+<td>깔끔 · 실용</td>
+<td>트렌디 · 캐주얼</td>
+</tr>
+<tr>
+<td>메시지 방향</td>
+<td>“생각할 것 줄이기”</td>
+<td>“들고 다닐 필요 없음”</td>
+</tr>
+</tbody>
+</table>
+<p>👉 <strong>타깃이 달라지면, 카피도 달라져야 합니다.</strong></p>
+<hr>
+<h1 id="-결론-톤앤매너는-감성이-아니라-전략이다" style="position:relative;"><a href="#-%EA%B2%B0%EB%A1%A0-%ED%86%A4%EC%95%A4%EB%A7%A4%EB%84%88%EB%8A%94-%EA%B0%90%EC%84%B1%EC%9D%B4-%EC%95%84%EB%8B%88%EB%9D%BC-%EC%A0%84%EB%9E%B5%EC%9D%B4%EB%8B%A4" aria-label=" 결론 톤앤매너는 감성이 아니라 전략이다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🏁 결론: 톤앤매너는 ‘감성’이 아니라 ‘전략’이다</h1>
+<p>많은 서비스가<br>
+“우리는 누구나를 위한 서비스예요”라고 말합니다.</p>
+<p>하지만 실제로 잘 되는 서비스는<br>
+<strong>각 고객에게 다른 말로 설득합니다.</strong></p>
+<p>RainHub 역시</p>
+<ul>
+<li>어떤 사람에겐 <strong>도시 인프라</strong>로</li>
+<li>어떤 사람에겐 <strong>라이프스타일 아이템</strong>으로<br>
+자리 잡아야 합니다.</li>
+</ul>
+<p>그 시작은 기능이 아니라,<br>
+<strong>타깃을 나누고 말투를 바꾸는 것</strong>입니다.</p>
+<hr>
 <div class="table-of-contents">
 <ul>
-<li><a href="#-%EB%AA%A9%EC%A0%81">🎈 목적</a></li>
-<li><a href="#-bucket-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0">🗑 Bucket 생성하기</a></li>
-<li><a href="#1%EF%B8%8F%E2%83%A3">1️⃣</a></li>
-<li><a href="#2%EF%B8%8F%E2%83%A3">2️⃣</a></li>
-<li><a href="#3%EF%B8%8F%E2%83%A3">3️⃣</a></li>
+<li>
+<p><a href="#-%EB%88%84%EA%B5%AC%EC%97%90%EA%B2%8C">👤 누구에게?</a></p>
+<ul>
+<li><a href="#%EC%99%B8%EC%A0%81-%EB%AC%B8%EC%A0%9C">외적 문제</a></li>
+<li><a href="#%EB%82%B4%EC%A0%81-%EB%AC%B8%EC%A0%9C">내적 문제</a></li>
 </ul>
-</div></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/gatsby-aws-study-s3-referer/"><div class="direction">이전 글</div><div class="title">AWS S3 버킷 정책 편집</div></a></div><div class="post-navigator-card-wrapper"><a class="post-card next" href="/gatsby-aws-study-s3/"><div class="direction">다음 글</div><div class="title">AWS S3 란?</div></a></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2025<!-- -->  💥<a href="https://www.github.com">Re:teev</a>💥</p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/gatsby-aws-study-s3-makeBucket/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-ebf7ff47f46558574e2a.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-2337ad2c6f8d9e490bf7.js"],"component---src-pages-404-js":["/component---src-pages-404-js-15436f8dfae1c3ee67b5.js"],"component---src-pages-about-js":["/component---src-pages-about-js-856e8d6416ef6945064b.js"],"component---src-pages-index-js":["/component---src-pages-index-js-879fd8b4500755a93847.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-c4f28ccd583dc1bffa59.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-374367e59fc80abef7d9.js"]};/*]]>*/</script><script src="/component---src-templates-blog-template-js-c4f28ccd583dc1bffa59.js" async=""></script><script src="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-275fa38ecda86df3d2a6.js" async=""></script><script src="/app-ebf7ff47f46558574e2a.js" async=""></script><script src="/framework-7c748554c9c876e5e1b6.js" async=""></script><script src="/webpack-runtime-7e31cebe3ea491024046.js" async=""></script></body></html>
+</li>
+<li>
+<p><a href="#-%EB%AC%B4%EC%97%87%EC%9D%84-%EC%A0%9C%EC%95%88%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80">🎁 무엇을 제안할 것인가?</a></p>
+<ul>
+<li><a href="#%ED%95%B5%EC%8B%AC-%EC%85%80%EB%A7%81-%ED%8F%AC%EC%9D%B8%ED%8A%B8">핵심 셀링 포인트</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%A7%90%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80">🎨 어떻게 말할 것인가?</a></p>
+<ul>
+<li><a href="#%ED%83%80%EA%B9%83%EC%9D%B4-%EC%A2%8B%EC%95%84%ED%95%A0-%EB%B6%84%EC%9C%84%EA%B8%B0">타깃이 좋아할 분위기</a></li>
+<li><a href="#%EB%A7%88%EC%BC%80%ED%8C%85-%EB%A9%94%EC%8B%9C%EC%A7%80">마케팅 메시지</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#-%EB%88%84%EA%B5%AC%EC%97%90%EA%B2%8C-1">👤 누구에게?</a></p>
+<ul>
+<li><a href="#%EC%99%B8%EC%A0%81-%EB%AC%B8%EC%A0%9C-1">외적 문제</a></li>
+<li><a href="#%EB%82%B4%EC%A0%81-%EB%AC%B8%EC%A0%9C-1">내적 문제</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#-%EB%AC%B4%EC%97%87%EC%9D%84-%EC%A0%9C%EC%95%88%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80-1">🎁 무엇을 제안할 것인가?</a></p>
+<ul>
+<li><a href="#%ED%95%B5%EC%8B%AC-%EC%85%80%EB%A7%81-%ED%8F%AC%EC%9D%B8%ED%8A%B8-1">핵심 셀링 포인트</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%A7%90%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80-1">🎨 어떻게 말할 것인가?</a></p>
+<ul>
+<li><a href="#%ED%83%80%EA%B9%83%EC%9D%B4-%EC%A2%8B%EC%95%84%ED%95%A0-%EB%B6%84%EC%9C%84%EA%B8%B0-1">타깃이 좋아할 분위기</a></li>
+<li><a href="#%EB%A7%88%EC%BC%80%ED%8C%85-%EB%A9%94%EC%8B%9C%EC%A7%80-1">마케팅 메시지</a></li>
+</ul>
+</li>
+</ul>
+</div></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/aStartup13/"><div class="direction">이전 글</div><div class="title">RainHub 초도 시장 진입 전략 — 타겟별 3종 콜드메일 &amp; 4단 커넥션 프로세스</div></a></div><div class="post-navigator-card-wrapper"><a class="post-card next" href="/aStartup15/"><div class="direction">다음 글</div><div class="title">문장 호흡 정리 연습하기 — RainHub 한 문장으로 압축하는 법</div></a></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2025<!-- -->  💥<a href="https://www.github.com">Re:teev</a>💥</p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/aStartup14/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-ebf7ff47f46558574e2a.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-2337ad2c6f8d9e490bf7.js"],"component---src-pages-404-js":["/component---src-pages-404-js-15436f8dfae1c3ee67b5.js"],"component---src-pages-about-js":["/component---src-pages-about-js-856e8d6416ef6945064b.js"],"component---src-pages-index-js":["/component---src-pages-index-js-879fd8b4500755a93847.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-c4f28ccd583dc1bffa59.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-374367e59fc80abef7d9.js"]};/*]]>*/</script><script src="/component---src-templates-blog-template-js-c4f28ccd583dc1bffa59.js" async=""></script><script src="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-275fa38ecda86df3d2a6.js" async=""></script><script src="/app-ebf7ff47f46558574e2a.js" async=""></script><script src="/framework-7c748554c9c876e5e1b6.js" async=""></script><script src="/webpack-runtime-7e31cebe3ea491024046.js" async=""></script></body></html>
