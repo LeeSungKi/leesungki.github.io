@@ -4,12 +4,12 @@ title: 문장 호흡 정리 연습하기 — RainHub 한 문장으로 압축하�
 date: '2025-12-19 13:00:00'
 author: 쩡기
 tags: 콘텐츠연습 문장호흡 카피라이팅 rainhub 브랜딩 글쓰기연습
-categories: 실습과제
+categories: 창업공식
 imageUrl: 'startup.png'
 ---
 
 # ✏️ 문장 호흡 정리 연습하기
-구분: **실습과제 / 개인기록**
+구분: **창업공식 / 개인기록**
 
 ---
 
